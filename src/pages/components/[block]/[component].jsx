@@ -360,7 +360,7 @@ const CommonLayout = () => {
                             title="Preview"
                             width={componentWidth}
                             className="h-screen"
-                            src={`${process.env.NEXT_PUBLIC_APP_URL}/components/${component.type}/${component.type}-${component.slug}?color=${color}`}
+                            src={`${window.location.origin}/components/${component.type}/${component.type}-${component.slug}?color=${color}`}
 
                             // src={`${process.env.NEXT_PUBLIC_APP_URL}/components/pricing/pricing-sample-1?color=${color}`}
                           ></iframe>
