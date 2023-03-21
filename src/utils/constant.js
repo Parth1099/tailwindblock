@@ -1,0 +1,270 @@
+export const COMPONENT_LIST = [
+  {
+    mainImageSrc: "/bgcomponents/bgsample1.png",
+    hoverText: "This element displays several cost comparisons.",
+    title: "Sample 1",
+    subTitle: "Pricing component",
+    type: "pricing",
+    date: "2023-05-01",
+    slug: "sample-1",
+    codeAvailableLanguages: ["react", "HTML"],
+    pageDetails: {
+      title: "Pricing Sample 1",
+      componentReact: "pricingReact",
+      componentHTML: "pricingHtml",
+    },
+  },
+  {
+    mainImageSrc: "/bgcomponents/bgsample2.png",
+    hoverText: "On hover, the icons in this pricing component will change.",
+    title: "Sample 2",
+    subTitle: "Pricing component",
+    type: "pricing",
+    date: "2023-08-23",
+    slug: "sample-2",
+    codeAvailableLanguages: ["react"],
+    pageDetails: {
+      title: "Pricing Sample 2",
+      componentReact: "pricingReact",
+    },
+  },
+  {
+    mainImageSrc: "/bgcomponents/bgsample3.png",
+    hoverText: "On hover, the icons in this pricing component will change.",
+    title: "Sample 3",
+    subTitle: "Pricing component",
+    type: "pricing",
+    date: "2023-02-11",
+
+    slug: "sample-3",
+    codeAvailableLanguages: ["react"],
+    pageDetails: {
+      title: "Pricing Sample 3",
+      componentReact: "pricingReact",
+    },
+  },
+  {
+    mainImageSrc: "/bgcomponents/bgsample4.png",
+    hoverText: "On hover, the icons in this pricing component will change.",
+    title: "Sample 4",
+    subTitle: "Pricing component",
+    type: "pricing",
+    date: "2023-02-10",
+
+    slug: "sample-4",
+    codeAvailableLanguages: ["react"],
+    pageDetails: {
+      title: "Pricing Sample 4",
+      componentReact: "pricingReact",
+    },
+  },
+  {
+    mainImageSrc: "/bgcomponents/bgsample5.png",
+    hoverText: "On hover, the icons in this pricing component will change.",
+    title: "Sample 5",
+    subTitle: "Pricing component",
+    type: "pricing",
+    date: "2023-01-22",
+
+    slug: "sample-5",
+    codeAvailableLanguages: ["react"],
+    pageDetails: {
+      title: "Pricing Sample 5",
+      componentReact: "pricingReact",
+    },
+  },
+  {
+    mainImageSrc: "/bgcomponents/bgcreditcard1.png",
+    hoverText: "Credit card sample",
+    title: "Sample 1",
+    subTitle: "Creditcard component",
+    type: "creditcard",
+    date: "2024-11-10",
+
+    slug: "card-1",
+    codeAvailableLanguages: ["react"],
+    pageDetails: {
+      title: "Creditcard sample 1",
+      componentReact: "creditcardReact",
+    },
+  },
+  {
+    mainImageSrc: "/bgcomponents/bgcreditcard2.png",
+    hoverText: "Credit card sample",
+    title: "Sample 2",
+    subTitle: "Creditcard component",
+    type: "creditcard",
+    date: "2022-02-03",
+
+    slug: "card-2",
+    codeAvailableLanguages: ["react"],
+    pageDetails: {
+      title: "Creditcard sample 2",
+      componentReact: "creditcardReact",
+    },
+  },
+  {
+    mainImageSrc: "/bgcomponents/bgcreditcard3.png",
+    hoverText: "Credit card sample",
+    title: "Sample 3",
+    subTitle: "Creditcard component",
+    type: "creditcard",
+    date: "2023-03-01",
+
+    slug: "card-3",
+    codeAvailableLanguages: ["react"],
+    pageDetails: {
+      title: "Creditcard sample 3",
+      componentReact: "creditcardReact",
+    },
+  },
+  {
+    mainImageSrc: "/bgcomponents/bgcarousal1.png",
+    hoverText: "Carousal sample",
+    title: "Sample 1",
+    subTitle: "Carousal component",
+    type: "carousal",
+    date: "2022-07-01",
+
+    slug: "carousal-1",
+    codeAvailableLanguages: ["react"],
+    pageDetails: {
+      title: "Carousal sample 1",
+      componentReact: "carousalReact",
+    },
+  },
+  {
+    mainImageSrc: "/bgcomponents/bgcarousal2.png",
+    hoverText: "Carousal sample",
+    title: "Sample 2",
+    subTitle: "Carousal component",
+    type: "carousal",
+    date: "2023-03-20",
+
+    slug: "carousal-2",
+    codeAvailableLanguages: ["react"],
+    pageDetails: {
+      title: "Carousal sample 2",
+      componentReact: "carousalReact",
+    },
+  },
+  {
+    mainImageSrc: "/bgcomponents/bg-cards.png",
+    hoverText: "Card sample",
+    title: "Card",
+    subTitle: "Card component",
+    type: "card",
+    date: "2023-03-01",
+    slug: "profilecard",
+    codeAvailableLanguages: ["react"],
+    pageDetails: {
+      title: "Card sample 1",
+      componentReact: "cardReact",
+    },
+  },
+  {
+    mainImageSrc: "/bgcomponents/animation.gif",
+    hoverText: "Continues animation for intigrate inside website",
+    title: "Aniamtion",
+    subTitle: "Animation component",
+    type: "animation",
+    date: "2023-03-14",
+
+    slug: "animation-infinite",
+    codeAvailableLanguages: ["react"],
+    pageDetails: {
+      title: "Animation Infinite",
+      componentReact: "animationReact",
+    },
+  },
+  {
+    mainImageSrc: "/bgcomponents/bgbutton.jpg",
+    hoverText: "Continues animation for intigrate inside website",
+    title: "Sample Buttons 1",
+    subTitle: "Button component",
+    type: "button",
+    date: "2023-03-16",
+
+    slug: "sample-button-1",
+    codeAvailableLanguages: ["react"],
+    pageDetails: {
+      title: "Button",
+      componentReact: "ButtonSampleReact",
+    },
+  },
+  {
+    mainImageSrc: "/bgcomponents/bganimatedbutton.gif",
+    hoverText: "Continues animation for intigrate inside website",
+    title: "Sample Buttons 2",
+    subTitle: "Button component",
+    type: "button",
+    date: "2023-03-20",
+
+    slug: "sample-button-2",
+    codeAvailableLanguages: ["react"],
+    pageDetails: {
+      title: "Button",
+      componentReact: "ButtonSampleReact",
+    },
+  },
+  {
+    mainImageSrc: "/bgcomponents/bganimatedbutton.gif",
+    hoverText: "Continues animation for intigrate inside website",
+    title: "Sample Buttons 3",
+    subTitle: "Button component",
+    type: "button",
+    date: "2023-03-13",
+
+    slug: "sample-button-3",
+    codeAvailableLanguages: ["react"],
+    pageDetails: {
+      title: "Button",
+      componentReact: "ButtonSampleReact",
+    },
+  },
+  {
+    mainImageSrc: "/bgcomponents/bginput.jpg",
+    hoverText: "Continues animation for intigrate inside website",
+    title: "Input",
+    subTitle: "Input component",
+    type: "input",
+    date: "2023-03-26",
+
+    slug: "input-sample-1",
+    codeAvailableLanguages: ["react"],
+    pageDetails: {
+      title: "Input",
+      componentReact: "inputReact",
+    },
+  },
+  {
+    mainImageSrc: "/bgcomponents/bgradiobutton.jpg",
+    hoverText: "Continues animation for intigrate inside website",
+    title: "Radio Button",
+    subTitle: "Radio Button component",
+    type: "radiobutton",
+    date: "2023-03-27",
+
+    slug: "radiobutton-sample-1",
+    codeAvailableLanguages: ["react"],
+    pageDetails: {
+      title: "Radio Button",
+      componentReact: "radioButtonReact",
+    },
+  },
+  {
+    mainImageSrc: "/bgcomponents/bgcheckbox.png",
+    hoverText: "Continues animation for intigrate inside website",
+    title: "Check Box",
+    subTitle: "Checkbox component",
+    type: "checkbox",
+    date: "2023-03-28",
+
+    slug: "checkbox-sample-1",
+    codeAvailableLanguages: ["react"],
+    pageDetails: {
+      title: "Check Box",
+      componentReact: "checkboxReact",
+    },
+  },
+];
