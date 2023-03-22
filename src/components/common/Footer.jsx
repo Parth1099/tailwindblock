@@ -29,11 +29,11 @@ const socialmedia = [
 const HeaderData = [
   {
     name: "Components",
-    link: "/components",
+    link: "/listing",
   },
   {
     name: "Templates",
-    link: "/template",
+    link: "/templatelisting",
   },
   {
     name: "Documentations",

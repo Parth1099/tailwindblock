@@ -24,13 +24,13 @@ import { compareName } from "../../../utils/helper";
 import { TemplateConstant } from "@/utils/templateconstant";
 
 const colors = [
-  "#EBC84B",
-  "#64BC78",
-  "#57B3AC",
-  "#4299E1",
-  "#667EEA",
-  "#9F7AEA",
-  "#ed64a6",
+  "EBC84B",
+  "64BC78",
+  "57B3AC",
+  "4299E1",
+  "667EEA",
+  "9F7AEA",
+  "ed64a6",
 ];
 const shareSvg = [
   {
@@ -91,12 +91,12 @@ const CommonLayout = () => {
     }, 3000);
   };
   console.log(query, "CCC");
-  // console.log(component, "CCC");
 
   useEffect(() => {
     const code = TemplateConstant?.filter(
-      (data) => data.slug === query.component
+      (data) => data.slug === query.templates
     )[0]?.pageDetails;
+
     switch (selectedCodeBlock) {
       case "HTML": {
         setCodeBlockData(code?.componentHTML);
@@ -179,7 +179,7 @@ const CommonLayout = () => {
                       your existing project.
                     </div>
                     <div className="mt-10">
-                      <div className="mt-5 border rounded-t-md shadow-componentcard flex gap-5 p-3 bg-blue-200  ">
+                      {/* <div className="mt-5 border rounded-t-md shadow-componentcard flex gap-5 p-3 bg-blue-200  ">
                         <div className="flex  items-center gap-5">
                           {!codeblock ? (
                             <>
@@ -290,6 +290,162 @@ const CommonLayout = () => {
                             </div>
                           )}
                         </div>
+                      </div> */}
+                      <div className="mt-5 border rounded-t-md shadow-componentcard flex gap-5 p-3 bg-blue-200 overflow-x-auto overflow-y-hidden w-auto">
+                        <div className="flex items-center gap-5 ">
+                          <div className="flex items-center gap-5">
+                            <div
+                              onClick={() => setCodeBlock(false)}
+                              className="flex gap-5"
+                            >
+                              <span
+                                className={`font-bold text-xs md:text-xl whitespace-nowrap cursor-pointer 
+                              ${"bg-blue-800 border px-2 py-1 rounded text-white"}`}
+                              >
+                                Preview :
+                              </span>
+                              <div className="flex align-middle gap-2 items-center">
+                                <div
+                                  onClick={() => setComponentWidth("425px")}
+                                  className={`relative border h-7 w-7 items-center flex rounded-md  cursor-pointer shadow-md bg-white ${
+                                    componentWidth === "425px" && "bg-blue-800"
+                                  }`}
+                                >
+                                  <MobileViewLogo
+                                    fill={
+                                      componentWidth === "425px"
+                                        ? "blue"
+                                        : "black"
+                                    }
+                                  />
+                                </div>
+                                <div
+                                  onClick={() => setComponentWidth("768px")}
+                                  className={`relative border h-7 w-7 rounded-md items-center flex cursor-pointer shadow-md bg-white ${
+                                    componentWidth === "768px" &&
+                                    "text-white bg-blue-800"
+                                  }`}
+                                >
+                                  <TabletViewLogo
+                                    fill={
+                                      componentWidth === "768px"
+                                        ? "blue"
+                                        : "black"
+                                    }
+                                  />
+                                </div>
+                                <div
+                                  onClick={() => setComponentWidth("100%")}
+                                  className={`relative border h-7 w-7 rounded-md items-center flex cursor-pointer shadow-md bg-white ${
+                                    componentWidth === "100%" &&
+                                    "text-white bg-blue-800"
+                                  }`}
+                                >
+                                  <DesktopViewLogo
+                                    fill={
+                                      componentWidth === "100%"
+                                        ? "blue"
+                                        : "black"
+                                    }
+                                  />
+                                </div>
+
+                                <div
+                                  onClick={() =>
+                                    window.open(
+                                      `${process.env.NEXT_PUBLIC_APP_URL}/components/pricing/pricing-sample-1?color=${color}`,
+                                      "_blank"
+                                    )
+                                  }
+                                  className={`relative border h-7 w-7 rounded-md  cursor-pointer shadow-md bg-white`}
+                                >
+                                  <ShareSvg />
+                                </div>
+                              </div>
+                            </div>
+                            {/* <div className="flex justify-center gap-2 cursor-pointer">
+                              {colors.map((data, index) => {
+                                return (
+                                  <div
+                                    key={index}
+                                    style={{ backgroundColor: `#${data}` }}
+                                    className={`w-[20px] h-[20px] rounded-[2px]`}
+                                    onClick={(e) => {
+                                      setColor(data);
+                                    }}
+                                  ></div>
+                                );
+                              })}
+                            </div> */}
+                          </div>
+                          <div className="flex items-center gap-5">
+                            <div onClick={() => setCodeBlock(true)}>
+                              <span
+                                className={`font-bold text-xs md:text-xl whitespace-nowrap cursor-pointer 
+                                  ${"bg-blue-800 border px-2 py-1 rounded text-white"}`}
+                              >
+                                Code :
+                              </span>
+                            </div>
+                            {component.codeAvailableLanguages.map(
+                              (data, index) => (
+                                <div
+                                  onClick={() => {
+                                    setSelectedCodeBlock(data);
+                                    setCodeBlock(true);
+                                  }}
+                                  key={index}
+                                  className={`capitalize px-2 py-1 rounded hover:bg-white hover:text-blue-900 font-bold cursor-pointer ${
+                                    data === selectedCodeBlock && "bg-white"
+                                  }`}
+                                >
+                                  {data}
+                                </div>
+                              )
+                            )}
+                            <div className="group flex relative">
+                              <span
+                                onClick={() => {
+                                  copyData(
+                                    require(`!!raw-loader!../../../components/${
+                                      component.type
+                                    }/${component.slug}/${
+                                      codeBlockData ?? "pricingReact"
+                                    }`).default.toString()
+                                  );
+                                }}
+                                className="bg-blue-800 text-white px-2 py-1 rounded overflow-hidden"
+                              >
+                                <CopyIcon />
+                              </span>
+                              <span className="group-hover:opacity-100 transition-opacity bg-gray-800 px-2 text-sm text-gray-100  absolute left-1/2 -translate-x-1/2 -translate-y-full opacity-0 m-4 mx-auto bottom-1 cursor-pointer">
+                                {!copyBlock.clicked ? "Copy" : "Copied"}
+                              </span>
+                            </div>
+                            <div
+                              className="bg-blue-800 text-white px-2 py-1 rounded overflow-hidden cursor-pointer"
+                              onClick={() => {
+                                zip.file(
+                                  "code.jsx",
+                                  `${require(`!!raw-loader!../../../components/${
+                                    component.type
+                                  }/${component.slug}/${
+                                    codeBlockData ?? "pricingReact"
+                                  }`).default.toString()}`
+                                );
+
+                                zip
+                                  .generateAsync({ type: "base64" })
+                                  .then(function (content) {
+                                    location.href =
+                                      "data:application/zip;base64," + content;
+                                  });
+                              }}
+                            >
+                              <DownloadIcon />
+                            </div>
+                          </div>
+                        </div>
                       </div>
                       <div className="flex justify-center items-center w-full shadow-componentcard rounded-b-md bg-blue-300 border-b-[1px]">
                         {!codeblock ? (
@@ -298,68 +454,18 @@ const CommonLayout = () => {
                             width={componentWidth}
                             className="h-screen"
                             // src={`${process.env.NEXT_PUBLIC_APP_URL}/components/pricing/pricing-sample-2`}
-                            src={`${window.location.origin}/templates/${component.type}/${component.type}-${component.slug}`}
+                            src={`${process.env.NEXT_PUBLIC_APP_URL}/templates/${component.type}/${component.type}-${component.slug}`}
                           ></iframe>
                         ) : (
                           <div className="h-96 overflow-y-auto">
                             <CopyBlock
-                              // text={require(`!!raw-loader!../../../components/templates/${component.type}/${component.slug}/${codeBlockData}`).default.toString()}
+                              text={require(`!!raw-loader!../../../components/templates/${component.type}/${component.slug}/${codeBlockData}`).default.toString()}
                               theme={hybrid}
                               language="html"
                               CodeBlock
                             />
                           </div>
                         )}
-                      </div>
-                      <div className="mt-10 border-b-2 pb-5">
-                        <span className="font-bold sm:text-2xl lg:text-[22px] text-blue-900 ">
-                          Code
-                        </span>
-                      </div>
-                      <div className="text-[16px] lg:text-xl tracking-[0.055em]   mt-5 text-[#1c1c2399] font-normal">
-                        The starting component&apos;s code, which you can place
-                        into an already-existing project.
-                      </div>
-                      <div>
-                        <div className="flex  my-10 flex-row gap-1 sm:gap-5 ">
-                          <Button
-                            color={"bg-blue-900"}
-                            onClick={() => {
-                              copyData();
-                              // require(`!!raw-loader!../../../components/${component.type}/${component.slug}/${component.pageDetails.component}`).default.toString()
-                            }}
-                            label={
-                              !copyBlock.clicked
-                                ? "Copy to Clipboard"
-                                : "Copied"
-                            }
-                            icon={<CopyIcon />}
-                            size="max-w-[200px]  lg:max-w-[208px] w-full"
-                            font="font-semibold text-white text-[14px] sm:text-base lg:text-[17px]"
-                            className="rounded-md whitespace-nowrap py-[10px] lg:py-[15px] "
-                          />
-                          <Button
-                            color={"bg-blue-900"}
-                            onClick={() => {
-                              zip.file(
-                                "code.jsx"
-                                // `${require(`!!raw-loader!../../../components/${component.type}/${component.slug}/${codeBlockData}`).default.toString()}`
-                              );
-
-                              zip
-                                .generateAsync({ type: "base64" })
-                                .then(function (content) {
-                                  location.href =
-                                    "data:application/zip;base64," + content;
-                                });
-                            }}
-                            label={"Download"}
-                            icon={<DownloadIcon />}
-                            size="max-w-[200px] lg:max-w-[208px] w-full"
-                            font="font-semibold text-white text-[14px] sm:text-base lg:text-[17px]"
-                            className="rounded-md whitespace-nowrap py-[10px] lg:py-[15px]"
-                          />
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -377,7 +483,10 @@ const CommonLayout = () => {
                         : targetsLength;
                     return data.slug !== query.component &&
                       data.type === query.block ? (
-                      <Link key={index} href={"/"}>
+                      <Link
+                        key={index}
+                        href={`/components/${data.type}/${data.slug}`}
+                      >
                         <div className="   group border rounded-xl shadow-subcard overflow-hidden cursor-pointer hover:shadow-[0px_3px_6px_rgba(0,0,0,0.16)] hover:scale-[1.02] hover:duration-75">
                           <div>
                             <div className="min-w-[288px] w-full h-[190px] relative">
@@ -406,12 +515,15 @@ const CommonLayout = () => {
                     COMPONENT_LIST.slice(0, 4 - targetsLength).map(
                       (data, index) => {
                         return (
-                          <Link key={index} href={"/"}>
+                          <Link
+                            key={index}
+                            href={`/components/${data.type}/${data.slug}`}
+                          >
                             <div className="   group border rounded-xl shadow-subcard overflow-hidden cursor-pointer hover:shadow-[0px_3px_6px_rgba(0,0,0,0.16)] hover:scale-[1.02] hover:duration-75">
                               <div key={index}>
                                 <div className="min-w-[288px] w-full h-[190px] relative">
                                   <Image
-                                    src={data.imgsrc}
+                                    src={data.mainImageSrc}
                                     alt="not found"
                                     fill
                                   />

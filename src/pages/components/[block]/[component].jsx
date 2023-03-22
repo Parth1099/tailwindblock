@@ -76,7 +76,6 @@ const CommonLayout = () => {
     const cat = COMPONENT_LIST.filter((item) => item.type === query.block);
     setLableSample(cat);
   }, [query]);
-  console.log(lableSample, "AAA");
 
   const copyData = (code) => {
     setCopyBlock({
@@ -156,7 +155,7 @@ const CommonLayout = () => {
                                 key={index}
                                 className={`max-w-fit px-[15px] text-sm md:text-[22px] w-full   whitespace-nowrap relative  text-center  text-gray-500 capitalize  ${
                                   data.slug === query.component &&
-                                  "font-semibold !text-black after:-bottom-[2px]  md:after:-bottom-[20px]   after:left-0 after:absolute after:content-['']  after:h-[4px] after:w-full after:rounded-full after:bg-[#333333]"
+                                  "font-semibold !text-black after:-bottom-[20px]   md:after:-bottom-[20px]   after:left-0 after:absolute after:content-['']  after:h-[4px] after:w-full after:rounded-full after:bg-[#333333]"
                                 }`}
                               >
                                 <Link
@@ -360,7 +359,7 @@ const CommonLayout = () => {
                             title="Preview"
                             width={componentWidth}
                             className="h-screen"
-                            src={`${window.location.origin}/components/${component.type}/${component.type}-${component.slug}?color=${color}`}
+                            src={`${process.env.NEXT_PUBLIC_APP_URL}/components/${component.type}/${component.type}-${component.slug}?color=${color}`}
 
                             // src={`${process.env.NEXT_PUBLIC_APP_URL}/components/pricing/pricing-sample-1?color=${color}`}
                           ></iframe>
@@ -368,11 +367,6 @@ const CommonLayout = () => {
                           <div className="h-96 overflow-y-auto">
                             <CopyBlock
                               text={require(`!!raw-loader!../../../components/${component.type}/${component.slug}/${codeBlockData}`).default.toString()}
-                              // text={`${require(`!!raw-loader!../../../components/${
-                              //   component.type
-                              // }/${component.slug}/${
-                              //   codeBlockData ?? "pricingReact"
-                              // }`).default.toString()}`}
                               theme={hybrid}
                               language="jsx"
                               CodeBlock
@@ -396,7 +390,11 @@ const CommonLayout = () => {
                         : targetsLength;
                     return data.slug !== query.component &&
                       data.type === query.block ? (
-                      <Link key={index} href={"/"}>
+                      // <Link key={index} href={"/components/pricing/sample-1"}>
+                      <Link
+                        key={index}
+                        href={`/components/${data.type}/${data.slug}`}
+                      >
                         <div className="   group border rounded-xl shadow-subcard overflow-hidden cursor-pointer hover:shadow-[0px_3px_6px_rgba(0,0,0,0.16)] hover:scale-[1.02] hover:duration-75">
                           <div>
                             <div className="min-w-[288px] w-full h-[190px] relative">
@@ -425,7 +423,10 @@ const CommonLayout = () => {
                     COMPONENT_LIST.slice(0, 4 - targetsLength).map(
                       (data, index) => {
                         return (
-                          <Link key={index} href={"/"}>
+                          <Link
+                            key={index}
+                            href={`/components/${data.type}/${data.slug}`}
+                          >
                             <div className="   group border rounded-xl shadow-subcard overflow-hidden cursor-pointer hover:shadow-[0px_3px_6px_rgba(0,0,0,0.16)] hover:scale-[1.02] hover:duration-75">
                               <div key={index}>
                                 <div className="min-w-[288px] w-full h-[190px] relative">

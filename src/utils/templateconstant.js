@@ -7,7 +7,7 @@ export const TemplateConstant = [
     type: "3dnft",
     date: "2023-09-11",
     slug: "temp1",
-    codeAvailableLanguages: ["react", "HTML"],
+    codeAvailableLanguages: ["react"],
     pageDetails: {
       title: "3DNFT",
       componentReact: "templateReact",
@@ -21,11 +21,10 @@ export const TemplateConstant = [
     type: "crypto",
     date: "2023-01-09",
     slug: "temp2",
-    codeAvailableLanguages: ["react", "HTML"],
+    codeAvailableLanguages: ["react"],
     pageDetails: {
       title: "Crypto",
-      componentReact: "pricingReact",
-      componentHTML: "pricingHtml",
+      componentReact: "templateReact",
     },
   },
   {
@@ -36,11 +35,10 @@ export const TemplateConstant = [
     type: "advocate",
     date: "2023-05-01",
     slug: "temp3",
-    codeAvailableLanguages: ["react", "HTML"],
+    codeAvailableLanguages: ["react"],
     pageDetails: {
       title: "Advocate",
-      componentReact: "pricingReact",
-      componentHTML: "pricingHtml",
+      componentReact: "templateReact",
     },
   },
   {
@@ -51,11 +49,10 @@ export const TemplateConstant = [
     type: "tbdesign",
     date: "2023-05-01",
     slug: "temp4",
-    codeAvailableLanguages: ["react", "HTML"],
+    codeAvailableLanguages: ["react"],
     pageDetails: {
       title: "TBDesign",
-      componentReact: "pricingReact",
-      componentHTML: "pricingHtml",
+      componentReact: "templateReact",
     },
   },
 ];

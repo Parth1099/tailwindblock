@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Marquee from "react-fast-marquee";
-import "@fontsource/cormorant";
-import "@fontsource/montserrat";
+// import "@fontsource/cormorant";
+// import "@fontsource/montserrat";
 
 const discover = [
   {

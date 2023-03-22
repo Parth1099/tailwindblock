@@ -106,7 +106,7 @@ const Listing = () => {
         <div className="absolute top-2.5 text-center lg:px-0 xl:px-28 px-6 h-full w-full flex justify-center items-center">
           <div className="flex flex-col justify-center items-center gap-8 md:w-1/2 h-full ">
             <div className="w-full flex justify-center ">
-              <div className="max-w-[400px] w-full p-2 rounded text-3xl  capitalize bg-[#4F30B9] text-white">
+              <div className="max-w-[400px] w-full p-2 rounded text-3xl  capitalize  bg-blue-900 text-white">
                 Tailwind components
               </div>
             </div>
