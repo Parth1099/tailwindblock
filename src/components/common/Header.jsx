@@ -3,21 +3,9 @@ import Link from "next/link";
 import Logo from "../../../public/assets/common/logo.svg";
 import { useState } from "react";
 import { useRouter } from "next/router";
+import { NavbarList } from "../../../src/utils/navbarlist";
 
-const HeaderData = [
-  {
-    name: "Components",
-    link: "/listing",
-  },
-  {
-    name: "Templates",
-    link: "/templatelisting",
-  },
-  {
-    name: "Documentations",
-    link: "https://github.com/infynno-solutions/tailwind-ui",
-  },
-];
+console.log(NavbarList, "NAV");
 
 const Header = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -42,7 +30,7 @@ const Header = () => {
           </Link>
 
           <div className={` flex items-center sm:gap-3 md:gap-4`}>
-            {HeaderData.map((data, index) => (
+            {NavbarList.map((data, index) => (
               <span
                 className={`font-nunito font-semibold text-white cursor-pointer hover:border-b-2 hover:pb-1 px-2  md:flex hidden h-8 ${
                   data.link === router.pathname && "border-b-2"
@@ -107,7 +95,7 @@ const Header = () => {
                     toggle ? "delay-[0.45s]" : "delay-[0s]"
                   }`}
                 >
-                  {HeaderData.map((data, index) => (
+                  {NavbarList.map((data, index) => (
                     <span
                       className={`font-semibold text-black text-center cursor-pointer hover:border-b-2 hover:pb-1 px-2 flex md:hidden `}
                       key={index}

@@ -10,7 +10,6 @@ import { COMPONENT_LIST } from "../../../utils/constant";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
-import Button from "../../../components/common/Button";
 import { CopyIcon, DownloadIcon } from "../../../utils/images/commonImages";
 import JSZip from "jszip";
 import { CopyBlock, hybrid } from "react-code-blocks";
@@ -155,7 +154,7 @@ const CommonLayout = () => {
                                 key={index}
                                 className={`max-w-fit px-[15px] text-sm md:text-[22px] w-full   whitespace-nowrap relative  text-center  text-gray-500 capitalize  ${
                                   data.slug === query.component &&
-                                  "font-semibold !text-black after:-bottom-[20px]   md:after:-bottom-[20px]   after:left-0 after:absolute after:content-['']  after:h-[4px] after:w-full after:rounded-full after:bg-[#333333]"
+                                  "font-semibold !text-black after:-bottom-[20px]  md:after:-bottom-[20px] after:left-0 after:absolute after:content-['']  after:h-[4px] after:w-full after:rounded-full after:bg-[#333333]"
                                 }`}
                               >
                                 <Link
@@ -333,35 +332,14 @@ const CommonLayout = () => {
                           </div>
                         </div>
                       </div>
-                      {/* <div className="flex justify-center items-center w-full shadow-componentcard rounded-b-md bg-blue-300 border-b-[1px]">
-                        {!codeblock ? (
-                          <iframe
-                            title="Preview"
-                            width={componentWidth}
-                            className="h-screen"
-                            // src={`${process.env.NEXT_PUBLIC_APP_URL}/components/pricing/pricing-sample-2`}
-                            src={`${process.env.NEXT_PUBLIC_APP_URL}/components/${component.type}/${component.type}-${component.slug}`}
-                          ></iframe>
-                        ) : (
-                          <div className="h-96 overflow-y-auto">
-                            <CopyBlock
-                              text={require(`!!raw-loader!../../../components/${component.type}/${component.slug}/${codeBlockData}`).default.toString()}
-                              theme={hybrid}
-                              language="html"
-                              CodeBlock
-                            />
-                          </div>
-                        )}
-                      </div> */}
+
                       <div className="flex justify-center items-center w-full shadow-componentcard rounded-b-md bg-blue-300 border-b-[1px]">
                         {!codeblock ? (
                           <iframe
                             title="Preview"
                             width={componentWidth}
                             className="h-screen"
-                            src={`${window.location.origin}/components/${component.type}/${component.type}-${component.slug}?color=${color}`}
-
-                            // src={`${process.env.NEXT_PUBLIC_APP_URL}/components/pricing/pricing-sample-1?color=${color}`}
+                            src={`${process.env.NEXT_PUBLIC_APP_URL}/components/${component.type}/${component.type}-${component.slug}?color=${color}`}
                           ></iframe>
                         ) : (
                           <div className="h-96 overflow-y-auto">
@@ -390,7 +368,6 @@ const CommonLayout = () => {
                         : targetsLength;
                     return data.slug !== query.component &&
                       data.type === query.block ? (
-                      // <Link key={index} href={"/components/pricing/sample-1"}>
                       <Link
                         key={index}
                         href={`/components/${data.type}/${data.slug}`}

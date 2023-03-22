@@ -7,6 +7,7 @@ import Linkedin from "../../../public/assets/footer/linkedinicon.svg";
 import Instagram from "../../../public/assets/footer/instagramicon.svg";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { NavbarList } from "../../../src/utils/navbarlist";
 
 const socialmedia = [
   {
@@ -26,20 +27,6 @@ const socialmedia = [
     img: Instagram,
   },
 ];
-const HeaderData = [
-  {
-    name: "Components",
-    link: "/listing",
-  },
-  {
-    name: "Templates",
-    link: "/templatelisting",
-  },
-  {
-    name: "Documentations",
-    link: "https://github.com/infynno-solutions/tailwind-ui",
-  },
-];
 
 const Footer = () => {
   const router = useRouter();
@@ -50,7 +37,7 @@ const Footer = () => {
           <div
             className={` flex  items-center  md:flex-row  justify-center gap-3 sm:gap-[40px] md:gap-[50px] font-bold text-sm sm:text-[16px] md:text-[18px] leading-6 tracking-[0.055em]`}
           >
-            {HeaderData.map((data, index) => (
+            {NavbarList.map((data, index) => (
               <span
                 className={` font-semibold text-white hover:border-b-[3px] hover:pb-[2px]  cursor-pointer  px-2 h-8 flex`}
                 key={index}

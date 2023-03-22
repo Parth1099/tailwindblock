@@ -10,7 +10,6 @@ import { COMPONENT_LIST } from "../../../utils/constant";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
-import Button from "../../../components/common/Button";
 import { CopyIcon, DownloadIcon } from "../../../utils/images/commonImages";
 import JSZip from "jszip";
 import { CopyBlock, hybrid } from "react-code-blocks";
@@ -90,7 +89,6 @@ const CommonLayout = () => {
       clearTimeout(timer);
     }, 3000);
   };
-  console.log(query, "CCC");
 
   useEffect(() => {
     const code = TemplateConstant?.filter(
@@ -179,118 +177,6 @@ const CommonLayout = () => {
                       your existing project.
                     </div>
                     <div className="mt-10">
-                      {/* <div className="mt-5 border rounded-t-md shadow-componentcard flex gap-5 p-3 bg-blue-200  ">
-                        <div className="flex  items-center gap-5">
-                          {!codeblock ? (
-                            <>
-                              <span
-                                className={`font-bold text-xs md:text-xl whitespace-nowrap cursor-pointer 
-                              ${"bg-blue-800 border px-2 py-1 rounded text-white"}`}
-                              >
-                                Preview :
-                              </span>
-                              <div className="flex align-middle gap-2 items-center">
-                                <div
-                                  onClick={() => setComponentWidth("425px")}
-                                  className={`relative border h-7 w-7 items-center flex rounded-md  cursor-pointer shadow-md bg-white ${
-                                    componentWidth === "425px" && "bg-blue-800"
-                                  }`}
-                                >
-                                  <MobileViewLogo
-                                    stroke={
-                                      componentWidth === "425px"
-                                        ? "blue"
-                                        : "black"
-                                    }
-                                  />
-                                </div>
-                                <div
-                                  onClick={() => setComponentWidth("768px")}
-                                  className={`relative border h-7 w-7 rounded-md items-center flex cursor-pointer shadow-md bg-white ${
-                                    componentWidth === "768px" &&
-                                    "text-white bg-blue-800"
-                                  }`}
-                                >
-                                  <TabletViewLogo
-                                    stroke={
-                                      componentWidth === "768px"
-                                        ? "blue"
-                                        : "black"
-                                    }
-                                  />
-                                </div>
-                                <div
-                                  onClick={() => setComponentWidth("100%")}
-                                  className={`relative border h-7 w-7 rounded-md items-center flex cursor-pointer shadow-md bg-white ${
-                                    componentWidth === "100%" &&
-                                    "text-white bg-blue-800"
-                                  }`}
-                                >
-                                  <DesktopViewLogo
-                                    stroke={
-                                      componentWidth === "100%"
-                                        ? "blue"
-                                        : "black"
-                                    }
-                                  />
-                                </div>
-
-                                <div
-                                  onClick={() =>
-                                    window.open(
-                                      `${process.env.NEXT_PUBLIC_APP_URL}/components/pricing/pricing-sample-1`,
-                                      "_blank"
-                                    )
-                                  }
-                                  className={`border h-7 w-7 rounded-md  cursor-pointer shadow-md bg-white`}
-                                >
-                                  <ShareSvg />
-                                </div>
-                              </div>
-                            </>
-                          ) : (
-                            <div
-                              onClick={() => setCodeBlock(false)}
-                              className={`font-bold text-xs md:text-xl whitespace-nowrap cursor-pointer
-                              `}
-                            >
-                              Preview
-                            </div>
-                          )}
-                          {codeblock ? (
-                            <>
-                              <div onClick={() => setCodeBlock(true)}>
-                                <span
-                                  className={`font-bold text-xs md:text-xl whitespace-nowrap cursor-pointer 
-                                  ${"bg-blue-800 border px-2 py-1 rounded text-white"}`}
-                                >
-                                  Code :
-                                </span>
-                              </div>
-                              {component.codeAvailableLanguages.map(
-                                (data, index) => (
-                                  <div
-                                    onClick={() => setSelectedCodeBlock(data)}
-                                    key={index}
-                                    className={`capitalize px-2 py-1 rounded hover:bg-white hover:text-blue-900 font-bold cursor-pointer ${
-                                      data === selectedCodeBlock && "bg-white"
-                                    }`}
-                                  >
-                                    {data}
-                                  </div>
-                                )
-                              )}
-                            </>
-                          ) : (
-                            <div
-                              onClick={() => setCodeBlock(true)}
-                              className={`font-bold text-xs md:text-xl whitespace-nowrap cursor-pointer`}
-                            >
-                              Code
-                            </div>
-                          )}
-                        </div>
-                      </div> */}
                       <div className="mt-5 border rounded-t-md shadow-componentcard flex gap-5 p-3 bg-blue-200 overflow-x-auto overflow-y-hidden w-auto">
                         <div className="flex items-center gap-5 ">
                           <div className="flex items-center gap-5">
@@ -363,20 +249,6 @@ const CommonLayout = () => {
                                 </div>
                               </div>
                             </div>
-                            {/* <div className="flex justify-center gap-2 cursor-pointer">
-                              {colors.map((data, index) => {
-                                return (
-                                  <div
-                                    key={index}
-                                    style={{ backgroundColor: `#${data}` }}
-                                    className={`w-[20px] h-[20px] rounded-[2px]`}
-                                    onClick={(e) => {
-                                      setColor(data);
-                                    }}
-                                  ></div>
-                                );
-                              })}
-                            </div> */}
                           </div>
                           <div className="flex items-center gap-5">
                             <div onClick={() => setCodeBlock(true)}>
@@ -453,8 +325,7 @@ const CommonLayout = () => {
                             title="Preview"
                             width={componentWidth}
                             className="h-screen"
-                            // src={`${process.env.NEXT_PUBLIC_APP_URL}/components/pricing/pricing-sample-2`}
-                            src={`${window.location.origin}/templates/${component.type}/${component.type}-${component.slug}`}
+                            src={`${process.env.NEXT_PUBLIC_APP_URL}/templates/${component.type}/${component.type}-${component.slug}`}
                           ></iframe>
                         ) : (
                           <div className="h-96 overflow-y-auto">
