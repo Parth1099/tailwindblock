@@ -279,7 +279,7 @@ const CommonLayout = () => {
                               <span
                                 onClick={() => {
                                   copyData(
-                                    require(`!!raw-loader!../../../components/${
+                                    require(`!!raw-loader!../../../components/templates/${
                                       component.type
                                     }/${component.slug}/${
                                       codeBlockData ?? "pricingReact"
@@ -299,7 +299,7 @@ const CommonLayout = () => {
                               onClick={() => {
                                 zip.file(
                                   "code.jsx",
-                                  `${require(`!!raw-loader!../../../components/${
+                                  `${require(`!!raw-loader!../../../components/templates/${
                                     component.type
                                   }/${component.slug}/${
                                     codeBlockData ?? "pricingReact"
