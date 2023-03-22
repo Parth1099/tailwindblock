@@ -325,7 +325,7 @@ const CommonLayout = () => {
                             title="Preview"
                             width={componentWidth}
                             className="h-screen"
-                            src={`${process.env.NEXT_PUBLIC_APP_URL}/templates/${component.type}/${component.type}-${component.slug}`}
+                            src={`${window.location.origin}/templates/${component.type}/${component.type}-${component.slug}`}
                           ></iframe>
                         ) : (
                           <div className="h-96 overflow-y-auto">
