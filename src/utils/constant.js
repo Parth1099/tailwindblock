@@ -7,6 +7,7 @@ export const COMPONENT_LIST = [
     type: "pricing",
     date: "2023-05-01",
     slug: "sample-1",
+    isCustomizeColor: true,
     codeAvailableLanguages: ["react", "HTML"],
     pageDetails: {
       title: "Pricing Sample 1",
@@ -22,6 +23,7 @@ export const COMPONENT_LIST = [
     type: "pricing",
     date: "2023-08-23",
     slug: "sample-2",
+    isCustomizeColor: false,
     codeAvailableLanguages: ["react"],
     pageDetails: {
       title: "Pricing Sample 2",
@@ -35,8 +37,8 @@ export const COMPONENT_LIST = [
     subTitle: "Pricing component",
     type: "pricing",
     date: "2023-02-11",
-
     slug: "sample-3",
+    isCustomizeColor: true,
     codeAvailableLanguages: ["react", "HTML"],
     pageDetails: {
       title: "Pricing Sample 3",
@@ -51,8 +53,8 @@ export const COMPONENT_LIST = [
     subTitle: "Pricing component",
     type: "pricing",
     date: "2023-02-10",
-
     slug: "sample-4",
+    isCustomizeColor: true,
     codeAvailableLanguages: ["react", "HTML"],
     pageDetails: {
       title: "Pricing Sample 4",
@@ -67,8 +69,8 @@ export const COMPONENT_LIST = [
     subTitle: "Pricing component",
     type: "pricing",
     date: "2023-01-22",
-
     slug: "sample-5",
+    isCustomizeColor: false,
     codeAvailableLanguages: ["react"],
     pageDetails: {
       title: "Pricing Sample 5",
@@ -82,8 +84,8 @@ export const COMPONENT_LIST = [
     subTitle: "Creditcard component",
     type: "creditcard",
     date: "2024-11-10",
-
     slug: "card-1",
+    isCustomizeColor: true,
     codeAvailableLanguages: ["react"],
     pageDetails: {
       title: "Creditcard sample 1",
@@ -97,8 +99,8 @@ export const COMPONENT_LIST = [
     subTitle: "Creditcard component",
     type: "creditcard",
     date: "2022-02-03",
-
     slug: "card-2",
+    isCustomizeColor: false,
     codeAvailableLanguages: ["react"],
     pageDetails: {
       title: "Creditcard sample 2",
@@ -112,8 +114,8 @@ export const COMPONENT_LIST = [
     subTitle: "Creditcard component",
     type: "creditcard",
     date: "2023-03-01",
-
     slug: "card-3",
+    isCustomizeColor: false,
     codeAvailableLanguages: ["react"],
     pageDetails: {
       title: "Creditcard sample 3",
@@ -127,8 +129,8 @@ export const COMPONENT_LIST = [
     subTitle: "Carousal component",
     type: "carousal",
     date: "2022-07-01",
-
     slug: "carousal-1",
+    isCustomizeColor: false,
     codeAvailableLanguages: ["react"],
     pageDetails: {
       title: "Carousal sample 1",
@@ -142,8 +144,8 @@ export const COMPONENT_LIST = [
     subTitle: "Carousal component",
     type: "carousal",
     date: "2023-03-20",
-
     slug: "carousal-2",
+    isCustomizeColor: false,
     codeAvailableLanguages: ["react"],
     pageDetails: {
       title: "Carousal sample 2",
@@ -158,6 +160,7 @@ export const COMPONENT_LIST = [
     type: "card",
     date: "2023-03-01",
     slug: "profilecard",
+    isCustomizeColor: false,
     codeAvailableLanguages: ["react"],
     pageDetails: {
       title: "Card sample 1",
@@ -171,8 +174,8 @@ export const COMPONENT_LIST = [
     subTitle: "Animation component",
     type: "animation",
     date: "2023-03-14",
-
     slug: "animation-infinite",
+    isCustomizeColor: false,
     codeAvailableLanguages: ["react"],
     pageDetails: {
       title: "Animation Infinite",
@@ -186,8 +189,8 @@ export const COMPONENT_LIST = [
     subTitle: "Button component",
     type: "button",
     date: "2023-03-16",
-
     slug: "sample-button-1",
+    isCustomizeColor: false,
     codeAvailableLanguages: ["react"],
     pageDetails: {
       title: "Button",
@@ -201,8 +204,8 @@ export const COMPONENT_LIST = [
     subTitle: "Button component",
     type: "button",
     date: "2023-03-20",
-
     slug: "sample-button-2",
+    isCustomizeColor: false,
     codeAvailableLanguages: ["react"],
     pageDetails: {
       title: "Button",
@@ -216,8 +219,8 @@ export const COMPONENT_LIST = [
     subTitle: "Button component",
     type: "button",
     date: "2023-03-13",
-
     slug: "sample-button-3",
+    isCustomizeColor: false,
     codeAvailableLanguages: ["react"],
     pageDetails: {
       title: "Button",
@@ -231,8 +234,8 @@ export const COMPONENT_LIST = [
     subTitle: "Input component",
     type: "input",
     date: "2023-03-26",
-
     slug: "input-sample-1",
+    isCustomizeColor: false,
     codeAvailableLanguages: ["react"],
     pageDetails: {
       title: "Input",
@@ -246,8 +249,8 @@ export const COMPONENT_LIST = [
     subTitle: "Radio Button component",
     type: "radiobutton",
     date: "2023-03-27",
-
     slug: "radiobutton-sample-1",
+    isCustomizeColor: false,
     codeAvailableLanguages: ["react"],
     pageDetails: {
       title: "Radio Button",
@@ -261,8 +264,8 @@ export const COMPONENT_LIST = [
     subTitle: "Checkbox component",
     type: "checkbox",
     date: "2023-03-28",
-
     slug: "checkbox-sample-1",
+    isCustomizeColor: false,
     codeAvailableLanguages: ["react"],
     pageDetails: {
       title: "Check Box",

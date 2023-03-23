@@ -232,11 +232,11 @@ const Listing = () => {
                   }}
                 >
                   <div
-                    className="w-72 mx-auto  group border rounded-xl shadow-subcard overflow-hidden cursor-pointer hover:shadow-[0px_3px_6px_rgba(0,0,0,0.16)] hover:scale-[1.02] hover:duration-75"
+                    className="max-w-[350px] w-full mx-auto  group border rounded-xl shadow-subcard overflow-hidden cursor-pointer hover:shadow-[0px_3px_6px_rgba(0,0,0,0.16)] hover:scale-[1.02] hover:duration-75"
                     key={index}
                   >
                     <div>
-                      <div className="w-[288px] h-[190px] relative">
+                      <div className="w-full h-[190px] relative">
                         <Image src={data.mainImageSrc} alt="not found" fill />
                       </div>
                       <span className="group-hover: bg-blue-900 absolute top-0 group-hover:visible invisible group-hover:text-white  left-0 w-full text-center p-2 font-bold text-base">

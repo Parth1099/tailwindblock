@@ -131,7 +131,6 @@ const CommonLayout = () => {
     }
   }, [selectedCodeBlock]);
 
-  useEffect(() => {}, [color]);
   return (
     <>
       <Header />
@@ -151,11 +150,27 @@ const CommonLayout = () => {
                         Share :
                       </div>
                       <div className="flex gap-[7px] items-center">
-                        <AiFillFacebook fill="#445BC5" size={22} />
-                        <AiFillLinkedin fill="#445BC5" size={22} />
-                        <AiFillTwitterSquare fill="#445BC5" size={22} />
-                        <AiOutlineMail fill="#445BC5" size={22} />
-                        <AiOutlineWhatsApp fill="#445BC5" size={22} />
+                        <Link
+                          href={"https://www.facebook.com/infynnosolutions"}
+                        >
+                          <AiFillFacebook fill="#445BC5" size={22} />
+                        </Link>
+                        <Link
+                          href={
+                            "https://www.linkedin.com/company/infynno-solutions/"
+                          }
+                        >
+                          <AiFillLinkedin fill="#445BC5" size={22} />
+                        </Link>
+                        <Link href={"https://twitter.com/infynno"}>
+                          <AiFillTwitterSquare fill="#445BC5" size={22} />
+                        </Link>
+                        <Link href={"https://twitter.com/infynno"}>
+                          <AiOutlineMail fill="#445BC5" size={22} />
+                        </Link>
+                        <Link href={"https://twitter.com/infynno"}>
+                          <AiOutlineWhatsApp fill="#445BC5" size={22} />
+                        </Link>
                         {/* {shareSvg.map((data, index) => (
                           <Link key={index} href={data.link}>
                             <Image
@@ -168,7 +183,7 @@ const CommonLayout = () => {
                         ))} */}
                       </div>
                     </div>
-                    <div className="mt-[42px]  ">
+                    <div className="mt-[20px] md:mt-[42px]  ">
                       <span className="flex overflow-x-auto no-scrollbar h-[60px]   text-[22px]  tracking-[0.055em] w-full items-center cursor-pointer text-base font-bold text-gray-500 capitalize">
                         <div className="flex  md:h-[50px] h-[30px]  whitespace-nowrap text-sm md:text-[22px]   items-center">
                           <Link href={"/listing"}>
@@ -207,8 +222,8 @@ const CommonLayout = () => {
                       your existing project.
                     </div>
                     <div className="mt-10">
-                      <div className="mt-5 border rounded-t-md shadow-componentcard flex gap-5 p-3 bg-blue-200 overflow-x-auto overflow-y-hidden w-auto">
-                        <div className="flex items-center gap-5 ">
+                      <div className="mt-5 border rounded-t-md shadow-componentcard flex gap-5 p-3 bg-blue-200 overflow-x-auto overflow-y-hidden">
+                        <div className="flex items-center gap-5 w-full justify-between">
                           <div className="flex items-center gap-5">
                             <div
                               onClick={() => setCodeBlock(false)}
@@ -269,7 +284,7 @@ const CommonLayout = () => {
                                 <div
                                   onClick={() =>
                                     window.open(
-                                      `${process.env.NEXT_PUBLIC_APP_URL}/components/${component.type}/${component.type}-${component.slug}?color=${color}`,
+                                      `${process.env.NEXT_PUBLIC_APP_URL}/components/${component?.type}/${component?.type}-${component?.slug}?color=${color}`,
                                       "_blank"
                                     )
                                   }
@@ -279,22 +294,24 @@ const CommonLayout = () => {
                                 </div>
                               </div>
                             </div>
-                            <div className="flex justify-center gap-2 cursor-pointer">
-                              {colors.map((data, index) => {
-                                return (
-                                  <div
-                                    key={index}
-                                    style={{ backgroundColor: `#${data}` }}
-                                    className={`w-[20px] h-[20px] rounded-[2px] bg-[#${data}]`}
-                                    onClick={(e) => {
-                                      setColor(data);
-                                    }}
-                                  ></div>
-                                );
-                              })}
-                            </div>
+                            {component?.isCustomizeColor && (
+                              <div className="flex justify-center gap-2 cursor-pointer">
+                                {colors.map((data, index) => {
+                                  return (
+                                    <div
+                                      key={index}
+                                      style={{ backgroundColor: `#${data}` }}
+                                      className={`w-[20px] h-[20px] rounded-[2px] bg-[#${data}]`}
+                                      onClick={(e) => {
+                                        setColor(data);
+                                      }}
+                                    ></div>
+                                  );
+                                })}
+                              </div>
+                            )}
                           </div>
-                          <div className="flex items-center gap-5">
+                          <div className="flex items-center justify-end gap-5">
                             <div onClick={() => setCodeBlock(true)}>
                               <span
                                 className={`font-bold text-xs md:text-xl whitespace-nowrap cursor-pointer 
@@ -303,7 +320,7 @@ const CommonLayout = () => {
                                 Code :
                               </span>
                             </div>
-                            {component.codeAvailableLanguages.map(
+                            {component?.codeAvailableLanguages.map(
                               (data, index) => (
                                 <div
                                   onClick={() => {
@@ -324,11 +341,11 @@ const CommonLayout = () => {
                                 onClick={() => {
                                   copyData(getCode(component));
                                 }}
-                                className="bg-blue-800 text-white px-2 py-1 rounded overflow-hidden"
+                                className="bg-blue-800 text-white px-2 py-1 rounded overflow-hidden cursor-pointer"
                               >
                                 <CopyIcon />
                               </span>
-                              <span className="group-hover:opacity-100 transition-opacity bg-gray-800 px-2 text-sm text-gray-100  absolute left-1/2 -translate-x-1/2 -translate-y-full opacity-0 m-4 mx-auto bottom-1 cursor-pointer">
+                              <span class="absolute right-12 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100">
                                 {!copyBlock.clicked ? "Copy" : "Copied"}
                               </span>
                             </div>
@@ -350,13 +367,13 @@ const CommonLayout = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="flex justify-center items-center w-full shadow-componentcard rounded-b-md bg-blue-300 border-b-[1px]">
+                      <div className="flex justify-center items-center w-full shadow-componentcard rounded-b-md bg-[#f3f1f6] border-b-[1px]">
                         {!codeblock ? (
                           <iframe
                             title="Preview"
                             width={componentWidth}
                             className="h-screen"
-                            src={`${process.env.NEXT_PUBLIC_APP_URL}/components/${component.type}/${component.type}-${component.slug}?color=${color}`}
+                            src={`${window.location.origin}/components/${component.type}/${component.type}-${component.slug}?color=${color}`}
                           ></iframe>
                         ) : (
                           <div className="h-96 overflow-y-auto">

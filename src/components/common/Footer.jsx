@@ -53,7 +53,7 @@ const Footer = () => {
 
         <div className="flex flex-col justify-center items-center gap-[20px] text-center">
           <Link href={"/"}>
-            <div className="max-w-[250px] w-full flex justify-center gap-[15px]">
+            <div className="max-w-[250px] md:max-w-[350px] w-full flex justify-center gap-[15px]">
               <div className="flex items-center">
                 <Image src={Logo} alt="logo" />
               </div>
