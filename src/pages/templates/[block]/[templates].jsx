@@ -239,7 +239,7 @@ const CommonLayout = () => {
                                 <div
                                   onClick={() =>
                                     window.open(
-                                      `${window.location.origin}/components/pricing/pricing-sample-1?color=${color}`,
+                                      `${window.location.origin}/components/${data.type}/${data.type}-${data.slug}?color=${color}`,
                                       "_blank"
                                     )
                                   }
