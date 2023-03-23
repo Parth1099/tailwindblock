@@ -37,10 +37,11 @@ export const COMPONENT_LIST = [
     date: "2023-02-11",
 
     slug: "sample-3",
-    codeAvailableLanguages: ["react"],
+    codeAvailableLanguages: ["react", "HTML"],
     pageDetails: {
       title: "Pricing Sample 3",
       componentReact: "pricingReact",
+      componentHTML: "pricingHtml",
     },
   },
   {
@@ -52,10 +53,11 @@ export const COMPONENT_LIST = [
     date: "2023-02-10",
 
     slug: "sample-4",
-    codeAvailableLanguages: ["react"],
+    codeAvailableLanguages: ["react", "HTML"],
     pageDetails: {
       title: "Pricing Sample 4",
       componentReact: "pricingReact",
+      componentHTML: "pricingHtml",
     },
   },
   {

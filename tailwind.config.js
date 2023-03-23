@@ -22,6 +22,7 @@ module.exports = {
         "cat-two": "url('/assets/advocate/cat_two.png')",
         "cat-three": "url('/assets/advocate/cat_three.png')",
         "home-back": "url('/assets/common/homeback.png')",
+        "component-back": "url('/assets/common/bgdetailsection.png')",
 
         "bg-linear":
           "linear-gradient(180deg, rgba(162, 89, 255, 0) 0%, #A259FF 100%)",

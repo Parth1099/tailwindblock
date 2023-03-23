@@ -1,5 +1,3 @@
-import Image from "next/image";
-import { useRouter } from "next/router";
 import React from "react";
 
 const pricingData = [
@@ -40,15 +38,21 @@ const pricingData = [
     ],
   },
 ];
-const Sample4 = () => {
-  const router = useRouter();
+const Sample4 = ({ color }) => {
+  const primaryColor = color?.length > 0 ? `#${color}` : "#1D4ED8";
+
   return (
     <>
       {/* main div */}
       <div className="bg-gray-300">
         {/* header part  */}
         <div className="py-8 lg:py-24 flex flex-col mx-4 px-4 lg:mx-0 items-center">
-          <span className="text-[#7F56D9] text-base">Pricing</span>
+          <span
+            style={{ color: primaryColor }}
+            className="text-[${primaryColor}] text-base"
+          >
+            Pricing
+          </span>
           <span className="font-semibold text-4xl sm:text-5xl mt-3 mb-6">
             Plans that fit your scale
           </span>
@@ -86,7 +90,10 @@ const Sample4 = () => {
                       </span>
                       <div>
                         {data.ispopular && (
-                          <span className="text-sm font-medium text-[#6941C6] px-2.5 py-0.5 bg-[#F9F5FF] rounded-2xl ml-2">
+                          <span
+                            style={{ color: primaryColor }}
+                            className="text-sm font-medium text-[${primaryColor}] px-2.5 py-0.5 bg-[#F9F5FF] rounded-2xl ml-2"
+                          >
                             Popular
                           </span>
                         )}
@@ -120,11 +127,18 @@ const Sample4 = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 text-start mt-6 gap-4">
                     {data.getInPlan.map((data, index) => (
                       <div key={index} className="flex flex-row gap-4">
-                        <img
-                          src={"/assets/pricing/sample4/right-black.svg"}
-                          alt="not found"
-                          className="w-6 h-6"
-                        />
+                        <svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 20 20"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M10.0001 0.00012207C4.48608 0.00012207 7.62939e-05 4.48612 7.62939e-05 10.0001C7.62939e-05 15.5141 4.48608 20.0001 10.0001 20.0001C15.5141 20.0001 20.0001 15.5141 20.0001 10.0001C20.0001 4.48612 15.5141 0.00012207 10.0001 0.00012207ZM8.00108 14.4131L4.28808 10.7081L5.70008 9.29212L7.99908 11.5871L13.2931 6.29312L14.7071 7.70712L8.00108 14.4131Z"
+                            fill={primaryColor}
+                          />
+                        </svg>
                         <span className="font-light">{data}</span>
                       </div>
                     ))}
@@ -132,7 +146,10 @@ const Sample4 = () => {
                 </div>
                 <hr className="mt-8 mb-20" />
                 <div className="absolute inset-x-0 bottom-0 mx-6 lg:mx-8 mb-8">
-                  <button className="bg-[#7F56D9] text-white rounded-lg font-bold text-base w-full py-3">
+                  <button
+                    style={{ backgroundColor: primaryColor }}
+                    className="bg-[primaryColor] text-white rounded-lg font-bold text-base w-full py-3"
+                  >
                     Get started
                   </button>
                 </div>
@@ -154,7 +171,10 @@ const Sample4 = () => {
                 <button className="px-5 py-3 text-[#344054] font-semibold border rounded-lg bg-white w-full lg:w-auto">
                   Learn more
                 </button>
-                <button className="px-5 py-3 font-semibold rounded-lg bg-[#7F56D9] text-white w-full lg:w-auto">
+                <button
+                  style={{ backgroundColor: primaryColor }}
+                  className="px-5 py-3 font-semibold rounded-lg bg-[primaryColor] text-white w-full lg:w-auto"
+                >
                   Get started
                 </button>
               </div>

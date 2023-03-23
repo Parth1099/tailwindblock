@@ -1,5 +1,3 @@
-import Image from "next/image";
-import { useRouter } from "next/router";
 import React from "react";
 
 const staticValue = [
@@ -28,8 +26,9 @@ const staticValue = [
     ],
   },
 ];
-export default function Sample3() {
-  const router = useRouter();
+export default function Sample3({ color }) {
+  const primaryColor = color?.length > 0 ? `#${color}` : "#1D4ED8";
+
   return (
     <>
       <div className=" relative bg-white">
@@ -39,21 +38,11 @@ export default function Sample3() {
           className="w-full h-screen object-cover hidden lg:inline-block opacity-50"
         />
         <container className="bg-gray-300 lg:bg-transparent absolute top-0 flex-col lg:flex-row flex justify-center items-center w-full lg:h-screen gap-6 lg:px-5 xl:px-0 py-8 lg:py-0 ">
-          <div
-            className="cursor-pointer"
-            onClick={() => router.push("/preview/pricing/pricingSample3")}
-          >
-            <Image
-              data-te-toggle="tooltip"
-              title="Customize view"
-              src="/customize_black.svg"
-              alt="not found"
-              width={25}
-              height={25}
-            />
-          </div>
           {/* first portion */}
-          <div className="flex flex-col flex-wrap w-[360px] md:w-[384px] h-[572px] p-6 bg-[#2E6434]  group rounded-[20px] relative overflow-hidden ">
+          <div
+            style={{ backgroundColor: primaryColor }}
+            className="flex flex-col flex-wrap w-[360px] md:w-[384px] h-[572px] p-6 bg-[${primaryColor}]  group rounded-[20px] relative overflow-hidden "
+          >
             <div className="text-start text-white">
               <span className="font-light text-[32px]">Save More</span>
               <br />
@@ -111,7 +100,10 @@ export default function Sample3() {
                   <span className="">{data.duration}</span>
                 </div>
                 <div className="flex align-bottom">
-                  <button className="w-full rounded-xl font-semibold text-[22px] px-4 py-3 bg-[#2E6434] text-white">
+                  <button
+                    style={{ backgroundColor: primaryColor }}
+                    className="w-full rounded-xl font-semibold text-[22px] px-4 py-3 bg-[${primaryColor}] text-white"
+                  >
                     Choose
                   </button>
                 </div>

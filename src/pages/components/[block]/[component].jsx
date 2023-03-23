@@ -20,6 +20,13 @@ import Twittericon from "../../../../public/share/twitter.svg";
 import Emailicon from "../../../../public/share/email.svg";
 import Whatsappicon from "../../../../public/share/whatsapp.svg";
 import { compareName } from "../../../utils/helper";
+import {
+  AiFillFacebook,
+  AiFillLinkedin,
+  AiFillTwitterSquare,
+  AiOutlineMail,
+  AiOutlineWhatsApp,
+} from "react-icons/ai";
 
 const colors = [
   "EBC84B",
@@ -58,7 +65,7 @@ const CommonLayout = () => {
   let targetsLength = 0;
 
   const [componentWidth, setComponentWidth] = useState("100%");
-  const [color, setColor] = useState("#5455BB");
+  const [color, setColor] = useState("1D4ED8");
   const [lableSample, setLableSample] = useState();
   const [copyBlock, setCopyBlock] = useState({
     clicked: false,
@@ -88,6 +95,22 @@ const CommonLayout = () => {
       clearTimeout(timer);
     }, 3000);
   };
+  const getCode = (component) => {
+    const rawCode =
+      require(`!!raw-loader!../../../components/${component?.type}/${component?.slug}/${codeBlockData}`).default.toString();
+    const finalCode = rawCode
+      .replace(
+        'const primaryColor = color?.length > 0 ? `#${color}` : "#1D4ED8";',
+        ""
+      )
+      .replaceAll("{ color }", "")
+      .replaceAll("${primaryColor}", `#${color}`)
+      .replaceAll("primaryColor", `#${color}`)
+      .replaceAll(`style={{ backgroundColor: #${color} }}`, "")
+      .replaceAll(`style={{ color: #${color} }}`, "")
+      .replaceAll(`style={{ borderColor: #${color}, color: #${color} }}`, "");
+    return finalCode;
+  };
 
   useEffect(() => {
     const code = COMPONENT_LIST?.filter(
@@ -98,9 +121,12 @@ const CommonLayout = () => {
         setCodeBlockData(code?.componentHTML);
         break;
       }
-      default: {
+      case "React": {
         setCodeBlockData(code?.componentReact);
         break;
+      }
+      default: {
+        setCodeBlockData(code?.componentReact);
       }
     }
   }, [selectedCodeBlock]);
@@ -109,8 +135,7 @@ const CommonLayout = () => {
   return (
     <>
       <Header />
-
-      <div className="bg-details-back  bg-cover bg-no-repeat h-[300px] mt-20"></div>
+      <div className="bg-component-back w-full   bg-cover bg-no-repeat h-[300px] mt-20"></div>
       {COMPONENT_LIST.map(
         (component, index) =>
           component.slug === query.component && (
@@ -125,8 +150,13 @@ const CommonLayout = () => {
                       <div className="text-[#00000099] text-[18px] font-normal">
                         Share :
                       </div>
-                      <div className="flex gap-[7px]">
-                        {shareSvg.map((data, index) => (
+                      <div className="flex gap-[7px] items-center">
+                        <AiFillFacebook fill="#445BC5" size={22} />
+                        <AiFillLinkedin fill="#445BC5" size={22} />
+                        <AiFillTwitterSquare fill="#445BC5" size={22} />
+                        <AiOutlineMail fill="#445BC5" size={22} />
+                        <AiOutlineWhatsApp fill="#445BC5" size={22} />
+                        {/* {shareSvg.map((data, index) => (
                           <Link key={index} href={data.link}>
                             <Image
                               src={data.img}
@@ -135,7 +165,7 @@ const CommonLayout = () => {
                               height={22}
                             />
                           </Link>
-                        ))}
+                        ))} */}
                       </div>
                     </div>
                     <div className="mt-[42px]  ">
@@ -151,6 +181,7 @@ const CommonLayout = () => {
                           {lableSample?.sort(compareName).map((data, index) => {
                             return (
                               <div
+                                onClick={() => setSelectedCodeBlock("react")}
                                 key={index}
                                 className={`max-w-fit px-[15px] text-sm md:text-[22px] w-full   whitespace-nowrap relative  text-center  text-gray-500 capitalize  ${
                                   data.slug === query.component &&
@@ -238,11 +269,11 @@ const CommonLayout = () => {
                                 <div
                                   onClick={() =>
                                     window.open(
-                                      `${process.env.NEXT_PUBLIC_APP_URL}/components/pricing/pricing-sample-1?color=${color}`,
+                                      `${process.env.NEXT_PUBLIC_APP_URL}/components/${component.type}/${component.type}-${component.slug}?color=${color}`,
                                       "_blank"
                                     )
                                   }
-                                  className={`relative border h-7 w-7 rounded-md  cursor-pointer shadow-md bg-white`}
+                                  className={`relative border h-7 w-7 rounded-md cursor-pointer shadow-md bg-white`}
                                 >
                                   <ShareSvg />
                                 </div>
@@ -254,7 +285,7 @@ const CommonLayout = () => {
                                   <div
                                     key={index}
                                     style={{ backgroundColor: `#${data}` }}
-                                    className={`w-[20px] h-[20px] rounded-[2px]`}
+                                    className={`w-[20px] h-[20px] rounded-[2px] bg-[#${data}]`}
                                     onClick={(e) => {
                                       setColor(data);
                                     }}
@@ -291,13 +322,7 @@ const CommonLayout = () => {
                             <div className="group flex relative">
                               <span
                                 onClick={() => {
-                                  copyData(
-                                    require(`!!raw-loader!../../../components/${
-                                      component.type
-                                    }/${component.slug}/${
-                                      codeBlockData ?? "pricingReact"
-                                    }`).default.toString()
-                                  );
+                                  copyData(getCode(component));
                                 }}
                                 className="bg-blue-800 text-white px-2 py-1 rounded overflow-hidden"
                               >
@@ -310,14 +335,7 @@ const CommonLayout = () => {
                             <div
                               className="bg-blue-800 text-white px-2 py-1 rounded overflow-hidden cursor-pointer"
                               onClick={() => {
-                                zip.file(
-                                  "code.jsx",
-                                  `${require(`!!raw-loader!../../../components/${
-                                    component.type
-                                  }/${component.slug}/${
-                                    codeBlockData ?? "pricingReact"
-                                  }`).default.toString()}`
-                                );
+                                zip.file("code.jsx", `${getCode(component)}`);
 
                                 zip
                                   .generateAsync({ type: "base64" })
@@ -332,19 +350,18 @@ const CommonLayout = () => {
                           </div>
                         </div>
                       </div>
-
                       <div className="flex justify-center items-center w-full shadow-componentcard rounded-b-md bg-blue-300 border-b-[1px]">
                         {!codeblock ? (
                           <iframe
                             title="Preview"
                             width={componentWidth}
                             className="h-screen"
-                            src={`${window.location.origin}/components/${component.type}/${component.type}-${component.slug}?color=${color}`}
+                            src={`${process.env.NEXT_PUBLIC_APP_URL}/components/${component.type}/${component.type}-${component.slug}?color=${color}`}
                           ></iframe>
                         ) : (
                           <div className="h-96 overflow-y-auto">
                             <CopyBlock
-                              text={require(`!!raw-loader!../../../components/${component.type}/${component.slug}/${codeBlockData}`).default.toString()}
+                              text={getCode(component)}
                               theme={hybrid}
                               language="jsx"
                               CodeBlock
@@ -357,10 +374,10 @@ const CommonLayout = () => {
                 </div>
               </div>
               <div className="w-full text-center flex flex-col items-center  justify-center  gap-10 capitalize text-xl  font-semibold tracking-[0.05em]">
-                <div className="text-[38px] tracking-[0.055em]">
+                <div className="xl:text-[38px] tracking-[0.055em]">
                   For More Components
                 </div>
-                <div className="max-w-[1400px]  md:h-[300px] overflow-x-auto w-full  flex flex-col mx-auto md:flex-row md:flex justify-center gap-10  ">
+                <div className="max-w-[1400px]  md:h-[300px] overflow-x-auto w-full items-center flex flex-col mx-auto md:flex-row md:flex justify-center gap-10  ">
                   {COMPONENT_LIST?.map((data, index) => {
                     targetsLength =
                       data.slug !== query.component && data.type === query.block
@@ -372,7 +389,7 @@ const CommonLayout = () => {
                         key={index}
                         href={`/components/${data.type}/${data.slug}`}
                       >
-                        <div className="   group border rounded-xl shadow-subcard overflow-hidden cursor-pointer hover:shadow-[0px_3px_6px_rgba(0,0,0,0.16)] hover:scale-[1.02] hover:duration-75">
+                        <div className="w-72   group border rounded-xl shadow-subcard overflow-hidden cursor-pointer hover:shadow-[0px_3px_6px_rgba(0,0,0,0.16)] hover:scale-[1.02] hover:duration-75">
                           <div>
                             <div className="min-w-[288px] w-full h-[190px] relative">
                               <Image
@@ -404,7 +421,7 @@ const CommonLayout = () => {
                             key={index}
                             href={`/components/${data.type}/${data.slug}`}
                           >
-                            <div className="   group border rounded-xl shadow-subcard overflow-hidden cursor-pointer hover:shadow-[0px_3px_6px_rgba(0,0,0,0.16)] hover:scale-[1.02] hover:duration-75">
+                            <div className="w-72  group border rounded-xl shadow-subcard overflow-hidden cursor-pointer hover:shadow-[0px_3px_6px_rgba(0,0,0,0.16)] hover:scale-[1.02] hover:duration-75">
                               <div key={index}>
                                 <div className="min-w-[288px] w-full h-[190px] relative">
                                   <Image

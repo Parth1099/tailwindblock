@@ -1,5 +1,3 @@
-import Image from "next/image";
-import { useRouter } from "next/router";
 import React, { useState } from "react";
 
 const staticValue = [
@@ -10,7 +8,7 @@ const staticValue = [
 ];
 export default function Pricing() {
   const [icon, setIcon] = useState("2");
-  const router = useRouter();
+
   return (
     <>
       <div className="relative">
@@ -74,7 +72,10 @@ export default function Pricing() {
           <div
             className={`
               " w-[360px] md:w-[384px] h-[572px] p-6 bg-white group rounded-[20px] ease-in duration-300 border-[#0B0641] border xl:border-none "
-              ${icon === "2" && "text-white bg-[#0B0641] lg:-translate-y-6 "}
+              ${
+                icon === "2" &&
+                "text-white hover:bg-[#0B0641] lg:-translate-y-6 "
+              }
           `}
             onMouseOver={() => setIcon("2")}
             onMouseOut={() => setIcon("")}

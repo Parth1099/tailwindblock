@@ -5,8 +5,6 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import { NavbarList } from "../../../src/utils/navbarlist";
 
-console.log(NavbarList, "NAV");
-
 const Header = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [toggle, setToggle] = useState(false);
@@ -20,9 +18,9 @@ const Header = () => {
   return (
     <>
       <div className="z-10  lg:px-[60px] xl:px-[110px]  bg-gradient-to-r from-[#5455BB] to-[#2077DE]  w-full top-0  transition-all duration-700 fixed right-0 left-0">
-        <div className="flex justify-between px-[10%] md:justify-between  items-center font-semibold h-[80px] md:px-14 lg:px-0 ">
+        <div className="flex justify-between px-[3%]  md:justify-between  items-center font-semibold h-[80px] md:px-5 lg:px-0 ">
           <Link href={"/"}>
-            <div className="flex items-center gap-3 md:gap-[15px] mr-5">
+            <div className="max-w-[200px] sm:max-w-[300px]  w-full flex items-center gap-3 md:gap-[15px] mr-5">
               <div>
                 <Image src={Logo} alt="Main logo" />
               </div>

@@ -111,7 +111,7 @@ const CommonLayout = () => {
     <>
       <Header />
 
-      <div className="bg-details-back  bg-cover bg-no-repeat h-[300px] mt-20"></div>
+      <div className="bg-component-back   bg-cover bg-no-repeat h-[300px] mt-20"></div>
       {TemplateConstant.map(
         (component, index) =>
           component.type === query.block && (
@@ -325,7 +325,7 @@ const CommonLayout = () => {
                             title="Preview"
                             width={componentWidth}
                             className="h-screen"
-                            src={`${window.location.origin}/templates/${component.type}/${component.type}-${component.slug}`}
+                            src={`${process.env.NEXT_PUBLIC_APP_URL}/templates/${component.type}/${component.type}-${component.slug}`}
                           ></iframe>
                         ) : (
                           <div className="h-96 overflow-y-auto">

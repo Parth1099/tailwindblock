@@ -8,18 +8,19 @@ let falseData = [
 ];
 
 const PricingReact = ({ color }) => {
-  const secondaryColor = color?.length > 0 ? `#${color}` : "#1D4ED8";
+  const primaryColor = color?.length > 0 ? `#${color}` : "#1D4ED8";
 
   return (
-    <container className="flex flex-col justify-center items-center py-[72px] bg-gray-300">
+    <container className="flex flex-col justify-center items-center py-[72px] bg-gray-300 h-screen">
       {/* {/ heading section  /} */}
       <div className="flex flex-col w-auto px-6">
         <span className="font-medium text-[30px] md:text-[40px]">
           Powerful features for
         </span>
         <span
+          style={{ color: primaryColor }}
           className={
-            "font-medium text-transparent text-[34px] md:text-[40px] bg-clip-text bg-gradient-to-r from-[#1D4ED8] to-[#55CBFB]"
+            "font-medium text-transparent text-[34px] md:text-[40px] bg-clip-text bg-gradient-to-r from-[${primaryColor}] to-[#55CBFB]"
           }
         >
           powerful creators.
@@ -52,7 +53,10 @@ const PricingReact = ({ color }) => {
           alt="not found"
           className="w-14 md:w-20 h-20 mt-[-30px]"
         />
-        <span className="text-sm md:text-lg text-[#1D4ED8] font-medium pr-2 pt-2">
+        <span
+          style={{ color: primaryColor }}
+          className="text-sm md:text-lg text-[${primaryColor}] font-medium pr-2 pt-2"
+        >
           Save 25%
         </span>
       </div>
@@ -72,7 +76,10 @@ const PricingReact = ({ color }) => {
                 <span className="text-[56px] font-semibold">$0</span>
                 <span className="font-thin">/ Month</span>
               </div>
-              <button className="w-full text-[#1D4ED8] border-[#1D4ED8] border-[1px]  rounded py-2.5">
+              <button
+                style={{ borderColor: primaryColor, color: primaryColor }}
+                className="w-full text-[${primaryColor}] border-[${primaryColor}] border-[1px]  rounded py-2.5"
+              >
                 Get Started Now
               </button>
               <div className="mt-10 space-y-3">
@@ -100,10 +107,9 @@ const PricingReact = ({ color }) => {
             </div>
           </div>
         </div>
-        {console.log(secondaryColor, "in component")}
         <div
-          style={{ backgroundColor: secondaryColor }}
-          className={`flex flex-col h-full  w-[378px] lg:w-auto xl:w-[378px] bg-[${secondaryColor}] rounded-xl text-white py-6 px-10`}
+          style={{ backgroundColor: primaryColor }}
+          className={`flex flex-col h-full  w-[378px] lg:w-auto xl:w-[378px] bg-[${primaryColor}] rounded-xl text-white py-6 px-10`}
         >
           <div className="flex flex-col text-left">
             <div className="flex flex-col gap-3">
@@ -116,7 +122,10 @@ const PricingReact = ({ color }) => {
               <span className="text-[56px] font-semibold">$25</span>
               <span className="font-thin">/ Month</span>
             </div>
-            <button className="w-full  bg-white text-[#1D4ED8] rounded py-2.5">
+            <button
+              style={{ color: primaryColor }}
+              className="w-full  bg-white text-[${primaryColor}] rounded py-2.5"
+            >
               Get Started Now
             </button>
             <div className="mt-10 space-y-3">
@@ -156,7 +165,10 @@ const PricingReact = ({ color }) => {
                 <span className="text-[56px] font-semibold">$100</span>
                 <span className="font-thin">/ Month</span>
               </div>
-              <button className="w-full text-[1D4ED8] border-[#1D4ED8] border-[1px]  rounded py-2.5">
+              <button
+                style={{ borderColor: primaryColor, color: primaryColor }}
+                className="w-full text-[${primaryColor}] border-[${primaryColor}] border-[1px]  rounded py-2.5"
+              >
                 Get Started Now
               </button>
               <div className="mt-10 space-y-3">

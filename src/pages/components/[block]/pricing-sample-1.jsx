@@ -5,7 +5,6 @@ const PricingSample1 = () => {
   const router = useRouter();
   return (
     <>
-      {/* <PricingReact /> */}
       <PricingReact color={router?.query?.color} />
     </>
   );
