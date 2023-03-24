@@ -39,7 +39,9 @@ const Footer = () => {
           >
             {NavbarList.map((data, index) => (
               <span
-                className={` font-semibold text-white hover:border-b-[3px] hover:pb-[2px]  cursor-pointer  px-2 h-8 flex`}
+                className={` font-semibold text-white hover:border-b-[3px] hover:pb-[2px]  cursor-pointer  px-2 h-8 flex ${
+                  data.link === router.pathname && "border-b-2"
+                }  `}
                 key={index}
               >
                 <Link href={data.link} rel="noreferrer">

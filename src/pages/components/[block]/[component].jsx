@@ -108,7 +108,8 @@ const CommonLayout = () => {
       .replaceAll("primaryColor", `#${color}`)
       .replaceAll(`style={{ backgroundColor: #${color} }}`, "")
       .replaceAll(`style={{ color: #${color} }}`, "")
-      .replaceAll(`style={{ borderColor: #${color}, color: #${color} }}`, "");
+      .replaceAll(`style={{ borderColor: #${color}, color: #${color} }}`, "")
+      .replaceAll(`style={{ borderColor: #${color} }}`, "");
     return finalCode;
   };
 
@@ -231,11 +232,11 @@ const CommonLayout = () => {
                             >
                               <span
                                 className={`font-bold text-xs md:text-xl whitespace-nowrap cursor-pointer 
-                              ${"bg-blue-800 border px-2 py-1 rounded text-white"}`}
+                              `}
                               >
                                 Preview :
                               </span>
-                              <div className="flex align-middle gap-2 items-center">
+                              <div className=" hidden lg:flex align-middle gap-2 items-center">
                                 <div
                                   onClick={() => setComponentWidth("425px")}
                                   className={`relative border h-7 w-7 items-center flex rounded-md  cursor-pointer shadow-md bg-white ${
@@ -315,7 +316,7 @@ const CommonLayout = () => {
                             <div onClick={() => setCodeBlock(true)}>
                               <span
                                 className={`font-bold text-xs md:text-xl whitespace-nowrap cursor-pointer 
-                                  ${"bg-blue-800 border px-2 py-1 rounded text-white"}`}
+                              `}
                               >
                                 Code :
                               </span>
@@ -328,8 +329,8 @@ const CommonLayout = () => {
                                     setCodeBlock(true);
                                   }}
                                   key={index}
-                                  className={`capitalize px-2 py-1 rounded hover:bg-white hover:text-blue-900 font-bold cursor-pointer ${
-                                    data === selectedCodeBlock && "bg-white"
+                                  className={`capitalize px-2 py-1 rounded hover:bg-white hover:text-blue-900 font-bold text-xs md:text-xl  cursor-pointer ${
+                                    data === selectedCodeBlock && ""
                                   }`}
                                 >
                                   {data}
@@ -373,7 +374,7 @@ const CommonLayout = () => {
                             title="Preview"
                             width={componentWidth}
                             className="h-screen"
-                            src={`${window.location.origin}/components/${component.type}/${component.type}-${component.slug}?color=${color}`}
+                            src={`${process.env.NEXT_PUBLIC_APP_URL}/components/${component.type}/${component.type}-${component.slug}?color=${color}`}
                           ></iframe>
                         ) : (
                           <div className="h-96 overflow-y-auto">
@@ -390,8 +391,8 @@ const CommonLayout = () => {
                   </div>
                 </div>
               </div>
-              <div className="w-full text-center flex flex-col items-center  justify-center  gap-10 capitalize text-xl  font-semibold tracking-[0.05em]">
-                <div className="xl:text-[38px] tracking-[0.055em]">
+              <div className="w-full text-center flex flex-col items-center  justify-center  gap-5 md:gap-10 capitalize text-xl  font-semibold tracking-[0.05em]">
+                <div className="xl:text-[38px] text-[24px] tracking-[0.055em]">
                   For More Components
                 </div>
                 <div className="max-w-[1400px]  md:h-[300px] overflow-x-auto w-full items-center flex flex-col mx-auto md:flex-row md:flex justify-center gap-10  ">
@@ -406,9 +407,9 @@ const CommonLayout = () => {
                         key={index}
                         href={`/components/${data.type}/${data.slug}`}
                       >
-                        <div className="w-72   group border rounded-xl shadow-subcard overflow-hidden cursor-pointer hover:shadow-[0px_3px_6px_rgba(0,0,0,0.16)] hover:scale-[1.02] hover:duration-75">
+                        <div className="w-full group border rounded-xl shadow-subcard overflow-hidden cursor-pointer hover:shadow-[0px_3px_6px_rgba(0,0,0,0.16)] hover:scale-[1.02] hover:duration-75">
                           <div>
-                            <div className="min-w-[288px] w-full h-[190px] relative">
+                            <div className="min-w-[325px] w-full h-[190px] relative">
                               <Image
                                 src={data.mainImageSrc}
                                 alt="not found"
@@ -438,13 +439,14 @@ const CommonLayout = () => {
                             key={index}
                             href={`/components/${data.type}/${data.slug}`}
                           >
-                            <div className="w-72  group border rounded-xl shadow-subcard overflow-hidden cursor-pointer hover:shadow-[0px_3px_6px_rgba(0,0,0,0.16)] hover:scale-[1.02] hover:duration-75">
+                            <div className=" w-full  group border rounded-xl shadow-subcard overflow-hidden cursor-pointer hover:shadow-[0px_3px_6px_rgba(0,0,0,0.16)] hover:scale-[1.02] hover:duration-75">
                               <div key={index}>
-                                <div className="min-w-[288px] w-full h-[190px] relative">
+                                <div className="min-w-[325px] w-full h-[190px] relative">
                                   <Image
                                     src={data.mainImageSrc}
                                     alt="not found"
                                     fill
+                                    sizes="300px"
                                   />
                                 </div>
                                 <span className="group-hover: bg-blue-900 absolute top-0 group-hover:visible invisible group-hover:text-white  left-0 w-full text-center p-2 font-bold text-sm">

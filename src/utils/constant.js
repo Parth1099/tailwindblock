@@ -70,7 +70,7 @@ export const COMPONENT_LIST = [
     type: "pricing",
     date: "2023-01-22",
     slug: "sample-5",
-    isCustomizeColor: false,
+    isCustomizeColor: true,
     codeAvailableLanguages: ["react"],
     pageDetails: {
       title: "Pricing Sample 5",
@@ -189,8 +189,8 @@ export const COMPONENT_LIST = [
     subTitle: "Button component",
     type: "button",
     date: "2023-03-16",
-    slug: "sample-button-1",
-    isCustomizeColor: false,
+    slug: "sample1",
+    isCustomizeColor: true,
     codeAvailableLanguages: ["react"],
     pageDetails: {
       title: "Button",
@@ -204,7 +204,7 @@ export const COMPONENT_LIST = [
     subTitle: "Button component",
     type: "button",
     date: "2023-03-20",
-    slug: "sample-button-2",
+    slug: "sample2",
     isCustomizeColor: false,
     codeAvailableLanguages: ["react"],
     pageDetails: {
@@ -219,7 +219,7 @@ export const COMPONENT_LIST = [
     subTitle: "Button component",
     type: "button",
     date: "2023-03-13",
-    slug: "sample-button-3",
+    slug: "sample3",
     isCustomizeColor: false,
     codeAvailableLanguages: ["react"],
     pageDetails: {

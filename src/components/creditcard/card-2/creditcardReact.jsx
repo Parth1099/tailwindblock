@@ -20,12 +20,12 @@ const CreditCard2 = ({ showCaseView }) => {
       }`}
     >
       <div
-        className={`flex flex-col justify-center items-center md:gap-20 sm:gap-16 bg-white bg-opacity-40  gap-7 shadow-sm rounded-3xl w-max  px-6 md:px-8 lg:px-20 sm:py-20 py-8 ${
+        className={`flex flex-col justify-center items-center md:gap-20 sm:gap-16 bg-white bg-opacity-40  gap-7  shadow-sm px-0 sm:px-5 rounded-3xl w-max  md:px-8 lg:px-20 sm:py-20 py-8 ${
           showCaseView && "sm:py-20 md:py-7 py-6"
         }`}
       >
         <div className="flex md:flex-row flex-col items-center justify-center md:gap-20 gap-12">
-          <div className="flex flex-col">
+          <div className="flex flex-col px-2">
             {(error.expiryDate || error.number) && (
               <div className="text-xs text-red-600 h-9">
                 {error.expiryDate
@@ -33,7 +33,7 @@ const CreditCard2 = ({ showCaseView }) => {
                   : "Please enter valid card number"}
               </div>
             )}
-            <div className="relative w-[290px] shadow-xl transition duration-400 hover:scale-110 ">
+            <div className="relative max-w-[290px] shadow-xl transition duration-400 hover:scale-110 ">
               <img
                 src="/assets/creditcard/sample2/cc_cover.jpg"
                 className="w-full h-full rounded-[10px]"
@@ -117,13 +117,13 @@ const CreditCard2 = ({ showCaseView }) => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col">
+          <div className="flex flex-col w-full px-4">
             {error.cvv && (
               <span className="text-xs text-red-600 h-9">
                 Please enter valid cvv number
               </span>
             )}
-            <div className="flex flex-col justify-between bg-white h-[186px] w-[307px] rounded-[10px] pt-[18px] pb-2 italic text-[4px] shadow-xl transition duration-400 hover:scale-110 sample2">
+            <div className="flex flex-col justify-between bg-white h-[186px] max-w-[307px] rounded-[10px] pt-[18px] pb-2 italic text-[4px] shadow-xl transition duration-400 hover:scale-110 sample2">
               <div>
                 <div className="bg-black h-[34px] w-full" />
                 <div className="flex justify-between">

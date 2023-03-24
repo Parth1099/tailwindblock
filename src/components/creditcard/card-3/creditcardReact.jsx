@@ -19,12 +19,12 @@ const CreditCard3 = ({ showCaseView }) => {
       }`}
     >
       <div
-        className={`flex flex-col justify-center items-center md:gap-20 sm:gap-16 bg-white bg-opacity-40  gap-7 shadow-sm rounded-3xl w-max  px-6 md:px-8 lg:px-20 sm:py-20 py-8 ${
+        className={`flex flex-col justify-center items-center md:gap-20 sm:gap-16 bg-white bg-opacity-40  gap-7 shadow-sm rounded-3xl w-max  px-6 md:px-8 lg:px-20 sm:py-10 py-8 ${
           showCaseView && "sm:py-20 md:py-7 py-6"
         }`}
       >
         <div className="flex md:flex-row flex-col items-center justify-center md:gap-20 gap-12">
-          <div className="flex flex-col">
+          <div className="flex flex-col w-full">
             {(error.expiryDate || error.number) && (
               <div className="text-xs text-red-600 h-9">
                 {error.expiryDate
@@ -116,13 +116,13 @@ const CreditCard3 = ({ showCaseView }) => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col">
+          <div className="flex flex-col w-full">
             {error.cvv && (
               <span className="text-xs text-red-600 h-9">
                 Please enter valid cvv number
               </span>
             )}
-            <div className="flex flex-col justify-between bg-white h-[186px] w-[307px] rounded-[10px] pt-[18px] pb-2 italic text-[4px] transition shadow-xl duration-400 hover:scale-110 sample3">
+            <div className="flex flex-col justify-between bg-white h-[186px] w-[307px]  rounded-[10px] pt-[18px] pb-2 italic text-[4px] transition shadow-xl duration-400 hover:scale-110 sample3">
               <div>
                 <div className="bg-black h-[34px] w-full" />
                 <div className="flex justify-between">

@@ -1,16 +1,10 @@
-import Button from "../../common/Button1";
-
-export const buttonBasic = <Button />;
-
-import React from "react";
-
 const ButtonSample2 = () => {
   return (
-    <div className="flex  flex-col items-center h-[800px] justify-center gap-9 ">
+    <div className="flex  flex-col items-center h-[800px]  gap-9 ">
       <div className="flex justify-center items-center flex-col gap-3">
         <h2 className="text-[22px] font-bold">Colors Buttons</h2>
 
-        <div className="flex justify-center gap-3">
+        <div className="flex justify-center gap-3 flex-col sm:flex-row ">
           <div className="flex items-center justify-center">
             <button className="flex h-9 items-center justify-center rounded bg-blue-600 hover:bg-blue-700 px-6 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg">
               Button
@@ -51,7 +45,7 @@ const ButtonSample2 = () => {
       <div className="flex justify-center items-center flex-col gap-3">
         <h2 className="text-[22px] font-bold">Outline Buttons</h2>
 
-        <div className="flex justify-center gap-3">
+        <div className="flex justify-center gap-3 flex-col sm:flex-row">
           <div className="flex items-center justify-center">
             <button className="flex h-9 items-center justify-center rounded border-2 border-blue-600 bg-white px-6 text-xs font-medium uppercase leading-tight text-blue-600 hover:bg-gray-100 shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg">
               Button
@@ -93,7 +87,7 @@ const ButtonSample2 = () => {
       <div className="flex justify-center items-center flex-col gap-3">
         <h2 className="text-[22px] font-bold">Rounded Buttons</h2>
 
-        <div className="flex justify-center gap-3">
+        <div className="flex justify-center gap-3 flex-col sm:flex-row">
           <div className="flex items-center justify-center">
             <button className="flex h-9 items-center justify-center rounded-full bg-blue-600 hover:bg-blue-700 px-6 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg">
               Button
@@ -135,7 +129,7 @@ const ButtonSample2 = () => {
       <div className="px-9 flex justify-center items-center w-full flex-col gap-3">
         <h2 className="text-[22px] font-bold">Rounded Outline Buttons</h2>
 
-        <div className="flex justify-center gap-3">
+        <div className="flex justify-center gap-3 flex-col sm:flex-row">
           <div className="flex items-center justify-center">
             <button className="flex h-9 items-center justify-center rounded-full border-2 border-blue-600 bg-white px-6 text-xs font-medium uppercase leading-tight text-blue-600 hover:bg-gray-100 shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg">
               Button

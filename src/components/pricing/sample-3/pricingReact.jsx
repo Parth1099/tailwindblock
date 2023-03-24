@@ -1,5 +1,3 @@
-import React from "react";
-
 const staticValue = [
   {
     passType: "Day Pass",
@@ -37,11 +35,11 @@ export default function Sample3({ color }) {
           alt="not found"
           className="w-full h-screen object-cover hidden lg:inline-block opacity-50"
         />
-        <container className="bg-gray-300 lg:bg-transparent absolute top-0 flex-col lg:flex-row flex justify-center items-center w-full lg:h-screen gap-6 lg:px-5 xl:px-0 py-8 lg:py-0 ">
+        <container className="bg-gray-300 lg:bg-transparent absolute top-0 flex-col lg:flex-row flex justify-center items-center w-full lg:h-screen gap-6 px-5 xl:px-0 py-8 lg:py-0 ">
           {/* first portion */}
           <div
             style={{ backgroundColor: primaryColor }}
-            className="flex flex-col flex-wrap w-[360px] md:w-[384px] h-[572px] p-6 bg-[${primaryColor}]  group rounded-[20px] relative overflow-hidden "
+            className="flex flex-col flex-wrap max-w-[360px] md:w-[384px] h-[572px] p-6 bg-[${primaryColor}]  group rounded-[20px] relative overflow-hidden "
           >
             <div className="text-start text-white">
               <span className="font-light text-[32px]">Save More</span>
@@ -69,7 +67,7 @@ export default function Sample3({ color }) {
           {staticValue.map((data, index) => (
             <div
               key={index}
-              className="flex flex-col flex-wrap w-[360px] md:w-[384px] h-[572px] p-6 bg-white  group rounded-[20px] border xl:border-none border-[#0B0641]"
+              className="flex flex-col flex-wrap max-w-[360px] md:w-[384px] h-[572px] p-6 bg-white  group rounded-[20px] border xl:border-none border-[#0B0641]"
             >
               <div className="flex flex-row gap-5 items-center">
                 <img src={data.image} alt="not found" />

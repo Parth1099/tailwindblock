@@ -1,12 +1,10 @@
-<container class="flex flex-col items-center justify-center bg-gray-300 py-[72px]">
-  <div class="flex w-auto flex-col px-6">
-    <span class="text-[30px] font-medium md:text-[40px]">
-      Powerful features for
-    </span>
-    <span class="bg-[${primaryColor}] bg-clip-text text-[34px] font-medium text-transparent md:text-[40px]">
+<container class="flex flex-col items-center justify-center bg-gray-300 py-[12px]">
+  <div class="md:text:4xl flex w-auto flex-col px-6 text-center text-2xl sm:text-3xl">
+    <span class="font-medium"> Powerful features for </span>
+    <span class="bg-[${primaryColor}] bg-clip-text font-medium text-transparent">
       powerful creators.
     </span>
-    <span class="mt-4 text-xl"> Chose a plan that&apos;s right for you </span>
+    <span class="mt-4"> Chose a plan that&apos;s right for you </span>
     <div class="mt-8 flex items-center justify-center gap-4 pl-5 text-base md:mt-16">
       <span>Pay monthly </span>
       <div class="flex items-center">
@@ -26,7 +24,7 @@
       <span>Pay yearly</span>
     </div>
   </div>
-  <div class="flex w-[350px] justify-end pt-2 md:w-[590px] md:pt-0">
+  <div class="flex w-[300px] justify-end pt-2 sm:w-[350px] md:w-[590px] md:pt-0">
     <svg
       width="107"
       height="88"
@@ -57,9 +55,9 @@
       Save 25%
     </span>
   </div>
-  <div class="flex h-full flex-col gap-6 lg:flex-row">
-    <div class="h-full w-[378px] rounded-xl bg-white lg:w-auto xl:w-[378px]">
-      <div class="flex h-full flex-col rounded-xl border border-gray-500 py-6 px-10 lg:border-none">
+  <div class="flex h-full flex-col gap-6 px-5 lg:flex-row">
+    <div class="h-full max-w-[375px] rounded-xl bg-white lg:w-auto xl:w-[378px]">
+      <div class="flex h-full flex-col rounded-xl border border-gray-500 py-6 px-5 sm:px-10 lg:border-none">
         <div class="flex flex-col text-left">
           <div class="flex flex-col gap-3">
             <span class="text-[22px]">Freebie</span>
@@ -155,7 +153,7 @@
         </div>
       </div>
     </div>
-    <div class="flex h-full w-[378px] flex-col rounded-xl bg-[${primaryColor}] py-6 px-10 text-white lg:w-auto xl:w-[378px]">
+    <div class="flex h-full max-w-[378px] flex-col rounded-xl bg-[${primaryColor}] py-6 px-5 text-white sm:px-10 lg:w-auto xl:w-[378px]">
       <div class="flex flex-col text-left">
         <div class="flex flex-col gap-3">
           <span class="text-[22px]">Professional</span>
@@ -252,8 +250,8 @@
         </div>
       </div>
     </div>
-    <div class="h-full w-[378px] rounded-xl bg-white lg:w-auto xl:w-[378px]">
-      <div class="flex h-full flex-col rounded-xl border border-gray-500 py-6 px-10 lg:border-none">
+    <div class="h-full max-w-[378px] rounded-xl bg-white lg:w-auto xl:w-[378px]">
+      <div class="flex h-full flex-col rounded-xl border border-gray-500 py-6 px-5 sm:px-10 lg:border-none">
         <div class="flex flex-col text-left">
           <div class="flex flex-col gap-3">
             <span class="text-[22px]">Enterprise</span>

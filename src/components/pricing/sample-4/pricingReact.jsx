@@ -1,5 +1,3 @@
-import React from "react";
-
 const pricingData = [
   {
     mainTitle: "Basic plan",
@@ -61,16 +59,18 @@ const Sample4 = ({ color }) => {
             for 30 days.
           </span>
           {/* billing type div */}
-          <div className="px-2 h-[56px] bg-[#F2F4F7] m-auto mt-10 space-x-2 flex justify-center items-center rounded-lg">
-            <button className="py-2.5 px-1.5 sm:px-3.5 drop-shadow-md hover:bg-white text-[#667085]  hover:text-black  rounded-md">
-              Monthly billing
-            </button>
-            <button className="py-2.5 px-1.5 sm:px-3.5 border border-[#94a3b8] drop-shadow-md hover:bg-white text-[#667085] hover:border-none hover:text-black rounded-md">
-              Annual billing
-            </button>
-            <span className="py-0.5 px-1 sm:px-2.5 text-sm text-[#344054] bg-[#cbd5e1] rounded-2xl  ">
-              Save 20%
-            </span>
+          <div className="hidden sm:block">
+            <div className="px-2 h-[56px] bg-[#F2F4F7] m-auto mt-10 space-x-2 flex justify-center items-center rounded-lg">
+              <button className="py-2.5 px-1.5 sm:px-3.5 drop-shadow-md hover:bg-white text-[#667085] hover:text-black rounded-md">
+                Monthly billing
+              </button>
+              <button className="py-2.5 px-1.5 sm:px-3.5 border border-[#94a3b8] drop-shadow-md hover:bg-white text-[#667085] hover:border-none hover:text-black rounded-md">
+                Annual billing
+              </button>
+              <span className="py-0.5 px-1 sm:px-2.5 text-sm text-[#344054] bg-[#cbd5e1] rounded-2xl  ">
+                Save 20%
+              </span>
+            </div>
           </div>
         </div>
         {/* types of pricing */}

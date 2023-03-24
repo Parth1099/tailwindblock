@@ -11,16 +11,14 @@ const PricingReact = ({ color }) => {
   const primaryColor = color?.length > 0 ? `#${color}` : "#1D4ED8";
 
   return (
-    <container className="flex flex-col justify-center items-center py-[72px] bg-gray-300 h-screen">
-      {/* {/ heading section  /} */}
-      <div className="flex flex-col w-auto px-6">
-        <span className="font-medium text-[30px] md:text-[40px]">
-          Powerful features for
-        </span>
+    <container className="flex flex-col justify-center items-center py-[12px] bg-gray-300 min-h-screen">
+      {/* heading section  */}
+      <div className="flex flex-col w-auto px-6 text-center text-2xl sm:text-3xl md:text-4xl">
+        <span className="font-medium">Powerful features for</span>
         <span
           style={{ color: primaryColor }}
           className={
-            "font-medium text-transparent text-[34px] md:text-[40px] bg-clip-text bg-gradient-to-r from-[${primaryColor}] to-[#55CBFB]"
+            "font-medium pt-4 text-transparent bg-clip-text bg-gradient-to-r from-[${primaryColor}] to-[#55CBFB]"
           }
         >
           powerful creators.
@@ -33,7 +31,7 @@ const PricingReact = ({ color }) => {
           <div className="items-center flex">
             <label
               for="small-toggle"
-              className="inline-flex relative cursor-pointer  "
+              className="inline-flex relative cursor-pointer"
             >
               <input
                 type="checkbox"
@@ -47,7 +45,7 @@ const PricingReact = ({ color }) => {
           <span>Pay yearly</span>
         </div>
       </div>
-      <div className="w-[350px] md:w-[590px] flex justify-end pt-2 md:pt-0">
+      <div className="w-[300px] sm:w-[350px] md:w-[590px] flex justify-end pt-2 md:pt-0">
         <img
           src={"/assets/pricing/sample1/offer.svg"}
           alt="not found"
@@ -60,11 +58,10 @@ const PricingReact = ({ color }) => {
           Save 25%
         </span>
       </div>
-      {/* {/ pricing section  /} */}
-      <div className="flex flex-col lg:flex-row gap-6 h-full">
-        {/* {/ w-[1184px] /} */}
-        <div className="h-full w-[378px] lg:w-auto xl:w-[378px] bg-white rounded-xl">
-          <div className="flex flex-col h-full  rounded-xl py-6 px-10 border border-gray-500 lg:border-none">
+      {/* pricing section   */}
+      <div className="flex flex-col lg:flex-row gap-6 h-full px-5">
+        <div className="h-full max-w-[378px] lg:w-auto xl:w-[378px] bg-white rounded-xl">
+          <div className="flex flex-col h-full  rounded-xl py-6 px-5 sm:px-10 border border-gray-500 lg:border-none">
             <div className="flex flex-col text-left">
               <div className="flex flex-col gap-3">
                 <span className="text-[22px]">Freebie</span>
@@ -109,7 +106,7 @@ const PricingReact = ({ color }) => {
         </div>
         <div
           style={{ backgroundColor: primaryColor }}
-          className={`flex flex-col h-full  w-[378px] lg:w-auto xl:w-[378px] bg-[${primaryColor}] rounded-xl text-white py-6 px-10`}
+          className={`flex flex-col h-full max-w-[378px] lg:w-auto xl:w-[378px] bg-[${primaryColor}] rounded-xl text-white py-6 px-5 sm:px-10`}
         >
           <div className="flex flex-col text-left">
             <div className="flex flex-col gap-3">
@@ -152,8 +149,8 @@ const PricingReact = ({ color }) => {
             </div>
           </div>
         </div>
-        <div className="h-full w-[378px] lg:w-auto xl:w-[378px] bg-white rounded-xl">
-          <div className="flex flex-col h-full rounded-xl py-6 px-10 border border-gray-500 lg:border-none">
+        <div className="h-full max-w-[378px] lg:w-auto xl:w-[378px] bg-white rounded-xl">
+          <div className="flex flex-col h-full rounded-xl py-6 px-5 sm:px-10 border border-gray-500 lg:border-none">
             <div className="flex flex-col text-left">
               <div className="flex flex-col gap-3">
                 <span className="text-[22px]">Enterprise</span>

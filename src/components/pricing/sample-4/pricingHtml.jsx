@@ -8,16 +8,18 @@
       Simple, transparent pricing that grows with you. Try any plan free for 30
       days.
     </span>
-    <div class="m-auto mt-10 flex h-[56px] items-center justify-center space-x-2 rounded-lg bg-[#F2F4F7] px-2">
-      <button class="rounded-md py-2.5 px-1.5 text-[#667085] drop-shadow-md hover:bg-white hover:text-black sm:px-3.5">
-        Monthly billing
-      </button>
-      <button class="rounded-md border border-[#94a3b8] py-2.5 px-1.5 text-[#667085] drop-shadow-md hover:border-none hover:bg-white hover:text-black sm:px-3.5">
-        Annual billing
-      </button>
-      <span class="rounded-2xl bg-[#cbd5e1] py-0.5 px-1 text-sm text-[#344054] sm:px-2.5">
-        Save 20%
-      </span>
+    <div className="hidden sm:block">
+      <div class="m-auto mt-10 flex h-[56px] items-center justify-center space-x-2 rounded-lg bg-[#F2F4F7] px-2">
+        <button class="rounded-md py-2.5 px-1.5 text-[#667085] drop-shadow-md hover:bg-white hover:text-black sm:px-3.5">
+          Monthly billing
+        </button>
+        <button class="rounded-md border border-[#94a3b8] py-2.5 px-1.5 text-[#667085] drop-shadow-md hover:border-none hover:bg-white hover:text-black sm:px-3.5">
+          Annual billing
+        </button>
+        <span class="rounded-2xl bg-[#cbd5e1] py-0.5 px-1 text-sm text-[#344054] sm:px-2.5">
+          Save 20%
+        </span>
+      </div>
     </div>
   </div>
   <div class="mx-4 pb-16 xl:mx-0">

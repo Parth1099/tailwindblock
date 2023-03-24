@@ -1,6 +1,6 @@
 <div class="relative bg-white">
-  <container class="absolute top-0 flex w-full flex-col items-center justify-center gap-6 bg-gray-300 py-8 lg:h-screen lg:flex-row lg:bg-transparent lg:px-5 lg:py-0 xl:px-0">
-    <div class="group relative flex h-[572px] w-[360px] flex-col flex-wrap overflow-hidden rounded-[20px] bg-[primaryColor] p-6 md:w-[384px]">
+  <container class="absolute top-0 flex w-full flex-col items-center justify-center gap-6 bg-gray-300 py-8 lg:h-screen lg:flex-row lg:bg-transparent px-5 lg:py-0 xl:px-0">
+    <div class="group relative flex h-[572px] max-w-[360px] flex-col flex-wrap overflow-hidden rounded-[20px] bg-[primaryColor] p-6 md:w-[384px]">
       <div class="text-start text-white">
         <span class="text-[32px] font-light">Save More</span>
         <br />
@@ -58,7 +58,7 @@
       </div>
     </div>
 
-    <div class="group flex h-[572px] w-[360px] flex-col flex-wrap rounded-[20px] border border-[#0B0641] bg-white p-6 md:w-[384px]">
+    <div class="group flex h-[572px] max-w-[360px] flex-col flex-wrap rounded-[20px] border border-[#0B0641] bg-white p-6 md:w-[384px]">
       <div class="flex flex-row items-center gap-5">
         <svg
           width="34"
@@ -110,7 +110,7 @@
       </div>
     </div>
 
-    <div class="group flex h-[572px] w-[360px] flex-col flex-wrap rounded-[20px] border border-[#0B0641] bg-white p-6 md:w-[384px] ">
+    <div class="group flex h-[572px] max-w-[360px] flex-col flex-wrap rounded-[20px] border border-[#0B0641] bg-white p-6 md:w-[384px] ">
       <div class="flex flex-row items-center gap-5">
         <svg
           width="30"

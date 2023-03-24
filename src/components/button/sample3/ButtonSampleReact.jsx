@@ -1,9 +1,3 @@
-import Button from "../../common/Button1";
-
-export const buttonBasic = <Button />;
-
-import React from "react";
-
 const ButtonSample3 = () => {
   return (
     <div className="flex  flex-col items-center h-[800px] py-[10px] justify-center gap-9 ">
