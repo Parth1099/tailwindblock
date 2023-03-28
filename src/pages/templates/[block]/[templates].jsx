@@ -182,23 +182,30 @@ const CommonLayout = () => {
 
   return (
     <>
+      <Head>
+        <title>About - TitleMetaNextjs</title>
+        <meta
+          name="description"
+          content="Meta description for the About page"
+        />
+      </Head>
       <Header />
       <div className="bg-component-back w-full bg-cover bg-no-repeat h-[300px] mt-20"></div>
       {TemplateConstant.map(
         (component, index) =>
           component.type === query.block && (
             <>
-              <Head>
+              {/* <Head>
                 <meta property="og:title" content={component.title} />
 
                 <meta property="og:description" content={component.subTitle} />
 
                 <meta property="og:image" content={component.mainImageSrc} />
 
-                {/* <meta property="og:image:width" content="1200" /> */}
+                <meta property="og:image:width" content="1200" />
 
-                {/* <meta property="og:image:height" content="630" /> */}
-              </Head>
+                <meta property="og:image:height" content="630" />
+              </Head> */}
               <div key={index} className="px-[20px]">
                 <div className="container mx-auto -mt-[250px] mb-[50px] md:mb-[100px] rounded-[12px] shadow-componentcard bg-white  overflow-hidden">
                   <div className="mb-10">
