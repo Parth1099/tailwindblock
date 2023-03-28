@@ -183,11 +183,15 @@ const CommonLayout = () => {
   return (
     <>
       <Head>
-        <title>About - TitleMetaNextjs</title>
-        <meta
-          name="description"
-          content="Meta description for the About page"
-        />
+        <meta property="og:title" content="component.title" />
+
+        <meta property="og:description" content="component.subTitle" />
+
+        <meta property="og:image" content="component.mainImageSrc" />
+
+        {/* <meta property="og:image:width" content="1200" />
+
+        <meta property="og:image:height" content="630" /> */}
       </Head>
       <Header />
       <div className="bg-component-back w-full bg-cover bg-no-repeat h-[300px] mt-20"></div>
@@ -233,11 +237,11 @@ const CommonLayout = () => {
                           <EmailIcon size={32} round={true} />
                         </EmailShareButton>
                         <WhatsappShareButton
-                          url={"https://tailwindblock.vercel.app/"}
-                          title={
-                            "next-share is a social share buttons for your next React apps."
-                          }
-                          separator=":: "
+                        // url={"https://tailwindblock.vercel.app/"}
+                        // title={
+                        //   "next-share is a social share buttons for your next React apps."
+                        // }
+                        // separator=":: "
                         >
                           <WhatsappIcon size={32} round />
                         </WhatsappShareButton>
