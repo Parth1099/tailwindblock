@@ -1,11 +1,11 @@
 export const NavbarList = [
   {
     name: "Components",
-    link: "/listing",
+    link: "/components",
   },
   {
     name: "Templates",
-    link: "/templatelisting",
+    link: "/templates",
   },
   {
     name: "Documentations",

@@ -1,3 +1,4 @@
+import { COMPONENT_LIST } from "../utils/constant";
 import { useState, Fragment, useEffect } from "react";
 import Header from "../components/common/Header";
 import Link from "next/link";
@@ -7,7 +8,6 @@ import { compareName } from "../utils/helper";
 
 import { Listbox, Transition } from "@headlessui/react";
 import { HiChevronUpDown, HiCheckCircle } from "react-icons/hi2";
-import { TemplateConstant } from "@/utils/templateconstant";
 
 const category = [
   {
@@ -15,32 +15,52 @@ const category = [
     type: "all",
   },
   {
-    name: "3DNFT",
-    type: "3dnft",
+    name: "Pricing",
+    type: "pricing",
   },
   {
-    name: "Crypto",
-    type: "crypto",
+    name: "Creditcard",
+    type: "creditcard",
   },
   {
-    name: "Advocate",
-    type: "advocate",
+    name: "Carousal",
+    type: "carousal",
   },
   {
-    name: "TBDesign",
-    type: "tbdesign",
+    name: "Card",
+    type: "card",
+  },
+  {
+    name: "Animation",
+    type: "animation",
+  },
+  {
+    name: "Button",
+    type: "button",
+  },
+  {
+    name: "Input",
+    type: "input",
+  },
+  {
+    name: "Radio Button",
+    type: "radiobutton",
+  },
+  {
+    name: "Check Box",
+    type: "checkbox",
   },
 ];
 const people = [{ name: "Recent Added" }, { name: "A - Z" }, { name: "Z - A" }];
 
-const ListingTemplate = () => {
+const Components = () => {
   const [selected, setSelected] = useState(people[0]);
   const [data, setData] = useState(null);
 
   const [components, setComponents] = useState({
-    count: TemplateConstant.length,
+    count: COMPONENT_LIST.length,
     type: "all",
-    visible: TemplateConstant,
+    visible: COMPONENT_LIST,
   });
 
   useEffect(() => {
@@ -73,7 +93,7 @@ const ListingTemplate = () => {
       default:
         setData({
           ...components,
-          visible: TemplateConstant,
+          visible: Constant.ComponentList,
         });
     }
   };
@@ -83,17 +103,17 @@ const ListingTemplate = () => {
       <Header />
 
       <div className="relative h-[261px]  top-20 bg-hero-pattern w-full">
-        <div className="absolute top-2.5 text-center lg:px-0 xl:px-28 px-6 h-full w-full flex justify-center items-center">
-          <div className="flex flex-col justify-center items-center gap-8 md:w-1/2 h-full ">
+        <div className="absolute top-2.5 text-center lg:px-0 xl:px-28 px-3 md:px-7 h-full w-full flex justify-center items-center">
+          <div className="flex flex-col justify-center items-center lg:w-1/2 gap-8 h-full ">
             <div className="w-full flex justify-center ">
-              <div className="max-w-[400px] w-full p-2 rounded text-3xl  capitalize bg-[#4F30B9] text-white">
-                Templates
+              <div className="max-w-[200px] sm:max-w-[300px] lg:max-w-[400px] w-full p-2 rounded text-lg sm:text-2xl  capitalize  bg-blue-900 text-white">
+                Tailwind components
               </div>
             </div>
 
-            <div className="leading-6 text-base font-nunito">
+            <div className="text-base">
               <p>
-                Here is a list of all free Template made with tailwind css and
+                Here is a list of all free components made with tailwind css and
                 reactjs. Users can preview all views on a tablet, mobile, or
                 desktop, and users can copy the code and paste it into their
                 compiler. user can customize the code as well.
@@ -103,8 +123,8 @@ const ListingTemplate = () => {
         </div>
       </div>
 
-      <div className="flex flex-col px-4 sm:flex-row gap-10 container mx-auto pt-28">
-        <aside className="border h-fit  md:h-[400px] w-full sm:bg-white text-black no-scrollbar  overflow-x-auto rounded sm:w-72 px-4 py-2 sm:p-4 sm:sticky top-24">
+      <div className="flex flex-col px-4 sm:flex-row gap-3 md:gap-10 container mx-auto pt-28">
+        <aside className="border h-fit md:h-[500px]  lg:h-[580px] w-full sm:bg-white text-black   overflow-x-auto rounded sm:w-72 px-4 py-2 sm:p-4 sm:sticky top-24">
           <div className="sm:flex-col flex flex-row gap-3">
             {category.map((ctype, index) => (
               <div
@@ -117,16 +137,16 @@ const ListingTemplate = () => {
                 onClick={() => {
                   ctype.type === "all"
                     ? setComponents({
-                        count: TemplateConstant.length,
+                        count: COMPONENT_LIST.length,
                         type: ctype.type,
-                        visible: TemplateConstant,
+                        visible: COMPONENT_LIST,
                       })
                     : setComponents({
-                        count: TemplateConstant.filter(
+                        count: COMPONENT_LIST.filter(
                           (item) => item.type === ctype.type
                         ).length,
                         type: ctype.type,
-                        visible: TemplateConstant.filter(
+                        visible: COMPONENT_LIST.filter(
                           (item) => item.type === ctype.type
                         ),
                       });
@@ -136,10 +156,9 @@ const ListingTemplate = () => {
                 <span className="py-0.5 px-2.5 leading-[1.50em] text group-hover:text-white rounded">
                   (
                   {ctype.type === "all"
-                    ? TemplateConstant.length
-                    : TemplateConstant.filter(
-                        (item) => item.type === ctype.type
-                      ).length}
+                    ? COMPONENT_LIST.length
+                    : COMPONENT_LIST.filter((item) => item.type === ctype.type)
+                        .length}
                   )
                 </span>
               </div>
@@ -150,7 +169,7 @@ const ListingTemplate = () => {
           <div className="flex  items-end mb-5 text-center justify-end cursor-pointer ">
             <Listbox value={selected} onChange={(val) => filterdata(val)}>
               <div className=" relative mt-1 min-w-[160px]">
-                <Listbox.Button className="relative w-full cursor-default rounded-lg bg-white px-8 py-2  shadow-subcard focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm">
+                <Listbox.Button className="relative w-full cursor-pointer rounded-lg bg-white px-8 py-2  shadow-subcard focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300  sm:text-sm">
                   <span className="block truncate">{selected.name}</span>
                   <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
                     <HiChevronUpDown
@@ -165,15 +184,13 @@ const ListingTemplate = () => {
                   leaveFrom="opacity-100"
                   leaveTo="opacity-0"
                 >
-                  <Listbox.Options className="absolute    z-10 mt-1 max-h-60 w-full text-start overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+                  <Listbox.Options className="absolute z-10 mt-1 max-h-60 w-full text-start overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
                     {people.map((person, personIdx) => (
                       <Listbox.Option
                         key={personIdx}
                         className={({ active }) =>
                           `relative cursor-default select-none py-2 pl-10 pr-4 ${
-                            active
-                              ? "bg-blue-200 text-amber-900"
-                              : "text-gray-900"
+                            active ? "bg-blue-900 text-white" : "text-gray-900"
                           }`
                         }
                         value={person}
@@ -181,14 +198,14 @@ const ListingTemplate = () => {
                         {({ selected }) => (
                           <>
                             <span
-                              className={`cursor-pointer block truncate ${
+                              className={` cursor-pointer block truncate ${
                                 selected ? "font-medium " : "font-normal"
                               }`}
                             >
                               {person.name}
                             </span>
                             {selected ? (
-                              <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-blue-600">
+                              <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-white">
                                 <HiCheckCircle
                                   className="h-5 w-5"
                                   aria-hidden="true"
@@ -209,15 +226,15 @@ const ListingTemplate = () => {
               <div key={index}>
                 <Link
                   href={{
-                    pathname: `/templates/${data.type}/${data.slug}`,
+                    pathname: `components/${data.type}/${data.slug}`,
                   }}
                 >
                   <div
-                    className="w-72 mx-auto  group border rounded-xl shadow-subcard overflow-hidden cursor-pointer hover:shadow-[0px_3px_6px_rgba(0,0,0,0.16)] hover:scale-[1.02] hover:duration-75"
+                    className="max-w-[350px] w-full mx-auto  group border rounded-xl shadow-subcard overflow-hidden cursor-pointer hover:shadow-[0px_3px_6px_rgba(0,0,0,0.16)] hover:scale-[1.02] hover:duration-75"
                     key={index}
                   >
                     <div>
-                      <div className="w-[288px] h-[190px] relative">
+                      <div className="w-full h-[190px] relative">
                         <Image src={data.mainImageSrc} alt="not found" fill />
                       </div>
                       <span className="group-hover: bg-blue-900 absolute top-0 group-hover:visible invisible group-hover:text-white  left-0 w-full text-center p-2 font-bold text-base">
@@ -230,7 +247,6 @@ const ListingTemplate = () => {
                         {data.subTitle}
                       </div>
                     </div>
-                    {/* <div className="text-center">{data.date}</div> */}
                   </div>
                 </Link>
               </div>
@@ -243,4 +259,4 @@ const ListingTemplate = () => {
     </>
   );
 };
-export default ListingTemplate;
+export default Components;

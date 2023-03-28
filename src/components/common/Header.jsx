@@ -15,6 +15,7 @@ const Header = () => {
   };
 
   const router = useRouter();
+
   return (
     <>
       <div className="z-10  lg:px-[60px] xl:px-[110px]  bg-gradient-to-r from-[#5455BB] to-[#2077DE]  w-full top-0  transition-all duration-700 fixed right-0 left-0">
@@ -31,7 +32,9 @@ const Header = () => {
             {NavbarList.map((data, index) => (
               <span
                 className={`font-nunito font-semibold text-white cursor-pointer hover:border-b-2 hover:pb-1 px-2  md:flex hidden h-8 ${
-                  data.link === router.pathname && "border-b-2"
+                  router.pathname
+                    .split("/")
+                    .includes(data.link.replace("/", "")) && "border-b-2"
                 }`}
                 key={index}
               >

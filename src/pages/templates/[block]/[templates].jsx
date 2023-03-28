@@ -62,6 +62,7 @@ const shareSvg = [
 
   ,
 ];
+
 const CommonLayout = () => {
   let targetsLength = 0;
 
@@ -186,7 +187,7 @@ const CommonLayout = () => {
                       </div>
                     </div>
                     <div className=" mt-2 md:mt-[42px]  ">
-                      <span className="flex overflow-x-auto no-scrollbar h-[60px]   text-[22px]  tracking-[0.055em] w-full items-center cursor-pointer text-base font-bold text-gray-500 capitalize">
+                      <span className="flex overflow-x-auto no-scrollbar h-[60px]   text-[22px]  tracking-[0.055em] w-full items-center  text-base font-bold text-gray-500 capitalize">
                         <div className="flex  md:h-[50px] h-[30px]  whitespace-nowrap text-sm md:text-[22px]   items-center">
                           <Link href={"/templatelisting"}>
                             <div>{component.type}</div>
@@ -374,7 +375,7 @@ const CommonLayout = () => {
                             title="Preview"
                             width={componentWidth}
                             className="h-screen"
-                            src={`${window.location.origin}/templates/${component.type}/${component.type}-${component.slug}`}
+                            src={`${process.env.NEXT_PUBLIC_APP_URL}/templates/${component.type}/${component.type}-${component.slug}`}
                           ></iframe>
                         ) : (
                           <div className="h-96 overflow-y-auto">
@@ -396,9 +397,9 @@ const CommonLayout = () => {
                   For More Components
                 </div>
                 <div className="max-w-[1500px]  md:h-[300px] overflow-x-auto w-full items-center flex flex-col mx-auto md:flex-row md:flex justify-center gap-10  ">
-                  {COMPONENT_LIST?.map((data, index) => {
+                  {TemplateConstant?.map((data, index) => {
                     targetsLength =
-                      data.slug !== query.component && data.type === query.block
+                      data.slug !== query.block && data.type === query.block
                         ? targetsLength + 1
                         : targetsLength;
                     return data.slug !== query.component &&

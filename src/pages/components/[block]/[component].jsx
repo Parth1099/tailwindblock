@@ -193,7 +193,7 @@ const CommonLayout = () => {
                       </div>
                     </div>
                     <div className=" mt-2 md:mt-[42px]  ">
-                      <span className="flex overflow-x-auto no-scrollbar h-[60px]   text-[22px]  tracking-[0.055em] w-full items-center cursor-pointer text-base font-bold text-gray-500 capitalize">
+                      <span className="flex overflow-x-auto no-scrollbar h-[60px]   text-[22px]  tracking-[0.055em] w-full items-center  text-base font-bold text-gray-500 capitalize">
                         <div className="flex  md:h-[50px] h-[30px]  whitespace-nowrap text-sm md:text-[22px]   items-center">
                           <Link href={"/listing"}>
                             <div>{component.type}</div>
@@ -391,7 +391,7 @@ const CommonLayout = () => {
                             title="Preview"
                             width={componentWidth}
                             className="h-screen"
-                            src={`${window.location.origin}/components/${component.type}/${component.type}-${component.slug}?color=${color}`}
+                            src={`${process.env.NEXT_PUBLIC_APP_URL}/components/${component.type}/${component.type}-${component.slug}?color=${color}`}
                           ></iframe>
                         ) : (
                           <div className="h-96 overflow-y-auto">
