@@ -124,7 +124,7 @@ const Listing = () => {
       </div>
 
       <div className="flex flex-col px-4 sm:flex-row gap-3 md:gap-10 container mx-auto pt-28">
-        <aside className="border h-fit  md:h-[400px] w-full sm:bg-white text-black no-scrollbar  overflow-x-auto rounded sm:w-72 px-4 py-2 sm:p-4 sm:sticky top-24">
+        <aside className="border h-fit md:h-[500px]  lg:h-[580px] w-full sm:bg-white text-black   overflow-x-auto rounded sm:w-72 px-4 py-2 sm:p-4 sm:sticky top-24">
           <div className="sm:flex-col flex flex-row gap-3">
             {category.map((ctype, index) => (
               <div
@@ -169,7 +169,7 @@ const Listing = () => {
           <div className="flex  items-end mb-5 text-center justify-end cursor-pointer ">
             <Listbox value={selected} onChange={(val) => filterdata(val)}>
               <div className=" relative mt-1 min-w-[160px]">
-                <Listbox.Button className="relative w-full cursor-default rounded-lg bg-white px-8 py-2  shadow-subcard focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300  sm:text-sm">
+                <Listbox.Button className="relative w-full cursor-pointer rounded-lg bg-white px-8 py-2  shadow-subcard focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300  sm:text-sm">
                   <span className="block truncate">{selected.name}</span>
                   <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
                     <HiChevronUpDown
@@ -190,9 +190,7 @@ const Listing = () => {
                         key={personIdx}
                         className={({ active }) =>
                           `relative cursor-default select-none py-2 pl-10 pr-4 ${
-                            active
-                              ? "bg-blue-200 text-amber-900"
-                              : "text-gray-900"
+                            active ? "bg-blue-900 text-white" : "text-gray-900"
                           }`
                         }
                         value={person}
@@ -207,7 +205,7 @@ const Listing = () => {
                               {person.name}
                             </span>
                             {selected ? (
-                              <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-blue-600">
+                              <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-white">
                                 <HiCheckCircle
                                   className="h-5 w-5"
                                   aria-hidden="true"

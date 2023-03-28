@@ -33,7 +33,7 @@ const CreditCard2 = ({ showCaseView }) => {
                   : "Please enter valid card number"}
               </div>
             )}
-            <div className="relative max-w-[290px] shadow-xl transition duration-400 hover:scale-110 ">
+            <div className="relative w-[290px] shadow-xl transition duration-400 hover:scale-110 ">
               <img
                 src="/assets/creditcard/sample2/cc_cover.jpg"
                 className="w-full h-full rounded-[10px]"
@@ -123,7 +123,7 @@ const CreditCard2 = ({ showCaseView }) => {
                 Please enter valid cvv number
               </span>
             )}
-            <div className="flex flex-col justify-between bg-white h-[186px] max-w-[307px] rounded-[10px] pt-[18px] pb-2 italic text-[4px] shadow-xl transition duration-400 hover:scale-110 sample2">
+            <div className="flex flex-col justify-between bg-white h-[186px] w-[307px] rounded-[10px] pt-[18px] pb-2 italic text-[4px] shadow-xl transition duration-400 hover:scale-110 sample2">
               <div>
                 <div className="bg-black h-[34px] w-full" />
                 <div className="flex justify-between">

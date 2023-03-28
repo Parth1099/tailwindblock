@@ -230,7 +230,7 @@ const ListingTemplate = () => {
                         {data.subTitle}
                       </div>
                     </div>
-                    <div className="text-center">{data.date}</div>
+                    {/* <div className="text-center">{data.date}</div> */}
                   </div>
                 </Link>
               </div>

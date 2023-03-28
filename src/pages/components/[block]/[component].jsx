@@ -27,13 +27,14 @@ import {
   AiOutlineMail,
   AiOutlineWhatsApp,
 } from "react-icons/ai";
+import { HuePicker } from "react-color";
 
 const colors = [
   "EBC84B",
   "64BC78",
   "57B3AC",
   "4299E1",
-  "667EEA",
+  "a60fa9",
   "9F7AEA",
   "ed64a6",
 ];
@@ -74,6 +75,7 @@ const CommonLayout = () => {
   const [codeblock, setCodeBlock] = useState(false);
   const [selectedCodeBlock, setSelectedCodeBlock] = useState("react");
   const [codeBlockData, setCodeBlockData] = useState();
+  const [showBottom, setShowBottom] = useState(false);
 
   const router = useRouter();
   const { query } = router;
@@ -112,7 +114,9 @@ const CommonLayout = () => {
       .replaceAll(`style={{ borderColor: #${color} }}`, "");
     return finalCode;
   };
-
+  const handleChange = (color) => {
+    setColor(color.hex.slice(1));
+  };
   useEffect(() => {
     const code = COMPONENT_LIST?.filter(
       (data) => data.slug === query.component
@@ -132,10 +136,14 @@ const CommonLayout = () => {
     }
   }, [selectedCodeBlock]);
 
+  // useEffect(() => {
+  //   setColor(localStorage.getItem("preview-color"));
+  // }, [color]);
+
   return (
     <>
       <Header />
-      <div className="bg-component-back w-full   bg-cover bg-no-repeat h-[300px] mt-20"></div>
+      <div className="bg-component-back w-full bg-cover bg-no-repeat h-[300px] mt-20"></div>
       {COMPONENT_LIST.map(
         (component, index) =>
           component.slug === query.component && (
@@ -146,7 +154,7 @@ const CommonLayout = () => {
                     <div className="text-[24px] md:text-[48px]  tracking-[0.055em] font-bold capitalize text-[#1C1C23CC]">
                       {component?.pageDetails?.title}
                     </div>
-                    <div className="mt-5 flex items-center gap-2 ">
+                    <div className="mt-3 md:mt-5 flex items-center gap-2 ">
                       <div className="text-[#00000099] text-[18px] font-normal">
                         Share :
                       </div>
@@ -184,7 +192,7 @@ const CommonLayout = () => {
                         ))} */}
                       </div>
                     </div>
-                    <div className="mt-[20px] md:mt-[42px]  ">
+                    <div className=" mt-2 md:mt-[42px]  ">
                       <span className="flex overflow-x-auto no-scrollbar h-[60px]   text-[22px]  tracking-[0.055em] w-full items-center cursor-pointer text-base font-bold text-gray-500 capitalize">
                         <div className="flex  md:h-[50px] h-[30px]  whitespace-nowrap text-sm md:text-[22px]   items-center">
                           <Link href={"/listing"}>
@@ -222,13 +230,13 @@ const CommonLayout = () => {
                       The code for the starter component which you can drop into
                       your existing project.
                     </div>
-                    <div className="mt-10">
+                    <div className="mt-5 md:mt-10">
                       <div className="mt-5 border rounded-t-md shadow-componentcard flex gap-5 p-3 bg-blue-200 overflow-x-auto overflow-y-hidden">
-                        <div className="flex items-center gap-5 w-full justify-between">
+                        <div className="flex items-center gap-3 md:gap-5 w-full justify-between">
                           <div className="flex items-center gap-5">
                             <div
                               onClick={() => setCodeBlock(false)}
-                              className="flex gap-5"
+                              className="flex gap-3 md:gap-5 items-center"
                             >
                               <span
                                 className={`font-bold text-xs md:text-xl whitespace-nowrap cursor-pointer 
@@ -281,18 +289,17 @@ const CommonLayout = () => {
                                     }
                                   />
                                 </div>
-
-                                <div
-                                  onClick={() =>
-                                    window.open(
-                                      `${process.env.NEXT_PUBLIC_APP_URL}/components/${component?.type}/${component?.type}-${component?.slug}?color=${color}`,
-                                      "_blank"
-                                    )
-                                  }
-                                  className={`relative border h-7 w-7 rounded-md cursor-pointer shadow-md bg-white`}
-                                >
-                                  <ShareSvg />
-                                </div>
+                              </div>
+                              <div
+                                onClick={() =>
+                                  window.open(
+                                    `${process.env.NEXT_PUBLIC_APP_URL}/components/${component?.type}/${component?.type}-${component?.slug}?color=${color}`,
+                                    "_blank"
+                                  )
+                                }
+                                className={`relative border h-7 w-7 rounded-md cursor-pointer shadow-md bg-white`}
+                              >
+                                <ShareSvg />
                               </div>
                             </div>
                             {component?.isCustomizeColor && (
@@ -305,14 +312,24 @@ const CommonLayout = () => {
                                       className={`w-[20px] h-[20px] rounded-[2px] bg-[#${data}]`}
                                       onClick={(e) => {
                                         setColor(data);
+                                        // localStorage.setItem(
+                                        //   "preview-color",
+                                        //   data
+                                        // );
                                       }}
                                     ></div>
                                   );
                                 })}
                               </div>
                             )}
+                            <div>
+                              <HuePicker
+                                color={color}
+                                onChangeComplete={handleChange}
+                              />
+                            </div>
                           </div>
-                          <div className="flex items-center justify-end gap-5">
+                          <div className="flex items-center justify-end gap-3 md:gap-5">
                             <div onClick={() => setCodeBlock(true)}>
                               <span
                                 className={`font-bold text-xs md:text-xl whitespace-nowrap cursor-pointer 
@@ -329,7 +346,7 @@ const CommonLayout = () => {
                                     setCodeBlock(true);
                                   }}
                                   key={index}
-                                  className={`capitalize px-2 py-1 rounded hover:bg-white hover:text-blue-900 font-bold text-xs md:text-xl  cursor-pointer ${
+                                  className={`capitalize flex items-center px-2 py-1 rounded hover:bg-white hover:text-blue-900 font-bold text-xs md:text-xl  cursor-pointer ${
                                     data === selectedCodeBlock && ""
                                   }`}
                                 >
@@ -409,7 +426,7 @@ const CommonLayout = () => {
                       >
                         <div className="w-full group border rounded-xl shadow-subcard overflow-hidden cursor-pointer hover:shadow-[0px_3px_6px_rgba(0,0,0,0.16)] hover:scale-[1.02] hover:duration-75">
                           <div>
-                            <div className="min-w-[325px] w-full h-[190px] relative">
+                            <div className="min-w-[300px] w-full h-[190px] relative">
                               <Image
                                 src={data.mainImageSrc}
                                 alt="not found"
