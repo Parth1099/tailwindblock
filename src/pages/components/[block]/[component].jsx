@@ -128,6 +128,9 @@ const CommonLayout = () => {
         (component, index) =>
           component.slug === query.component && (
             <div key={index} className="px-[20px]">
+              <meta property="og:title" content={component.title} />
+              <meta property="og:description" content={component.subTitle} />
+              <meta property="og:image" content={component.mainImageSrc} />
               <div className="container mx-auto -mt-[250px] mb-[50px] md:mb-[100px] rounded-[12px] shadow-componentcard bg-white  overflow-hidden">
                 <div className="mb-10">
                   <div className=" p-[10px] md:p-[32px]">
