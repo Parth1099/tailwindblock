@@ -118,6 +118,9 @@ const CommonLayout = () => {
 
   return (
     <>
+      <Head>
+        <meta property="og:image" content="/bgcomponents/bgnft.png" />
+      </Head>
       <Header />
       <div className="bg-component-back w-full bg-cover bg-no-repeat h-[300px] mt-20"></div>
       {TemplateConstant.filter((data) => data.type === query.block).map(
