@@ -106,7 +106,7 @@ const Components = () => {
         <div className="absolute top-2.5 text-center lg:px-0 xl:px-28 px-3 md:px-7 h-full w-full flex justify-center items-center">
           <div className="flex flex-col justify-center items-center lg:w-1/2 gap-8 h-full ">
             <div className="w-full flex justify-center ">
-              <div className="max-w-[200px] sm:max-w-[300px] lg:max-w-[400px] w-full p-2 rounded text-lg sm:text-2xl  capitalize  bg-blue-900 text-white">
+              <div className="max-w-[200px] sm:max-w-[300px] lg:max-w-[400px] w-full p-2 rounded text-lg sm:text-2xl  capitalize bg-themeColor text-white">
                 Tailwind components
               </div>
             </div>
@@ -129,9 +129,10 @@ const Components = () => {
             {category.map((ctype, index) => (
               <div
                 key={index}
-                className={` whitespace-nowrap  group py-0.5 px-2.5 items-center sm:leading-[2.50em] flex justify-between gap-1 sm:border text-[14px] rounded cursor-pointer sm:text-lg font-bold hover:bg-blue-900 hover:text-white 
+                className={` whitespace-nowrap  group py-0.5 px-2.5 items-center sm:leading-[2.50em] flex justify-between gap-1 sm:border text-[14px] rounded cursor-pointer sm:text-lg font-bold hover:bg-themeColor hover:text-white 
                     ${
-                      components.type === ctype.type && "bg-blue-900 text-white"
+                      components.type === ctype.type &&
+                      "bg-themeColor text-white"
                     }
                   `}
                 onClick={() => {
@@ -190,7 +191,9 @@ const Components = () => {
                         key={personIdx}
                         className={({ active }) =>
                           `relative cursor-default select-none py-2 pl-10 pr-4 ${
-                            active ? "bg-blue-900 text-white" : "text-gray-900"
+                            active
+                              ? "bg-themeColor text-white"
+                              : "text-gray-900"
                           }`
                         }
                         value={person}
@@ -237,7 +240,7 @@ const Components = () => {
                       <div className="w-full h-[190px] relative">
                         <Image src={data.mainImageSrc} alt="not found" fill />
                       </div>
-                      <span className="group-hover: bg-blue-900 absolute top-0 group-hover:visible invisible group-hover:text-white  left-0 w-full text-center p-2 font-bold text-base">
+                      <span className="group-hover: bg-themeColor absolute top-0 group-hover:visible invisible group-hover:text-white  left-0 w-full text-center p-2 font-bold text-base">
                         {data.hoverText}
                       </span>
                       <div className="mt-3 font-bold text-center text-blue-900 text-2xl">

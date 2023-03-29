@@ -14,63 +14,22 @@ import { CopyIcon, DownloadIcon } from "../../../utils/images/commonImages";
 import JSZip from "jszip";
 import { CopyBlock, hybrid } from "react-code-blocks";
 import Footer from "@/components/common/Footer";
-import Facebookicon from "../../../../public/share/facebook.svg";
-import Linkedinicon from "../../../../public/share/linkedin.svg";
-import Twittericon from "../../../../public/share/twitter.svg";
-import Emailicon from "../../../../public/share/email.svg";
-import Whatsappicon from "../../../../public/share/whatsapp.svg";
 import { compareName } from "../../../utils/helper";
 import {
   EmailShareButton,
   FacebookShareButton,
-  HatenaShareButton,
-  InstapaperShareButton,
   LineShareButton,
-  LinkedinShareButton,
-  LivejournalShareButton,
-  MailruShareButton,
-  OKShareButton,
-  PinterestShareButton,
-  PocketShareButton,
-  RedditShareButton,
-  TelegramShareButton,
-  TumblrShareButton,
   TwitterShareButton,
-  ViberShareButton,
-  VKShareButton,
   WhatsappShareButton,
-  WorkplaceShareButton,
 } from "next-share";
 import {
   EmailIcon,
   FacebookIcon,
-  FacebookMessengerIcon,
-  HatenaIcon,
-  InstapaperIcon,
-  LineIcon,
   LinkedinIcon,
-  LivejournalIcon,
-  MailruIcon,
-  OKIcon,
-  PinterestIcon,
-  PocketIcon,
-  RedditIcon,
-  TelegramIcon,
-  TumblrIcon,
   TwitterIcon,
-  ViberIcon,
-  VKIcon,
-  WeiboIcon,
   WhatsappIcon,
-  WorkplaceIcon,
 } from "next-share";
-import {
-  AiFillFacebook,
-  AiFillLinkedin,
-  AiFillTwitterSquare,
-  AiOutlineMail,
-  AiOutlineWhatsApp,
-} from "react-icons/ai";
+
 import { TemplateConstant } from "@/utils/templateconstant";
 import Head from "next/head";
 
@@ -82,30 +41,6 @@ const colors = [
   "667EEA",
   "9F7AEA",
   "ed64a6",
-];
-const shareSvg = [
-  {
-    img: Facebookicon,
-    link: "https://www.facebook.com/infynnosolutions",
-  },
-  {
-    img: Linkedinicon,
-    link: "https://www.linkedin.com/company/infynno-solutions/",
-  },
-  {
-    link: "https://twitter.com/infynno",
-    img: Twittericon,
-  },
-  {
-    link: "https://twitter.com/infynno",
-    img: Emailicon,
-  },
-  {
-    link: "https://twitter.com/infynno",
-    img: Whatsappicon,
-  },
-
-  ,
 ];
 const CommonLayout = () => {
   let targetsLength = 0;
@@ -178,38 +113,25 @@ const CommonLayout = () => {
     }
   }, [selectedCodeBlock]);
 
-  const shareUrl = "https://tailwindblock.vercel.app/";
+  const shareUrl =
+    "`https://tailwindblock.vercel.app/templates/${component.type}/${component.slug`}";
 
   return (
     <>
-      <Head>
-        <meta property="og:title" content="component.title" />
-
-        <meta property="og:description" content="component.subTitle" />
-
-        <meta property="og:image" content="/bgcomponents/bgnft.png" />
-
-        {/* <meta property="og:image:width" content="1200" />
-
-        <meta property="og:image:height" content="630" /> */}
-      </Head>
       <Header />
       <div className="bg-component-back w-full bg-cover bg-no-repeat h-[300px] mt-20"></div>
-      {TemplateConstant.map(
+      {TemplateConstant.filter((data) => data.type === query.block).map(
         (component, index) =>
-          component.type === query.block && (
+          true && (
             <>
-              {/* <Head>
+              <Head>
                 <meta property="og:title" content={component.title} />
-
                 <meta property="og:description" content={component.subTitle} />
-
                 <meta property="og:image" content={component.mainImageSrc} />
+              </Head>
+              {/* {console.log(component.type, "AAA")}
+              {console.log(component.hoverText, "a")} */}
 
-                <meta property="og:image:width" content="1200" />
-
-                <meta property="og:image:height" content="630" />
-              </Head> */}
               <div key={index} className="px-[20px]">
                 <div className="container mx-auto -mt-[250px] mb-[50px] md:mb-[100px] rounded-[12px] shadow-componentcard bg-white  overflow-hidden">
                   <div className="mb-10">
@@ -228,8 +150,9 @@ const CommonLayout = () => {
                           <LinkedinIcon size={32} round={true} />
                         </LineShareButton>
                         <TwitterShareButton
-                          url={shareUrl}
-                          title="Free open source Tailwind CSS Landing Page starter template"
+                          url={`https://tailwindblock.vercel.app/templates/${component.type}/${component.slug}`}
+                          title={component.title}
+                          children={component.hoverText}
                         >
                           <TwitterIcon size={32} round={true} />
                         </TwitterShareButton>
@@ -237,37 +160,10 @@ const CommonLayout = () => {
                           <EmailIcon size={32} round={true} />
                         </EmailShareButton>
                         <WhatsappShareButton
-                          url={`https://tailwindblock.vercel.app/`}
-                          title={
-                            "next-share is a social share buttons for your next React apps."
-                          }
-                          separator=":: "
+                          url={`https://tailwindblock.vercel.app/templates/${component.type}/${component.slug}`}
                         >
                           <WhatsappIcon size={32} round />
                         </WhatsappShareButton>
-                        {/* <div className="flex gap-[7px] items-center">
-                        <Link
-                          href={"https://www.facebook.com/infynnosolutions"}
-                        >
-                          <AiFillFacebook fill="#445BC5" size={22} />
-                        </Link>
-                        <Link
-                          href={
-                            "https://www.linkedin.com/company/infynno-solutions/"
-                          }
-                        >
-                          <AiFillLinkedin fill="#445BC5" size={22} />
-                        </Link>
-                        <Link href={"https://twitter.com/infynno"}>
-                          <AiFillTwitterSquare fill="#445BC5" size={22} />
-                        </Link>
-                        <Link href={"https://twitter.com/infynno"}>
-                          <AiOutlineMail fill="#445BC5" size={22} />
-                        </Link>
-                        <Link href={"https://twitter.com/infynno"}>
-                          <AiOutlineWhatsApp fill="#445BC5" size={22} />
-                        </Link>
-                      </div> */}
                       </div>
                       <div className=" mt-2 md:mt-[42px]  ">
                         <span className="flex overflow-x-auto no-scrollbar h-[60px]   text-[22px]  tracking-[0.055em] w-full items-center cursor-pointer text-base font-bold text-gray-500 capitalize">
@@ -328,10 +224,7 @@ const CommonLayout = () => {
                                 <div className=" hidden lg:flex align-middle gap-2 items-center">
                                   <div
                                     onClick={() => setComponentWidth("425px")}
-                                    className={`relative border h-7 w-7 items-center flex rounded-md  cursor-pointer shadow-md bg-white ${
-                                      componentWidth === "425px" &&
-                                      "bg-blue-800"
-                                    }`}
+                                    className="relative border h-7 w-7 items-center flex rounded-md cursor-pointer shadow-md bg-white"
                                   >
                                     <MobileViewLogo
                                       fill={
@@ -343,10 +236,7 @@ const CommonLayout = () => {
                                   </div>
                                   <div
                                     onClick={() => setComponentWidth("768px")}
-                                    className={`relative border h-7 w-7 rounded-md items-center flex cursor-pointer shadow-md bg-white ${
-                                      componentWidth === "768px" &&
-                                      "text-white bg-blue-800"
-                                    }`}
+                                    className="relative border h-7 w-7 rounded-md items-center flex cursor-pointer shadow-md bg-white"
                                   >
                                     <TabletViewLogo
                                       fill={
@@ -358,10 +248,7 @@ const CommonLayout = () => {
                                   </div>
                                   <div
                                     onClick={() => setComponentWidth("100%")}
-                                    className={`relative border h-7 w-7 rounded-md items-center flex cursor-pointer shadow-md bg-white ${
-                                      componentWidth === "100%" &&
-                                      "text-white bg-blue-800"
-                                    }`}
+                                    className="relative border h-7 w-7 rounded-md items-center flex cursor-pointer shadow-md bg-white"
                                   >
                                     <DesktopViewLogo
                                       fill={
@@ -418,8 +305,8 @@ const CommonLayout = () => {
                                       setCodeBlock(true);
                                     }}
                                     key={index}
-                                    className={`capitalize flex items-center px-2 py-1 rounded hover:bg-white hover:text-blue-900 font-bold text-xs md:text-xl  cursor-pointer ${
-                                      data === selectedCodeBlock && ""
+                                    className={`capitalize flex items-center px-2 py-1 rounded hover:bg-white hover:text-themeColor font-bold text-xs md:text-xl  cursor-pointer ${
+                                      data === selectedCodeBlock && "bg-white"
                                     }`}
                                   >
                                     {data}
@@ -431,29 +318,37 @@ const CommonLayout = () => {
                                   onClick={() => {
                                     copyData(getCode(component));
                                   }}
-                                  className="bg-blue-800 text-white px-2 py-1 rounded overflow-hidden cursor-pointer"
+                                  key={index}
+                                  className="bg-themeColor text-white px-2 py-1 rounded overflow-hidden cursor-pointer"
                                 >
                                   <CopyIcon />
                                 </span>
-                                <span class="absolute right-12 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100">
+                                <span className="absolute right-12 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100">
                                   {!copyBlock.clicked ? "Copy" : "Copied"}
                                 </span>
                               </div>
-                              <div
-                                className="bg-blue-800 text-white px-2 py-1 rounded overflow-hidden cursor-pointer"
-                                onClick={() => {
-                                  zip.file("code.jsx", `${getCode(component)}`);
-
-                                  zip
-                                    .generateAsync({ type: "base64" })
-                                    .then(function (content) {
-                                      location.href =
-                                        "data:application/zip;base64," +
-                                        content;
-                                    });
-                                }}
-                              >
-                                <DownloadIcon />
+                              <div className="group flex relative">
+                                <span
+                                  className="bg-themeColor text-white px-2 py-1 rounded overflow-hidden cursor-pointer"
+                                  onClick={() => {
+                                    zip.file(
+                                      "code.jsx",
+                                      `${getCode(component)}`
+                                    );
+                                    zip
+                                      .generateAsync({ type: "base64" })
+                                      .then(function (content) {
+                                        location.href =
+                                          "data:application/zip;base64," +
+                                          content;
+                                      });
+                                  }}
+                                >
+                                  <DownloadIcon />
+                                </span>
+                                <span className="absolute right-12 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100">
+                                  Download
+                                </span>
                               </div>
                             </div>
                           </div>
@@ -485,7 +380,7 @@ const CommonLayout = () => {
                   <div className="xl:text-[38px] text-[24px] tracking-[0.055em]">
                     For More Components
                   </div>
-                  <div className="max-w-[1500px]  md:h-[300px] overflow-x-auto w-full items-center flex flex-col mx-auto md:flex-row md:flex justify-center gap-10  ">
+                  <div className="container grid lg:grid-cols-4 grid-cols-1 gap-7">
                     {TemplateConstant?.map((data, index) => {
                       targetsLength =
                         data.slug !== query.templates
@@ -496,20 +391,19 @@ const CommonLayout = () => {
                           key={index}
                           href={`/templates/${data.type}/${data.slug}`}
                         >
-                          <div className="w-full group border rounded-xl shadow-subcard overflow-hidden cursor-pointer hover:shadow-[0px_3px_6px_rgba(0,0,0,0.16)] hover:scale-[1.02] hover:duration-75">
+                          <div className="group border rounded-xl shadow-subcard  cursor-pointer hover:shadow-[0px_3px_6px_rgba(0,0,0,0.16)] hover:scale-[1.02] hover:duration-75 overflow-hidden">
                             <div>
-                              <div className="min-w-[300px] w-full h-[190px] relative">
+                              <div className="h-[190px] relative">
                                 <Image
                                   src={data.mainImageSrc}
                                   alt="not found"
                                   fill
-                                  sizes="300px"
                                 />
                               </div>
-                              <span className="group-hover: bg-blue-900 absolute top-0 group-hover:visible invisible group-hover:text-white  left-0 w-full text-center p-2 font-bold text-sm">
+                              <span className="group-hover: bg-themeColor absolute top-0 group-hover:visible invisible group-hover:text-white  left-0 w-full text-center p-2 font-bold text-sm">
                                 {data.hoverText}
                               </span>
-                              <div className="mt-3 font-bold text-center text-blue-900 text-2xl">
+                              <div className="mt-3 font-bold text-center text-themeColor text-2xl">
                                 {data.title}
                               </div>
                               <div className="mb-3 font-bold text-center text-gray-900">
@@ -528,9 +422,9 @@ const CommonLayout = () => {
                               key={index}
                               href={`/components/${data.type}/${data.slug}`}
                             >
-                              <div className=" w-full  group border rounded-xl shadow-subcard overflow-hidden cursor-pointer hover:shadow-[0px_3px_6px_rgba(0,0,0,0.16)] hover:scale-[1.02] hover:duration-75">
+                              <div className="group border rounded-xl shadow-subcard overflow-hidden cursor-pointer hover:shadow-[0px_3px_6px_rgba(0,0,0,0.16)] hover:scale-[1.02] hover:duration-75">
                                 <div key={index}>
-                                  <div className="min-w-[325px] w-full h-[190px] relative">
+                                  <div className="h-[190px] relative">
                                     <Image
                                       src={data.mainImageSrc}
                                       alt="not found"
@@ -538,10 +432,10 @@ const CommonLayout = () => {
                                       sizes="300px"
                                     />
                                   </div>
-                                  <span className="group-hover: bg-blue-900 absolute top-0 group-hover:visible invisible group-hover:text-white  left-0 w-full text-center p-2 font-bold text-sm">
+                                  <span className="group-hover: bg-themeColor absolute top-0 group-hover:visible invisible group-hover:text-white  left-0 w-full text-center p-2 font-bold text-sm">
                                     {data.hoverText}
                                   </span>
-                                  <div className="mt-3 font-bold text-center text-blue-900 text-2xl">
+                                  <div className="mt-3 font-bold text-center text-themeColor text-2xl">
                                     {data.title}
                                   </div>
                                   <div className="mb-3 font-bold text-center text-gray-900">

@@ -27,6 +27,9 @@ module.exports = {
         "bg-linear":
           "linear-gradient(180deg, rgba(162, 89, 255, 0) 0%, #A259FF 100%)",
       },
+      colors: {
+        themeColor: "#1e3a8a",
+      },
     },
     boxShadow: {
       componentcard: "0px 10px 20px rgba(0, 0, 0, 0.1)",

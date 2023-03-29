@@ -86,7 +86,7 @@ const Templates = () => {
         <div className="absolute top-2.5 text-center lg:px-0 xl:px-28 px-6 h-full w-full flex justify-center items-center">
           <div className="flex flex-col justify-center items-center gap-8 md:w-1/2 h-full ">
             <div className="w-full flex justify-center ">
-              <div className="max-w-[400px] w-full p-2 rounded text-3xl  capitalize bg-[#4F30B9] text-white">
+              <div className="max-w-[400px] w-full p-2 rounded text-3xl  capitalize bg-themeColor text-white">
                 Templates
               </div>
             </div>
@@ -109,9 +109,10 @@ const Templates = () => {
             {category.map((ctype, index) => (
               <div
                 key={index}
-                className={` whitespace-nowrap  group py-0.5 px-2.5 items-center sm:leading-[2.50em] flex justify-between gap-1 sm:border text-[14px] rounded cursor-pointer sm:text-lg font-bold hover:bg-blue-900 hover:text-white 
+                className={` whitespace-nowrap  group py-0.5 px-2.5 items-center sm:leading-[2.50em] flex justify-between gap-1 sm:border text-[14px] rounded cursor-pointer sm:text-lg font-bold hover:bg-themeColor hover:text-white 
                     ${
-                      components.type === ctype.type && "bg-blue-900 text-white"
+                      components.type === ctype.type &&
+                      "bg-themeColor text-white"
                     }
                   `}
                 onClick={() => {
@@ -165,14 +166,14 @@ const Templates = () => {
                   leaveFrom="opacity-100"
                   leaveTo="opacity-0"
                 >
-                  <Listbox.Options className="absolute    z-10 mt-1 max-h-60 w-full text-start overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+                  <Listbox.Options className="absolute z-10 mt-1 max-h-60 w-full text-start overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
                     {people.map((person, personIdx) => (
                       <Listbox.Option
                         key={personIdx}
                         className={({ active }) =>
                           `relative cursor-default select-none py-2 pl-10 pr-4 ${
                             active
-                              ? "bg-blue-200 text-amber-900"
+                              ? "bg-themeColor text-white"
                               : "text-gray-900"
                           }`
                         }
@@ -188,7 +189,7 @@ const Templates = () => {
                               {person.name}
                             </span>
                             {selected ? (
-                              <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-blue-600">
+                              <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-white">
                                 <HiCheckCircle
                                   className="h-5 w-5"
                                   aria-hidden="true"
@@ -220,17 +221,16 @@ const Templates = () => {
                       <div className="w-[288px] h-[190px] relative">
                         <Image src={data.mainImageSrc} alt="not found" fill />
                       </div>
-                      <span className="group-hover: bg-blue-900 absolute top-0 group-hover:visible invisible group-hover:text-white  left-0 w-full text-center p-2 font-bold text-base">
+                      <span className="group-hover: bg-themeColor absolute top-0 group-hover:visible invisible group-hover:text-white  left-0 w-full text-center p-2 font-bold text-base">
                         {data.hoverText}
                       </span>
-                      <div className="mt-3 font-bold text-center text-blue-900 text-2xl">
+                      <div className="mt-3 font-bold text-center text-themeColor text-2xl">
                         {data.title}
                       </div>
                       <div className="mb-3 font-bold text-center text-gray-900">
                         {data.subTitle}
                       </div>
                     </div>
-                    {/* <div className="text-center">{data.date}</div> */}
                   </div>
                 </Link>
               </div>
