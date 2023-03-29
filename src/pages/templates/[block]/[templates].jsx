@@ -129,8 +129,6 @@ const CommonLayout = () => {
                 <meta property="og:description" content={component.subTitle} />
                 <meta property="og:image" content={component.mainImageSrc} />
               </Head>
-              {/* {console.log(component.type, "AAA")}
-              {console.log(component.hoverText, "a")} */}
 
               <div key={index} className="px-[20px]">
                 <div className="container mx-auto -mt-[250px] mb-[50px] md:mb-[100px] rounded-[12px] shadow-componentcard bg-white  overflow-hidden">
@@ -161,6 +159,7 @@ const CommonLayout = () => {
                         </EmailShareButton>
                         <WhatsappShareButton
                           url={`https://tailwindblock.vercel.app/templates/${component.type}/${component.slug}`}
+                          title={component.title}
                         >
                           <WhatsappIcon size={32} round />
                         </WhatsappShareButton>
