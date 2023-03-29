@@ -32,7 +32,6 @@ import {
 
 import { TemplateConstant } from "@/utils/templateconstant";
 import Head from "next/head";
-import { RWebShare } from "react-web-share";
 
 const colors = [
   "EBC84B",
@@ -134,21 +133,10 @@ const CommonLayout = () => {
 
       <Header />
       <div className="bg-component-back w-full bg-cover bg-no-repeat h-[300px] mt-20"></div>
-      <div></div>
       {TemplateConstant.filter((data) => data.slug === query.templates).map(
         (component, index) =>
           true && (
             <>
-              <RWebShare
-                data={{
-                  text: component.subTitle,
-                  url: `https://tailwindblock.vercel.app/templates/${component.type}/${component.slug}`,
-                  title: component.title,
-                }}
-                onClick={() => console.log("shared successfully!")}
-              >
-                <button>Share 🔗</button>
-              </RWebShare>
               <div key={index} className="px-[20px]">
                 <div className="container mx-auto -mt-[250px] mb-[50px] md:mb-[100px] rounded-[12px] shadow-componentcard bg-white  overflow-hidden">
                   <div className="mb-10">
