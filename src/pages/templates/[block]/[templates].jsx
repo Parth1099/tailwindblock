@@ -154,6 +154,7 @@ const CommonLayout = () => {
                           url={`https://tailwindblock.vercel.app/templates/${component.type}/${component.slug}`}
                           title={component.title}
                           children={component.hoverText}
+                          media={component.mainImageSrc}
                         >
                           <TwitterIcon size={32} round={true} />
                         </TwitterShareButton>
