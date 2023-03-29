@@ -183,7 +183,7 @@ const CommonLayout = () => {
   return (
     <>
       <Head>
-        <meta property="og:title" content={component.title} />
+        <meta property="og:title" content="component.title" />
 
         <meta property="og:description" content="component.subTitle" />
 
@@ -237,7 +237,7 @@ const CommonLayout = () => {
                           <EmailIcon size={32} round={true} />
                         </EmailShareButton>
                         <WhatsappShareButton
-                          url={`https://tailwindblock.vercel.app/templates/${component.type}/${component.slug}`}
+                          url={`https://tailwindblock.vercel.app/`}
                           title={
                             "next-share is a social share buttons for your next React apps."
                           }
