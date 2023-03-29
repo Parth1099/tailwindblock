@@ -131,11 +131,13 @@ const CommonLayout = () => {
               <Head>
                 <meta
                   name="title"
+                  key="ogtitle"
                   property="og:title"
                   content={component.title}
                 />
                 <meta
                   name="description"
+                  key="ogdesc"
                   property="og:description"
                   content={component.subTitle}
                 />
