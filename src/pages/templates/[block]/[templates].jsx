@@ -118,9 +118,10 @@ const CommonLayout = () => {
 
   return (
     <>
-      {/* <Head>
-        <meta property="og:image" content="/bgcomponents/bgnft.png"} />
-      </Head> */}
+      <Head>
+        <meta name="title" property="og:title" content="Title" />
+        <meta name="og:image" content="/bgcomponents/bgnft.png" />
+      </Head>
       <Header />
       <div className="bg-component-back w-full bg-cover bg-no-repeat h-[300px] mt-20"></div>
       {TemplateConstant.filter((data) => data.type === query.block).map(
@@ -128,9 +129,21 @@ const CommonLayout = () => {
           true && (
             <>
               <Head>
-                <meta property="og:title" content={component.title} />
-                <meta property="og:description" content={component.subTitle} />
-                <meta property="og:image" content={component.mainImageSrc} />
+                <meta
+                  name="title"
+                  property="og:title"
+                  content={component.title}
+                />
+                <meta
+                  name="description"
+                  property="og:description"
+                  content={component.subTitle}
+                />
+                <meta
+                  name="image"
+                  property="og:image"
+                  content={component.mainImageSrc}
+                />
                 <meta name="twitter:image" content={component.mainImageSrc} />
               </Head>
 
