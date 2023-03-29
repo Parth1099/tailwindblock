@@ -165,10 +165,7 @@ const CommonLayout = () => {
                           <LinkedinIcon size={32} round={true} />
                         </LineShareButton>
                         <TwitterShareButton
-                          url={`https://tailwindblock.vercel.app/templates/${component.type}/${component.slug}`}
-                          title={component.title}
-                          children={component.hoverText}
-                          media={component.mainImageSrc}
+                          url={`https://tailwindblock.vercel.app`}
                         >
                           <TwitterIcon size={32} round={true} />
                         </TwitterShareButton>
