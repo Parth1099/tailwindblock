@@ -131,6 +131,7 @@ const CommonLayout = () => {
                 <meta property="og:title" content={component.title} />
                 <meta property="og:description" content={component.subTitle} />
                 <meta property="og:image" content={component.mainImageSrc} />
+                <meta name="twitter:image" content={component.mainImageSrc} />
               </Head>
 
               <div key={index} className="px-[20px]">
