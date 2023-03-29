@@ -183,7 +183,7 @@ const CommonLayout = () => {
   return (
     <>
       <Head>
-        <meta property="og:title" content="component.title" />
+        <meta property="og:title" content={component.title} />
 
         <meta property="og:description" content="component.subTitle" />
 
@@ -221,56 +221,37 @@ const CommonLayout = () => {
                         <div className="text-[#00000099] text-[18px] font-normal">
                           Share :
                         </div>
-                        <FacebookShareButton url={shareUrl}>
+                        <FacebookShareButton
+                          url={`https://tailwindblock.vercel.app/templates/${component.type}/${component.slug}`}
+                        >
                           <FacebookIcon size={32} round={true} />
                         </FacebookShareButton>
-                        <LineShareButton url={shareUrl}>
+                        <LineShareButton
+                          url={`https://tailwindblock.vercel.app/templates/${component.type}/${component.slug}`}
+                        >
                           <LinkedinIcon size={32} round={true} />
                         </LineShareButton>
                         <TwitterShareButton
-                          url={shareUrl}
+                          url={`https://tailwindblock.vercel.app/templates/${component.type}/${component.slug}`}
                           title="Free open source Tailwind CSS Landing Page starter template"
                         >
                           <TwitterIcon size={32} round={true} />
                         </TwitterShareButton>
-                        <EmailShareButton url={shareUrl}>
+                        <EmailShareButton
+                          url={`https://tailwindblock.vercel.app/templates/${component.type}/${component.slug}`}
+                        >
                           <EmailIcon size={32} round={true} />
                         </EmailShareButton>
                         <WhatsappShareButton
                           url={`https://tailwindblock.vercel.app/templates/${component.type}/${component.slug}`}
-                          title={
-                            "next-share is a social share buttons for your next React apps."
-                          }
+                          title={"Tailwind Blocks."}
                           separator=":: "
                         >
                           <WhatsappIcon size={32} round />
                         </WhatsappShareButton>
-                        {/* <div className="flex gap-[7px] items-center">
-                        <Link
-                          href={"https://www.facebook.com/infynnosolutions"}
-                        >
-                          <AiFillFacebook fill="#445BC5" size={22} />
-                        </Link>
-                        <Link
-                          href={
-                            "https://www.linkedin.com/company/infynno-solutions/"
-                          }
-                        >
-                          <AiFillLinkedin fill="#445BC5" size={22} />
-                        </Link>
-                        <Link href={"https://twitter.com/infynno"}>
-                          <AiFillTwitterSquare fill="#445BC5" size={22} />
-                        </Link>
-                        <Link href={"https://twitter.com/infynno"}>
-                          <AiOutlineMail fill="#445BC5" size={22} />
-                        </Link>
-                        <Link href={"https://twitter.com/infynno"}>
-                          <AiOutlineWhatsApp fill="#445BC5" size={22} />
-                        </Link>
-                      </div> */}
                       </div>
                       <div className=" mt-2 md:mt-[42px]  ">
-                        <span className="flex overflow-x-auto no-scrollbar h-[60px]   text-[22px]  tracking-[0.055em] w-full items-center cursor-pointer text-base font-bold text-gray-500 capitalize">
+                        <span className="flex overflow-x-auto no-scrollbar h-[60px] text-[22px]  tracking-[0.055em] w-full items-center cursor-pointer text-base font-bold text-gray-500 capitalize">
                           <div className="flex  md:h-[50px] h-[30px]  whitespace-nowrap text-sm md:text-[22px]   items-center">
                             <Link href={"/templates"}>
                               <div>{component.type}</div>
