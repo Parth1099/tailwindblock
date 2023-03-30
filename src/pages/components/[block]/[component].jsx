@@ -31,6 +31,7 @@ import {
 } from "next-share";
 
 import { HuePicker } from "react-color";
+import SEO from "@/components/Seo";
 
 const colors = [
   "EBC84B",
@@ -42,7 +43,7 @@ const colors = [
   "ed64a6",
 ];
 
-const CommonLayout = () => {
+const CommonLayout = ({ check }) => {
   let targetsLength = 0;
 
   const [componentWidth, setComponentWidth] = useState("100%");
@@ -125,6 +126,11 @@ const CommonLayout = () => {
   return (
     <>
       <Header />
+      <SEO
+        title={check?.pageDetails?.title}
+        description={check?.hoverText}
+        image={check?.mainImageSrc}
+      />
       <div className="bg-component-back w-full bg-cover bg-no-repeat h-[300px] mt-20"></div>
       {COMPONENT_LIST.map(
         (component, index) =>
@@ -148,7 +154,6 @@ const CommonLayout = () => {
                       </LineShareButton>
                       <TwitterShareButton
                         url={`https://tailwindblock.vercel.app/components/${component.type}/${component.slug}`}
-                        title="Free open source Tailwind CSS Landing Page starter template"
                       >
                         <TwitterIcon size={32} round={true} />
                       </TwitterShareButton>
@@ -270,7 +275,9 @@ const CommonLayout = () => {
                                     return (
                                       <div
                                         key={index}
-                                        style={{ backgroundColor: `#${data}` }}
+                                        style={{
+                                          backgroundColor: `#${data}`,
+                                        }}
                                         className={`w-[20px] h-[20px] rounded-[2px] bg-[#${data}]`}
                                         onClick={(e) => {
                                           setColor(data);
@@ -362,7 +369,11 @@ const CommonLayout = () => {
                             title="Preview"
                             width={componentWidth}
                             className="h-screen"
-                            src={`${window.location.origin}/components/${component.type}/${component.type}-${component.slug}?color=${color}`}
+                            src={
+                              typeof window === "undefined"
+                                ? ""
+                                : `${window.location.origin}/components/${component.type}/${component.type}-${component.slug}?color=${color}`
+                            }
                           ></iframe>
                         ) : (
                           <div className="h-96 overflow-y-auto">
@@ -459,4 +470,14 @@ const CommonLayout = () => {
     </>
   );
 };
+
+export async function getServerSideProps(context) {
+  return {
+    props: {
+      check: COMPONENT_LIST.find(
+        (data) => data.slug === context.query.component
+      ),
+    },
+  };
+}
 export default CommonLayout;

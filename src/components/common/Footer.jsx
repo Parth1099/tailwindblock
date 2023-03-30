@@ -44,7 +44,11 @@ const Footer = () => {
                 }  `}
                 key={index}
               >
-                <Link href={data.link} rel="noreferrer">
+                <Link
+                  target={data.name === "Documentations" ? "_blank" : ""}
+                  href={data.link}
+                  rel="noreferrer"
+                >
                   {data.name}
                 </Link>
               </span>

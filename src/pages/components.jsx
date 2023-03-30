@@ -243,7 +243,7 @@ const Components = () => {
                       <span className="group-hover: bg-themeColor absolute top-0 group-hover:visible invisible group-hover:text-white  left-0 w-full text-center p-2 font-bold text-base">
                         {data.hoverText}
                       </span>
-                      <div className="mt-3 font-bold text-center text-blue-900 text-2xl">
+                      <div className="mt-3 font-bold text-center text-themeColor text-2xl">
                         {data.title}
                       </div>
                       <div className="mb-3 font-bold text-center text-gray-900">

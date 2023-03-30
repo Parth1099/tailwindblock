@@ -126,7 +126,7 @@ export const COMPONENT_LIST = [
   },
   {
     mainImageSrc: "/bgcomponents/bgcarousal1.png",
-    hoverText: "Carousal sample",
+    hoverText: "Responsive and simple carousal with arrows.",
     title: "Sample 1",
     subTitle: "Carousal component",
     type: "carousal",
@@ -141,7 +141,8 @@ export const COMPONENT_LIST = [
   },
   {
     mainImageSrc: "/bgcomponents/bgcarousal2.png",
-    hoverText: "Carousal sample",
+    hoverText:
+      "Carousal component with infinite loop, dynamic text and with fade animation",
     title: "Sample 2",
     subTitle: "Carousal component",
     type: "carousal",

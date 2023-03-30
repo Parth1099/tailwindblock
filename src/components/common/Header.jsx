@@ -38,7 +38,12 @@ const Header = () => {
                 }`}
                 key={index}
               >
-                <Link href={data.link}>{data.name}</Link>
+                <Link
+                  target={data.name === "Documentations" ? "_blank" : ""}
+                  href={data.link}
+                >
+                  {data.name}
+                </Link>
               </span>
             ))}
 

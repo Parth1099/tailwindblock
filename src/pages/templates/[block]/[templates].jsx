@@ -32,6 +32,7 @@ import {
 
 import { TemplateConstant } from "@/utils/templateconstant";
 import Head from "next/head";
+import SEO from "@/components/Seo";
 
 const colors = [
   "EBC84B",
@@ -42,7 +43,7 @@ const colors = [
   "9F7AEA",
   "ed64a6",
 ];
-const CommonLayout = () => {
+const CommonLayout = ({ check }) => {
   let targetsLength = 0;
 
   const [componentWidth, setComponentWidth] = useState("100%");
@@ -76,6 +77,8 @@ const CommonLayout = () => {
       clearTimeout(timer);
     }, 3000);
   };
+  const readmeCode =
+    require(`!!raw-loader!../../../utils/README.md`).default.toString();
   const getCode = (component) => {
     const rawCode =
       require(`!!raw-loader!../../../components/templates/${component?.type}/${component?.slug}/${codeBlockData}`).default.toString();
@@ -95,7 +98,6 @@ const CommonLayout = () => {
   };
 
   useEffect(() => {
-    console.log(query.templates, "slugggggg");
     const code = TemplateConstant?.filter(
       (data) => data.slug === query.templates
     )[0]?.pageDetails;
@@ -119,30 +121,17 @@ const CommonLayout = () => {
 
   return (
     <>
-      <Head>
-        {TemplateConstant.filter((data) => data.slug === query.templates).map(
-          (component, index) => (
-            <>
-              <meta property="og:title" content={component.title} />
-              <meta property="og:description" content={component.subTitle} />
-              <meta property="og:image" content={component.mainImageSrc} />
-            </>
-          )
-        )}
-      </Head>
-
       <Header />
+      <SEO
+        title={check?.pageDetails?.title}
+        description={check?.hoverText}
+        image={check?.mainImageSrc}
+      />
       <div className="bg-component-back w-full bg-cover bg-no-repeat h-[300px] mt-20"></div>
       {TemplateConstant.filter((data) => data.slug === query.templates).map(
         (component, index) =>
           true && (
             <>
-              {/* <Head>
-                <meta property="og:title" content={component.title} />
-                <meta property="og:description" content={component.subTitle} />
-                <meta property="og:image" content={component.mainImageSrc} />
-              </Head> */}
-
               <div key={index} className="px-[20px]">
                 <div className="container mx-auto -mt-[250px] mb-[50px] md:mb-[100px] rounded-[12px] shadow-componentcard bg-white  overflow-hidden">
                   <div className="mb-10">
@@ -277,7 +266,7 @@ const CommonLayout = () => {
                                       "_blank"
                                     )
                                   }
-                                  className={`relative border h-7 w-7 rounded-md cursor-pointer shadow-md bg-white`}
+                                  className="relative border h-7 w-7 rounded-md cursor-pointer shadow-md bg-white"
                                 >
                                   <ShareSvg />
                                 </div>
@@ -301,10 +290,7 @@ const CommonLayout = () => {
                             </div>
                             <div className="flex items-center justify-end gap-3 md:gap-5">
                               <div onClick={() => setCodeBlock(true)}>
-                                <span
-                                  className={`font-bold text-xs md:text-xl whitespace-nowrap cursor-pointer 
-                              `}
-                                >
+                                <span className="font-bold text-xs md:text-xl whitespace-nowrap cursor-pointer">
                                   Code :
                                 </span>
                               </div>
@@ -346,6 +332,8 @@ const CommonLayout = () => {
                                       "code.jsx",
                                       `${getCode(component)}`
                                     );
+                                    zip.file("README.md", `${readmeCode}`);
+
                                     zip
                                       .generateAsync({ type: "base64" })
                                       .then(function (content) {
@@ -370,14 +358,18 @@ const CommonLayout = () => {
                               title="Preview"
                               width={componentWidth}
                               className="h-screen"
-                              src={`${window.location.origin}/templates/${component.type}/${component.type}-${component.slug}`}
+                              src={
+                                typeof window === "undefined"
+                                  ? ""
+                                  : `${window.location.origin}/templates/${component.type}/${component.type}-${component.slug}`
+                              }
                             ></iframe>
                           ) : (
                             <div className="h-96 overflow-y-auto">
                               <CopyBlock
-                                text={require(`!!raw-loader!../../../components/templates/${component.type}/${component.slug}/${codeBlockData}`).default.toString()}
+                                text={getCode(component)}
                                 theme={hybrid}
-                                language="html"
+                                language="jsx"
                                 CodeBlock
                               />
                             </div>
@@ -468,4 +460,13 @@ const CommonLayout = () => {
     </>
   );
 };
+export async function getServerSideProps(context) {
+  return {
+    props: {
+      check: TemplateConstant.find(
+        (data) => data.slug === context.query.templates
+      ),
+    },
+  };
+}
 export default CommonLayout;
