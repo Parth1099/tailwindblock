@@ -137,6 +137,12 @@ const CommonLayout = () => {
         (component, index) =>
           true && (
             <>
+              {/* <Head>
+                <meta property="og:title" content={component.title} />
+                <meta property="og:description" content={component.subTitle} />
+                <meta property="og:image" content={component.mainImageSrc} />
+              </Head> */}
+
               <div key={index} className="px-[20px]">
                 <div className="container mx-auto -mt-[250px] mb-[50px] md:mb-[100px] rounded-[12px] shadow-componentcard bg-white  overflow-hidden">
                   <div className="mb-10">
