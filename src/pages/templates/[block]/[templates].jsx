@@ -273,7 +273,7 @@ const CommonLayout = () => {
                                 <div
                                   onClick={() =>
                                     window.open(
-                                      `${process.env.NEXT_PUBLIC_APP_URL}/templates/${component?.type}/${component?.type}-${component?.slug}`,
+                                      `${window.location.origin}/templates/${component?.type}/${component?.type}-${component?.slug}`,
                                       "_blank"
                                     )
                                   }
