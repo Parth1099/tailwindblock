@@ -18,7 +18,7 @@ import { compareName } from "../../../utils/helper";
 import {
   EmailShareButton,
   FacebookShareButton,
-  LineShareButton,
+  LinkedinShareButton,
   TwitterShareButton,
   WhatsappShareButton,
 } from "next-share";
@@ -151,11 +151,11 @@ const CommonLayout = ({ check }) => {
                       >
                         <FacebookIcon size={32} round={true} />
                       </FacebookShareButton>
-                      <LineShareButton
+                      <LinkedinShareButton
                         url={`https://tailwindblock.vercel.app/components/${component.type}/${component.slug}`}
                       >
                         <LinkedinIcon size={32} round={true} />
-                      </LineShareButton>
+                      </LinkedinShareButton>
                       <TwitterShareButton
                         url={`https://tailwindblock.vercel.app/components/${component.type}/${component.slug}`}
                       >
