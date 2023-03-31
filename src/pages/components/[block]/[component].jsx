@@ -146,10 +146,14 @@ const CommonLayout = ({ check }) => {
                       <div className="text-[#00000099] text-[18px] font-normal">
                         Share :
                       </div>
-                      <FacebookShareButton url={shareUrl}>
+                      <FacebookShareButton
+                        url={`https://tailwindblock.vercel.app/components/${component.type}/${component.slug}`}
+                      >
                         <FacebookIcon size={32} round={true} />
                       </FacebookShareButton>
-                      <LineShareButton url={shareUrl}>
+                      <LineShareButton
+                        url={`https://tailwindblock.vercel.app/components/${component.type}/${component.slug}`}
+                      >
                         <LinkedinIcon size={32} round={true} />
                       </LineShareButton>
                       <TwitterShareButton
@@ -157,7 +161,9 @@ const CommonLayout = ({ check }) => {
                       >
                         <TwitterIcon size={32} round={true} />
                       </TwitterShareButton>
-                      <EmailShareButton url={shareUrl}>
+                      <EmailShareButton
+                        url={`https://tailwindblock.vercel.app/components/${component.type}/${component.slug}`}
+                      >
                         <EmailIcon size={32} round={true} />
                       </EmailShareButton>
                       <WhatsappShareButton
