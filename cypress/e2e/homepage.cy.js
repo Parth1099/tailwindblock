@@ -1,9 +1,12 @@
+import { COMPONENT_LIST } from "../../src/utils/constant";
+import { TemplateConstant } from "../../src/utils/templateconstant";
+
 const getComponentCard = (number) => {
   return cy.get(`[data-testid="card-${number}"]`);
 };
 
 describe("Testing home page", () => {
-  beforeEach("Login", () => {
+  beforeEach(() => {
     cy.visit(Cypress.env("WEB_URL"));
   });
 
@@ -11,32 +14,37 @@ describe("Testing home page", () => {
     cy.contains("UI elements that are beautifully Made with Tailwind CSS");
     cy.contains("By the Infynno Solutions");
     cy.contains("Components").click();
-    getComponentCard(1).click();
-
-    cy.wait(100);
-    for (let index = 0; index < 18; index++) {
+    cy.wait(500);
+    for (let index = 0; index < COMPONENT_LIST?.length; index++) {
       getComponentCard(index).click();
       cy.wait(5000);
       cy.contains("404").should("not.exist");
       cy.contains("This page could not be found.").should("not.exist");
-      cy.wait(3000);
+      cy.wait(5000);
+      cy.get(`[data-testid="preview"]`).invoke("removeAttr", "target").click();
+      cy.wait(5000);
+      cy.contains("404").should("not.exist");
+      cy.contains("This page could not be found.").should("not.exist");
       cy.go("back");
-      cy.wait(3000);
+      cy.wait(5000);
+      cy.go("back");
     }
     cy.contains("Templates").click();
-    cy.wait(100);
+    cy.wait(500);
     cy.contains("Templates");
-    cy.contains(
-      "Here is a list of all free Template made with tailwind css and reactjs. Users can preview all views on a tablet, mobile, or desktop, and users can copy the code and paste it into their compiler. user can customize the code as well."
-    );
-    for (let index = 0; index < 4; index++) {
+    for (let index = 0; index < TemplateConstant?.length; index++) {
       getComponentCard(index).click();
       cy.wait(5000);
       cy.contains("404").should("not.exist");
       cy.contains("This page could not be found.").should("not.exist");
       cy.wait(5000);
+      cy.get(`[data-testid="preview"]`).invoke("removeAttr", "target").click();
+      cy.wait(5000);
+      cy.contains("404").should("not.exist");
+      cy.contains("This page could not be found.").should("not.exist");
       cy.go("back");
       cy.wait(5000);
+      cy.go("back");
     }
   });
 });

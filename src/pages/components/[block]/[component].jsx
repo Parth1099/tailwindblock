@@ -262,17 +262,17 @@ const CommonLayout = ({ check }) => {
                                   />
                                 </div>
                               </div>
-                              <div
-                                onClick={() =>
-                                  window.open(
-                                    `${window.location.origin}/components/${component?.type}/${component?.type}-${component?.slug}?color=${color}`,
-                                    "_blank"
-                                  )
-                                }
-                                className={`relative border h-7 w-7 rounded-md cursor-pointer shadow-md bg-white`}
+                              <Link
+                                data-testid={`preview`}
+                                href={`${window.location.origin}/components/${component?.type}/${component?.type}-${component?.slug}?color=${color}`}
+                                target="_blank"
                               >
-                                <ShareSvg />
-                              </div>
+                                <div
+                                  className={`relative border h-7 w-7 rounded-md cursor-pointer shadow-md bg-white`}
+                                >
+                                  <ShareSvg />
+                                </div>
+                              </Link>
                             </div>
                             {component?.isCustomizeColor && (
                               <>

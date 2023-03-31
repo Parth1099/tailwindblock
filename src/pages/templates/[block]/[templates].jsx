@@ -263,17 +263,15 @@ const CommonLayout = ({ check }) => {
                                     />
                                   </div>
                                 </div>
-                                <div
-                                  onClick={() =>
-                                    window.open(
-                                      `${window.location.origin}/templates/${component?.type}/${component?.type}-${component?.slug}`,
-                                      "_blank"
-                                    )
-                                  }
-                                  className="relative border h-7 w-7 rounded-md cursor-pointer shadow-md bg-white"
+                                <Link
+                                  data-testid={`preview`}
+                                  href={`${window.location.origin}/templates/${component?.type}/${component?.type}-${component?.slug}`}
+                                  target="_blank"
                                 >
-                                  <ShareSvg />
-                                </div>
+                                  <div className="relative border h-7 w-7 rounded-md cursor-pointer shadow-md bg-white">
+                                    <ShareSvg />
+                                  </div>
+                                </Link>
                               </div>
                               {component?.isCustomizeColor && (
                                 <div className="flex justify-center gap-2 cursor-pointer">
