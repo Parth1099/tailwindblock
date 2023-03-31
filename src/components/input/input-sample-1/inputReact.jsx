@@ -1,6 +1,7 @@
 import React from "react";
 
-const Input = () => {
+const Input = ({ color }) => {
+  const primaryColor = color?.length > 0 ? `#${color}` : "#1D4ED8";
   return (
     <div className="flex flex-col py-6 items-center max-h-fit justify-center gap-5 ">
       <div className="flex justify-center items-center flex-col gap-3">
@@ -15,7 +16,8 @@ const Input = () => {
               Label
             </label>
             <input
-              className="form-control m-0 block w-full rounded border border-solid border-gray-300 bg-white bg-clip-padding py-1.5 px-2 text-base font-normal text-gray-700 transition ease-in-out first-letter:px-3 focus:border-blue-600 focus:bg-white focus:text-gray-700 focus:outline-none"
+              style={{ borderColor: primaryColor }}
+              className="form-control m-0 block w-full rounded border border-solid border-gray-300 bg-white bg-clip-padding py-1.5 px-2 text-base font-normal text-gray-700 transition ease-in-out first-letter:px-3 focus:border-[primaryColor] focus:bg-white focus:text-gray-700 focus:outline-none"
               placeholder="Basic Input"
             />
           </div>
@@ -33,7 +35,8 @@ const Input = () => {
                 Label
               </label>
               <input
-                className="form-control m-0 block h-8 w-full rounded border border-solid border-gray-300 bg-white bg-clip-padding py-1.5 px-2 text-sm font-normal text-gray-700 transition ease-in-out first-letter:px-3 focus:border-blue-600 focus:bg-white focus:text-gray-700 focus:outline-none"
+                style={{ borderColor: primaryColor }}
+                className="form-control m-0 block h-8 w-full rounded border border-solid border-gray-300 bg-white bg-clip-padding py-1.5 px-2 text-sm font-normal text-gray-700 transition ease-in-out first-letter:px-3 focus:border-[primaryColor] focus:bg-white focus:text-gray-700 focus:outline-none"
                 placeholder="Basic Input"
               />
             </div>
@@ -47,7 +50,8 @@ const Input = () => {
                 Label
               </label>
               <input
-                className="form-control m-0 block w-full rounded border border-solid border-gray-300 bg-white bg-clip-padding py-1.5 px-2 text-base font-normal text-gray-700 transition ease-in-out first-letter:px-3 focus:border-blue-600 focus:bg-white focus:text-gray-700 focus:outline-none"
+                style={{ borderColor: primaryColor }}
+                className="form-control m-0 block w-full rounded border border-solid border-gray-300 bg-white bg-clip-padding py-1.5 px-2 text-base font-normal text-gray-700 transition ease-in-out first-letter:px-3 focus:border-[primaryColor] focus:bg-white focus:text-gray-700 focus:outline-none"
                 placeholder="Basic Input"
               />
             </div>
@@ -61,7 +65,8 @@ const Input = () => {
                 Label
               </label>
               <input
-                className="form-control m-0 block h-12 w-full rounded border border-solid border-gray-300 bg-white bg-clip-padding py-1.5 px-2 text-lg font-normal text-gray-700 transition ease-in-out first-letter:px-3 focus:border-blue-600 focus:bg-white focus:text-gray-700 focus:outline-none"
+                style={{ borderColor: primaryColor }}
+                className="form-control m-0 block h-12 w-full rounded border border-solid border-gray-300 bg-white bg-clip-padding py-1.5 px-2 text-lg font-normal text-gray-700 transition ease-in-out first-letter:px-3 focus:border-[primaryColor] focus:bg-white focus:text-gray-700 focus:outline-none"
                 placeholder="Basic Input"
               />
             </div>
@@ -82,7 +87,8 @@ const Input = () => {
                 Label
               </label>
               <input
-                className="form-control m-0 block w-full rounded border border-solid border-gray-300 bg-gray-100 bg-clip-padding py-1.5 px-2 text-base font-normal text-gray-700 opacity-80 transition ease-in-out first-letter:px-3 focus:border-blue-600 focus:bg-white focus:text-gray-700 focus:outline-none"
+                style={{ borderColor: primaryColor }}
+                className="form-control m-0 block w-full rounded border border-solid border-gray-300 bg-gray-100 bg-clip-padding py-1.5 px-2 text-base font-normal text-gray-700 opacity-80 transition ease-in-out first-letter:px-3 focus:border-[primaryColor] focus:bg-white focus:text-gray-700 focus:outline-none"
                 placeholder="Basic Input"
                 disabled
               />
@@ -103,7 +109,8 @@ const Input = () => {
               Label
             </label>
             <input
-              className="form-control bg-slate-100 m-0 block w-full rounded border border-solid border-gray-300 bg-clip-padding py-1.5 px-2 text-base font-normal text-gray-700 opacity-80 transition ease-in-out first-letter:px-3 focus:border-blue-600 focus:bg-white focus:text-gray-700 focus:outline-none"
+              style={{ borderColor: primaryColor }}
+              className="form-control bg-slate-100 m-0 block w-full rounded border border-solid border-gray-300 bg-clip-padding py-1.5 px-2 text-base font-normal text-gray-700 opacity-80 transition ease-in-out first-letter:px-3 focus:border-[primaryColor] focus:bg-white focus:text-gray-700 focus:outline-none"
               placeholder="Basic Input"
               disabled
             />
@@ -123,7 +130,8 @@ const Input = () => {
               Label
             </label>
             <input
-              className="form-control m-0 block w-full rounded border border-solid border-gray-300 bg-white bg-clip-padding py-1.5 px-2 text-base font-normal text-gray-700 transition ease-in-out first-letter:px-3 focus:border-blue-600 focus:bg-white focus:text-gray-700 focus:outline-none"
+              style={{ borderColor: primaryColor }}
+              className="form-control m-0 block w-full rounded border border-solid border-gray-300 bg-white bg-clip-padding py-1.5 px-2 text-base font-normal text-gray-700 transition ease-in-out first-letter:px-3 focus:border-[primaryColor] focus:bg-white focus:text-gray-700 focus:outline-none"
               placeholder="Basic Input"
             />
           </div>
@@ -142,7 +150,8 @@ const Input = () => {
               Label
             </label>
             <input
-              className="form-control m-0 block w-full rounded border border-solid border-gray-300 bg-white bg-clip-padding py-1.5 px-2 text-base font-normal text-gray-700 transition ease-in-out first-letter:px-3 focus:border-blue-600 focus:bg-white focus:text-gray-700 focus:outline-none"
+              style={{ borderColor: primaryColor }}
+              className="form-control m-0 block w-full rounded border border-solid border-gray-300 bg-white bg-clip-padding py-1.5 px-2 text-base font-normal text-gray-700 transition ease-in-out first-letter:px-3 focus:border-[primaryColor] focus:bg-white focus:text-gray-700 focus:outline-none"
               placeholder="Basic Input"
               type="email"
             />
@@ -162,8 +171,9 @@ const Input = () => {
               Label
             </label>
             <input
+              style={{ borderColor: primaryColor }}
               type="password"
-              className="form-control bg-slate-100 m-0 block w-full rounded border border-solid border-gray-300 bg-clip-padding py-1.5 px-2 text-base font-normal text-gray-700 opacity-80 transition ease-in-out first-letter:px-3 focus:border-blue-600 focus:bg-white focus:text-gray-700 focus:outline-none"
+              className="form-control bg-slate-100 m-0 block w-full rounded border border-solid border-gray-300 bg-clip-padding py-1.5 px-2 text-base font-normal text-gray-700 opacity-80 transition ease-in-out first-letter:px-3 focus:border-[primaryColor] focus:bg-white focus:text-gray-700 focus:outline-none"
               placeholder="Basic Input"
             />
           </div>
@@ -181,7 +191,8 @@ const Input = () => {
               Label
             </label>
             <input
-              className="form-control bg-slate-100 m-0 block w-full rounded border border-solid border-gray-300 bg-clip-padding py-1.5 px-2 text-base font-normal text-gray-700 opacity-80 transition ease-in-out first-letter:px-3 focus:border-blue-600 focus:bg-white focus:text-gray-700 focus:outline-none"
+              style={{ borderColor: primaryColor }}
+              className="form-control bg-slate-100 m-0 block w-full rounded border border-solid border-gray-300 bg-clip-padding py-1.5 px-2 text-base font-normal text-gray-700 opacity-80 transition ease-in-out first-letter:px-3 focus:border-[primaryColor] focus:bg-white focus:text-gray-700 focus:outline-none"
               placeholder="Basic Input"
               type="number"
             />

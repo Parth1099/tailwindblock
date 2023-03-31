@@ -32,7 +32,7 @@ export const COMPONENT_LIST = [
   },
   {
     mainImageSrc: "/bgcomponents/bgsample3.png",
-    hoverText: "On hover, the icons in this pricing component will change.",
+    hoverText: "This price includes wonderful distribution with promotion.",
     title: "Sample 3",
     subTitle: "Pricing component",
     type: "pricing",
@@ -48,7 +48,7 @@ export const COMPONENT_LIST = [
   },
   {
     mainImageSrc: "/bgcomponents/bgsample4.png",
-    hoverText: "On hover, the icons in this pricing component will change.",
+    hoverText: "This pricing compoenent includes a free trial period.",
     title: "Sample 4",
     subTitle: "Pricing component",
     type: "pricing",
@@ -64,7 +64,8 @@ export const COMPONENT_LIST = [
   },
   {
     mainImageSrc: "/bgcomponents/bgsample5.png",
-    hoverText: "On hover, the icons in this pricing component will change.",
+    hoverText:
+      "The distribution of three pricing comparisons is shown here in table style.",
     title: "Sample 5",
     subTitle: "Pricing component",
     type: "pricing",
@@ -79,11 +80,11 @@ export const COMPONENT_LIST = [
   },
   {
     mainImageSrc: "/bgcomponents/bgcreditcard1.png",
-    hoverText: "Credit card sample",
+    hoverText: "Component for credit cards that has dynamic colors and fields.",
     title: "Sample 1",
     subTitle: "Creditcard component",
     type: "creditcard",
-    date: "2024-11-10",
+    date: "2023-01-01",
     slug: "card-1",
     isCustomizeColor: true,
     codeAvailableLanguages: ["react"],
@@ -94,7 +95,8 @@ export const COMPONENT_LIST = [
   },
   {
     mainImageSrc: "/bgcomponents/bgcreditcard2.png",
-    hoverText: "Credit card sample",
+    hoverText:
+      "Beautiful graphic backdrop and field validation on the ATM card.",
     title: "Sample 2",
     subTitle: "Creditcard component",
     type: "creditcard",
@@ -109,7 +111,7 @@ export const COMPONENT_LIST = [
   },
   {
     mainImageSrc: "/bgcomponents/bgcreditcard3.png",
-    hoverText: "Credit card sample",
+    hoverText: "ATM card with gorgeous graphic backdrop and field validation.",
     title: "Sample 3",
     subTitle: "Creditcard component",
     type: "creditcard",
@@ -124,7 +126,7 @@ export const COMPONENT_LIST = [
   },
   {
     mainImageSrc: "/bgcomponents/bgcarousal1.png",
-    hoverText: "Carousal sample",
+    hoverText: "Responsive and simple carousal with arrows.",
     title: "Sample 1",
     subTitle: "Carousal component",
     type: "carousal",
@@ -139,7 +141,8 @@ export const COMPONENT_LIST = [
   },
   {
     mainImageSrc: "/bgcomponents/bgcarousal2.png",
-    hoverText: "Carousal sample",
+    hoverText:
+      "Carousal component with infinite loop, dynamic text and with fade animation",
     title: "Sample 2",
     subTitle: "Carousal component",
     type: "carousal",
@@ -154,7 +157,7 @@ export const COMPONENT_LIST = [
   },
   {
     mainImageSrc: "/bgcomponents/bg-cards.png",
-    hoverText: "Card sample",
+    hoverText: "Attractive, functional, and effective card Layout.",
     title: "Card",
     subTitle: "Card component",
     type: "card",
@@ -169,7 +172,7 @@ export const COMPONENT_LIST = [
   },
   {
     mainImageSrc: "/bgcomponents/animation.gif",
-    hoverText: "Continues animation for intigrate inside website",
+    hoverText: "Component for the loader, button, and design with animation.",
     title: "Aniamtion",
     subTitle: "Animation component",
     type: "animation",
@@ -183,8 +186,8 @@ export const COMPONENT_LIST = [
     },
   },
   {
-    mainImageSrc: "/bgcomponents/bgbutton.jpg",
-    hoverText: "Continues animation for intigrate inside website",
+    mainImageSrc: "/bgcomponents/bg-btn-1.png",
+    hoverText: "Flexible colour and style buttons.",
     title: "Sample Buttons 1",
     subTitle: "Button component",
     type: "button",
@@ -198,8 +201,9 @@ export const COMPONENT_LIST = [
     },
   },
   {
-    mainImageSrc: "/bgcomponents/bganimatedbutton.gif",
-    hoverText: "Continues animation for intigrate inside website",
+    mainImageSrc: "/bgcomponents/bg-btn-2.png",
+    hoverText:
+      "Colorful buttons component with with outline ,rounded and fill style",
     title: "Sample Buttons 2",
     subTitle: "Button component",
     type: "button",
@@ -214,7 +218,7 @@ export const COMPONENT_LIST = [
   },
   {
     mainImageSrc: "/bgcomponents/bganimatedbutton.gif",
-    hoverText: "Continues animation for intigrate inside website",
+    hoverText: "Components of buttons with different hover effects.",
     title: "Sample Buttons 3",
     subTitle: "Button component",
     type: "button",
@@ -229,13 +233,13 @@ export const COMPONENT_LIST = [
   },
   {
     mainImageSrc: "/bgcomponents/bginput.jpg",
-    hoverText: "Continues animation for intigrate inside website",
+    hoverText: "Various input field types with dynamic border colours.",
     title: "Input",
     subTitle: "Input component",
     type: "input",
     date: "2023-03-26",
     slug: "input-sample-1",
-    isCustomizeColor: false,
+    isCustomizeColor: true,
     codeAvailableLanguages: ["react"],
     pageDetails: {
       title: "Input",
@@ -244,7 +248,7 @@ export const COMPONENT_LIST = [
   },
   {
     mainImageSrc: "/bgcomponents/bgradiobutton.jpg",
-    hoverText: "Continues animation for intigrate inside website",
+    hoverText: "Radio button with an unique style.",
     title: "Radio Button",
     subTitle: "Radio Button component",
     type: "radiobutton",
@@ -259,7 +263,7 @@ export const COMPONENT_LIST = [
   },
   {
     mainImageSrc: "/bgcomponents/bgcheckbox.png",
-    hoverText: "Continues animation for intigrate inside website",
+    hoverText: "Checkbox elements with vibrant and stylish categories",
     title: "Check Box",
     subTitle: "Checkbox component",
     type: "checkbox",

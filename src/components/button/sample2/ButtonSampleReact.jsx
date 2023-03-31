@@ -1,6 +1,6 @@
 const ButtonSample2 = () => {
   return (
-    <div className="flex  flex-col items-center h-[800px]  gap-9 ">
+    <div className="flex  flex-col justify-center items-center h-[800px]  gap-9 ">
       <div className="flex justify-center items-center flex-col gap-3">
         <h2 className="text-[22px] font-bold">Colors Buttons</h2>
 
