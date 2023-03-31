@@ -61,7 +61,7 @@ const CommonLayout = ({ check }) => {
   const { query } = router;
   const zip = new JSZip();
   useEffect(() => {
-    const cat = COMPONENT_LIST.filter((item) => item.type === query.block);
+    const cat = TemplateConstant.filter((item) => item.type === query.block);
     setLableSample(cat);
   }, [query]);
 
@@ -125,7 +125,7 @@ const CommonLayout = ({ check }) => {
       <SEO
         title={check?.pageDetails?.title}
         description={check?.hoverText}
-        image={check?.mainImageSrc}
+        image={`https://tailwindblock.vercel.app/${check?.mainImageSrc}`}
       />
       <div className="bg-component-back w-full bg-cover bg-no-repeat h-[300px] mt-20"></div>
       {TemplateConstant.filter((data) => data.slug === query.templates).map(
@@ -155,8 +155,6 @@ const CommonLayout = ({ check }) => {
                         </LinkedinShareButton>
                         <TwitterShareButton
                           url={`https://tailwindblock.vercel.app/templates/${component.type}/${component.slug}`}
-                          title={component.title}
-                          children={component.hoverText}
                         >
                           <TwitterIcon size={32} round={true} />
                         </TwitterShareButton>
@@ -196,10 +194,10 @@ const CommonLayout = ({ check }) => {
                                     }`}
                                   >
                                     <Link
-                                      href={`/components/${data.type}/${data.slug}`}
+                                      href={`/templates/${data.type}/${data.slug}`}
                                       className="relative"
                                     >
-                                      <p>{data.title}</p>
+                                      <p>{data.slug}</p>
                                     </Link>
                                   </div>
                                 );

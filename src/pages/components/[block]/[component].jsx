@@ -129,7 +129,7 @@ const CommonLayout = ({ check }) => {
       <SEO
         title={check?.pageDetails?.title}
         description={check?.hoverText}
-        image={check?.mainImageSrc}
+        image={`https://tailwindblock.vercel.app/${check?.mainImageSrc}`}
       />
       <div className="bg-component-back w-full bg-cover bg-no-repeat h-[300px] mt-20"></div>
       {COMPONENT_LIST.map(

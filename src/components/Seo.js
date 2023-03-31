@@ -20,7 +20,9 @@ const SEO = ({ title, image, description, keywords }) => {
         property="og:url"
         content={`https://https://tailwindblock.vercel.app/${router.pathname}`}
       />
-      <meta property="og:type" content="event" />
+      <meta property="og:type" content="website" />
+      <meta property="og:image:width" content="300" />
+      <meta property="og:image:height" content="300"></meta>
       <meta property="og:title" content={title} />
       <meta
         property="og:description"
@@ -30,8 +32,8 @@ const SEO = ({ title, image, description, keywords }) => {
         }
       />
       <meta property="og:image" content={image || "/assets/logo.svg"} />
-      <meta property="og:image:alt" content={description} />
-      <meta name="keywords" content={keywords || "Compoenent and templates"} />
+      <meta property="og:image:alt" content={title || "Tailwind blocks"} />
+      <meta name="keywords" content={keywords || "Component and templates"} />
     </Head>
   );
 };
