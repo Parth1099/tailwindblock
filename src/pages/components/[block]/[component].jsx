@@ -6,7 +6,7 @@ import {
 } from "../../../utils/images/responsiveImages";
 import { useEffect, useState } from "react";
 import Header from "../../../components/common/Header";
-import { COMPONENT_LIST } from "../../../utils/constant";
+import { COMPONENT_LIST, COMPONENT_REACT } from "../../../utils/constant";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
@@ -32,6 +32,7 @@ import {
 
 import { HuePicker } from "react-color";
 import SEO from "@/components/Seo";
+import { RotatingLines } from "react-loader-spinner";
 
 const colors = [
   "EBC84B",
@@ -55,8 +56,9 @@ const CommonLayout = ({ check }) => {
   });
   const [codeblock, setCodeBlock] = useState(false);
   const [selectedCodeBlock, setSelectedCodeBlock] = useState("react");
-  const [codeBlockData, setCodeBlockData] = useState();
-
+  const [codeBlockData, setCodeBlockData] = useState(COMPONENT_REACT);
+  const [windowMounted, setWindowMounted] = useState(false);
+  const [loading, IsLoading] = useState(true);
   const router = useRouter();
   const { query } = router;
   const zip = new JSZip();
@@ -118,10 +120,9 @@ const CommonLayout = ({ check }) => {
     }
   }, [selectedCodeBlock]);
 
-  // useEffect(() => {
-  //   setColor(localStorage.getItem("preview-color"));
-  // }, [color]);
-  const shareUrl = "https://tailwindblock.vercel.app/";
+  useEffect(() => {
+    setWindowMounted(true);
+  }, []);
 
   return (
     <>
@@ -262,17 +263,19 @@ const CommonLayout = ({ check }) => {
                                   />
                                 </div>
                               </div>
-                              <Link
-                                data-testid={`preview`}
-                                href={`${window.location.origin}/components/${component?.type}/${component?.type}-${component?.slug}?color=${color}`}
-                                target="_blank"
-                              >
-                                <div
-                                  className={`relative border h-7 w-7 rounded-md cursor-pointer shadow-md bg-white`}
+                              {windowMounted && (
+                                <Link
+                                  data-testid={`preview`}
+                                  href={`${window.location.origin}/components/${component?.type}/${component?.type}-${component?.slug}?color=${color}`}
+                                  target="_blank"
                                 >
-                                  <ShareSvg />
-                                </div>
-                              </Link>
+                                  <div
+                                    className={`relative border h-7 w-7 rounded-md cursor-pointer shadow-md bg-white`}
+                                  >
+                                    <ShareSvg />
+                                  </div>
+                                </Link>
+                              )}
                             </div>
                             {component?.isCustomizeColor && (
                               <>
@@ -371,16 +374,29 @@ const CommonLayout = ({ check }) => {
                       </div>
                       <div className="flex justify-center items-center w-full shadow-componentcard rounded-b-md bg-[#f3f1f6] border-b-[1px]">
                         {!codeblock ? (
-                          <iframe
-                            title="Preview"
-                            width={componentWidth}
-                            className="h-screen"
-                            src={
-                              typeof window === "undefined"
-                                ? ""
-                                : `${window.location.origin}/components/${component.type}/${component.type}-${component.slug}?color=${color}`
-                            }
-                          ></iframe>
+                          <>
+                            <iframe
+                              onLoad={() => IsLoading(false)}
+                              title="Preview"
+                              width={componentWidth}
+                              className={loading ? "hidden" : "h-screen"}
+                              src={
+                                windowMounted &&
+                                `${window.location.origin}/components/${component.type}/${component.type}-${component.slug}?color=${color}`
+                              }
+                            ></iframe>
+                            {loading && (
+                              <div className="h-screen flex items-start pt-10">
+                                <RotatingLines
+                                  strokeColor="#1E3B8A"
+                                  strokeWidth="5"
+                                  animationDuration="0.75"
+                                  width="96"
+                                  visible={true}
+                                />
+                              </div>
+                            )}
+                          </>
                         ) : (
                           <div className="h-96 overflow-y-auto">
                             <CopyBlock

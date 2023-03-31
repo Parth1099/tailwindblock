@@ -1,3 +1,6 @@
+export const COMPONENT_REACT = "pricingReact";
+export const COMPONENT_HTML = "pricingHtml";
+
 export const COMPONENT_LIST = [
   {
     mainImageSrc: "/bgcomponents/bgsample1.png",

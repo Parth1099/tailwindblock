@@ -30,9 +30,9 @@ import {
   WhatsappIcon,
 } from "next-share";
 
-import { TemplateConstant } from "@/utils/templateconstant";
-import Head from "next/head";
+import { TemplateConstant, TEMPLATE_REACT } from "@/utils/templateconstant";
 import SEO from "@/components/Seo";
+import { RotatingLines } from "react-loader-spinner";
 
 const colors = [
   "EBC84B",
@@ -55,7 +55,10 @@ const CommonLayout = ({ check }) => {
   });
   const [codeblock, setCodeBlock] = useState(false);
   const [selectedCodeBlock, setSelectedCodeBlock] = useState("react");
-  const [codeBlockData, setCodeBlockData] = useState();
+  const [loading, IsLoading] = useState(true);
+
+  const [codeBlockData, setCodeBlockData] = useState(TEMPLATE_REACT);
+  const [windowMounted, setWindowMounted] = useState(false);
 
   const router = useRouter();
   const { query } = router;
@@ -116,9 +119,9 @@ const CommonLayout = ({ check }) => {
     }
   }, [selectedCodeBlock]);
 
-  const shareUrl =
-    "`https://tailwindblock.vercel.app/templates/${component.type}/${component.slug`}";
-
+  useEffect(() => {
+    setWindowMounted(true);
+  }, []);
   return (
     <>
       <Header />
@@ -263,15 +266,17 @@ const CommonLayout = ({ check }) => {
                                     />
                                   </div>
                                 </div>
-                                <Link
-                                  data-testid={`preview`}
-                                  href={`${window.location.origin}/templates/${component?.type}/${component?.type}-${component?.slug}`}
-                                  target="_blank"
-                                >
-                                  <div className="relative border h-7 w-7 rounded-md cursor-pointer shadow-md bg-white">
-                                    <ShareSvg />
-                                  </div>
-                                </Link>
+                                {windowMounted && (
+                                  <Link
+                                    data-testid={`preview`}
+                                    href={`${window.location.origin}/templates/${component?.type}/${component?.type}-${component?.slug}`}
+                                    target="_blank"
+                                  >
+                                    <div className="relative border h-7 w-7 rounded-md cursor-pointer shadow-md bg-white">
+                                      <ShareSvg />
+                                    </div>
+                                  </Link>
+                                )}
                               </div>
                               {component?.isCustomizeColor && (
                                 <div className="flex justify-center gap-2 cursor-pointer">
@@ -356,16 +361,29 @@ const CommonLayout = ({ check }) => {
                         </div>
                         <div className="flex justify-center items-center w-full shadow-componentcard rounded-b-md bg-[#f3f1f6] border-b-[1px]">
                           {!codeblock ? (
-                            <iframe
-                              title="Preview"
-                              width={componentWidth}
-                              className="h-screen"
-                              src={
-                                typeof window === "undefined"
-                                  ? ""
-                                  : `${window.location.origin}/templates/${component.type}/${component.type}-${component.slug}`
-                              }
-                            ></iframe>
+                            <>
+                              <iframe
+                                title="Preview"
+                                onLoad={() => IsLoading(false)}
+                                width={componentWidth}
+                                className={loading ? "hidden" : "h-screen"}
+                                src={
+                                  windowMounted &&
+                                  `${window.location.origin}/templates/${component.type}/${component.type}-${component.slug}`
+                                }
+                              ></iframe>
+                              {loading && (
+                                <div className="h-screen flex items-start pt-10">
+                                  <RotatingLines
+                                    strokeColor="#1E3B8A"
+                                    strokeWidth="5"
+                                    animationDuration="0.75"
+                                    width="96"
+                                    visible={true}
+                                  />
+                                </div>
+                              )}
+                            </>
                           ) : (
                             <div className="h-96 overflow-y-auto">
                               <CopyBlock

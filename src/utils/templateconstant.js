@@ -1,3 +1,5 @@
+export const TEMPLATE_REACT = "templateReact";
+
 export const TemplateConstant = [
   {
     mainImageSrc: "/bgcomponents/bgnft.png",
@@ -11,7 +13,7 @@ export const TemplateConstant = [
     codeAvailableLanguages: ["react"],
     pageDetails: {
       title: "3DNFT",
-      componentReact: "templateReact",
+      componentReact: TEMPLATE_REACT,
     },
   },
   {
@@ -25,7 +27,7 @@ export const TemplateConstant = [
     codeAvailableLanguages: ["react"],
     pageDetails: {
       title: "Crypto",
-      componentReact: "templateReact",
+      componentReact: TEMPLATE_REACT,
     },
   },
   {
@@ -39,7 +41,7 @@ export const TemplateConstant = [
     codeAvailableLanguages: ["react"],
     pageDetails: {
       title: "Advocate",
-      componentReact: "templateReact",
+      componentReact: TEMPLATE_REACT,
     },
   },
   {
@@ -53,7 +55,7 @@ export const TemplateConstant = [
     codeAvailableLanguages: ["react"],
     pageDetails: {
       title: "TBDesign",
-      componentReact: "templateReact",
+      componentReact: TEMPLATE_REACT,
     },
   },
 ];
