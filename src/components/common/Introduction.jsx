@@ -3,11 +3,7 @@ import SEO from "../Seo";
 const Introduction = () => {
   return (
     <>
-      <SEO
-        title="Tailwind Blocks"
-        description="Free responsive components and template ,Preview it and and download source code in one click."
-        image="https://tailwindblock.vercel.app/bgcomponents/bgbutton.jpg"
-      />
+      <SEO />
       <div>
         <div className="mt-[80px] mb-[280px] w-full font-nunito flex justify-center items-center bg-home-back bg-no-repeat bg-cover h-[550px]">
           <div className="max-w-[994px] -mt-[100px] text-center flex-col gap-[32px] flex">
