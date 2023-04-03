@@ -196,6 +196,7 @@ export const COMPONENT_LIST = [
     type: "button",
     date: "2023-03-16",
     slug: "sample1",
+    component: "ButtonSample1",
     isCustomizeColor: true,
     codeAvailableLanguages: ["react"],
     pageDetails: {

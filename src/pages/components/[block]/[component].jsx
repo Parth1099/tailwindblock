@@ -266,7 +266,7 @@ const CommonLayout = ({ check }) => {
                               {windowMounted && (
                                 <Link
                                   data-testid={`preview`}
-                                  href={`${window.location.origin}/components/${component?.type}/${component?.type}-${component?.slug}?color=${color}`}
+                                  href={`${window.location.origin}/components/${component?.type}/view/${component?.type}-${component?.slug}?color=${color}`}
                                   target="_blank"
                                 >
                                   <div

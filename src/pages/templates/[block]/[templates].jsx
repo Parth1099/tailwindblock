@@ -269,7 +269,7 @@ const CommonLayout = ({ check }) => {
                                 {windowMounted && (
                                   <Link
                                     data-testid={`preview`}
-                                    href={`${window.location.origin}/templates/${component?.type}/${component?.type}-${component?.slug}`}
+                                    href={`${window.location.origin}/templates/${component?.type}/view/${component?.type}-${component?.slug}`}
                                     target="_blank"
                                   >
                                     <div className="relative border h-7 w-7 rounded-md cursor-pointer shadow-md bg-white">
