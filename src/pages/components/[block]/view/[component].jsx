@@ -3,7 +3,7 @@ import SEO from "@/components/Seo";
 import { COMPONENT_LIST } from "@/utils/constant";
 import { useRouter } from "next/router";
 import React from "react";
-import { componetList } from "./componentList";
+import componetList from "./componentList";
 
 const ViewComponent = ({ target }) => {
   const { query } = useRouter();
