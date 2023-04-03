@@ -8,6 +8,7 @@ import { compareName } from "../utils/helper";
 import { Listbox, Transition } from "@headlessui/react";
 import { HiChevronUpDown, HiCheckCircle } from "react-icons/hi2";
 import { TemplateConstant } from "@/utils/templateconstant";
+import SEO from "@/components/Seo";
 
 const category = [
   {
@@ -80,6 +81,10 @@ const Templates = () => {
 
   return (
     <>
+      <SEO
+        title="Templates"
+        image="https://tailwindblock.vercel.app/seo/templates.png"
+      />
       <Header />
 
       <div className="relative h-[261px]  top-20 bg-hero-pattern w-full">

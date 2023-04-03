@@ -8,6 +8,7 @@ import { compareName } from "../utils/helper";
 
 import { Listbox, Transition } from "@headlessui/react";
 import { HiChevronUpDown, HiCheckCircle } from "react-icons/hi2";
+import SEO from "@/components/Seo";
 
 const category = [
   {
@@ -100,8 +101,11 @@ const Components = () => {
 
   return (
     <>
+      <SEO
+        title="Tailwind Components"
+        image="https://tailwindblock.vercel.app/seo/components.png"
+      />
       <Header />
-
       <div className="relative h-[261px]  top-20 bg-hero-pattern w-full">
         <div className="absolute top-2.5 text-center lg:px-0 xl:px-28 px-3 md:px-7 h-full w-full flex justify-center items-center">
           <div className="flex flex-col justify-center items-center lg:w-1/2 gap-8 h-full ">

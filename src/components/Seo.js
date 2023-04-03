@@ -31,10 +31,7 @@ const SEO = ({ title, image, description, keywords }) => {
           "Free responsive components and template ,Preview it and and download source code in one click."
         }
       />
-      <meta
-        property="og:image"
-        content={image || "https://tailwindblock.vercel.app/homepage.png"}
-      />
+      content={image || "https://tailwindblock.vercel.app/homepage.png"}
       <meta property="og:image:alt" content={title || "Tailwind blocks"} />
       <meta name="keywords" content={keywords || "Component and templates"} />
     </Head>
