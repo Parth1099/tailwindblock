@@ -18,7 +18,7 @@ const SEO = ({ title, image, description, keywords }) => {
       <meta property="og:site_name" content="Tailwind blocks" />
       <meta
         property="og:url"
-        content={`https://https://tailwindblock.vercel.app/${router.pathname}`}
+        content={`https://https://tailwindblock.vercel.app${router.pathname}`}
       />
       <meta property="og:type" content="website" />
       <meta property="og:image:width" content="300" />
