@@ -244,12 +244,13 @@ const Components = () => {
                       <div className="w-full h-[190px] relative">
                         <Image src={data.mainImageSrc} alt="not found" fill />
                       </div>
-                      <span className="group-hover: bg-themeColor absolute top-0 group-hover:visible invisible group-hover:text-white  left-0 w-full text-center p-2 font-bold text-base">
+                      <span className="group-hover: bg-themeColor absolute top-0 group-hover:visible invisible group-hover:text-white  left-0 w-full text-center p-2 font-bold text-base group">
                         {data.hoverText}
                       </span>
-                      <div className="mt-3 font-bold text-center text-themeColor text-2xl">
+                      <div className="mt-3 font-bold text-center text-themeColor text-2xl truncate px-5 capitalize">
                         {data.title}
                       </div>
+
                       <div className="mb-3 font-bold text-center text-gray-900">
                         {data.subTitle}
                       </div>

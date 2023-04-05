@@ -10,5 +10,3 @@ export const TemplateList = (targetKey) => {
   if (targetKey === "tbdesign-temp4") return <Template4 />;
   else return <p> NO Component</p>;
 };
-
-export default TemplateList;

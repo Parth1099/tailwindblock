@@ -5,7 +5,7 @@ export const COMPONENT_LIST = [
   {
     mainImageSrc: "/bgcomponents/bgsample1.png",
     hoverText: "This element displays several cost comparisons.",
-    title: "Sample 1",
+    title: "Pricing Sections",
     subTitle: "Pricing component",
     type: "pricing",
     date: "2023-05-01",
@@ -21,7 +21,7 @@ export const COMPONENT_LIST = [
   {
     mainImageSrc: "/bgcomponents/bgsample2.png",
     hoverText: "On hover, the icons in this pricing component will change.",
-    title: "Sample 2",
+    title: "Comparing Prices",
     subTitle: "Pricing component",
     type: "pricing",
     date: "2023-08-23",
@@ -36,10 +36,10 @@ export const COMPONENT_LIST = [
   {
     mainImageSrc: "/bgcomponents/bgsample3.png",
     hoverText: "This price includes wonderful distribution with promotion.",
-    title: "Sample 3",
+    title: "Promotional Pricing",
     subTitle: "Pricing component",
     type: "pricing",
-    date: "2023-02-11",
+    date: "2022-03-20",
     slug: "sample-3",
     isCustomizeColor: true,
     codeAvailableLanguages: ["react", "HTML"],
@@ -52,10 +52,10 @@ export const COMPONENT_LIST = [
   {
     mainImageSrc: "/bgcomponents/bgsample4.png",
     hoverText: "This pricing compoenent includes a free trial period.",
-    title: "Sample 4",
+    title: "Pricing Plans",
     subTitle: "Pricing component",
     type: "pricing",
-    date: "2023-02-10",
+    date: "2023-03-20",
     slug: "sample-4",
     isCustomizeColor: true,
     codeAvailableLanguages: ["react", "HTML"],
@@ -69,7 +69,7 @@ export const COMPONENT_LIST = [
     mainImageSrc: "/bgcomponents/bgsample5.png",
     hoverText:
       "The distribution of three pricing comparisons is shown here in table style.",
-    title: "Sample 5",
+    title: "Pricing Table",
     subTitle: "Pricing component",
     type: "pricing",
     date: "2023-01-22",
@@ -84,7 +84,7 @@ export const COMPONENT_LIST = [
   {
     mainImageSrc: "/bgcomponents/bgcreditcard1.png",
     hoverText: "Component for credit cards that has dynamic colors and fields.",
-    title: "Sample 1",
+    title: "Shifting colour card",
     subTitle: "Creditcard component",
     type: "creditcard",
     date: "2023-01-01",
@@ -100,10 +100,10 @@ export const COMPONENT_LIST = [
     mainImageSrc: "/bgcomponents/bgcreditcard2.png",
     hoverText:
       "Beautiful graphic backdrop and field validation on the ATM card.",
-    title: "Sample 2",
+    title: "Picture-Backed Card",
     subTitle: "Creditcard component",
     type: "creditcard",
-    date: "2022-02-03",
+    date: "2022-11-03",
     slug: "card-2",
     isCustomizeColor: false,
     codeAvailableLanguages: ["react"],
@@ -115,7 +115,7 @@ export const COMPONENT_LIST = [
   {
     mainImageSrc: "/bgcomponents/bgcreditcard3.png",
     hoverText: "ATM card with gorgeous graphic backdrop and field validation.",
-    title: "Sample 3",
+    title: "Regular Credit Card",
     subTitle: "Creditcard component",
     type: "creditcard",
     date: "2023-03-01",
@@ -130,7 +130,7 @@ export const COMPONENT_LIST = [
   {
     mainImageSrc: "/bgcomponents/bgcarousal1.png",
     hoverText: "Responsive and simple carousal with arrows.",
-    title: "Sample 1",
+    title: "Carousel with controls",
     subTitle: "Carousal component",
     type: "carousal",
     date: "2022-07-01",
@@ -146,7 +146,7 @@ export const COMPONENT_LIST = [
     mainImageSrc: "/bgcomponents/bgcarousal2.png",
     hoverText:
       "Carousal component with infinite loop, dynamic text and with fade animation",
-    title: "Sample 2",
+    title: "All-inclusive carousel",
     subTitle: "Carousal component",
     type: "carousal",
     date: "2023-03-20",
@@ -161,7 +161,7 @@ export const COMPONENT_LIST = [
   {
     mainImageSrc: "/bgcomponents/bg-cards.png",
     hoverText: "Attractive, functional, and effective card Layout.",
-    title: "Card",
+    title: "Stack of cards with scale effect",
     subTitle: "Card component",
     type: "card",
     date: "2023-03-01",
@@ -176,7 +176,7 @@ export const COMPONENT_LIST = [
   {
     mainImageSrc: "/bgcomponents/animation.gif",
     hoverText: "Component for the loader, button, and design with animation.",
-    title: "Aniamtion",
+    title: "Infinite Animation",
     subTitle: "Animation component",
     type: "animation",
     date: "2023-03-14",
@@ -191,12 +191,11 @@ export const COMPONENT_LIST = [
   {
     mainImageSrc: "/bgcomponents/bg-btn-1.png",
     hoverText: "Flexible colour and style buttons.",
-    title: "Sample Buttons 1",
+    title: "Changing Colour Buttons",
     subTitle: "Button component",
     type: "button",
     date: "2023-03-16",
     slug: "sample1",
-    component: "ButtonSample1",
     isCustomizeColor: true,
     codeAvailableLanguages: ["react"],
     pageDetails: {
@@ -208,7 +207,7 @@ export const COMPONENT_LIST = [
     mainImageSrc: "/bgcomponents/bg-btn-2.png",
     hoverText:
       "Colorful buttons component with with outline ,rounded and fill style",
-    title: "Sample Buttons 2",
+    title: "Rounded and Fill Buttons",
     subTitle: "Button component",
     type: "button",
     date: "2023-03-20",
@@ -223,7 +222,7 @@ export const COMPONENT_LIST = [
   {
     mainImageSrc: "/bgcomponents/bganimatedbutton.gif",
     hoverText: "Components of buttons with different hover effects.",
-    title: "Sample Buttons 3",
+    title: "Button hover animations",
     subTitle: "Button component",
     type: "button",
     date: "2023-03-13",
@@ -238,7 +237,7 @@ export const COMPONENT_LIST = [
   {
     mainImageSrc: "/bgcomponents/bginput.jpg",
     hoverText: "Various input field types with dynamic border colours.",
-    title: "Input",
+    title: "Variouns Of Input",
     subTitle: "Input component",
     type: "input",
     date: "2023-03-26",
@@ -253,8 +252,8 @@ export const COMPONENT_LIST = [
   {
     mainImageSrc: "/bgcomponents/bgradiobutton.jpg",
     hoverText: "Radio button with an unique style.",
-    title: "Radio Button",
-    subTitle: "Radio Button component",
+    title: "Several Radio Buttons",
+    subTitle: "Radio Button Component",
     type: "radiobutton",
     date: "2023-03-27",
     slug: "radiobutton-sample-1",
@@ -268,7 +267,7 @@ export const COMPONENT_LIST = [
   {
     mainImageSrc: "/bgcomponents/bgcheckbox.png",
     hoverText: "Checkbox elements with vibrant and stylish categories",
-    title: "Check Box",
+    title: "Checkbox Variation",
     subTitle: "Checkbox component",
     type: "checkbox",
     date: "2023-03-28",
