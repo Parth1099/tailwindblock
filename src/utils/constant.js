@@ -313,4 +313,52 @@ export const COMPONENT_LIST = [
       componentReact: "cardReact",
     },
   },
+  {
+    mainImageSrc: "/bgcomponents/bgcountdown1.png",
+    hoverText: "Timer component to show the user how much time has to wait.",
+    title: "Day countdown",
+    subTitle: "Timer component",
+    type: "timer",
+    date: "2023-04-07",
+    slug: "timer-1",
+    isCustomizeColor: false,
+    codeAvailableLanguages: ["react"],
+    pageDetails: {
+      title: "Timer Component 1",
+      componentReact: "timerReact",
+    },
+  },
+  {
+    mainImageSrc: "/bgcomponents/bgcountdown2.png",
+    hoverText:
+      "A responsive timer that displays the conclusion of our waiting time.",
+    title: "Box countdown",
+    subTitle: "Timer component",
+    type: "timer",
+    date: "2023-04-10",
+    slug: "timer-2",
+    isCustomizeColor: false,
+    codeAvailableLanguages: ["react"],
+    pageDetails: {
+      title: "Timer Component 2",
+      componentReact: "timerReact",
+    },
+  },
+
+  {
+    mainImageSrc: "/bgcomponents/bgcountdown3.png",
+    hoverText:
+      "Timer component which used to display remaining time for a particular function.",
+    title: "countdown labels",
+    subTitle: "Timer component",
+    type: "timer",
+    date: "2023-04-01",
+    slug: "timer-3",
+    isCustomizeColor: false,
+    codeAvailableLanguages: ["react"],
+    pageDetails: {
+      title: "Timer Component 3",
+      componentReact: "timerReact",
+    },
+  },
 ];

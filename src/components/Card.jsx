@@ -50,7 +50,7 @@ const Card = ({ data, type }) => {
               {data.title}
             </div>
 
-            <div className="mb-3 font-bold text-center text-gray-900">
+            <div className="mb-3 font-bold text-center text-gray-900 capitalize">
               {data.subTitle}
             </div>
           </div>

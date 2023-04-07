@@ -53,8 +53,6 @@ const PreviewSecion = ({ component, page, array_map, query_slug }) => {
   const readmeCode =
     require(`!!raw-loader!../utils/README.md`).default.toString();
   const getCode = (component) => {
-    console.log(component);
-
     const rawCode =
       component?.pageDetails?.componentReact !== "templateReact"
         ? require(`!!raw-loader!../${page}/${component?.type}/${component?.slug}/${codeBlockData}`).default.toString()
@@ -289,7 +287,7 @@ const PreviewSecion = ({ component, page, array_map, query_slug }) => {
             {windowMounted && (
               <Link
                 data-testid={`preview`}
-                href={`${window.location.origin}/${page}/${component?.type}/${component?.type}-${component?.slug}?color=${color}`}
+                href={`${window.location.origin}/${page}/${component?.type}/view/${component?.type}-${component?.slug}?color=${color}`}
                 target="_blank"
               >
                 <div className="cursor-pointer">

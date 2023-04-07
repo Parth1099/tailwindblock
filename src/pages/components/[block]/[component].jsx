@@ -29,7 +29,7 @@ const CommonLayout = ({ check }) => {
         description={check?.hoverText}
         image={`https://tailwindblock.vercel.app/${check?.mainImageSrc}`}
       />
-      <div className="bg-component-back w-full bg-cover bg-no-repeat h-[300px] mt-20"></div>
+      <div className="mb-5 bg-component-back w-full bg-cover bg-no-repeat h-[300px] mt-20"></div>
       {COMPONENT_LIST.map(
         (component, index) =>
           component.slug === query.component && (

@@ -10,7 +10,7 @@ const MoreComponent = ({
 }) => {
   let targetsLength = 0;
   return (
-    <div className="w-full text-center flex flex-col items-center justify-center gap-5 md:gap-10 capitalize text-xl  font-semibold tracking-[0.05em]">
+    <div className="mb-10 w-full text-center flex flex-col items-center justify-center gap-5 md:gap-10 capitalize text-xl  font-semibold tracking-[0.05em]">
       <div className="xl:text-[38px] text-[24px] tracking-[0.055em]">
         For More {page}
       </div>

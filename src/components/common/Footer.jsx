@@ -31,7 +31,7 @@ const socialmedia = [
 const Footer = () => {
   const router = useRouter();
   return (
-    <div className="static bottom-0 w-full flex justify-center items-center mt-7 ">
+    <div className=" static bottom-0 w-full flex justify-center items-center">
       <div className="text-white pt-[30px] md:pt-[30px]  flex flex-col items-center justify-center gap-11 w-full max-h-[500px]  bg-footerBg">
         <div className="flex flex-col gap-[15px] lg:gap-[30px] lg:px-[161px] w-full">
           <div

@@ -25,8 +25,8 @@ const AdvertiseCard = ({ color }) => {
               Taliwind Components and Templates
             </span>
           </div>
-          <div className="mt-4 text-justify">
-            <span className="font-semibold text-gray-800/50 text-sm md:text-lg">
+          <div className="mt-4">
+            <p className="font-semibold text-gray-800/50 text-sm md:text-lg">
               <span
                 style={{ backgroundColor: primaryColor }}
                 className="box-decoration-slice bg-[${primaryColor}]/50 text-white px-1"
@@ -47,8 +47,8 @@ const AdvertiseCard = ({ color }) => {
               >
                 Download
               </span>
-              &nbsp;source code in one click.
-            </span>
+              &nbsp; source code in one click.
+            </p>
           </div>
           <div className="mt-4">
             <a href="/components" target="_blank">

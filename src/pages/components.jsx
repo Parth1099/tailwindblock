@@ -9,6 +9,7 @@ import { compareName } from "../utils/helper";
 import { Listbox, Transition } from "@headlessui/react";
 import { HiChevronUpDown, HiCheckCircle } from "react-icons/hi2";
 import SEO from "@/components/Seo";
+import SideLayout from "@/components/SideLayout";
 
 const category = [
   {
@@ -106,28 +107,26 @@ const Components = () => {
         image="https://tailwindblock.vercel.app/seo/components.png"
       />
       <Header />
-      <div className="relative h-[261px]  top-20 bg-hero-pattern w-full">
+      <div className="relative h-[276px] top-20 bg-hero-pattern bg-cover bg-no-repeat w-full">
         <div className="absolute top-2.5 text-center lg:px-0 xl:px-28 px-3 md:px-7 h-full w-full flex justify-center items-center">
           <div className="flex flex-col justify-center items-center lg:w-1/2 gap-8 h-full ">
             <div className="w-full flex justify-center ">
-              <div className="max-w-[200px] sm:max-w-[300px] lg:max-w-[400px] w-full p-2 rounded text-lg sm:text-2xl  capitalize bg-themeColor text-white">
-                Tailwind components
-              </div>
+              <h1 className="font-semibold text-xl sm:text-3xl md:text-4xl xl:text-5xl leading-tight text-[#F1F5FD]">
+                Tailwind CSS
+              </h1>
             </div>
-
-            <div className="text-base">
-              <p>
-                Here is a list of all free components made with tailwind css and
-                reactjs. Users can preview all views on a tablet, mobile, or
-                desktop, and users can copy the code and paste it into their
-                compiler. user can customize the code as well.
-              </p>
-            </div>
+            <p className="font-normal text-base sm:text-xl md:text-2xl leading-tight text-white">
+              Examples of beautifully produced, completely responsive, and
+              professionally designed components that you can add to your
+              Tailwind projects and modify as you like.
+            </p>
           </div>
         </div>
       </div>
 
-      <div className="flex flex-col px-4 sm:flex-row gap-3 md:gap-10 container mx-auto pt-28">
+      <SideLayout></SideLayout>
+
+      {/* <div className="flex flex-col px-4 sm:flex-row gap-3 md:gap-10 container mx-auto pt-28">
         <aside className="border h-fit md:h-[500px]  lg:h-[580px] w-full sm:bg-white text-black   overflow-x-auto rounded sm:w-72 px-4 py-2 sm:p-4 sm:sticky top-24">
           <div className="sm:flex-col flex flex-row gap-3">
             {category.map((ctype, index) => (
@@ -224,7 +223,7 @@ const Components = () => {
                       </Listbox.Option>
                     ))}
                   </Listbox.Options>
-                </Transition>
+                </Transition>SS
               </div>
             </Listbox>
           </div>
@@ -251,7 +250,7 @@ const Components = () => {
                         {data.title}
                       </div>
 
-                      <div className="mb-3 font-bold text-center text-gray-900">
+                      <div className="mb-3 font-bold text-center text-gray-900 capitalize">
                         {data.subTitle}
                       </div>
                     </div>
@@ -261,7 +260,7 @@ const Components = () => {
             ))}
           </div>
         </main>
-      </div>
+      </div> */}
 
       <Footer />
     </>

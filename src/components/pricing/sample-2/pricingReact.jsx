@@ -7,7 +7,7 @@ const staticValue = [
   "Advanced analytics",
 ];
 export default function Pricing() {
-  const [icon, setIcon] = useState("2");
+  const [icon, setIcon] = useState("");
 
   return (
     <div className="relative">

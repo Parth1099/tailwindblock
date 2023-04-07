@@ -15,7 +15,8 @@ module.exports = {
         ssm: "425px",
       },
       backgroundImage: {
-        "hero-pattern": "url('/assets/common/headerback.svg')",
+        "hero-pattern": "url('/assets/common/componentsBg.png')",
+        homeGradient: "url('/assets/common/line.svg')",
         "details-back": "url('/assets/common/detailsback.png')",
         "nft-back": "url('/assets/crypto/nft_back.png')",
         "landing-back": "url('/assets/advocate/background_landing.png')",

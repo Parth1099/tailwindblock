@@ -2,7 +2,7 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import Image from "next/image";
 import React from "react";
 import * as Yup from "yup";
-import ContactImg from "../../public/assets/common/contactImg.svg";
+import ContactImg from "../../public/assets/common/contactImg.png";
 
 const SignupSchema = Yup.object().shape({
   name: Yup.string()

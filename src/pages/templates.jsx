@@ -87,7 +87,7 @@ const Templates = () => {
       />
       <Header />
 
-      <div className="relative h-[261px]  top-20 bg-hero-pattern w-full">
+      <div className="relative h-[261px] top-20 bg-hero-pattern w-full">
         <div className="absolute top-2.5 text-center lg:px-0 xl:px-28 px-6 h-full w-full flex justify-center items-center">
           <div className="flex flex-col justify-center items-center gap-8 md:w-1/2 h-full ">
             <div className="w-full flex justify-center ">
@@ -108,7 +108,7 @@ const Templates = () => {
         </div>
       </div>
 
-      <div className="flex flex-col px-4 sm:flex-row gap-10 container mx-auto pt-28">
+      <div className="mb-10 flex flex-col px-4 sm:flex-row gap-10 container mx-auto pt-28">
         <aside className="border h-fit  md:h-[400px] w-full sm:bg-white text-black no-scrollbar  overflow-x-auto rounded sm:w-72 px-4 py-2 sm:p-4 sm:sticky top-24">
           <div className="sm:flex-col flex flex-row gap-3">
             {category.map((ctype, index) => (
@@ -152,7 +152,7 @@ const Templates = () => {
             ))}
           </div>
         </aside>
-        <main className="flex-1">
+        <main className="flex-1 ">
           <div className="flex  items-end mb-5 text-center justify-end cursor-pointer ">
             <Listbox value={selected} onChange={(val) => filterdata(val)}>
               <div className=" relative mt-1 min-w-[160px]">
@@ -232,7 +232,7 @@ const Templates = () => {
                       <div className="mt-3 font-bold text-center text-themeColor text-2xl truncate px-5 capitalize">
                         {data.title}
                       </div>
-                      <div className="mb-3 font-bold text-center text-gray-900">
+                      <div className="mb-3 font-bold text-center text-gray-900 capitalize">
                         {data.subTitle}
                       </div>
                     </div>
