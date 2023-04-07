@@ -17,7 +17,7 @@ import PricingSample3 from "../pricing-sample-3";
 import PricingSample4 from "../pricing-sample-4";
 import PricingSample5 from "../pricing-sample-5";
 
-export const componetList = (targetKey) => {
+const componetList = (targetKey) => {
   if (targetKey === "button-sample1") return <ButtonSample1 />;
   else if (targetKey === "button-sample2") return <ButtonSample2 />;
   else if (targetKey === "button-sample3") return <ButtonSample3 />;
@@ -39,3 +39,5 @@ export const componetList = (targetKey) => {
   else if (targetKey === "checkbox-checkbox-sample-1") return <CheckBox />;
   else return <p> NO Component</p>;
 };
+
+export default componetList;
