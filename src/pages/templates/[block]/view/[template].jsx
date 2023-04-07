@@ -2,12 +2,12 @@ import SEO from "@/components/Seo";
 import { TemplateConstant } from "@/utils/templateconstant";
 import { useRouter } from "next/router";
 import React from "react";
-import TemplateList from "./TemplateList";
+import { TemplateList } from "./TemplateList";
 
 const ViewComponent = ({ target }) => {
   const { query } = useRouter();
-  console.log(query, " : query");
-  console.log(target, " : target");
+  // console.log(query, " : query");
+  // console.log(target, " : target");
 
   return (
     <>

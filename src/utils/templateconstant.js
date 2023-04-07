@@ -2,6 +2,7 @@ export const TEMPLATE_REACT = "templateReact";
 
 export const TemplateConstant = [
   {
+    section: "template",
     mainImageSrc: "/bgcomponents/bgnft.png",
     hoverText:
       "Responsive landing page template with cards, category and infinite carousal.",
@@ -17,6 +18,7 @@ export const TemplateConstant = [
     },
   },
   {
+    section: "template",
     mainImageSrc: "/bgcomponents/bgcrypto.png",
     hoverText: "This is Landing Page Template",
     title: "Crypto",
@@ -31,6 +33,7 @@ export const TemplateConstant = [
     },
   },
   {
+    section: "template",
     mainImageSrc: "/bgcomponents/bgadvocate.png",
     hoverText: "Landing page template with all primary requirements.",
     title: "Advocate",
@@ -45,6 +48,7 @@ export const TemplateConstant = [
     },
   },
   {
+    section: "template",
     mainImageSrc: "/bgcomponents/bgtbdesign.png",
     hoverText: "This is landing page template for showing person's portfolio",
     title: "TBDesign",

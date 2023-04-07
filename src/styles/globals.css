@@ -5,6 +5,7 @@
 body,
 html {
   font-family: "Nunito", sans-serif;
+  background-color: #f1f5fd;
 }
 
 /* MOBILE MENU  */
@@ -30,7 +31,7 @@ html {
   position: absolute;
   height: 3px;
   width: 100%;
-  background: #fff;
+  background: black;
   border-radius: 9px;
   opacity: 1;
   left: 0;
@@ -162,6 +163,14 @@ html {
 
   color: #dda45c !important;
 }
+.popular .slick-dots li.slick-active button:before {
+  font-size: 20px !important;
+  display: flex !important;
+  justify-content: center !important;
+  border: none;
+
+  color: #365cce !important;
+}
 
 .slick-dots li button:before {
   font-size: 20px !important;
@@ -172,6 +181,18 @@ html {
   border: 1px solid #dda45c;
   border-radius: 100%;
 }
+.popular .slick-dots li button:before {
+  font-size: 20px !important;
+  display: flex;
+  position: relative;
+  top: 30px;
+
+  justify-content: center !important;
+  border: none;
+  color: #e0e9f9 !important;
+  border: 1px solid #75a0e5;
+  border-radius: 100%;
+}
 .slick-arrow.slick-next:before {
   content: "";
 }
@@ -179,6 +200,7 @@ html {
 .slick-arrow.slick-prev:before {
   content: "";
 }
+
 @media only screen and (max-width: 767px) {
   .slick-list {
     width: 90vw !important;
@@ -202,6 +224,10 @@ html {
 @media only screen and (min-width: 1280px) {
   .slick-list {
     max-width: 1230px !important;
+  }
+  .popular .slick-track {
+    display: flex;
+    gap: 12px;
   }
 }
 .progress {

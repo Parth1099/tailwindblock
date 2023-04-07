@@ -14,8 +14,10 @@
     "@fontsource/nunito": "^4.5.12",
     "@headlessui/react": "^1.7.13",
     "classnames": "^2.3.2",
+    "date-fns": "^2.29.3",
     "eslint": "8.35.0",
     "eslint-config-next": "13.2.4",
+    "formik": "^2.2.9",
     "jszip": "^3.10.1",
     "next": "13.2.4",
     "next-share": "^0.20.0",
@@ -29,7 +31,8 @@
     "react-loader-spinner": "^5.3.4",
     "react-share": "^4.4.1",
     "react-slick": "^0.29.0",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "yup": "^1.0.2"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",

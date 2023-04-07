@@ -1,33 +1,40 @@
+import HtmlLogo from "@/utils/images/HtmlLogo";
+import ReactLogo from "@/utils/images/ReactLogo";
+import TailwindLogo from "@/utils/images/TailwindLogo";
+import VueLogo from "@/utils/images/VueLogo";
+import Link from "next/link";
 import SEO from "../Seo";
 
 const Introduction = () => {
   return (
-    <>
+    <div>
       <SEO />
-      <div>
-        <div className="mt-[80px] mb-[280px] w-full font-nunito flex justify-center items-center bg-home-back bg-no-repeat bg-cover h-[550px]">
-          <div className="max-w-[994px] -mt-[100px] text-center flex-col gap-[32px] flex">
-            <div className="px-[30px] ">
-              <fieldset className="border-dashed rounded-lg border border-black rotate-180 ">
-                <legend className="px-[20px] rotate-180 text-[12px] sm:text-[22px] tracking-[0.055em] font-bold text-[#1E7ADF]">
-                  By the Infynno Solutions
-                </legend>
-                <div className="rotate-180 text-[16px] sm:text-[35px] lg:text-[48px] px-0 md:px-[10%] lg:px-[5%]  text-center  sm:leading-[65px] tracking-[0.055em] text-[#4F30B9]">
-                  UI elements that are beautifully Made with{" "}
-                  <span className="font-bold">Tailwind CSS</span>
-                </div>
-              </fieldset>
-            </div>
+      <div className="mt-[80px] w-full font-nunito flex justify-center items-center bg-home-back bg-no-repeat bg-cover h-auto py-8 md:py-12">
+        <div className="max-w-[994px] text-center flex-col gap-5 md:gap-9 flex">
+          <div className="px-[30px] flex flex-col gap-4 text-[#F1F5FD]">
+            <h1 className="font-bold text-2xl md:text-4xl lg:text-5xl leading-normal md:leading-snug lg:leading-snug xl:text-[58px] xl:leading-[89px] text-center tracking-wide">
+              UI elements that are beautifully Made with Tailwind CSS
+            </h1>
+            <Link
+              href={"https://infynno.com/"}
+              target="_blank"
+              className="cursor-pointer hover:underline"
+            >
+              <p className="font-semibold text-base sm:text-xl md:text-2xl text-center">
+                By the Infynno Solutions
+              </p>
+            </Link>
+          </div>
 
-            <div className="px-[10px] sm:px-0 text-[12px] sm:text-[16px] lg:text-[22px]  leading-[30px] tracking-[0.055em] text-[#1c1c23cc] font-semibold">
-              Examples of beautifully produced, completely responsive, and
-              professionally designed components that you can add to your
-              Tailwind projects and modify as you like.
-            </div>
+          <div className="flex gap-8 md:gap-20 w-full px-5 sm:px-0 max-w-xs sm:max-w-sm md:max-w-lg xl:max-w-xl mx-auto">
+            <TailwindLogo />
+            <HtmlLogo />
+            <ReactLogo />
+            <VueLogo />
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 export default Introduction;

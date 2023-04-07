@@ -8,8 +8,12 @@ module.exports = {
     // Or if using `src` directory:
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+
   theme: {
     extend: {
+      screens: {
+        ssm: "425px",
+      },
       backgroundImage: {
         "hero-pattern": "url('/assets/common/headerback.svg')",
         "details-back": "url('/assets/common/detailsback.png')",
@@ -21,19 +25,25 @@ module.exports = {
         "cat-one": "url('/assets/advocate/cat_one.png')",
         "cat-two": "url('/assets/advocate/cat_two.png')",
         "cat-three": "url('/assets/advocate/cat_three.png')",
-        "home-back": "url('/assets/common/homeback.png')",
+        "home-back": "url('/assets/common/home-back.png')",
         "component-back": "url('/assets/common/bgdetailsection.png')",
+        footerBg:
+          "linear-gradient(85.88deg, #547FDD 1.67%, #365CCE 50.99%, #2D3C7B 95.8%)",
 
         "bg-linear":
           "linear-gradient(180deg, rgba(162, 89, 255, 0) 0%, #A259FF 100%)",
+        contactBtn:
+          "linear-gradient(270.09deg, #32439B 0.1%, #365CCE 45.15%, #547FDD 95.78%)",
       },
       colors: {
         themeColor: "#1e3a8a",
+        borderColor: "#75A0E5",
       },
     },
     boxShadow: {
       componentcard: "0px 10px 20px rgba(0, 0, 0, 0.1)",
       subcard: "0px 0px 15px rgba(0, 0, 0, 0.1)",
+      pupularCard: "0px 0px 20px rgba(0, 0, 0, 0.2)",
     },
     container: {
       padding: {

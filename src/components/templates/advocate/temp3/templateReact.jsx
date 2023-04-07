@@ -274,7 +274,7 @@ const Advocate = () => {
             <div className="md:text-[40px] text-[30px] leading-[60px] tracking-[0.02em] text-[#1C1C23] font-semibold">
               Popular Lawyers
             </div>
-            <div className="mx-0.5">
+            <div className="template mx-0.5">
               <Slider {...settings_first}>
                 {popularLawyer.map((data, index) => {
                   return (
@@ -370,7 +370,7 @@ const Advocate = () => {
           <div className="lg:text-[40px] text-[28px] md:text-[30px] leading-[68px] tracking-[0.02em] text-[#1C1C23] font-semibold">
             Popular Categories
           </div>
-          <div className="flex md:flex-row xs:flex-col xs:gap-2.5 xl:gap-[51px] px-[5%] md:gap-[30px]">
+          <div className="template flex md:flex-row xs:flex-col xs:gap-2.5 xl:gap-[51px] px-[5%] md:gap-[30px]">
             <Slider {...settings_first}>
               {popularcatData.map((data, index) => {
                 return (
@@ -440,7 +440,7 @@ const Advocate = () => {
             Hear it From Our Customers
           </div>
 
-          <div className="mb-5 flex  justify-center xl:max-w-[1234px]">
+          <div className="mb-5 flex template justify-center xl:max-w-[1234px]">
             <Slider {...settings}>
               {customer.map((data, index) => {
                 return (
