@@ -7,6 +7,7 @@ import React, { Fragment, useEffect, useRef, useState } from "react";
 import { HiCheckCircle, HiChevronUpDown } from "react-icons/hi2";
 import Card from "./Card";
 import { MdClear } from "react-icons/md";
+import classNames from "classnames";
 
 const people = [{ name: "Recent Added" }, { name: "A - Z" }, { name: "Z - A" }];
 
@@ -272,48 +273,55 @@ const SideLayout = ({ listData, category }) => {
       </div>
       <div className="hidden ssm:grid ssm:grid-cols-[30%_70%] sm:grid-cols-[30%_70%] xl:grid-cols-[20%_80%] w-full">
         <div className="h-full flex flex-col border-r border-[#75A0E5] items-center">
-          <div className="w-full h-full max-h-[312px] sm:max-h-[448px] overflow-y-scroll scrollbar-thumb-[#75A0E5] scrollbar-thin">
-            {categoryData.map((ctype, index) => (
-              <div
-                key={index}
-                className={`border-[#75A0E5] border-b whitespace-nowrap w-full group px-2 py-2 sm:py-3 sm:px-4 items-center sm:leading-[2.50em] flex sm:justify-between gap-1 text-[14px] cursor-pointer text-xs sm:text-sm md:text-lg font-bold hover:bg-[#E0E9F9] 
+          <div
+            className={classNames(
+              "w-full h-full max-h-[312px] text-black text-opacity-60 sm:max-h-[448px] overflow-y-scroll scrollbar-thumb-[#75A0E5] scrollbar-thin",
+              !categoryData.length > 0 && "p-5"
+            )}
+          >
+            {categoryData.length > 0
+              ? categoryData.map((ctype, index) => (
+                  <div
+                    key={index}
+                    className={`border-[#75A0E5] border-b whitespace-nowrap w-full group px-2 py-2 sm:py-3 sm:px-4 items-center sm:leading-[2.50em] flex sm:justify-between gap-1 text-[14px] cursor-pointer text-xs sm:text-sm md:text-lg font-bold hover:bg-[#E0E9F9] 
                     ${
                       components.type === ctype.type
                         ? "text-[#365CCE]"
                         : "text-black text-opacity-60"
                     }
                   `}
-                onClick={() => {
-                  ctype.type === "all"
-                    ? setComponents({
-                        count: listData.length,
-                        type: ctype.type,
-                        visible: listData,
-                      })
-                    : setComponents({
-                        count: listData.filter(
-                          (item) => item.type === ctype.type
-                        ).length,
-                        type: ctype.type,
-                        visible: listData.filter(
-                          (item) => item.type === ctype.type
-                        ),
-                      });
-                }}
-              >
-                <span className="w-full max-w-[100px] block truncate">
-                  {ctype.name}
-                </span>
-                <span className="py-0.5 sm:px-2.5 leading-[1.50em]">
-                  (
-                  {ctype.type === "all"
-                    ? listData.length
-                    : listData.filter((item) => item.type === ctype.type)
-                        .length}
-                  )
-                </span>
-              </div>
-            ))}
+                    onClick={() => {
+                      ctype.type === "all"
+                        ? setComponents({
+                            count: listData.length,
+                            type: ctype.type,
+                            visible: listData,
+                          })
+                        : setComponents({
+                            count: listData.filter(
+                              (item) => item.type === ctype.type
+                            ).length,
+                            type: ctype.type,
+                            visible: listData.filter(
+                              (item) => item.type === ctype.type
+                            ),
+                          });
+                    }}
+                  >
+                    <span className="w-full max-w-[100px] block truncate">
+                      {ctype.name}
+                    </span>
+                    <span className="py-0.5 sm:px-2.5 leading-[1.50em]">
+                      (
+                      {ctype.type === "all"
+                        ? listData.length
+                        : listData.filter((item) => item.type === ctype.type)
+                            .length}
+                      )
+                    </span>
+                  </div>
+                ))
+              : "No Match Found"}
           </div>
         </div>
         <div className="bg-[#E0E9F9] min-h-[700px] p-3 md:p-8 h-full w-full">
