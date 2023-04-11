@@ -36,7 +36,7 @@ const ChangeLog = () => {
             <div className="text-2xl md:text-[56px] font-semibold">
               Changelog
             </div>
-            <div className="text-base md:text-[24px] font-normal leading-[33px] px-5 md:px-0  md:max-w-[592px] text-center">
+            <div className="text-[#00000099] text-base md:text-[24px] font-normal leading-[33px] px-5 md:px-0  md:max-w-[592px] text-center">
               Weekly update log of free & premium tailwind CSS components and
               templates.
             </div>

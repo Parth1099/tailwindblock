@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const Card = ({ data, type }) => {
+const Card = ({ data, type, className }) => {
   return (
     <div>
       <Link
@@ -11,7 +11,12 @@ const Card = ({ data, type }) => {
           pathname: `${type}/${data.type}/${data.slug}`,
         }}
       >
-        <div className="border-[#75A0E5] w-full mx-auto group border rounded-xl shadow-subcard overflow-hidden cursor-pointer hover:shadow-[0px_3px_6px_rgba(0,0,0,0.16)] hover:scale-[1] hover:duration-75">
+        <div
+          className={classNames(
+            "border border-[#75A0E5] w-full mx-auto group rounded-xl shadow-subcard overflow-hidden cursor-pointer hover:shadow-[0px_3px_6px_rgba(0,0,0,0.16)] hover:scale-[1] hover:duration-75",
+            className
+          )}
+        >
           <div>
             <div
               className={classNames(

@@ -26,7 +26,6 @@ const PopularComponents = () => {
         )
       ),
     ]);
-    console.log(arr, "arrrrrrrr");
   }, []);
 
   const color = [

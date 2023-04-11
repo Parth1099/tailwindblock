@@ -119,7 +119,7 @@ const Components = () => {
         </div>
       </div>
 
-      <SideLayout></SideLayout>
+      <SideLayout listData={COMPONENT_LIST} category={category} />
 
       <Footer />
     </>
