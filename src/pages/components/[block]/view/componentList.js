@@ -9,6 +9,9 @@ import CreditCard2 from "@/components/creditcard/card-2/creditcardReact";
 import CreditCard3 from "@/components/creditcard/card-3/creditcardReact";
 import Input from "@/components/input/input-sample-1/inputReact";
 import RadioButton from "@/components/radiobutton/radiobutton-sample-1/radioButtonReact";
+import Timer1 from "@/components/timer/timer-1/timerReact";
+import Timer2 from "@/components/timer/timer-2/timerReact";
+import Timer3 from "@/components/timer/timer-3/timerReact";
 import Carousal1 from "../carousal-carousal-1";
 import Carousal2 from "../carousal-carousal-2";
 import PricingSample1 from "../pricing-sample-1";
@@ -37,6 +40,9 @@ const componetList = (targetKey) => {
   else if (targetKey === "radiobutton-radiobutton-sample-1")
     return <RadioButton />;
   else if (targetKey === "checkbox-checkbox-sample-1") return <CheckBox />;
+  else if (targetKey === "timer-timer-1") return <Timer1 />;
+  else if (targetKey === "timer-timer-2") return <Timer2 />;
+  else if (targetKey === "timer-timer-3") return <Timer3 />;
   else return <p> NO Component</p>;
 };
 

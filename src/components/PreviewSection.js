@@ -305,7 +305,7 @@ const PreviewSecion = ({ component, page, array_map, query_slug }) => {
               >
                 <CopyIcon />
               </span>
-              <span class="absolute bottom-7 right-[-5px] scale-0 transition-all rounded bg-gray-800 p-1 text-xs text-white group-hover:scale-100">
+              <span className="absolute bottom-7 right-[-5px] scale-0 transition-all rounded bg-gray-800 p-1 text-xs text-white group-hover:scale-100">
                 {!copyBlock.clicked ? "Copy" : "Copied"}
               </span>
             </div>

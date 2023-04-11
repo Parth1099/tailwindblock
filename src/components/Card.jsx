@@ -24,7 +24,7 @@ const Card = ({ data, type }) => {
                   "relative rounded-lg group-hover:scale-105 group-hover:duration-75",
                   type === "components"
                     ? "h-[190px] w-full"
-                    : "h-full w-10/12 top-10 xl:top-20"
+                    : "h-full w-11/12 md:w-10/12 top-5 md:top-10 xl:top-20"
                   // : ""
                 )}
               >
@@ -33,7 +33,7 @@ const Card = ({ data, type }) => {
                   className="rounded-lg"
                   alt="not found"
                   fill
-                  style={{ objectFit: "cover", objectPosition: "top" }}
+                  style={{ objectFit: "fill" }}
                 />
               </div>
             </div>
@@ -46,11 +46,11 @@ const Card = ({ data, type }) => {
             >
               {data.hoverText}
             </span>
-            <div className="mt-3 font-bold text-center text-black text-opacity-80 text-2xl truncate px-5 capitalize">
+            <div className="mt-3 font-bold text-center text-black text-opacity-80 text-lg md:text-2xl truncate px-5 capitalize">
               {data.title}
             </div>
 
-            <div className="mb-3 font-bold text-center text-gray-900 capitalize">
+            <div className="mb-3 text-xs sm:text-sm md:text-lg font-bold text-center text-gray-900">
               {data.subTitle}
             </div>
           </div>

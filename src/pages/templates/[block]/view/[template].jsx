@@ -6,8 +6,6 @@ import TemplateList from "./TemplateList";
 
 const ViewComponent = ({ target }) => {
   const { query } = useRouter();
-  // console.log(query, " : query");
-  // console.log(target, " : target");
 
   return (
     <>

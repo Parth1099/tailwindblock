@@ -34,10 +34,7 @@ const Contact = () => {
               message: "",
             }}
             validationSchema={SignupSchema}
-            onSubmit={(values) => {
-              // same shape as initial values
-              console.log(values);
-            }}
+            onSubmit={(values) => {}}
           >
             {({ errors, touched }) => (
               <Form className="flex flex-col gap-7 w-full">
@@ -75,7 +72,7 @@ const Contact = () => {
                   </span>
                 </div>
                 <button
-                  className="bg-contactBtn hover:scale-105 py-3 font-normal text-lg text-white rounded w-full max-w-[117px]"
+                  className="bg-contactBtn hover:scale-105 py-3 font-normal text-sm md:text-lg text-white rounded w-full max-w-[117px]"
                   type="submit"
                 >
                   Submit

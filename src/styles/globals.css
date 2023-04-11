@@ -151,7 +151,7 @@ html {
   padding-inline: 5px !important;
 }
 .slick-list {
-  min-height: 320px !important;
+  /* min-height: 320px !important; */
   width: 90vw !important;
 }
 

@@ -16,7 +16,8 @@ module.exports = {
       },
       backgroundImage: {
         "hero-pattern": "url('/assets/common/componentsBg.png')",
-        homeGradient: "url('/assets/common/line.svg')",
+        homeGradient: "url('/assets/common/line.png')",
+        homeLineGradient: "url('/assets/common/Line_Gradient.svg')",
         "details-back": "url('/assets/common/detailsback.png')",
         "nft-back": "url('/assets/crypto/nft_back.png')",
         "landing-back": "url('/assets/advocate/background_landing.png')",
@@ -52,5 +53,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar")],
 };

@@ -1,6 +1,8 @@
 export const COMPONENT_REACT = "pricingReact";
 export const COMPONENT_HTML = "pricingHtml";
 
+export const PRODUCT_TYPES = ["component", "template"];
+
 export const COMPONENT_LIST = [
   {
     section: "component",
@@ -299,6 +301,7 @@ export const COMPONENT_LIST = [
   },
 
   {
+    section: "component",
     mainImageSrc: "/bgcomponents/bgadvertise.png",
     hoverText: "Advertise components that highlight important points.",
     title: "Advertise card",
@@ -314,6 +317,7 @@ export const COMPONENT_LIST = [
     },
   },
   {
+    section: "component",
     mainImageSrc: "/bgcomponents/bgcountdown1.png",
     hoverText: "Timer component to show the user how much time has to wait.",
     title: "Day countdown",
@@ -329,6 +333,7 @@ export const COMPONENT_LIST = [
     },
   },
   {
+    section: "component",
     mainImageSrc: "/bgcomponents/bgcountdown2.png",
     hoverText:
       "A responsive timer that displays the conclusion of our waiting time.",
@@ -346,6 +351,7 @@ export const COMPONENT_LIST = [
   },
 
   {
+    section: "component",
     mainImageSrc: "/bgcomponents/bgcountdown3.png",
     hoverText:
       "Timer component which used to display remaining time for a particular function.",
