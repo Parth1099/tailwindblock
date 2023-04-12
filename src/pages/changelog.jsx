@@ -31,7 +31,7 @@ const ChangeLog = () => {
             style={{ objectFit: "cover", backgroundPosition: "left" }}
           />
         </div>
-        <div className="py-14 md:py-24 lg:py-30 flex items-center justify-center w-full bg-blue-100">
+        <div className="py-6 md:py-24 lg:py-30 flex items-center justify-center w-full bg-blue-100">
           <div className="flex flex-col gap-6 items-center justify-center">
             <div className="text-2xl md:text-[56px] font-semibold">
               Changelog

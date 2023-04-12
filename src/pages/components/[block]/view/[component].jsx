@@ -1,4 +1,3 @@
-import ButtonSample1 from "@/components/button/sample1/ButtonSampleReact";
 import SEO from "@/components/Seo";
 import { COMPONENT_LIST } from "@/utils/constant";
 import { useRouter } from "next/router";
@@ -7,8 +6,6 @@ import componetList from "./componentList";
 
 const ViewComponent = ({ target }) => {
   const { query } = useRouter();
-  // console.log(query, " : query");
-  // console.log(target, " : target");
 
   return (
     <>

@@ -120,7 +120,7 @@ const PreviewSecion = ({ component, page, array_map, query_slug }) => {
 
   return (
     <div className="mt-5 md:mt-10 border-2 border-borderColor rounded-[10px] overflow-hidden">
-      <div className="flex gap-5 px-3 lg:px-9 py-3 lg:py-4 bg-[#F1F5FD] overflow-x-auto overflow-y-hidden border-b-2 border-b-borderColor">
+      <div className="flex gap-5 px-3 lg:px-9 py-4 lg:py-4 bg-[#F1F5FD] overflow-x-auto overflow-y-hidden border-b-2 border-b-borderColor">
         <div className="flex items-center gap-3 md:gap-5 w-full justify-between">
           <div className="flex items-center lg:gap-7 ">
             <div className="flex gap-3 md:gap-5 items-center">
@@ -284,6 +284,12 @@ const PreviewSecion = ({ component, page, array_map, query_slug }) => {
               )}
             </div>
             {/* icon for open component in full screen */}
+            <div
+              onClick={() => setCodeBlock(false)}
+              className="lg:hidden block"
+            >
+              <PreviewIcon />
+            </div>
             {windowMounted && (
               <Link
                 data-testid={`preview`}
@@ -310,7 +316,7 @@ const PreviewSecion = ({ component, page, array_map, query_slug }) => {
               </span>
             </div>
             {/* icon for downlod zip */}
-            <div className="group flex relative">
+            <div className="group flex relative pr-4 md:pr-0">
               <span
                 className="cursor-pointer"
                 onClick={() => {

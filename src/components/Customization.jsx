@@ -1,6 +1,6 @@
-import Image from "next/image";
+import { COMPONENT_LIST } from "@/utils/constant";
 import React from "react";
-import CustomizationImg from "../../public/assets/common/Customization.png";
+import PreviewSecion from "./PreviewSection";
 
 const Customization = () => {
   return (
@@ -11,13 +11,18 @@ const Customization = () => {
         </h2>
         <div className="border md:border-2 rounded-xl border-[#365CCE] w-16 md:w-40 h-0"></div>
         <p className="font-normal text-sm sm:text-lg md:text-xl xl:text-2xl text-black opacity-60">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry&apos;s standard dummy text
-          ever since the 1500s, when an unknown printer{" "}
+          Examples of beautifully produced, completely responsive, and
+          professionally designed components that you can add to your Tailwind
+          projects and modify as you like.
         </p>
       </div>
       <div className="relative w-full h-full">
-        <Image src={CustomizationImg} alt="customization" />
+        <PreviewSecion
+          component={COMPONENT_LIST[18]}
+          page="components"
+          array_map={COMPONENT_LIST}
+          query_slug="advertise"
+        />
       </div>
     </div>
   );

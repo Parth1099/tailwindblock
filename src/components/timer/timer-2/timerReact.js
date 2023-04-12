@@ -58,7 +58,8 @@ const Timer2 = () => {
             Limited time offer, Sales end in
           </h1>
           <span className="text-sm font-semibold text-center leading-8 text-[#959AAE]">
-            Take Advantage of Our Biggest Sale, Grab the offer before it's gone!
+            Take Advantage of Our Biggest Sale, Grab the offer before it&apos;s
+            gone!
           </span>
         </div>
         <div className="flex justify-between sm:px-4 ">

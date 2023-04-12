@@ -19,6 +19,7 @@ import PricingSample2 from "../pricing-sample-2";
 import PricingSample3 from "../pricing-sample-3";
 import PricingSample4 from "../pricing-sample-4";
 import PricingSample5 from "../pricing-sample-5";
+import AdvertiseCard from "@/components/card/advertise/cardReact";
 
 const componetList = (targetKey) => {
   if (targetKey === "button-sample1") return <ButtonSample1 />;
@@ -35,6 +36,7 @@ const componetList = (targetKey) => {
   else if (targetKey === "carousal-carousal-1") return <Carousal1 />;
   else if (targetKey === "carousal-carousal-2") return <Carousal2 />;
   else if (targetKey === "card-profilecard") return <Cards />;
+  else if (targetKey === "card-advertise") return <AdvertiseCard />;
   else if (targetKey === "animation-animation-infinite") return <Animation />;
   else if (targetKey === "input-input-sample-1") return <Input />;
   else if (targetKey === "radiobutton-radiobutton-sample-1")

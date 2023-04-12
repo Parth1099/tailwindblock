@@ -1,4 +1,5 @@
 import { PRODUCT_TYPES } from "@/utils/constant";
+import classNames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
@@ -10,6 +11,10 @@ const MonthData = ({ cardData }) => {
   const year = new Date(cardData[0]?.date).getFullYear();
   const [componentData, setComponentData] = useState();
   const [TemplateData, setTemplateData] = useState();
+
+  const cardDataSection = cardData.map((data) => data["section"]);
+
+  const section = [...new Set(cardDataSection)];
 
   function getMonthName(monthNumber) {
     const date = new Date();
@@ -35,37 +40,41 @@ const MonthData = ({ cardData }) => {
 
         <div className="flex flex-col  justify-start items-center">
           <div className="flex text-[20px] text-[#00000099] font-bold ">
-            {getMonthName(month)}-{year}
+            <div className="min-w-[90px] flex justify-end">
+              {getMonthName(month)}
+            </div>
+            <div className="min-w-[20px] flex justify-center ">-</div>{" "}
+            <div className="min-w-[90px]">{year}</div>
+            {/* &nbsp;-&nbsp; */}
           </div>
           <div className="h-11 w-[1px] bg-blue-700 "></div>
         </div>
 
-        <div className="capitalize  flex-col gap-3 flex justify-satrt w-full items-center px-5">
+        <div className="flex-col gap-3 flex justify-satrt w-full items-center px-5">
           <div
-            className={`max-w-[800px] w-full flex flex-col justify-center  py-5  bg-[#F1F5FD] border border-[#75A0E5] rounded-[10px]`}
+            className={`max-w-[950px] w-full flex flex-col justify-center  py-5  bg-[#F1F5FD] border border-[#75A0E5] rounded-[10px]`}
           >
             <div className="flex gap-[17px] px-5 sm:px-[30px]  flex-col w-full">
               <h1 className="text-xl md:text-[28px] font-semibold leading-[35px] text-[#00000099]">
                 {componentData?.length
                   ? componentData.length > 1
-                    ? componentData.length + " components changes  "
-                    : componentData.length + " component changes "
+                    ? componentData.length + " Components"
+                    : componentData.length + " Component"
                   : null}
-
                 {componentData?.length && TemplateData?.length ? " & " : ""}
-
                 {TemplateData?.length
                   ? TemplateData.length > 1
-                    ? TemplateData.length + " Templates changes "
-                    : TemplateData.length + " Template changes "
+                    ? TemplateData.length + " Templates"
+                    : TemplateData.length + " Template"
                   : null}
+                &nbsp;added
               </h1>
-              <div className="flex justify-start gap-4  md:gap-[30px] md:flex-wrap overflow-x-auto overflow-hidden ">
+              <div className=" flex justify-start gap-4  md:gap-[30px] md:flex-wrap overflow-x-auto overflow-hidden ">
                 {cardData &&
                   cardData.map((data, index) => (
                     <>
                       <div key={index} className="flex items-stretch">
-                        <div className=" flex items-center   mt-3 border border-[#365CCE] rounded-[7px] drop-shadow-2xl ">
+                        <div className=" flex items-center">
                           <Link
                             href={`/${
                               data.section === "component"
@@ -74,9 +83,9 @@ const MonthData = ({ cardData }) => {
                             }/${data.type}/${data.slug}`}
                             target="_blank"
                           >
-                            <div className="group relative w-[84px] h-[65px] flex-row flex items-center justify-start ">
+                            <div className="group relative w-[84px] h-[65px] flex-row flex items-center justify-start border border-[#365CCE] rounded-[7px] drop-shadow-xl  ">
                               <Image
-                                className="rounded-[7px] bg-cover  "
+                                className="rounded-[7px] bg-cover"
                                 src={data.mainImageSrc}
                                 fill
                                 alt="image"
@@ -91,44 +100,55 @@ const MonthData = ({ cardData }) => {
                     </>
                   ))}
               </div>
-              <div className="flex flex-col gap-[13px] justify-start flex-wrap ">
+              <div
+                className={classNames(
+                  "flex flex-col  ",
+                  section.length > 1 ? "gap-4" : "gap-2"
+                )}
+              >
                 {cardData &&
-                  PRODUCT_TYPES.map((producType) => (
+                  PRODUCT_TYPES.map((producType, index) => (
                     <>
                       {cardData.filter((t) => t.section === producType).length >
                         0 && (
-                        <p className="font-semibold text-lg">{producType}</p>
+                        <div
+                          className={classNames(
+                            "font-semibold text-lg capitalize",
+                            section.length > 1 && index === 1 && "mt-2 md:mt-5"
+                          )}
+                        >
+                          {producType}
+                        </div>
                       )}
-                      {cardData
-                        .filter((t) => t.section === producType)
-                        .map((data, index) => {
-                          return (
-                            <>
-                              <div key={index} className="flex items-center">
-                                <div className="flex mt-3 ">
-                                  <Link
-                                    href={`/${
-                                      data.section === "component"
-                                        ? "components"
-                                        : "templates"
-                                    }/${data.type}/${data.slug}`}
-                                    target="_blank"
-                                  >
-                                    <div className="gap-[13px] text-lg font-normal text-[#00000099] flex items-center justify-start ">
-                                      <FaCircle size={11} fill="#365CCE" />
-                                      <h2 className=" whitespace-nowrap">
-                                        {data.title}
-                                      </h2>
-                                      <div className="hidden sm:flex text-ellipsis truncate  sm:max-w-[300px] md:max-w-[700px] whitespace-nowrap text-[14px] leading-7  items-center">
-                                        - {data.hoverText}
-                                      </div>
-                                    </div>
-                                  </Link>
+                      <div className="flex gap-2 md:gap-4 flex-col">
+                        {cardData
+                          .filter((t) => t.section === producType)
+                          .map((data, index) => (
+                            <div
+                              key={index}
+                              className={classNames("flex  items-center")}
+                            >
+                              <Link
+                                href={`/${
+                                  data.section === "component"
+                                    ? "components"
+                                    : "templates"
+                                }/${data.type}/${data.slug}`}
+                                target="_blank"
+                              >
+                                <div className="gap-[13px] text-lg font-normal text-[#00000099] flex items-center justify-start ">
+                                  <FaCircle size={11} fill="#365CCE" />
+                                  <h2 className=" whitespace-nowrap">
+                                    {data.title}
+                                  </h2>
+                                  <div className="hidden sm:flex  truncate  sm:max-w-[300px] md:max-w-[450px] lg:max-w-[700px] whitespace-nowrap text-[14px] leading-7  items-center">
+                                    - {data.hoverText}
+                                  </div>
                                 </div>
-                              </div>
-                            </>
-                          );
-                        })}
+                              </Link>
+                            </div>
+                          ))}
+                      </div>
                     </>
                   ))}
               </div>

@@ -28,7 +28,6 @@ module.exports = {
         "cat-two": "url('/assets/advocate/cat_two.png')",
         "cat-three": "url('/assets/advocate/cat_three.png')",
         "home-back": "url('/assets/common/home-back.png')",
-        "component-back": "url('/assets/common/bgdetailsection.png')",
         footerBg:
           "linear-gradient(85.88deg, #547FDD 1.67%, #365CCE 50.99%, #2D3C7B 95.8%)",
 

@@ -1,14 +1,11 @@
-import { COMPONENT_LIST } from "@/utils/constant";
 import RightArrow from "@/utils/images/RightArrow";
 import classNames from "classnames";
-import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 import Slider from "react-slick";
 import Card from "./Card";
 
 function SampleNextArrow(props) {
-  const { className, style, onClick } = props;
+  const { className, onClick } = props;
   return (
     <div onClick={onClick} className={className}>
       <div className="w-12 h-12 absolute -left-7 ssm:-left-10 md:-left-6 lg:-left-12 xl:-left-12 -top-9 bg-white flex justify-center items-center rounded-full shadow-pupularCard">
@@ -91,7 +88,11 @@ const CustomSlider = ({ selectType, sliderData, type }) => {
             .map((data, index) => {
               return (
                 <div key={index} data-testid={`card-${index}`}>
-                  <Card type={type} data={data} />
+                  <Card
+                    className="max-w-xl"
+                    type={`${data.section}s`}
+                    data={data}
+                  />
                 </div>
               );
             })}
@@ -101,7 +102,7 @@ const CustomSlider = ({ selectType, sliderData, type }) => {
           {sliderData.map((data, index) => {
             return (
               <div key={index} data-testid={`card-${index}`}>
-                <Card type={type} data={data} />
+                <Card type={`${data.section}s`} data={data} />
               </div>
             );
           })}

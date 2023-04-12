@@ -10,7 +10,7 @@ const colors = [
 const CustomePreview = ({ setColor }) => {
   return (
     <div className="flex flex-row gap-5 p-2">
-      <div>kaival Thakkar </div>
+      <div>Infynno</div>
       <div className="flex justify-center gap-2 cursor-pointer">
         {colors.map((data, index) => {
           return (

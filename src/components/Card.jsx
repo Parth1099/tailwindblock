@@ -3,12 +3,12 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const Card = ({ data, type, className }) => {
+const Card = ({ data, type, className, details }) => {
   return (
     <div>
       <Link
         href={{
-          pathname: `${type}/${data.type}/${data.slug}`,
+          pathname: `/${type}/${data.type}/${data.slug}`,
         }}
       >
         <div
@@ -20,14 +20,15 @@ const Card = ({ data, type, className }) => {
           <div>
             <div
               className={classNames(
-                type === "templates" &&
-                  "flex overflow-hidden justify-center items-center w-full h-[200px] sm:h-[300px] lg:h-[400px] xl:h-[505px] bg-gradient-to-r from-[#55C8F4] via-purple-500 to-pink-500"
+                type === "templates" && !details
+                  ? "flex overflow-hidden justify-center items-center w-full h-[200px] sm:h-[300px] lg:h-[400px] xl:h-[505px] bg-gradient-to-r from-[#55C8F4] via-purple-500 to-pink-500"
+                  : ""
               )}
             >
               <div
                 className={classNames(
                   "relative rounded-lg group-hover:scale-105 group-hover:duration-75",
-                  type === "components"
+                  type === "components" || details
                     ? "h-[190px] w-full"
                     : "h-full w-11/12 md:w-10/12 top-5 md:top-10 xl:top-20"
                   // : ""

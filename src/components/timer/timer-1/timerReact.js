@@ -59,7 +59,7 @@ const Timer1 = () => {
     <div className="flex justify-center  items-center h-screen w-screen  bg-gradient-to-t from-[#2C045A] to-[#2B109D]">
       <div className="p-5 flex justify-center flex-col gap-4">
         <h1 className=" sm:text-3xl  text-2xl font-semibold leading-8 text-[#FBFAF8] text-center">
-          Black Friday'23 Sale is Here
+          Black Friday&apos;23 Sale is Here
         </h1>
         <div className="flex gap-2 items-center justify-center">
           <div className="flex gap-1 ">

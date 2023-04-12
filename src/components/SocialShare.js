@@ -1,47 +1,44 @@
 import {
+  EmailIcon,
+  FacebookIcon,
+  LinkedinIcon,
+  TwitterIcon,
+  WhatsappIcon,
   EmailShareButton,
   FacebookShareButton,
   LinkedinShareButton,
   TwitterShareButton,
   WhatsappShareButton,
 } from "next-share";
-import {
-  EmailIcon,
-  FacebookIcon,
-  LinkedinIcon,
-  TwitterIcon,
-  WhatsappIcon,
-} from "next-share";
 
 const SocialShare = ({ component }) => {
   return (
     <>
-      <div className="mt-3 md:mt-5 flex items-center gap-2 ">
-        <div className="text-[#00000099] text-[18px] font-normal">Share :</div>
+      <div className="flex items-center gap-2">
         <FacebookShareButton
           url={`https://tailwindblock.vercel.app/components/${component.type}/${component.slug}`}
         >
-          <FacebookIcon size={32} round={true} />
+          <FacebookIcon size={32} borderRadius="14px" />
         </FacebookShareButton>
         <LinkedinShareButton
           url={`https://tailwindblock.vercel.app/components/${component.type}/${component.slug}`}
         >
-          <LinkedinIcon size={32} round={true} />
+          <LinkedinIcon size={32} borderRadius="14px" />
         </LinkedinShareButton>
         <TwitterShareButton
           url={`https://tailwindblock.vercel.app/components/${component.type}/${component.slug}`}
         >
-          <TwitterIcon size={32} round={true} />
+          <TwitterIcon size={32} borderRadius="14px" />
         </TwitterShareButton>
         <EmailShareButton
           url={`https://tailwindblock.vercel.app/components/${component.type}/${component.slug}`}
         >
-          <EmailIcon size={32} round={true} />
+          <EmailIcon size={32} borderRadius="14px" />
         </EmailShareButton>
         <WhatsappShareButton
           url={`https://tailwindblock.vercel.app/components/${component.type}/${component.slug}`}
         >
-          <WhatsappIcon size={32} round />
+          <WhatsappIcon size={32} borderRadius="14px" />
         </WhatsappShareButton>
       </div>
     </>

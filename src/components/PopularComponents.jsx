@@ -1,12 +1,9 @@
 import { COMPONENT_LIST } from "@/utils/constant";
-import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import Slider from "react-slick";
 import CustomButton from "./button/CustomButton";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
 import CustomSlider from "./CustomSlider";
 
 const PopularComponents = () => {

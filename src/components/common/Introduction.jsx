@@ -26,11 +26,31 @@ const Introduction = () => {
             </Link>
           </div>
 
-          <div className="flex gap-8 md:gap-20 w-full px-5 sm:px-0 max-w-xs sm:max-w-sm md:max-w-lg xl:max-w-xl mx-auto">
-            <TailwindLogo />
-            <HtmlLogo />
-            <ReactLogo />
-            <VueLogo />
+          <div className=" flex gap-8 md:gap-20 w-full px-5 sm:px-0 max-w-xs sm:max-w-sm md:max-w-lg xl:max-w-xl mx-auto">
+            <div className="cursor-pointer group relative">
+              <span className="absolute top-0 right-[-5px] scale-0 transition-all rounded bg-[#F1F5FD] p-1 text-xs text-blue-900 font-bold group-hover:scale-100">
+                {"Tailwind CSS"}
+              </span>
+              <TailwindLogo />
+            </div>
+            <div className="cursor-pointer group relative">
+              <span className="absolute top-0 right-[-5px] scale-0 transition-all rounded bg-[#F1F5FD] p-1 text-xs text-blue-900 font-bold group-hover:scale-100">
+                {"HMTL"}
+              </span>
+              <HtmlLogo />
+            </div>
+            <div className="cursor-pointer group relative">
+              <span className="absolute top-0 right-[-5px] scale-0 transition-all rounded bg-[#F1F5FD] p-1 text-xs text-blue-900 font-bold group-hover:scale-100">
+                {"ReactJs"}
+              </span>
+              <ReactLogo />
+            </div>
+            <div className="cursor-pointer group relative">
+              <span className="absolute top-0 right-[-5px] scale-0 transition-all rounded bg-[#F1F5FD] p-1 text-xs text-blue-900 font-bold group-hover:scale-100">
+                {"VueJS"}
+              </span>
+              <VueLogo />
+            </div>
           </div>
         </div>
       </div>
