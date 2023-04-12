@@ -308,7 +308,7 @@ const SideLayout = ({ listData, category }) => {
                           });
                     }}
                   >
-                    <span className="w-full max-w-[100px] block truncate">
+                    <span className="w-full max-w-[220px] block truncate">
                       {ctype.name}
                     </span>
                     <span className="py-0.5 sm:px-2.5 leading-[1.50em]">

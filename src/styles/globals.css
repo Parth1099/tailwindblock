@@ -11,7 +11,7 @@ html {
 /* MOBILE MENU  */
 
 #nav-icon4 {
-  width: 37px;
+  width: 30px;
   height: 30px;
   position: relative;
   /* / margin: 50px auto; / */
@@ -54,7 +54,7 @@ html {
 }
 
 #nav-icon4 span:nth-child(2) {
-  top: 11px;
+  top: 9px;
   -webkit-transform-origin: left center;
   -moz-transform-origin: left center;
   -o-transform-origin: left center;
@@ -62,7 +62,7 @@ html {
 }
 
 #nav-icon4 span:nth-child(3) {
-  top: 22px;
+  top: 18px;
   -webkit-transform-origin: left center;
   -moz-transform-origin: left center;
   -o-transform-origin: left center;
@@ -88,7 +88,7 @@ html {
   -moz-transform: rotate(-45deg);
   -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
-  top: 25px;
+  top: 20px;
   left: 4px;
 }
 

@@ -48,9 +48,11 @@ const MonthData = ({ cardData }) => {
               <h1 className="text-xl md:text-[28px] font-semibold leading-[35px] text-[#00000099]">
                 {componentData?.length
                   ? componentData.length > 1
-                    ? componentData.length + " components changes "
+                    ? componentData.length + " components changes  "
                     : componentData.length + " component changes "
                   : null}
+
+                {componentData?.length && TemplateData?.length ? " & " : ""}
 
                 {TemplateData?.length
                   ? TemplateData.length > 1
@@ -58,12 +60,12 @@ const MonthData = ({ cardData }) => {
                     : TemplateData.length + " Template changes "
                   : null}
               </h1>
-              <div className="flex justify-start gap-4  md:gap-[30px] flex-wrap ">
+              <div className="flex justify-start gap-4  md:gap-[30px] md:flex-wrap overflow-x-auto overflow-hidden ">
                 {cardData &&
                   cardData.map((data, index) => (
                     <>
-                      <div key={index} className="flex   items-stretch">
-                        <div className=" flex items-center  mt-3 border border-[#365CCE] rounded-[7px] drop-shadow-2xl ">
+                      <div key={index} className="flex items-stretch">
+                        <div className=" flex items-center   mt-3 border border-[#365CCE] rounded-[7px] drop-shadow-2xl ">
                           <Link
                             href={`/${
                               data.section === "component"
@@ -117,7 +119,7 @@ const MonthData = ({ cardData }) => {
                                       <h2 className=" whitespace-nowrap">
                                         {data.title}
                                       </h2>
-                                      <div className="hidden sm:flex text-ellipsis truncate  sm:max-w-[300px] md:max-w-[700px] whitespace-nowrap text-[12px] leading-7  items-center">
+                                      <div className="hidden sm:flex text-ellipsis truncate  sm:max-w-[300px] md:max-w-[700px] whitespace-nowrap text-[14px] leading-7  items-center">
                                         - {data.hoverText}
                                       </div>
                                     </div>

@@ -88,7 +88,7 @@ const Header = () => {
                   toggle
                     ? "left-0 w-full  delay-[0s]"
                     : "left-1/4 w-0  delay-[0.3s] skew-x-0"
-                } absolute top-5 bg-[#F1F5FD] h-full transition -z-10`}
+                } absolute top-9 bg-[#F1F5FD] h-full transition -z-10`}
               ></span>
             </div>
             <div
