@@ -60,7 +60,9 @@ const PopularComponents = () => {
             );
           })}
           <Link href={"/components"}>
-            <CustomButton color={color}>+More</CustomButton>
+            <CustomButton color={color}>
+              <spam className="font-bold ">+&nbsp;More</spam>
+            </CustomButton>
           </Link>
         </div>
       </div>

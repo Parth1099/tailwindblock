@@ -102,7 +102,7 @@ const Components = () => {
         image="https://tailwindblock.vercel.app/seo/components.png"
       />
       <Header />
-      <div className="relative h-[200px] sm:h-[276px] top-20 bg-hero-pattern bg-cover bg-no-repeat w-full">
+      <div className="relative h-[200px] sm:h-72 top-20 bg-hero-pattern bg-cover bg-no-repeat w-full">
         <div className="absolute top-2.5 text-center lg:px-0 xl:px-28 px-3 md:px-7 h-full w-full flex justify-center items-center">
           <div className="flex flex-col justify-center items-center lg:w-1/2 gap-4 sm:gap-8 h-full ">
             <div className="w-full flex justify-center ">

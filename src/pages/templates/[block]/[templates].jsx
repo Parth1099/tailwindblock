@@ -29,12 +29,27 @@ const CommonLayout = ({ check }) => {
         description={check?.hoverText}
         image={`https://tailwindblock.vercel.app/${check?.mainImageSrc}`}
       />
-      <div className="bg-hero-pattern w-full bg-cover bg-no-repeat h-[300px] mt-20"></div>
+      <div className="bg-hero-pattern w-full bg-cover bg-no-repeat h-[300px] mt-20 mb-5"></div>
       {TemplateConstant.filter((data) => data.slug === query.templates).map(
         (component, index) =>
           true && (
             <>
-              <div key={index} className="px-[20px]">
+              <div key={index} className="mx-5">
+                <div className="w-full relative mx-auto container">
+                  <div className=" absolute top-[-44px] ">
+                    <span className="font-bold text-white flex gap-1.5 md:gap-2 text-sm md:text-base">
+                      <Link href="/">Home</Link> /
+                      <Link href="/templates">
+                        {component.section.charAt(0).toUpperCase() +
+                          component.section.slice(1).concat("s")}
+                      </Link>
+                      /
+                      <span className="text-borderColor">
+                        {component.title.replaceAll(" ", " - ")}
+                      </span>
+                    </span>
+                  </div>
+                </div>
                 <div className="container mx-auto -mt-[250px] mb-[50px] md:mb-[90px] rounded-[12px] shadow-componentcard bg-white  overflow-hidden">
                   <div className="p-2.5 md:p-[26px]">
                     <div className="flex flex-col md:flex-row justify-between md:items-center gap-2 md:gap-0">
@@ -47,8 +62,13 @@ const CommonLayout = ({ check }) => {
                       </div>
                     </div>
                     {/* Desciption portion */}
-                    <div className="mt-1 md:mt-[14px] font-normal px-1 text-base md:text-2xl text-gray-500 md:border-b-2 md:border-spacing-5 pb-4 border-borderColor">
-                      {component?.hoverText}
+                    <div className="mt-1 md:mt-[14px] font-normal px-1 text-base md:text-xl text-gray-500 md:border-b-2 md:border-spacing-5 pb-4 border-borderColor">
+                      Take advantage of a free {component.type}&nbsp;
+                      {component.section} for your website. React and Tailwind
+                      CSS was used to create it. Our website provides an
+                      abundance of other resources in addition to this one. With
+                      our free code blocks and Tailwind CSS , you can get the
+                      source code you need to make beautiful web pages.
                     </div>
                     <div className="block md:hidden">
                       <SocialShare component={component} />
@@ -82,7 +102,7 @@ const CommonLayout = ({ check }) => {
                                     }`}
                                   />
                                 </div>
-                                <span className="flex justify-center text-sm md:text-lg text-center mt-1">
+                                <span className="flex justify-center text-sm md:text-lg text-center mt-1 capitalize">
                                   {data.title}
                                 </span>
                               </Link>
@@ -107,6 +127,7 @@ const CommonLayout = ({ check }) => {
                   LIST_ARRAY_2={TemplateConstant}
                   queryComponent={query.templates}
                   queryBlock={""}
+                  page="Templates"
                 />
               </div>
             </>

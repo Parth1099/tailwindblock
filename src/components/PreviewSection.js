@@ -19,6 +19,7 @@ import JSZip from "jszip";
 import { CopyBlock, hybrid } from "react-code-blocks";
 import { ChromePicker } from "react-color";
 import { RotatingLines } from "react-loader-spinner";
+import classNames from "classnames";
 
 const PreviewSecion = ({ component, page, array_map, query_slug }) => {
   const languageRef = useRef(null);
@@ -190,7 +191,7 @@ const PreviewSecion = ({ component, page, array_map, query_slug }) => {
             {/* Color picker  */}
             {component?.isCustomizeColor && (
               <>
-                <div ref={pickerRef}>
+                <div className={openPicker && "z-40"} ref={pickerRef}>
                   <div
                     className="px-3 py-3 text-lg  border-2 rounded-md border-borderColor cursor-pointer items-center flex text-[#00000061] gap-2 "
                     onClick={() => !codeblock && setOpenPicker(!openPicker)}
@@ -341,7 +342,13 @@ const PreviewSecion = ({ component, page, array_map, query_slug }) => {
         </div>
       </div>
       {/* code and preview section  */}
-      <div className="flex justify-center items-center w-full shadow-componentcard rounded-b-md bg-[#f3f1f6] border-b-[1px]">
+      <div
+        className={classNames(
+          "flex justify-center items-center w-full shadow-componentcard rounded-b-md bg-[#f3f1f6] border-b-[1px]",
+          openPicker &&
+            "before:w-full before:h-full relative before:absolute before:top-0 before:bg-transparent before:z-30 z-0"
+        )}
+      >
         {!codeblock ? (
           <>
             <iframe

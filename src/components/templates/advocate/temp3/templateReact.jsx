@@ -71,6 +71,8 @@ const settings = {
   ],
 };
 
+let Navitem = ["Home", "Services", "About", "Contact"];
+
 let whychooseData = [
   "CLIENT-FOCUSED SOLUTIONS AND RESULTS",
   "FLEXIBLE, VALUE-DRIVEN APPROACH",
@@ -192,32 +194,41 @@ const Advocate = () => {
   const [navbar, setNavbar] = useState(false);
   return (
     <>
-      <div className="flex flex-col justify-center items-center ">
+      <div className="font-poppins flex flex-col justify-center items-center ">
         <div className="w-full h-[110px] bg-[#FFFFFF] flex justify-center">
-          <div className="flex justify-between md:justify-center items-center px-[10%] w-full max-w-[1440px] sm:px-5 md:px-[102px] sm:gap-[30px] md:gap-[50px] lg:gap-20 xl:gap-[124px]">
-            <div className="min-w-[100px] sm:min-w-[120px] lg:max-w-[200px]">
+          <div className="flex justify-between md:justify-center items-center px-5 w-full max-w-[1440px] sm:px-5 md:px-[102px] sm:gap-[30px] md:gap-[50px] lg:gap-20 xl:gap-[124px]">
+            <a href="/" className="w-full max-w-fit">
               <img src={"/assets/advocate/logo.svg"} alt="logo" />
-            </div>
+            </a>
             <div className="-mb-2.5 hidden md:flex  justify-between min-w-[200px] sm:min-w-[200px] md:min-w-[280px] gap-0 sm:gap-5 lg:min-w-[400px] xl:gap-[82px] w-full font-medium sm:text-xs xl:text-lg md:text-[15px] lg:text-[15px] tracking-tight leading-7">
-              <div className="text-[#DDA45C] text-center flex flex-col gap-[5px]">
-                <div>Home</div>
-                <div className="w-14 rounded-full border-[2px] border-[#DDA45C]"></div>
-              </div>
-              <div className="text-[#1C1C23]">Services</div>
-              <div>About</div>
-              <div>Contact</div>
+              {Navitem.map((navitem) => {
+                return (
+                  <a
+                    href="#"
+                    className="text-[#1C1C23] hover:text-[#DDA45C] font-semibold"
+                  >
+                    {navitem}
+                  </a>
+                );
+              })}
             </div>
             <div className=" hidden md:flex items-center justify-center gap-[25px]">
-              <div className="xl:min-w-[141px] md:min-w-[80px] sm:min-w-[60px]  w-full sm:py-[10px] sm:px-[20px] xl:py-2.5 md:py-[5px] flex justify-center items-center rounded-[5px] border border-[#DDA45C] ">
+              <a
+                href="/"
+                className="xl:min-w-[141px] md:min-w-[80px] sm:min-w-[60px]  w-full sm:py-[10px] sm:px-[20px] xl:py-2.5 md:py-[5px] flex justify-center items-center rounded-[5px] border border-[#DDA45C] "
+              >
                 <button className="font-normal sm:text-xs xl:text-lg md:text-xs lg:text-sm leading-7 tracking-tight">
                   Login
                 </button>
-              </div>
-              <div className="xl:min-w-[141px] md:min-w-[80px] sm:min-w-[60px] sm:py-[10px] sm:px-[20px] w-full xl:py-2.5 md:py-[5px] flex justify-center items-center rounded-[5px]bg-[#DDA45C] text-white ">
+              </a>
+              <a
+                href="/"
+                className="xl:min-w-[141px] md:min-w-[80px] sm:min-w-[60px] sm:py-[10px] sm:px-[20px] w-full xl:py-2.5 md:py-[5px] flex justify-center items-center text-white rounded-[5px] bg-[#DDA45C] "
+              >
                 <button className="font-normal xl:text-lg sm:text-xs md:text-xs  lg:text-sm leading-7 tracking-tight">
                   Register
                 </button>
-              </div>
+              </a>
             </div>
             <div
               className={
@@ -227,12 +238,13 @@ const Advocate = () => {
               }
             >
               <div className="flex flex-col -mb-2.5 sm:flex items-center  justify-between  gap-2.5 sm:gap-5  w-full  font-medium sm:text-xs xl:text-lg md:text-[15px] lg:text-[15px] tracking-tight leading-7">
-                <div className="text-[#DDA45C] flex flex-col gap-[5px] ">
-                  <div>Home</div>
-                </div>
-                <div className="hover:text-[#DDA45C]">Services</div>
-                <div className="hover:text-[#DDA45C]">About</div>
-                <div className="hover:text-[#DDA45C]">Contact</div>
+                {Navitem.map((navitem) => {
+                  return (
+                    <a href="#" className="text-[#1C1C23] font-semibold">
+                      {navitem}
+                    </a>
+                  );
+                })}
               </div>
             </div>
 
@@ -249,7 +261,7 @@ const Advocate = () => {
           <div className="w-full h-full opacity-[0.5] top-0 bg-black absolute"></div>
           <div className="absolute z-10 flex justify-center flex-col items-center gap-[60px]">
             <div className="flex flex-col gap-[22px] xs:gap-[23px] md:gap-5">
-              <div className="text-center text-white mx-auto text-[28px] leading-9 sm:text-[48px] sm:leading-[50px] md:text-[38px]  lg:text-[48px] md:leading-[48px] lg:leading-[60px]   font-extrabold lg:max-w-[514px] md:max-w-[414px] max-w-[300px] sm:max-w-[550px]">
+              <div className="text-center text-white mx-auto text-[28px] leading-9 sm:text-[48px] sm:leading-[50px] md:text-[38px]  lg:text-[48px] md:leading-[48px] lg:leading-[60px] font-extrabold lg:max-w-[514px] md:max-w-[414px] max-w-[300px] sm:max-w-[550px]">
                 Here at <span className="text-[#DDA45C]"> Advocate</span>, Every
                 client matters
               </div>
@@ -295,7 +307,7 @@ const Advocate = () => {
                           </div>
                         </div>
                         <div className="h-[1px] w-full bg-[#D9D9D9] "></div>
-                        <div className="flex flex-col gap-[28px] mx-auto max-w-[308px] xl:max-w-[308px] lg:max-w-[280px]  w-full ">
+                        <div className="flex flex-col gap-[28px] mx-auto max-w-[308px] xl:max-w-[308px] lg:max-w-[280px] w-full ">
                           <div className=" pt-[13px] w-full items-center flex justify-between">
                             <div className="w-[87px]  text-start text-base font-normal leading-[22px]">
                               <span className="font-semibold">{data.exp}+</span>
@@ -391,7 +403,7 @@ const Advocate = () => {
                       <div className="xl:text-[32px] xs:text-[28px] lg:text-[28px] text-[20px] md:text-[30px] text-start leading-[48px] text-white font-semibold">
                         {data.title}
                       </div>
-                      <div className="lg:max-w-fit  xs:max-w-[270px] xl:max-w-fit md:max-w-fit pr-0 md:pr-[20%] lg:pr-[15%]  text-justify text-white xs:text-lg lg:text-sm xl:text-lg md:text-lg md:leading-[32px] lg:leading-7 font-normal">
+                      <div className="lg:max-w-fit  max-w-[270px] xl:max-w-fit md:max-w-fit pr-0 md:pr-[20%] lg:pr-[15%]  text-justify text-white xs:text-lg lg:text-sm xl:text-lg md:text-lg md:leading-[32px] lg:leading-7 font-normal">
                         {data.des}
                       </div>
                       <div className="flex item-center gap-[16.7px] text-[#DDA45C] text-start  lg:text-lg md:text-[24px] leading-7 font-medium">
@@ -416,7 +428,7 @@ const Advocate = () => {
           <div className="h-full w-full absolute bg-black opacity-[0.7]"></div>
           <div className="flex absolute   top-[50%]  transform translate-x-[-52%] translate-y-[-50%]  left-[50%] z-10 mx-auto flex-col  lg:flex-row justify-center gap-[50px] md:gap-[40px] xl:gap-[135px] items-center max-w-[1216px] w-full">
             <div className="left w-max mx-auto pl-[15px]   text-white font-semibold lg:text-[40px]  xl:text-[54px]  md:text-[40px] md:leading-5  xs:text-[34px]  xs:leading-[20px] lg:leading-[61px]  xl:leading-[81px] tracking-[0.02em] lg:max-w-[140px]">
-              Why<span className="text-[#DDA45C] mx-2"> Choose </span> Us ?
+              Why<span className="text-[#DDA45C] "> Choose </span> Us ?
             </div>
             <div className=" px-[10%] lg:px-0 flex flex-col md:gap-[30px] lg:gap-[41px] xl:gap-[61px] gap-5 sm:gap-[30px]">
               {whychooseData.map((data, index) => (
@@ -436,7 +448,7 @@ const Advocate = () => {
           </div>
         </div>
         <div className="mt-[40px] min-h-[440px] flex flex-col gap-5 lg:gap-[60px] xl:max-w-[1234px] ">
-          <div className="lg:text-[40px] text-lg sm:text-[30px] leading-[60px] tracking-[0.02em] text-[#1C1C23] font-semibold">
+          <div className="lg:text-[40px] text-center text-lg sm:text-[30px] leading-[60px] tracking-[0.02em] text-[#1C1C23] font-semibold">
             Hear it From Our Customers
           </div>
 
@@ -481,64 +493,75 @@ const Advocate = () => {
           <div className="flex md:mt-[60px] mt-0 flex-col  items-center justify-center max-h-fit    xl:max-w-full  w-full bg-[#000D13]">
             <div className="flex gap-5 px-[10%] xl:gap-[122px] lg:gap-[50px] flex-col md:flex-row md:gap-5   justify-center mt-[30px] md:mt-[60px] xl:px-0 lg:px-[30px] md:px-[30px]">
               <div className="flex flex-col gap-[15px] lg:gap-[23px] md:gap-[15px]">
-                <div className="md:max-w-[150px] lg:max-w-[300px] -mt-2.5  ">
+                <a href="#" className="max-w-fit -mt-2.5  ">
                   <img src={"/assets/advocate/logofooter.svg"} alt="footer" />
-                </div>
+                </a>
                 <div className="text-[#F2F2F2] xl:max-w-[249px] lg:max-w-[249px] md:max-w-[190px] text-justify xl:text-base md:text-xs lg:text-sm leading-[24px] tracking-[0.02em] font-normal">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Massa
                   habitant enim eget at non, integer non tempus.
                 </div>
                 <div className="flex justify-between max-w-[200px]  xs:gap-5 lg:gap-[29px] md:gap-[15px] items-center">
-                  <img src={"/assets/advocate/facebookicon.svg"} alt="" />
-                  <img src={"/assets/advocate/linkedinicon.svg"} alt="" />
-                  <img src={"/assets/advocate/twittericon.svg"} alt="" />
-                  <img src={"/assets/advocate/instagramicon.svg"} alt="" />
+                  <img
+                    src={"/assets/advocate/facebookicon.svg"}
+                    alt="facebook"
+                  />
+                  <img
+                    src={"/assets/advocate/linkedinicon.svg"}
+                    alt="linkedin"
+                  />
+                  <img src={"/assets/advocate/twittericon.svg"} alt="twitter" />
+                  <img
+                    src={"/assets/advocate/instagramicon.svg"}
+                    alt="instagram"
+                  />
                 </div>
               </div>
               <div className="flex flex-col md:gap-[23px] gap-2.5">
                 <div className="text-[#DDA45C] xl:text-[20px] lg:text-lg md:text-sm leading-[30px] tracking-[0.02em] text-justify font-semibold">
                   Links
                 </div>
-                <div className="text-[#F2F2F2] xl:text-base lg:text-sm md:text-xs leading-[24px] font-normal text-justify">
-                  Home
-                </div>
-                <div className="text-[#F2F2F2] xl:text-base lg:text-sm md:text-xs leading-[24px] font-normal text-justify">
-                  Services
-                </div>
-                <div className="text-[#F2F2F2] xl:text-base lg:text-sm md:text-xs leading-[24px] font-normal text-justify">
-                  About
-                </div>
-                <div className="text-[#F2F2F2] xl:text-base lg:text-sm md:text-xs leading-[24px] font-normal text-justify">
-                  Contact
-                </div>
+                {Navitem.map((navitem) => {
+                  return (
+                    <a
+                      href="#"
+                      className="text-[#F2F2F2] xl:text-base lg:text-sm md:text-xs leading-[24px] font-normal text-justify"
+                    >
+                      {navitem}
+                    </a>
+                  );
+                })}
               </div>
               <div className="flex flex-col md:gap-[23px] gap-2.5">
                 <div className="text-[#DDA45C]  xl:text-[20px] lg:text-lg md:text-sm leading-[30px] tracking-[0.02em] text-justify font-semibold">
                   Services
                 </div>
                 <div className="flex gap-[31px] w-full  text-[#F2F2F2] xl:text-base lg:text-sm md:text-xs leading-[24px] font-normal text-justify">
-                  <div className="lg:w-[112px] w-[95px] md:w-[85px]">
+                  <a href="#" className="lg:w-[112px] w-[95px] md:w-[85px]">
                     Drug crime
-                  </div>
-                  <div>Evading</div>
+                  </a>
+                  <a href="#">Evading</a>
                 </div>
                 <div className="flex gap-[31px]  text-[#F2F2F2] xl:text-base lg:text-sm md:text-xs leading-[24px] font-normal text-justify">
-                  <div className="lg:w-[112px] w-[95px] md:w-[85px]">
+                  <a href="#" className="lg:w-[112px] w-[95px] md:w-[85px]">
                     Robbery
-                  </div>
-                  <div>Hit and Run</div>
+                  </a>
+                  <a href="#">Hit and Run</a>
                 </div>
                 <div className="flex gap-[31px]  text-[#F2F2F2] xl:text-base lg:text-sm md:text-xs leading-[24px] font-normal text-justify">
-                  <div className="lg:w-[112px] w-[95px] md:w-[85px]">
+                  <a href="#" className="lg:w-[112px] w-[95px] md:w-[85px]">
                     Investigations
-                  </div>
-                  <div className="tett-strat flex justify-start ">Theft</div>
+                  </a>
+                  <a href="#" className="tett-strat flex justify-start ">
+                    Theft
+                  </a>
                 </div>
                 <div className="flex gap-[31px]  text-[#F2F2F2] xl:text-base lg:text-sm md:text-xs leading-[24px] font-normal text-justify">
-                  <div className=" lg:w-[112px] w-[95px] md:w-[85px]">
+                  <a href="#" className=" lg:w-[112px] w-[95px] md:w-[85px]">
                     Assault
-                  </div>
-                  <div className="whitespace-nowrap">Disturbing the peace</div>
+                  </a>
+                  <a href="#" className="whitespace-nowrap">
+                    Disturbing the peace
+                  </a>
                 </div>
               </div>
               <div className="flex flex-col gap-2.5 lg:gap-[23px] md:gap-[15px]">
@@ -555,9 +578,11 @@ const Advocate = () => {
                   info.advocate@gmail.com
                 </div>
                 <div className="text-[#F2F2F2]  lg:text-xs xs:text-[13px] md:text-xs leading-[24px] font-normal text-justify">
-                  <div className="xl:max-w-[211px] lg:max-w-[170px] xs:max-w-[190px] md:max-w-[170px] lg:py-3 md:py-2 py-[10px] bg-[#DDA45C] text-center text-white font-medium">
-                    <button>Book free Consultation</button>
-                  </div>
+                  <a href="#">
+                    <div className="xl:max-w-[211px] lg:max-w-[170px] xs:max-w-[190px] md:max-w-[170px] lg:py-3 md:py-2 py-[10px] bg-[#DDA45C] text-center text-white font-medium">
+                      <button>Book free Consultation</button>
+                    </div>
+                  </a>
                 </div>
               </div>
             </div>

@@ -5,12 +5,13 @@ const MoreComponent = ({
   LIST_ARRAY_2,
   queryComponent,
   queryBlock,
+  page,
 }) => {
   let targetsLength = 0;
   return (
     <div className="container mx-auto md:mb-20 mb-11">
       <div className="xl:text-[38px] text-[28px] font-semibold text-[#000000CC] mb-6">
-        Recommended
+        Recommended {page}
       </div>
       <div className="container grid lg:grid-cols-4 grid-cols-1 gap-7">
         {LIST_ARRAY_1?.map((data, index) => {

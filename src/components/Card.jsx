@@ -31,12 +31,10 @@ const Card = ({ data, type, className, details }) => {
                   type === "components" || details
                     ? "h-[190px] w-full"
                     : "h-full w-11/12 md:w-10/12 top-5 md:top-10 xl:top-20"
-                  // : ""
                 )}
               >
                 <Image
                   src={data.mainImageSrc}
-                  className="rounded-lg"
                   alt="not found"
                   fill
                   style={{ objectFit: "fill" }}

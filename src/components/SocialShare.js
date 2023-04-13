@@ -1,10 +1,8 @@
 import {
-  EmailIcon,
   FacebookIcon,
   LinkedinIcon,
   TwitterIcon,
   WhatsappIcon,
-  EmailShareButton,
   FacebookShareButton,
   LinkedinShareButton,
   TwitterShareButton,
@@ -30,11 +28,6 @@ const SocialShare = ({ component }) => {
         >
           <TwitterIcon size={32} borderRadius="14px" />
         </TwitterShareButton>
-        <EmailShareButton
-          url={`https://tailwindblock.vercel.app/components/${component.type}/${component.slug}`}
-        >
-          <EmailIcon size={32} borderRadius="14px" />
-        </EmailShareButton>
         <WhatsappShareButton
           url={`https://tailwindblock.vercel.app/components/${component.type}/${component.slug}`}
         >

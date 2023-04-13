@@ -1,8 +1,12 @@
+import classNames from "classnames";
+import { useState } from "react";
+
 const pricingData = [
   {
     mainTitle: "Basic plan",
     subTitle: "Our most popular plan for small teams.",
-    price: 10,
+    monthlyprice: 10,
+    yerlyprice: 120,
     ispopular: false,
     getInPlan: [
       "Access to basic features",
@@ -20,7 +24,8 @@ const pricingData = [
   {
     mainTitle: "Bussiness plan",
     subTitle: "Advanced features and reporting.",
-    price: 20,
+    monthlyprice: 20,
+    yerlyprice: 210,
     ispopular: true,
     getInPlan: [
       "Access to basic features",
@@ -37,6 +42,7 @@ const pricingData = [
   },
 ];
 const Sample4 = ({ color }) => {
+  const [monthprice, setMonthPrice] = useState(true);
   const primaryColor = color?.length > 0 ? `#${color}` : "#1D4ED8";
 
   return (
@@ -61,15 +67,29 @@ const Sample4 = ({ color }) => {
           {/* billing type div */}
           <div className="hidden sm:block">
             <div className="px-2 h-[56px] bg-[#F2F4F7] m-auto mt-10 space-x-2 flex justify-center items-center rounded-lg">
-              <button className="py-2.5 px-1.5 sm:px-3.5 drop-shadow-md hover:bg-white text-[#667085] hover:text-black rounded-md">
+              <button
+                onClick={() => setMonthPrice(true)}
+                className={classNames(
+                  "py-2.5 px-1.5 sm:px-3.5 drop-shadow-md hover:bg-white text-[#667085] hover:text-black rounded-md",
+                  monthprice && "bg-white text-black"
+                )}
+              >
                 Monthly billing
               </button>
-              <button className="py-2.5 px-1.5 sm:px-3.5 border border-[#94a3b8] drop-shadow-md hover:bg-white text-[#667085] hover:border-none hover:text-black rounded-md">
+              <button
+                onClick={() => setMonthPrice(false)}
+                className={classNames(
+                  "py-2.5 px-1.5 sm:px-3.5 border border-[#94a3b8] drop-shadow-md hover:bg-white text-[#667085] hover:border-none hover:text-black rounded-md",
+                  !monthprice && "bg-white text-black"
+                )}
+              >
                 Annual billing
               </button>
-              <span className="py-0.5 px-1 sm:px-2.5 text-sm text-[#344054] bg-[#cbd5e1] rounded-2xl  ">
-                Save 20%
-              </span>
+              {!monthprice && (
+                <span className="py-0.5 px-1 sm:px-2.5 text-sm text-[#344054] bg-[#cbd5e1] rounded-2xl">
+                  Save 20%
+                </span>
+              )}
             </div>
           </div>
         </div>
@@ -106,10 +126,10 @@ const Sample4 = ({ color }) => {
                   <div className="text-[#101828]">
                     <span className="font-bold text-4xl leading-none">$</span>
                     <span className="font-bold text-6xl lg:text-4xl xl:text-6xl">
-                      {data.price}
+                      {monthprice ? data.monthlyprice : data.yerlyprice}
                     </span>
                     <span className="text-base font-normal text-[#475467] ml-0.5">
-                      per month
+                      {monthprice ? "per month" : "per year"}
                     </span>
                   </div>
                 </div>

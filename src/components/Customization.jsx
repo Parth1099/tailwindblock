@@ -1,6 +1,8 @@
 import { COMPONENT_LIST } from "@/utils/constant";
 import React from "react";
 import PreviewSecion from "./PreviewSection";
+import { TemplateConstant } from "@/utils/templateconstant";
+import Link from "next/link";
 
 const Customization = () => {
   return (
@@ -11,14 +13,19 @@ const Customization = () => {
         </h2>
         <div className="border md:border-2 rounded-xl border-[#365CCE] w-16 md:w-40 h-0"></div>
         <p className="font-normal text-sm sm:text-lg md:text-xl xl:text-2xl text-black opacity-60">
-          Examples of beautifully produced, completely responsive, and
-          professionally designed components that you can add to your Tailwind
-          projects and modify as you like.
+          You may put over well-made {COMPONENT_LIST.length}&nbsp;+
+          <Link href="/components">&nbsp;Components&nbsp;</Link>
+          and {TemplateConstant.length}&nbsp;+&nbsp;
+          <Link href="templates">Templates</Link> page into your Tailwind
+          projects and modify them as you like. They are all professionally
+          designed and fully responsive.
         </p>
       </div>
       <div className="relative w-full h-full">
         <PreviewSecion
-          component={COMPONENT_LIST[18]}
+          component={
+            COMPONENT_LIST.filter((data) => data.slug == "advertise")[0]
+          }
           page="components"
           array_map={COMPONENT_LIST}
           query_slug="advertise"

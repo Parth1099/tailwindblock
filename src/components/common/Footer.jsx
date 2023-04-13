@@ -54,7 +54,7 @@ const Footer = () => {
               </span>
             ))}
           </div>
-          <div className="border-[0.5px] border-[#C7D9F6] "></div>
+          <div className="border-[0.5px] border-[#C7D9F6] w-full max-w-7xl mx-auto"></div>
         </div>
 
         <div className="flex flex-col justify-center items-center gap-[20px] text-center">

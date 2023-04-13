@@ -210,8 +210,8 @@ const Navitem = ["Marketplace", "Rankings", "Connect a wallet"];
 const Crypto = () => {
   return (
     <div className=" flex flex-col justify-center items-center gap-10 lg:gap-20 font-worksans  bg-[#2B2B2B]">
-      <div className=" w-full flex items-center justify-between gap-[20px]  px-3 sm:px-[50px] py-[15px] md:py-5">
-        <a href="/">
+      <div className="w-full flex items-center justify-between gap-[20px] px-3 lg:px-5 xl:px-12 py-[15px] md:py-5">
+        <a href="/" className="max-w-[200px] lg:max-w-[250px] ">
           <img src={"/assets/crypto/logo.svg"} alt="logo" />
         </a>
         <div className="hidden capitalize md:flex whitespace-nowrap text-white  items-center gap-[20px]  lg:gap-[50px] text-[16px] font-semibold leading-[22px]">
@@ -221,7 +221,7 @@ const Crypto = () => {
 
           <a
             href="/"
-            className="lg:px-[30px] px-[20px] whitespace-nowrap py-[10px] text-center lg:py-3 text-[16px] leading-[22px] font-semibold  bg-[#A259FF] rounded-[20px] flex justify-center gap-[10px]"
+            className="lg:px-[30px] px-[20px] whitespace-nowrap py-[6px] text-center lg:py-3 text-[16px] leading-[22px] font-semibold  bg-[#A259FF] rounded-[20px] flex justify-center gap-[10px]"
           >
             <img src={"/assets/crypto/user.svg"} alt="user" />
             <button>Sign Up</button>
@@ -231,7 +231,7 @@ const Crypto = () => {
           <img src={"/assets/crypto/navmenu.svg"} alt="menu" />
         </div>
       </div>
-      <div className="md:max-w-[690px] px-3 capitalize sm:max-w-[590px]  xl:max-w-[1050px] lg:max-w-[900px] flex flex-col items-center gap-10 md:gap-[80px] lg:gap-[100px]">
+      <div className="md:max-w-[690px] px-[15px] md:px-0 capitalize sm:max-w-[590px] xl:max-w-[1050px] lg:max-w-[900px] flex flex-col items-center gap-10 md:gap-[80px] lg:gap-[100px]">
         <div className=" w-full flex flex-col sm:flex-row justify-between gap-[30px]   ">
           <div className="flex flex-col  gap-[20px] md:gap-[30px] md:max-w-[330px]  lg:max-w-[510px] text-white text-start">
             <div className=" capitalize text-[28px] font-semibold leading-[39px] md:text-[38px] lg:text-[67px] md:leading-[45px] lg:leading-[73px] text-start">
@@ -386,7 +386,7 @@ const Crypto = () => {
               </a>
             </div>
           </div>
-          <div className="flex flex-wrap gap-[20px] px-[6%] sm:px-0 sm:gap-[30px] justify-center w-full ">
+          <div className="flex flex-wrap gap-[20px]  sm:gap-[30px] justify-center w-full ">
             {creator.map((data, i, index) => {
               return (
                 <div
@@ -433,7 +433,7 @@ const Crypto = () => {
               Browse Categories
             </div>
           </div>
-          <div className="flex px-[4%] sm:px-0 flex-wrap items-center justify-around   gap-[15px] sm:gap-[25px] md:gap-[30px] max-w-[1050px]">
+          <div className="flex  flex-wrap items-center justify-around   gap-[15px] sm:gap-[25px] md:gap-[30px] max-w-[1050px]">
             {browse.map((data, index) => {
               return (
                 <div
@@ -486,12 +486,12 @@ const Crypto = () => {
               </a>
             </div>
           </div>
-          <div className="flex flex-col justify-between px-[8%] sm:px-0 items-center rounded-[20px]  sm:flex-row gap-[30px] w-full  max-w-[1050px]">
+          <div className="flex flex-col justify-between items-center rounded-[20px]  sm:flex-row gap-[30px] w-full  max-w-[1050px]">
             {nftdata.map((data, i, index) => {
               return (
                 <div
                   key={index}
-                  className={`max-w-[330px] lg:max-w-[330px] h-[469px] w-full     ${
+                  className={`max-w-[330px] lg:max-w-[330px] h-[469px] w-full ${
                     i === 2 && "sm:hidden lg:block"
                   }`}
                 >
@@ -601,7 +601,7 @@ const Crypto = () => {
       </div>
 
       <div className="md:max-w-[690px] capitalize sm:max-w-[590px] w-full   xl:max-w-[1050px] lg:max-w-[900px] flex flex-col items-center gap-10 md:gap-[80px] lg:gap-[100px]">
-        <div className="text-white px-[30px] sm:px-0 flex flex-col  justify-center gap-10 lg:gap-[60px]  w-full ">
+        <div className="text-white px-[15px] md:px-0 flex flex-col  justify-center gap-10 lg:gap-[60px]  w-full ">
           <div className=" sm:pl-0 flex flex-col lg:gap-[10px] justify-start text-start">
             <div className="text-[28px] lg:text-[38px] leading-[39px] lg:leading-[45px] font-semibold">
               How it works
@@ -638,7 +638,7 @@ const Crypto = () => {
           </div>
         </div>
 
-        <div className="px-[30px] lg:px-[10px] md:px-[20px] xl:px-0 w-full sm:bg-[#3B3B3B] rounded-[20px]  sm:h-[360px]  lg:h-[430px] flex flex-col sm:flex-row gap-[30px] lg:gap-[40px] xl:gap-[80px] items-center justify-center">
+        <div className="px-[15px] lg:px-[10px] md:px-[20px] xl:px-0 w-full sm:bg-[#3B3B3B] rounded-[20px]  sm:h-[360px]  lg:h-[430px] flex flex-col sm:flex-row gap-[30px] lg:gap-[40px] xl:gap-[80px] items-center justify-center">
           <div>
             <img
               src={"/assets/crypto/weekly.png"}
@@ -684,7 +684,7 @@ const Crypto = () => {
       </div>
 
       <div className=" w-full pl-[5%] pb-[20px] lg:px-0  text-start max-h-fit   flex flex-col gap-[20px] justify-center items-start sm:items-center bg-[#3B3B3B]">
-        <div className="max-w-[315px] sm:max-w-[690px] md:max-w-[900px] xl:max-w-[1050px] px-[20px] w-full">
+        <div className="max-w-[315px] sm:max-w-[690px] md:max-w-[900px] xl:max-w-[1050px] md:px-[20px]  w-full">
           <div className="flex flex-col gap-[30px] pt-[40px] md:flex-row md:justify-between ">
             <div className="text-[#CCCCCC] flex flex-col gap-[25px]">
               <div>

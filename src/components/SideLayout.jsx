@@ -144,11 +144,98 @@ const SideLayout = ({ listData, category }) => {
           </Listbox>
         </div>
         <div className="w-full h-11 border-b border-[#75A0E5] flex items-center px-2 text-black text-opacity-60 text-base sm:max-h-[448px] scrollbar-none overflow-scroll">
-          {categoryData.length > 0
-            ? categoryData?.map((ctype, index) => (
+          {categoryData.length > 0 ? (
+            categoryData?.map((ctype, index) => (
+              <div
+                key={index}
+                className={`border-[#75A0E5] border-b whitespace-nowrap w-full group px-3 py-2 sm:py-3 sm:px-4 items-center sm:leading-[2.50em] flex sm:justify-between gap-1 cursor-pointer text-base font-bold
+                    ${
+                      components.type === ctype.type
+                        ? "text-[#365CCE]"
+                        : "text-black text-opacity-60"
+                    }
+                  `}
+                onClick={() => {
+                  ctype.type === "all"
+                    ? setComponents({
+                        count: listData.length,
+                        type: ctype.type,
+                        visible: listData,
+                      })
+                    : setComponents({
+                        count: listData.filter(
+                          (item) => item.type === ctype.type
+                        ).length,
+                        type: ctype.type,
+                        visible: listData.filter(
+                          (item) => item.type === ctype.type
+                        ),
+                      });
+                }}
+              >
+                <span
+                  className={classNames(
+                    "w-full block truncate",
+                    categoryData.length <= 2 ? "max-w-[80px]" : "max-w-[100px] "
+                  )}
+                >
+                  {ctype.name}
+                </span>
+                <span className="py-0.5 sm:px-2.5 leading-[1.50em]">
+                  (
+                  {ctype.type === "all"
+                    ? listData.length
+                    : listData.filter((item) => item.type === ctype.type)
+                        .length}
+                  )
+                </span>
+              </div>
+            ))
+          ) : (
+            <p>No Match Found</p>
+          )}
+        </div>
+        <div className="bg-[#E0E9F9] min-h-[700px] p-6 md:p-8 h-full w-full">
+          <div className="grid 2xl:grid-cols-4 xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-5">
+            {data?.visible.map((data, index) => (
+              <div key={index}>
+                <Card
+                  data={data}
+                  className="max-w-sm xl:max-w-none"
+                  type={`${data.section}s`}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="hidden relative ssm:grid ssm:grid-cols-[30%_70%] sm:grid-cols-[30%_70%] xl:grid-cols-[20%_80%] w-full">
+        <div className="h-full flex flex-col border-r border-[#75A0E5] items-center">
+          <div
+            className={classNames(
+              "w-full text-black text-opacity-60 sticky top-20 h-auto overflow-y-auto scrollbar-thumb-[#75A0E5] scrollbar-thin"
+            )}
+          >
+            <div className="border-[#75A0E5] border-b whitespace-nowrap w-full group px-2 py-2 ssm:py-[11px] sm:py-[17px] sm:px-4 items-center  flex sm:justify-between gap-1 text-[14px] cursor-pointer text-xs sm:text-sm md:text-lg font-bold">
+              <input
+                type="text"
+                className="font-normal w-full text-base md:text-lg leading-tight text-black text-opacity-60 bg-[#F1F5FD] outline-none"
+                placeholder="Filter..."
+                onChange={(e) => handleFilter(e)}
+                ref={inputRef}
+              />
+              <MdClear
+                onClick={handleClear}
+                className="cursor-pointer"
+                size={20}
+              />
+            </div>
+            {categoryData.length > 0 ? (
+              categoryData.map((ctype, index) => (
                 <div
                   key={index}
-                  className={`border-[#75A0E5] border-b whitespace-nowrap w-full group px-3 py-2 sm:py-3 sm:px-4 items-center sm:leading-[2.50em] flex sm:justify-between gap-1 cursor-pointer text-base font-bold
+                  className={`border-[#75A0E5] border-b whitespace-nowrap w-full group px-2 py-2 sm:py-3 sm:px-4 items-center flex sm:justify-between gap-1 text-[14px] cursor-pointer text-xs sm:text-sm md:text-lg font-bold hover:bg-[#E0E9F9] 
                     ${
                       components.type === ctype.type
                         ? "text-[#365CCE]"
@@ -173,7 +260,7 @@ const SideLayout = ({ listData, category }) => {
                         });
                   }}
                 >
-                  <span className="w-full max-w-[100px] block truncate">
+                  <span className="w-full max-w-[220px] block truncate">
                     {ctype.name}
                   </span>
                   <span className="py-0.5 sm:px-2.5 leading-[1.50em]">
@@ -186,87 +273,11 @@ const SideLayout = ({ listData, category }) => {
                   </span>
                 </div>
               ))
-            : "No Match Found"}
-        </div>
-        <div className="bg-[#E0E9F9] min-h-[700px] p-6 md:p-8 h-full w-full">
-          <div className="grid 2xl:grid-cols-4 xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-5">
-            {data?.visible.map((data, index) => (
-              <div key={index}>
-                <Card
-                  data={data}
-                  className="max-w-sm xl:max-w-none"
-                  type={`${data.section}s`}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      <div className="hidden relative ssm:grid ssm:grid-cols-[30%_70%] sm:grid-cols-[30%_70%] xl:grid-cols-[20%_80%] w-full">
-        <div className="h-full flex flex-col border-r border-[#75A0E5] items-center">
-          <div
-            className={classNames(
-              "w-full text-black text-opacity-60 sticky top-20 h-screen overflow-y-auto scrollbar-thumb-[#75A0E5] scrollbar-thin"
+            ) : (
+              <p className="p-4 text-[14px] text-xs sm:text-sm md:text-lg">
+                No Match Found
+              </p>
             )}
-          >
-            <div className="border-[#75A0E5] border-b whitespace-nowrap w-full group px-2 py-2 ssm:py-[11px] sm:py-[17px] sm:px-4 items-center  flex sm:justify-between gap-1 text-[14px] cursor-pointer text-xs sm:text-sm md:text-lg font-bold">
-              <input
-                type="text"
-                className="font-normal w-full text-base md:text-lg leading-tight text-black text-opacity-60 bg-[#F1F5FD] outline-none"
-                placeholder="Filter..."
-                onChange={(e) => handleFilter(e)}
-                ref={inputRef}
-              />
-              <MdClear
-                onClick={handleClear}
-                className="cursor-pointer"
-                size={20}
-              />
-            </div>
-            {categoryData.length > 0
-              ? categoryData.map((ctype, index) => (
-                  <div
-                    key={index}
-                    className={`border-[#75A0E5] border-b whitespace-nowrap w-full group px-2 py-2 sm:py-3 sm:px-4 items-center flex sm:justify-between gap-1 text-[14px] cursor-pointer text-xs sm:text-sm md:text-lg font-bold hover:bg-[#E0E9F9] 
-                    ${
-                      components.type === ctype.type
-                        ? "text-[#365CCE]"
-                        : "text-black text-opacity-60"
-                    }
-                  `}
-                    onClick={() => {
-                      ctype.type === "all"
-                        ? setComponents({
-                            count: listData.length,
-                            type: ctype.type,
-                            visible: listData,
-                          })
-                        : setComponents({
-                            count: listData.filter(
-                              (item) => item.type === ctype.type
-                            ).length,
-                            type: ctype.type,
-                            visible: listData.filter(
-                              (item) => item.type === ctype.type
-                            ),
-                          });
-                    }}
-                  >
-                    <span className="w-full max-w-[220px] block truncate">
-                      {ctype.name}
-                    </span>
-                    <span className="py-0.5 sm:px-2.5 leading-[1.50em]">
-                      (
-                      {ctype.type === "all"
-                        ? listData.length
-                        : listData.filter((item) => item.type === ctype.type)
-                            .length}
-                      )
-                    </span>
-                  </div>
-                ))
-              : "No Match Found"}
           </div>
         </div>
         <div className="bg-[#E0E9F9] min-h-[700px] h-full w-full">

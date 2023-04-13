@@ -19,6 +19,7 @@ module.exports = {
         Cormorant: ["Cormorant", "serif"],
         montserratAlter: ["Montserrat Alternates", "sans-serif"],
         worksans: ["Work Sans", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
       },
       backgroundImage: {
         "hero-pattern": "url('/assets/common/componentsBg.png')",

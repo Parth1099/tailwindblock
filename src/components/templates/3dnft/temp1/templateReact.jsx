@@ -131,7 +131,7 @@ const topcreator1 = [
 const Nft = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   return (
-    <div className=" flex text-[#ECDBBA] flex-col items-center w-full overflow-x-hidden ">
+    <div className="flex text-[#ECDBBA] flex-col items-center w-full overflow-x-hidden ">
       <div className="bg-[#ECDBBA] gap-[43px]  pb-10  flex flex-col items-center justify-center max-h-fit lg:h-[780px] w-full">
         <div className="px-[4%] relative xl:px-0 sm:px-[4%] py-[4%] flex max-w-[1180px] items-center justify-between w-full">
           <div className="cursor-pointer">
@@ -140,12 +140,12 @@ const Nft = () => {
           <div className="hidden sm:text-lg text-2xl text-[#2D4263] font-normal md:flex md:flex-row items-center sm:gap-2.5 md:gap-[60px]">
             {Navitem.map((navitem) => {
               return (
-                <a href="#">
+                <a href="/">
                   <div>{navitem}</div>
                 </a>
               );
             })}
-            <a href="#">
+            <a href="/">
               <div className="font-Cormorant px-7 py-3 text-[#ECDBBA] font-bold bg-[#2D4263] rounded-[68px]">
                 <button>Connect Wallet</button>
               </div>
@@ -170,10 +170,10 @@ const Nft = () => {
             >
               <img src={"/assets/nft/closed.svg"} alt="Close" className="h-7" />
             </div>
-            <div className="flex  flex-col w-full items-center justify-center h-screen  gap-[30px] sm:gap-[50px] md:hidden sm:text-lg text-[20px] leading-[29px] font-normal md:flex-row md:gap-[60px]">
+            <div className="flex flex-col w-full items-center justify-center h-screen  gap-[30px] sm:gap-[50px] md:hidden sm:text-lg text-[20px] leading-[29px] font-normal md:flex-row md:gap-[60px]">
               {Navitem.map((navitem) => {
                 return (
-                  <a href="#">
+                  <a href="/">
                     <div>{navitem}</div>
                   </a>
                 );
@@ -219,8 +219,8 @@ const Nft = () => {
               </div>
             </div>
             <a
-              href="#"
-              className=" w-full lg:max-w-[150px] text-center text-[#2D4263] px-7 py-3 border-2 border-[#2D4263] rounded-[68px]"
+              href="/"
+              className=" w-full lg:max-w-[150px] text-center text-[#2D4263] px-7 py-3 border-2 border-[#2D4263] rounded-[68px] hover:text-white duration-1000 hover:bg-[#2D4263]"
             >
               <button>Join Now</button>
             </a>
@@ -240,20 +240,20 @@ const Nft = () => {
                 </div>
                 <a
                   href="#"
-                  className="text-[12px] text-center px-[30px] md:max-w-[166px] md:w-full py-3  border-2 border-[#ECDBBA] rounded-[68px]"
+                  className="text-[12px] font-semibold text-center px-[30px] md:max-w-[166px] md:w-full py-3  border-2 border-[#ECDBBA] rounded-[68px] hover:text-white duration-1000 hover:bg-[#2D4263] hover:border-none"
                 >
                   <button>View More</button>
                 </a>
               </div>
               <div>
-                <div className="items-center justify-center flex flex-wrap gap-[30px] md:gap-[50px] lg:gap-[83px] md:px-0 px-[3%] w-full">
+                <div className="items-center justify-center flex flex-wrap gap-[30px] md:gap-[50px] lg:gap-[83px] md:px-0 px-[3%] w-full ">
                   {dropsection.map((data, index) => {
                     return (
                       <div
                         key={index}
-                        className=" flex flex-col justify-center items-center md:max-w-[300px]  lg:max-w-[338px]   w-full py-[4%] lg:py-[2%]    max-h-fit xl:h-[410px] border-[4px] border-[#ECDBBA] rounded-[28px]"
+                        className="hover:scale-105 duration-1000 cursor-pointer flex flex-col justify-center items-center md:max-w-[300px]  lg:max-w-[338px]   w-full py-[4%] lg:py-[2%]    max-h-fit xl:h-[410px] border-[4px] border-[#ECDBBA] rounded-[28px]"
                       >
-                        <div className=" px-[4%]   w-full flex flex-col gap-[16px]">
+                        <div className=" px-[4%]  w-full flex flex-col gap-[16px]">
                           <img
                             src={data.img}
                             alt="dropmainback"
@@ -291,7 +291,7 @@ const Nft = () => {
             </div>
 
             <div className="items-center  flex flex-col gap-[36px]">
-              <div className=" font-Cormorant text-[25px] sm:text-[48px] font-bold leading-[58px]">
+              <div className="font-Cormorant text-[25px] sm:text-[48px] font-bold leading-[58px]">
                 Create and sell your NFTs
               </div>
 
@@ -300,7 +300,7 @@ const Nft = () => {
                   return (
                     <div
                       key={index}
-                      className="px-[17px] w-full lg:max-w-[280px] xl:max-w-[337px] pb-[2%] max-h-fit bg-[#2D4263] border-[4px] border-[#2D4263] rounded-[28px] flex flex-col gap-2.5 items-center justify-center"
+                      className="px-[17px] hover:border-1 duration-1000 hover:shadow-pupularCard hover:shadow-white w-full lg:max-w-[280px] xl:max-w-[337px] pb-[2%] max-h-fit bg-[#2D4263] border-[4px] border-[#2D4263] rounded-[28px] flex flex-col gap-2.5 items-center justify-center"
                     >
                       <div className="max-w-[200px]">
                         <img src={data.img} alt="" />
@@ -387,7 +387,7 @@ const Nft = () => {
               </div>
             </div>
             <a
-              href="#"
+              href="/"
               className="max-w-[252px] text-lg w-full bg-[#2D4263]  py-3 md:py-3 flex gap-2.5 justify-center items-center rounded-[68px]"
             >
               <img src={"/assets/nft/discord.svg"} alt="discord" />
@@ -419,9 +419,9 @@ const Nft = () => {
               Quick Links
             </div>
             <div className="text-start font-montserrat text-[16px] leading-[20px] tracking-[0.03em] flex flex-col gap-2.5 font-medium">
-              <a href="#"> About</a>
-              <a href="#"> Blog</a>
-              <a href="#"> Press</a>
+              <a href="/"> About</a>
+              <a href="/"> Blog</a>
+              <a href="/"> Press</a>
             </div>
           </div>
           <div className="items-start  flex flex-col gap-2 md:gap-[21px]">
@@ -429,9 +429,9 @@ const Nft = () => {
               Resources
             </div>
             <div className="text-start font-montserrat text-[16px] leading-[20px] tracking-[0.03em] flex flex-col gap-2.5 font-medium">
-              <a href="#"> Help Center</a>
-              <a href="#"> Community</a>
-              <a href="#"> Partners</a>
+              <a href="/"> Help Center</a>
+              <a href="/"> Community</a>
+              <a href="/"> Partners</a>
             </div>
           </div>
           <div className="items-start flex flex-col gap-2 md:gap-[21px]">
@@ -440,7 +440,7 @@ const Nft = () => {
             </div>
             <div className="font-montserrat text-[16px] leading-[20px] tracking-[0.03em] flex flex-col gap-2.5 font-medium">
               <a
-                href="#"
+                href="/"
                 className="border whitespace-nowrap flex justify-center items-center gap-2.5 px-[24px] border-[#ECDBBA] max-w-[221px] py-[8px] rounded-[68px]"
               >
                 Get NFT updates
