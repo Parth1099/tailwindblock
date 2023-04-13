@@ -14,6 +14,12 @@ module.exports = {
       screens: {
         ssm: "425px",
       },
+      fontFamily: {
+        montserrat: ["Montserrat", "sans-serif"],
+        Cormorant: ["Cormorant", "serif"],
+        montserratAlter: ["Montserrat Alternates", "sans-serif"],
+        worksans: ["Work Sans", "sans-serif"],
+      },
       backgroundImage: {
         "hero-pattern": "url('/assets/common/componentsBg.png')",
         homeGradient: "url('/assets/common/line.png')",

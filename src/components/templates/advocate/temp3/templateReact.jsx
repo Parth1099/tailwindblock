@@ -194,11 +194,11 @@ const Advocate = () => {
     <>
       <div className="flex flex-col justify-center items-center ">
         <div className="w-full h-[110px] bg-[#FFFFFF] flex justify-center">
-          <div className="flex justify-between md:justify-center items-center px-[10%] w-full max-w-[1440px]  sm:px-5 md:px-[102px]   sm:gap-[30px]   md:gap-[50px] lg:gap-20 xl:gap-[124px]">
+          <div className="flex justify-between md:justify-center items-center px-[10%] w-full max-w-[1440px] sm:px-5 md:px-[102px] sm:gap-[30px] md:gap-[50px] lg:gap-20 xl:gap-[124px]">
             <div className="min-w-[100px] sm:min-w-[120px] lg:max-w-[200px]">
               <img src={"/assets/advocate/logo.svg"} alt="logo" />
             </div>
-            <div className=" -mb-2.5 hidden md:flex  justify-between min-w-[200px] sm:min-w-[200px] md:min-w-[280px] gap-0 sm:gap-5 lg:min-w-[400px] xl:gap-[82px]  w-full  font-medium sm:text-xs xl:text-lg md:text-[15px] lg:text-[15px] tracking-tight leading-7">
+            <div className="-mb-2.5 hidden md:flex  justify-between min-w-[200px] sm:min-w-[200px] md:min-w-[280px] gap-0 sm:gap-5 lg:min-w-[400px] xl:gap-[82px] w-full font-medium sm:text-xs xl:text-lg md:text-[15px] lg:text-[15px] tracking-tight leading-7">
               <div className="text-[#DDA45C] text-center flex flex-col gap-[5px]">
                 <div>Home</div>
                 <div className="w-14 rounded-full border-[2px] border-[#DDA45C]"></div>
@@ -208,12 +208,12 @@ const Advocate = () => {
               <div>Contact</div>
             </div>
             <div className=" hidden md:flex items-center justify-center gap-[25px]">
-              <div className="xl:min-w-[141px] md:min-w-[80px] sm:min-w-[60px]  w-full sm:py-[10px] sm:px-[20px] xl:py-2.5 md:py-[5px] flex justify-center items-center rounded-[5px]  border border-[#DDA45C] ">
+              <div className="xl:min-w-[141px] md:min-w-[80px] sm:min-w-[60px]  w-full sm:py-[10px] sm:px-[20px] xl:py-2.5 md:py-[5px] flex justify-center items-center rounded-[5px] border border-[#DDA45C] ">
                 <button className="font-normal sm:text-xs xl:text-lg md:text-xs lg:text-sm leading-7 tracking-tight">
                   Login
                 </button>
               </div>
-              <div className="xl:min-w-[141px] md:min-w-[80px] sm:min-w-[60px] sm:py-[10px] sm:px-[20px] w-full xl:py-2.5 md:py-[5px] flex justify-center items-center rounded-[5px]   bg-[#DDA45C] text-white ">
+              <div className="xl:min-w-[141px] md:min-w-[80px] sm:min-w-[60px] sm:py-[10px] sm:px-[20px] w-full xl:py-2.5 md:py-[5px] flex justify-center items-center rounded-[5px]bg-[#DDA45C] text-white ">
                 <button className="font-normal xl:text-lg sm:text-xs md:text-xs  lg:text-sm leading-7 tracking-tight">
                   Register
                 </button>
@@ -245,7 +245,7 @@ const Advocate = () => {
             </div>
           </div>
         </div>
-        <div className="pt-[5%] -z-10 md:pt-[30%] lg:pt-[15%] relative xl:pt-0 bg-landing-back bg-cover bg-no-repeat w-full md:min-h-[609px] min-h-[400px] flex flex-col items-center md:gap-[70px] sm:gap-[40px] gap-[30px] justify-center">
+        <div className="pt-[5%] z-10 md:pt-[30%] lg:pt-[15%] relative xl:pt-0 !bg-landing-back bg-cover bg-no-repeat w-full md:min-h-[609px] min-h-[400px] flex flex-col items-center md:gap-[70px] sm:gap-[40px] gap-[30px] justify-center">
           <div className="w-full h-full opacity-[0.5] top-0 bg-black absolute"></div>
           <div className="absolute z-10 flex justify-center flex-col items-center gap-[60px]">
             <div className="flex flex-col gap-[22px] xs:gap-[23px] md:gap-5">

@@ -14,7 +14,7 @@ const ViewComponent = ({ target }) => {
         description={target?.description}
         image={`https://tailwindblock.vercel.app/${target?.mainImageSrc}`}
       ></SEO>
-      <div>{TemplateList(query.template)};</div>
+      <div>{TemplateList(query.template)}</div>
     </>
   );
 };

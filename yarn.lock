@@ -204,10 +204,30 @@
   resolved "https://registry.npmjs.org/@eslint/js/-/js-8.35.0.tgz"
   integrity sha512-JXdzbRiWclLVoD8sNUjR443VVlYqiYmDVT6rGUEIEHU5YJW0gaVZwV2xgM7D4arkvASqD0IlLUVjHiFuxaftRw==
 
+"@fontsource/cormorant@^4.5.10":
+  version "4.5.10"
+  resolved "https://registry.yarnpkg.com/@fontsource/cormorant/-/cormorant-4.5.10.tgz#a3126f0c7ec425ae424756016192a2d9a6fdba27"
+  integrity sha512-hcerRmT8ML4+MMnasHKMMIaeNL/uR/Gs2nm5/w24ytCEW2JI2gwqP7YHjJbfS1GlblEC7AKNxYuv0w4Nfn3h9g==
+
+"@fontsource/montserrat-alternates@^4.5.11":
+  version "4.5.11"
+  resolved "https://registry.yarnpkg.com/@fontsource/montserrat-alternates/-/montserrat-alternates-4.5.11.tgz#9a6f6ea56f5d30152e567389b8c142fbda55ca22"
+  integrity sha512-A9bsrj56gM3pQE8OZOj7/tu+O7j1ut1wOiPkFPQnKVU1ouDAhSh7fH+phDiINyaNiTvduZ9BfKwl66KdKgHMrg==
+
+"@fontsource/montserrat@^4.5.14":
+  version "4.5.14"
+  resolved "https://registry.yarnpkg.com/@fontsource/montserrat/-/montserrat-4.5.14.tgz#5f4bfc5e7f234a986d94d9e7e7193f852e6971e3"
+  integrity sha512-fTvrteVzuFUePhr4QYBGoK8G/YHLJ3IhF1HhKg0AxcFvZajJT7rM7ULdmKLSd2PkX44R3aaFZq1zDbmjbGGI+w==
+
 "@fontsource/nunito@^4.5.12":
   version "4.5.12"
   resolved "https://registry.npmjs.org/@fontsource/nunito/-/nunito-4.5.12.tgz"
   integrity sha512-Li90TCJha1E+nBgP51GjcIGV6LxyQi7QisW8KZ4kpz5mpnQc1HmsJWVr9fyTMItUF/OuZUOfEazenXjaY6qRpQ==
+
+"@fontsource/work-sans@^4.5.14":
+  version "4.5.14"
+  resolved "https://registry.yarnpkg.com/@fontsource/work-sans/-/work-sans-4.5.14.tgz#965bf103baa9f812d042b5f678a34f632fa76f2e"
+  integrity sha512-AFBSDBA3hnSCXHwb52qBOMEGqF5nfdbANp+y5/hbE1PMjYfFY0lUdtUwL5J7mRAdyn1NJwobJlhduHtlAyPzmA==
 
 "@headlessui/react@^1.7.13":
   version "1.7.13"

@@ -1,4 +1,4 @@
-// import "@fontsource/work-sans";
+import "@fontsource/work-sans";
 
 const discover = [
   {
@@ -205,27 +205,33 @@ const howwoks = [
   },
 ];
 
+const Navitem = ["Marketplace", "Rankings", "Connect a wallet"];
+
 const Crypto = () => {
   return (
-    <div className=" flex flex-col justify-center items-center gap-[40px] lg:gap-[80px] font-worksans  bg-[#2B2B2B]">
-      <div className=" w-full flex items-center justify-between gap-[20px]  px-5 sm:px-[50px] py-[15px] md:py-5">
-        <div>
+    <div className=" flex flex-col justify-center items-center gap-10 lg:gap-20 font-worksans  bg-[#2B2B2B]">
+      <div className=" w-full flex items-center justify-between gap-[20px]  px-3 sm:px-[50px] py-[15px] md:py-5">
+        <a href="/">
           <img src={"/assets/crypto/logo.svg"} alt="logo" />
-        </div>
+        </a>
         <div className="hidden capitalize md:flex whitespace-nowrap text-white  items-center gap-[20px]  lg:gap-[50px] text-[16px] font-semibold leading-[22px]">
-          <div>Marketplace</div>
-          <div>Rankings</div>
-          <div>Connect a wallet</div>
-          <div className="lg:px-[30px] px-[20px] whitespace-nowrap py-[10px] text-center lg:py-[19px] text-[16px] leading-[22px] font-semibold  bg-[#A259FF] rounded-[20px] flex justify-center gap-[10px]">
+          {Navitem.map((navitem) => {
+            return <a href="/">{navitem}</a>;
+          })}
+
+          <a
+            href="/"
+            className="lg:px-[30px] px-[20px] whitespace-nowrap py-[10px] text-center lg:py-3 text-[16px] leading-[22px] font-semibold  bg-[#A259FF] rounded-[20px] flex justify-center gap-[10px]"
+          >
             <img src={"/assets/crypto/user.svg"} alt="user" />
             <button>Sign Up</button>
-          </div>
+          </a>
         </div>
         <div className="md:hidden">
           <img src={"/assets/crypto/navmenu.svg"} alt="menu" />
         </div>
       </div>
-      <div className="md:max-w-[690px] capitalize sm:max-w-[590px]  xl:max-w-[1050px] lg:max-w-[900px] flex flex-col items-center gap-10 md:gap-[80px] lg:gap-[100px]">
+      <div className="md:max-w-[690px] px-3 capitalize sm:max-w-[590px]  xl:max-w-[1050px] lg:max-w-[900px] flex flex-col items-center gap-10 md:gap-[80px] lg:gap-[100px]">
         <div className=" w-full flex flex-col sm:flex-row justify-between gap-[30px]   ">
           <div className="flex flex-col  gap-[20px] md:gap-[30px] md:max-w-[330px]  lg:max-w-[510px] text-white text-start">
             <div className=" capitalize text-[28px] font-semibold leading-[39px] md:text-[38px] lg:text-[67px] md:leading-[45px] lg:leading-[73px] text-start">
@@ -236,12 +242,15 @@ const Crypto = () => {
               sell art from more than 20k NFT artists.
             </div>
             <div className="hidden sm:flex sm:flex-col gap-[30px] ">
-              <div className="max-w-[224px]  whitespace-nowrap  py-[15px] lg:py-[19px] bg-[#A259FF] rounded-[20px] flex justify-center items-center gap-[15px]">
-                <img src={"/assets/crypto/rocket.svg"} alt="" />
+              <a
+                href="/"
+                className="max-w-[224px]  whitespace-nowrap  py-[15px] lg:py-[19px] bg-[#A259FF] rounded-[20px] flex justify-center items-center gap-[15px]"
+              >
+                <img src={"/assets/crypto/rocket.svg"} alt="rocket" />
                 <button className=" font-semibold text-[16px] leading-[22px]">
                   Get Started
                 </button>
-              </div>
+              </a>
               <div className="flex justify-between gap-[30px]  w-full">
                 {discover.map((data, index) => {
                   return (
@@ -277,12 +286,15 @@ const Crypto = () => {
             </div>
           </div>
           <div className="rounded-[20px] flex flex-col text-white gap-[30px] sm:hidden max-w-full">
-            <div className=" max-w-full whitespace-nowrap  py-[15px] lg:py-[19px] bg-[#A259FF] rounded-[20px] flex justify-center items-center gap-[15px]">
-              <img src={"/assets/crypto/rocket.svg"} alt="" />
+            <a
+              href="/"
+              className=" max-w-full whitespace-nowrap  py-[15px] lg:py-[19px] bg-[#A259FF] rounded-[20px] flex justify-center items-center gap-[15px]"
+            >
+              <img src={"/assets/crypto/rocket.svg"} alt="rocket" />
               <button className=" font-semibold text-[16px] leading-[22px]">
                 Get Started
               </button>
-            </div>
+            </a>
             <div className="flex justify-between xs:px-[5%]">
               {discover.map((data, index) => {
                 return (
@@ -363,12 +375,15 @@ const Crypto = () => {
               </div>
             </div>
             <div className="hidden sm:flex items-end justify-between">
-              <div className="px-[30px] lg:px-[50px] py-[13px] rounded-[20px] border-2 border-[#A259FF] flex gap-[15px] items-center">
+              <a
+                href="/"
+                className="px-[30px] lg:px-[50px] py-[13px] rounded-[20px] border-2 border-[#A259FF] flex gap-[15px] items-center"
+              >
                 <img src={"/assets/crypto/rocket.svg"} alt="" />
                 <button className="text-[16px] leading-[22px] font-semibold">
                   View Rankings
                 </button>
-              </div>
+              </a>
             </div>
           </div>
           <div className="flex flex-wrap gap-[20px] px-[6%] sm:px-0 sm:gap-[30px] justify-center w-full ">
@@ -460,12 +475,15 @@ const Crypto = () => {
               </div>
             </div>
             <div className="sm:flex hidden  items-end justify-end">
-              <div className=" px-[50px] py-[12px]  rounded-[20px] border-2 border-[#A259FF] flex gap-[10px] items-center justify-center">
+              <a
+                href="/"
+                className=" px-[50px] py-[12px]  rounded-[20px] border-2 border-[#A259FF] flex gap-[10px] items-center justify-center"
+              >
                 <img src={"/assets/crypto/eye.svg"} alt="" />
                 <button className="text-[16px] leading-[22px] font-semibold">
                   See All
                 </button>
-              </div>
+              </a>
             </div>
           </div>
           <div className="flex flex-col justify-between px-[8%] sm:px-0 items-center rounded-[20px]  sm:flex-row gap-[30px] w-full  max-w-[1050px]">
@@ -530,10 +548,13 @@ const Crypto = () => {
             <div className="sm:whitespace-nowrap text-[38px] leading-[45px] font-semibold text-white max-w-[375px] text-start">
               Magic Mashrooms
             </div>
-            <div className="sm:flex hidden bg-white py-[19px] font-semibold   justify-center items-center gap-[15px] rounded-[20px] max-w-[198px] text-[#2B2B2B]">
+            <a
+              href="/"
+              className="sm:flex hidden bg-white py-[19px] font-semibold   justify-center items-center gap-[15px] rounded-[20px] max-w-[198px] text-[#2B2B2B]"
+            >
               <img src={"/assets/crypto/eye.svg"} alt="eye" />
               <button>See NFT</button>
-            </div>
+            </a>
           </div>
           <div className="flex  text-white items-end ">
             <div className="flex flex-col gap-[10px] justify-center items-center  w-[295px] h-[144px] rounded-[20px] bg-[#3b3b3b80]">
@@ -638,19 +659,25 @@ const Crypto = () => {
               <div className="normal-case  text-black whitespace-nowrap pl-[20px] text-[16px] font-normal leading-[22px] ">
                 Enter your email here
               </div>
-              <div className="px-[50px] py-[17px] text-[16px] font-semibold leading-[22px] rounded-[20px]  bg-[#A259FF] flex justify-center items-center gap-[15px]">
+              <a
+                href="#"
+                className="px-[50px] py-[17px] text-[16px] font-semibold leading-[22px] rounded-[20px]  bg-[#A259FF] flex justify-center items-center gap-[15px]"
+              >
                 <img src={"/assets/crypto/email.svg"} alt="email" />
                 <button className=" ">Subscribe</button>
-              </div>
+              </a>
             </div>
             <div className="md:hidden flex flex-col gap-[16px]">
               <div className="normal-case max-w-[300px] text-[16px] w-full bg-white border py-[12px] rounded-[20px] text-black border-[#A259FF]">
                 <button className="px-5">Enter Your Email Address</button>
               </div>
-              <div className="px-[50px] py-[12px] text-[16px] font-semibold leading-[22px] rounded-[20px]  bg-[#A259FF] flex justify-center items-center gap-[15px]">
+              <a
+                href="/"
+                className="px-[50px] py-[12px] text-[16px] font-semibold leading-[22px] rounded-[20px]  bg-[#A259FF] flex justify-center items-center gap-[15px]"
+              >
                 <img src={"/public/assets/crypto/email.svg"} alt="" />
-                <button className=" ">Subscribe</button>
-              </div>
+                <button>Subscribe</button>
+              </a>
             </div>
           </div>
         </div>
@@ -683,9 +710,9 @@ const Crypto = () => {
                 Explore
               </div>
               <div className="flex flex-col gap-[20px] text-[16px] font-normal leading-[22px] text-[#CCCCCC]">
-                <div>Marketplace</div>
-                <div>Rankings</div>
-                <div>Connect a wallet</div>
+                {Navitem.map((navitem) => {
+                  return <a href="/">{navitem}</a>;
+                })}
               </div>
             </div>
             <div className="md:max-w-[420px] w-full flex flex-col lg gap-[25px] ">

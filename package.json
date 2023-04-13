@@ -11,7 +11,11 @@
     "cypress:ci": "npx cypress run --e2e --browser chrome"
   },
   "dependencies": {
+    "@fontsource/cormorant": "^4.5.10",
+    "@fontsource/montserrat": "^4.5.14",
+    "@fontsource/montserrat-alternates": "^4.5.11",
     "@fontsource/nunito": "^4.5.12",
+    "@fontsource/work-sans": "^4.5.14",
     "@headlessui/react": "^1.7.13",
     "classnames": "^2.3.2",
     "date-fns": "^2.29.3",

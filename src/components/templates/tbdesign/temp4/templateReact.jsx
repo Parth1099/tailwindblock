@@ -85,12 +85,12 @@ export default function TbDesign() {
       <div className="bg-[#F8F7F3]">
         <div>
           <div className="max-w-[1920px] mx-auto 2xl:px-40 xl:px-32 sm:px-10  px-5 flex justify-between items-center pt-6">
-            <div className="flex gap-3">
+            <a href="#" className="flex gap-3">
               <img src={"/assets/tbdesign/TB.svg"} alt="Logo"></img>
               <span className="font-normal text-3xl leading-10 uppercase">
                 TAILWIND blocks
               </span>
-            </div>
+            </a>
             <div className="relative h-10 w-12 block md:hidden">
               <img
                 alt="menu"
@@ -155,13 +155,13 @@ export default function TbDesign() {
                   <span className="font-[Playfair] text-3xl sm:text-4xl xl:text-5xl 2xl:text-8xl xl:leading-10  font-bold text-[#09051B]">
                     Websites
                   </span>
-                  <div className="relative">
+                  <a href="/" className="relative">
                     <img
                       alt="logo"
                       src="/assets/tbdesign/arrow.svg"
                       className="sm:w-32 w-20 h-14"
                     />
-                  </div>
+                  </a>
                 </div>
                 <div className="flex flex-col gap-6">
                   <div className="flex items-center  font-bold text-[#09051B]">
@@ -183,13 +183,16 @@ export default function TbDesign() {
               <div className="bg-[#09051b66] h-px w-full"></div>
               <div className=" flex flex-col gap-28 ">
                 <div className="flex gap-2 md:gap-16 items-center">
-                  <button className="relative font-[Playfair] border-[#4518F5] border-[3px]  bg-transparent  sm:py-4  sm:px-10 px-8 py-3 sm:text-2xl text-xl leading-5  sm:leading-8  font-semibold rounded-[30px] text-[#4518F5] hover:text-white duration-1000 hover:bg-[#4518F5] ">
+                  <a
+                    href="/"
+                    className="relative font-[Playfair] border-[#4518F5] border-[3px]  bg-transparent  sm:py-4  sm:px-10 px-8 py-3 sm:text-2xl text-xl leading-5  sm:leading-8  font-semibold rounded-[30px] text-[#4518F5] hover:text-white duration-1000 hover:bg-[#4518F5] "
+                  >
                     My Portfolio
-                  </button>
+                  </a>
 
                   <div className="flex sm:gap-7 gap-4 ">
                     <a
-                      href="https://in.linkedin.com/company/infynno-solutions"
+                      href="https://in.linkedin.com/"
                       target="_blank"
                       rel="noreferrer"
                       className="cursor-pointer"
@@ -202,7 +205,7 @@ export default function TbDesign() {
                       </div>
                     </a>
                     <a
-                      href="https://www.instagram.com/infynno_solutions/?hl=en"
+                      href="https://www.instagram.com/"
                       target="_blank"
                       rel="noreferrer"
                       className="cursor-pointer"
@@ -220,7 +223,7 @@ export default function TbDesign() {
                   <div>
                     <img src="/assets/tbdesign/carduser.svg" alt="card-user" />
                   </div>
-                  <span className="w-full  text-center md:text-start max-w-xs">
+                  <span className="w-full text-center md:text-start max-w-xs">
                     Absolutely fantastic, my go to web designer!
                   </span>
                   <span className="self-center sm:self-end whitespace-nowrap">
@@ -236,14 +239,14 @@ export default function TbDesign() {
         </div>
       </div>
       <div className="bg-[#F2F2F2] sm:py-32 py-16" id="portfolio">
-        <div className="mx-auto max-w-[1920px] 2xl:px-40 xl:px-32 sm:px-24  px-5  flex lg:justify-between   flex-col lg:flex-row gap-12">
+        <div className="mx-auto max-w-[1920px] 2xl:px-40 xl:px-32 sm:px-24  px-5  flex lg:justify-between flex-col lg:flex-row gap-12">
           <div className="flex flex-col gap-6">
             <span className="font-[Playfair] flex items-baseline lg:gap-4 md:gap-2 gap-2 font-bold  2xl:text-6xl lg:text-5xl sm:text-4xl text-4xl  text-[#09051B]">
               My Portfolio
               <div className=" xl:w-4 xl:h-4  w-3 h-3 bg-[#4518F5] rounded-full "></div>
             </span>
             <div className="">
-              <span className="text-xl w-[500px]   text-[#09051B]">
+              <span className="text-xl w-[500px] text-[#09051B]">
                 Here are some examples of websites I&apos;ve made recently. Each
                 and every project is a bespoke design made to serve the purpose
                 me and the client discussed.
@@ -252,15 +255,15 @@ export default function TbDesign() {
           </div>
           <div className="flex  gap-24  flex-col-reverse  lg:flex-col">
             <div className="">
-              <span className="text-xl w-[500px]   text-[#09051B]">
+              <span className="text-xl w-[500px] text-[#09051B]">
                 Here are some examples of websites I&apos;ve made recently. Each
                 and every project is a bespoke design made to serve the purpose
                 me and the client discussed.
               </span>
             </div>
-            <div className=" relative flex  justify-between ">
-              <div className="absolute top-[30px] sm:top-[45px] w-full  bg-[#09051b66] h-[2px]"></div>
-              <div className="relative w-[60px] h-[60px] sm:w-[90px] sm:h-[90px] border-[#1ED1A1] border-[2px]   rounded-full flex justify-center items-center ml-[10px]">
+            <div className="relative flex  justify-between ">
+              <div className="absolute top-[30px] sm:top-[45px] w-full bg-[#09051b66] h-[2px]"></div>
+              <div className="relative w-[60px] h-[60px] sm:w-[90px] sm:h-[90px] border-[#1ED1A1] border-[2px] rounded-full flex justify-center items-center ml-[10px]">
                 <div className="w-[30px] h-[30px] sm:w-12 sm:h-12 bg-[#1ED1A1] rounded-full flex justify-center items-center text-xl sm:text-4xl leading-10 text-white">
                   1
                 </div>
@@ -268,7 +271,7 @@ export default function TbDesign() {
                   Consultation
                 </span>
               </div>
-              <div className="relative w-[60px] h-[60px] sm:w-[90px] sm:h-[90px]  border-[#4518F5] border-[2px]   rounded-full flex justify-center items-center">
+              <div className="relative w-[60px] h-[60px] sm:w-[90px] sm:h-[90px]  border-[#4518F5] border-[2px] rounded-full flex justify-center items-center">
                 <div className=" w-[30px] h-[30px] sm:w-12 sm:h-12 bg-[#4518F5] rounded-full flex justify-center items-center text-xl sm:text-4xl leading-10 text-white">
                   2
                 </div>
@@ -276,7 +279,7 @@ export default function TbDesign() {
                   Mockup
                 </span>
               </div>
-              <div className="relative w-[60px] h-[60px] sm:w-[90px] sm:h-[90px] border-[#EB8015] border-[2px]   rounded-full flex justify-center items-center mr-[10px]">
+              <div className="relative w-[60px] h-[60px] sm:w-[90px] sm:h-[90px] border-[#EB8015] border-[2px] rounded-full flex justify-center items-center mr-[10px]">
                 <div className="w-[30px]  h-[30px] sm:w-12 sm:h-12 bg-[#EB8015] rounded-full flex justify-center items-center text-xl sm:text-4xl leading-10 text-white">
                   3
                 </div>
@@ -290,7 +293,7 @@ export default function TbDesign() {
       </div>
 
       <div className="bg-[#F2F2F2] sm:pb-44 pb-24">
-        <div className="flex  overflow-auto mx-auto  max-w-[109rem] ">
+        <div className="flex  overflow-auto mx-auto max-w-[109rem] ">
           <div>
             <div className="relative h-[340px] w-[580px] ">
               <img
@@ -321,7 +324,7 @@ export default function TbDesign() {
         </div>
       </div>
       <div className="bg-[#F2F2F2] sm:pb-40  pb-24" id="about">
-        <div className="max-w-[1920px] mx-auto 2xl:px-40 xl:px-32 sm:px-24  px-5 flex  items-center pt-[25px] flex-col gap-16 ">
+        <div className="max-w-[1920px] mx-auto 2xl:px-40 xl:px-32 sm:px-24  px-5 flex items-center pt-[25px] flex-col gap-16 ">
           <div className="w-full 2xl:px-36 lg:px-24 md:px-14 sm:px-11 px-6 py-16 lg:py-28 border-[#09051B] rounded-5 border-2 flex justify-between flex-col xl:flex-row gap-4 xl:gap-10">
             <div>
               <span className="font-[Playfair] text-3xl leading-9 text-[#09051B]">
@@ -369,7 +372,7 @@ export default function TbDesign() {
               </div>
             </div>
           </div>
-          <button className="font-[Playfair] mx-auto text-[#4518F5] text-2xl leading-8 font-semibold py-4 px-10 rounded-[20px] border-[#4518F5] border-[3px]">
+          <button className="font-[Playfair] mx-auto text-[#4518F5] text-2xl leading-8 font-semibold py-4 px-10 rounded-[20px] border-[#4518F5] border-[3px]  hover:text-white duration-1000 hover:bg-[#4518F5]">
             Learn More
           </button>
         </div>
@@ -519,7 +522,7 @@ export default function TbDesign() {
           </div>
         </div>
       </div>
-      <div className=" bg-[#F2F2F2] sm:py-40 py-24 " id="contactus">
+      <div className="bg-[#F2F2F2] sm:py-40 py-24 " id="contactus">
         <div className="flex justify-center gap-16 items-center flex-col lg:flex-row">
           <div className="">
             <div className="flex items-end sm:gap-3 gap-2 text-center ">
@@ -540,12 +543,12 @@ export default function TbDesign() {
           </div>
           <div>
             <a
-              href="https://in.linkedin.com/company/infynno-solutions"
+              href="/"
               target="_blank"
               rel="noreferrer"
               className="cursor-pointer"
             >
-              <button className=" font-[Playfair] mx-auto text-[#4518F5] text-2xl leading-8 font-semibold py-4 px-16 rounded-[20px] border-[#4518F5] border-[3px]">
+              <button className="font-[Playfair] mx-auto text-[#4518F5] text-2xl leading-8 font-semibold py-4 px-16 rounded-[20px] border-[#4518F5] border-[3px] hover:text-white duration-1000 hover:bg-[#4518F5]">
                 Get In Touch
               </button>
             </a>
