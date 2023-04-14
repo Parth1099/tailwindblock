@@ -159,7 +159,7 @@ const Nft = () => {
             " transition-all ease-in-out"
               ${
                 isNavOpen
-                  ? "md:hidden flex flex-col h-screen w-full left-0 top-0 absolute  rounded-lg z-30 bg-[#2D4263]"
+                  ? "md:hidden flex flex-col h-screen w-full left-0 top-0 absolute rounded-lg z-30 bg-[#2D4263]"
                   : "md:hidden flex flex-col h-screen w-full top-0 left-full  absolute  rounded-lg z-30 bg-[#2D4263]"
               } 
            `}

@@ -8,6 +8,7 @@ import Instagram from "../../../public/assets/footer/instagramicon.svg";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { NavbarList } from "../../../src/utils/navbarlist";
+import classNames from "classnames";
 
 const socialmedia = [
   {
@@ -35,23 +36,30 @@ const Footer = () => {
       <div className="text-white pt-[30px] md:pt-[30px]  flex flex-col items-center justify-center gap-11 w-full max-h-[500px]  bg-footerBg">
         <div className="flex flex-col gap-[15px] lg:gap-[30px] lg:px-[161px] w-full">
           <div
-            className={` flex  items-center  md:flex-row  justify-center  sm:gap-[40px] md:gap-[50px] font-bold text-[13px] sm:text-[16px] md:text-[18px] leading-6 tracking-[0.055em]`}
+            className={`flex  items-center  md:flex-row  justify-around sm:justify-center  sm:gap-[40px] md:gap-[50px] lg:gap-[60px] font-bold text-[13px] sm:text-[16px] md:text-[18px] leading-6 tracking-[0.055em]`}
           >
             {NavbarList.map((data, index) => (
-              <span
-                className={` font-semibold text-white hover:border-b-[3px] hover:pb-[2px]  cursor-pointer  px-2 h-8 flex ${
-                  data.link === router.pathname && "border-b-2"
-                }  `}
-                key={index}
-              >
-                <Link
-                  target={data.name === "Documentations" ? "_blank" : ""}
-                  href={data.link}
-                  rel="noreferrer"
+              <div className="group" key={index}>
+                <span
+                  className={`text-sm sm:text-lg text-center font-semibold text-white cursor-pointer flex items-center h-8`}
                 >
-                  {data.name}
-                </Link>
-              </span>
+                  <Link
+                    target={data.name === "Documentations" ? "_blank" : ""}
+                    href={data.link}
+                  >
+                    {data.name}
+                  </Link>
+                </span>
+                <div
+                  className={classNames(
+                    router.pathname
+                      .split("/")
+                      .includes(data.link.replace("/", ""))
+                      ? "w-full h-[2px] bg-white"
+                      : "h-[2px] w-full group-hover:bg-white "
+                  )}
+                ></div>
+              </div>
             ))}
           </div>
           <div className="border-[0.5px] border-[#C7D9F6] w-full max-w-7xl mx-auto"></div>

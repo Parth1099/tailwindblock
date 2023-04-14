@@ -27,30 +27,30 @@ const Introduction = () => {
           </div>
 
           <div className=" flex gap-8 md:gap-20 w-full px-5 sm:px-0 max-w-xs sm:max-w-sm md:max-w-lg xl:max-w-xl mx-auto">
-            {/* <div className="cursor-pointer group relative hover:scale-125 ">
-              <span className="absolute -bottom-7 right-[-5px] scale-0 transition-all rounded bg-[#F1F5FD] p-1 text-xs text-blue-900 font-bold group-hover:scale-100">
+            <div className="cursor-pointer group relative">
+              <span className="absolute -bottom-7 right-[-5px] scale-0 transition-all rounded bg-[#F1F5FD] p-1 text-xs text-blue-900 font-bold md:group-hover:scale-100">
                 {"Tailwind CSS"}
-              </span> */}
-            <TailwindLogo />
-            {/* </div> */}
-            {/* <div className="cursor-pointer group relative hover:scale-110">
-              <span className="absolute -bottom-7 right-5 scale-0 transition-all rounded bg-[#F1F5FD] p-1 text-xs text-blue-900 font-bold group-hover:scale-100">
+              </span>
+              <TailwindLogo className="w-full" />
+            </div>
+            <div className="cursor-pointer  group relative">
+              <span className="absolute -bottom-7 right-4 scale-0 transition-all rounded bg-[#F1F5FD] p-1 text-xs text-blue-900 font-bold md:group-hover:scale-100">
                 {"HMTL"}
-              </span> */}
-            <HtmlLogo />
-            {/* </div> */}
-            {/* <div className="cursor-pointer group relative hover:scale-110">
-              <span className="absolute -bottom-7 right-5 scale-0 transition-all rounded bg-[#F1F5FD] p-1 text-xs text-blue-900 font-bold group-hover:scale-100">
+              </span>
+              <HtmlLogo className="w-full" />
+            </div>
+            <div className="cursor-pointer  group relative">
+              <span className="absolute -bottom-7 right-4 scale-0 transition-all rounded bg-[#F1F5FD] p-1 text-xs text-blue-900 font-bold md:group-hover:scale-100">
                 {"ReactJs"}
-              </span> */}
-            <ReactLogo />
-            {/* </div> */}
-            {/* <div className="cursor-pointer group relative hover:scale-110  ">
-              <span className="absolute -bottom-7 right-5 scale-0 transition-all rounded bg-[#F1F5FD] p-1 text-xs text-blue-900 font-bold group-hover:scale-100">
+              </span>
+              <ReactLogo className="w-full" />
+            </div>
+            <div className="cursor-pointer group relative">
+              <span className="absolute -bottom-7 right-4 scale-0 transition-all rounded bg-[#F1F5FD] p-1 text-xs text-blue-900 font-bold md:group-hover:scale-100">
                 {"VueJS"}
-              </span> */}
-            <VueLogo />
-            {/* </div> */}
+              </span>
+              <VueLogo className="w-full" />
+            </div>
           </div>
         </div>
       </div>

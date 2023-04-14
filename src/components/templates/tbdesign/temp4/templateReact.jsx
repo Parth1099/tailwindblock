@@ -1,11 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 export default function TbDesign() {
-  // const [page, setPage] = useState("home");
   const moveTo = (section) => {
     const element = document.getElementById(section);
     element.scrollIntoView({ behavior: "smooth" });
   };
-  const [navbar, setNavbar] = useState(true);
+  const [isNavOpen, setIsNavOpen] = useState(false);
   const header = [
     {
       title: "Home",
@@ -87,16 +86,45 @@ export default function TbDesign() {
           <div className="max-w-[1920px] mx-auto 2xl:px-40 xl:px-32 sm:px-10  px-5 flex justify-between items-center pt-6">
             <a href="#" className="flex gap-3">
               <img src={"/assets/tbdesign/TB.svg"} alt="Logo"></img>
-              <span className="font-normal text-3xl leading-10 uppercase">
+              <span className="font-normal md:text-3xl leading-10 uppercase">
                 TAILWIND blocks
               </span>
             </a>
-            <div className="relative h-10 w-12 block md:hidden">
+            <div
+              className="relative h-10 w-12 block md:hidden"
+              onClick={() => setIsNavOpen(!isNavOpen)}
+            >
               <img
                 alt="menu"
                 src="/assets/tbdesign/menu.svg"
                 className=" h-10 w-12"
               />
+            </div>
+
+            <div
+              className={`absolute ${
+                isNavOpen
+                  ? "right-4 top-20 h-40 w-1/2 absolute flex justify-center items-center rounded-lg z-10 bg-[#F8F7F3] shadow-componentcard"
+                  : ""
+              }  `}
+            >
+              <div
+                className={`flex flex-col justify-center gap-3 items-center   ${
+                  isNavOpen ? "flex" : "hidden"
+                }`}
+              >
+                {header.map((data, index) => {
+                  return (
+                    <span
+                      key={index}
+                      className=" relative font-medium text-xl lg:text-xl  text-[#09051B] cursor-pointer"
+                      onClick={() => moveTo(data.scrollto)}
+                    >
+                      {data.title}
+                    </span>
+                  );
+                })}
+              </div>
             </div>
 
             <div className="md:flex gap-3 lg:gap-12  hidden ">

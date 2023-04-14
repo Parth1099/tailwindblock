@@ -1,4 +1,5 @@
 import "@fontsource/work-sans";
+import { useState } from "react";
 
 const discover = [
   {
@@ -208,9 +209,10 @@ const howwoks = [
 const Navitem = ["Marketplace", "Rankings", "Connect a wallet"];
 
 const Crypto = () => {
+  const [isNavOpen, setIsNavOpen] = useState(false);
   return (
-    <div className=" flex flex-col justify-center items-center gap-10 lg:gap-20 font-worksans  bg-[#2B2B2B]">
-      <div className="w-full flex items-center justify-between gap-[20px] px-3 lg:px-5 xl:px-12 py-[15px] md:py-5">
+    <div className="flex flex-col justify-center items-center gap-10 lg:gap-20 font-worksans bg-[#2B2B2B]">
+      <div className=" w-full flex items-center justify-between gap-[20px] px-3 lg:px-5 xl:px-12 py-[15px] md:py-5">
         <a href="/" className="max-w-[200px] lg:max-w-[250px] ">
           <img src={"/assets/crypto/logo.svg"} alt="logo" />
         </a>
@@ -227,8 +229,33 @@ const Crypto = () => {
             <button>Sign Up</button>
           </a>
         </div>
-        <div className="md:hidden">
+        <div
+          className="relative md:hidden"
+          onClick={() => setIsNavOpen(!isNavOpen)}
+        >
           <img src={"/assets/crypto/navmenu.svg"} alt="menu" />
+        </div>
+        <div
+          className={`absolute ${
+            isNavOpen
+              ? "md:hidden text-white flex flex-col items-center justify-center  right-0 top-0 h-40 w-fit absolute rounded-lg z-30 bg-[#201f1f]"
+              : "hidden"
+          }   `}
+        >
+          <div
+            className={`pr-4 pt-3 items-end flex-col justify-end  w-full ${
+              isNavOpen ? "flex" : "hidden"
+            }`}
+            onClick={() => setIsNavOpen(!isNavOpen)}
+          >
+            <h1 className="text-white">X</h1>
+          </div>
+
+          <div className="flex flex-col w-full items-center justify-center px-6 h-screen text-sm gap-[10px] md:hidden  font-normal ">
+            {Navitem.map((navitem) => {
+              return <a href="/">{navitem}</a>;
+            })}
+          </div>
         </div>
       </div>
       <div className="md:max-w-[690px] px-[15px] md:px-0 capitalize sm:max-w-[590px] xl:max-w-[1050px] lg:max-w-[900px] flex flex-col items-center gap-10 md:gap-[80px] lg:gap-[100px]">
