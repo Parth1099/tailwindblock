@@ -320,7 +320,7 @@ export const COMPONENT_LIST = [
     section: "component",
     mainImageSrc: "/bgcomponents/bgcountdown1.png",
     hoverText: "Timer component to show the user how much time has to wait.",
-    title: "Day countdown",
+    title: "Day Countdown",
     subTitle: "Timer component",
     type: "timer",
     date: "2023-04-07",
@@ -337,7 +337,7 @@ export const COMPONENT_LIST = [
     mainImageSrc: "/bgcomponents/bgcountdown2.png",
     hoverText:
       "A responsive timer that displays the conclusion of our waiting time.",
-    title: "Box countdown",
+    title: "Box Countdown",
     subTitle: "Timer component",
     type: "timer",
     date: "2023-04-10",
@@ -355,7 +355,7 @@ export const COMPONENT_LIST = [
     mainImageSrc: "/bgcomponents/bgcountdown3.png",
     hoverText:
       "Timer component which used to display remaining time for a particular function.",
-    title: "countdown labels",
+    title: "Countdown Labels",
     subTitle: "Timer component",
     type: "timer",
     date: "2023-04-01",
@@ -364,6 +364,42 @@ export const COMPONENT_LIST = [
     codeAvailableLanguages: ["react"],
     pageDetails: {
       title: "Timer Component 3",
+      componentReact: "timerReact",
+    },
+  },
+
+  {
+    section: "component",
+    mainImageSrc: "/bgcomponents/bgcountdown4.png",
+    hoverText:
+      "A responsive timer that displays the conclusion of our waiting time.",
+    title: "Live Countdown",
+    subTitle: "Timer component",
+    type: "timer",
+    date: "2023-04-05",
+    slug: "timer-4",
+    isCustomizeColor: false,
+    codeAvailableLanguages: ["react"],
+    pageDetails: {
+      title: "Timer Component 4",
+      componentReact: "timerReact",
+    },
+  },
+
+  {
+    section: "component",
+    mainImageSrc: "/bgcomponents/bgcountdown5.png",
+    hoverText:
+      "Timer component which used to display remaining time for a particular function.",
+    title: "Circle Countdown",
+    subTitle: "Timer component",
+    type: "timer",
+    date: "2023-04-09",
+    slug: "timer-5",
+    isCustomizeColor: false,
+    codeAvailableLanguages: ["react"],
+    pageDetails: {
+      title: "Timer Component 5",
       componentReact: "timerReact",
     },
   },

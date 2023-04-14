@@ -8,6 +8,7 @@ const getComponentCard = (number) => {
 describe("Testing home page", () => {
   beforeEach(() => {
     cy.visit(Cypress.env("WEB_URL"));
+    // cy.visit("http://localhost:3000");
   });
 
   it("Test 1", () => {
@@ -32,6 +33,7 @@ describe("Testing home page", () => {
     cy.contains("Templates").click();
     cy.wait(500);
     cy.contains("Templates");
+    cy.wait(500);
     for (let index = 0; index < TemplateConstant?.length; index++) {
       getComponentCard(index).click();
       cy.wait(5000);

@@ -12,6 +12,8 @@ import RadioButton from "@/components/radiobutton/radiobutton-sample-1/radioButt
 import Timer1 from "@/components/timer/timer-1/timerReact";
 import Timer2 from "@/components/timer/timer-2/timerReact";
 import Timer3 from "@/components/timer/timer-3/timerReact";
+import Timer4 from "@/components/timer/timer-4/timerReact";
+import Timer5 from "@/components/timer/timer-5/timerReact";
 import Carousal1 from "../carousal-carousal-1";
 import Carousal2 from "../carousal-carousal-2";
 import PricingSample1 from "../pricing-sample-1";
@@ -45,6 +47,8 @@ const componetList = (targetKey) => {
   else if (targetKey === "timer-timer-1") return <Timer1 />;
   else if (targetKey === "timer-timer-2") return <Timer2 />;
   else if (targetKey === "timer-timer-3") return <Timer3 />;
+  else if (targetKey === "timer-timer-4") return <Timer4 />;
+  else if (targetKey === "timer-timer-5") return <Timer5 />;
   else return <p> NO Component</p>;
 };
 

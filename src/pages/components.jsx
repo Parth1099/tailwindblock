@@ -47,6 +47,10 @@ const category = [
     name: "Check Box",
     type: "checkbox",
   },
+  {
+    name: "Timer",
+    type: "timer",
+  },
 ];
 const people = [{ name: "Recent Added" }, { name: "A - Z" }, { name: "Z - A" }];
 
