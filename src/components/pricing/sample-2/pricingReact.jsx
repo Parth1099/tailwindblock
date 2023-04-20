@@ -53,7 +53,7 @@ export default function Pricing() {
                   className="w-5 h-5 "
                 />
               </div>
-              <span className="">{data}</span>
+              <span>{data}</span>
             </div>
           ))}
           <div className="border border-dashed border-[#A9A9AA] tracking-widest my-4" />
@@ -109,7 +109,7 @@ export default function Pricing() {
                   className="w-5 h-5"
                 />
               </div>
-              <span className="">{data}</span>
+              <span>{data}</span>
             </div>
           ))}
           <div className="border border-dashed border-[#A9A9AA] tracking-widest my-[18px]" />
@@ -117,7 +117,7 @@ export default function Pricing() {
             <div className="bottom-0  left-0 w-full absolute">
               <div className="flex justify-start items-baseline">
                 <span className="text-[32px] font-bold ">$450</span>
-                <span className="">/month</span>
+                <span>/month</span>
               </div>
               <button
                 className={`"px-4 py-3 rounded-xl mt-6 " ${
@@ -166,7 +166,7 @@ export default function Pricing() {
                   className="w-5 h-5 "
                 />
               </div>
-              <span className="">{data}</span>
+              <span>{data}</span>
             </div>
           ))}
           <div className="border border-dashed border-[#A9A9AA] tracking-widest my-[18px]" />
@@ -174,7 +174,7 @@ export default function Pricing() {
             <div className="bottom-0  left-0 w-full absolute">
               <div className="flex justify-start items-baseline">
                 <span className="text-[32px] font-bold">$600</span>
-                <span className="">/month</span>
+                <span>/month</span>
               </div>
               <button className="w-full px-4 py-3 bg-[#FFF5FA] text-[#FF1D89] group-hover:text-white group-hover:bg-[#FF1D89] rounded-xl mt-6 font-semibold text-[22px]">
                 Choose

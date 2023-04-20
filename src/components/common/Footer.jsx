@@ -32,23 +32,18 @@ const socialmedia = [
 const Footer = () => {
   const router = useRouter();
   return (
-    <div className=" static bottom-0 w-full flex justify-center items-center">
+    <div className="static bottom-0 w-full flex justify-center items-center">
       <div className="text-white pt-[30px] md:pt-[30px]  flex flex-col items-center justify-center gap-11 w-full max-h-[500px]  bg-footerBg">
         <div className="flex flex-col gap-[15px] lg:gap-[30px] lg:px-[161px] w-full">
           <div
-            className={`flex  items-center  md:flex-row  justify-around sm:justify-center  sm:gap-[40px] md:gap-[50px] lg:gap-[60px] font-bold text-[13px] sm:text-[16px] md:text-[18px] leading-6 tracking-[0.055em]`}
+            className={`flex  items-center  md:flex-row  justify-around sm:justify-center  sm:gap-10 md:gap-[50px] lg:gap-[60px] font-bold text-[13px] sm:text-base md:text-[18px] leading-6 tracking-[0.055em]`}
           >
             {NavbarList.map((data, index) => (
               <div className="group" key={index}>
                 <span
                   className={`text-sm sm:text-lg text-center font-semibold text-white cursor-pointer flex items-center h-8`}
                 >
-                  <Link
-                    target={data.name === "Documentations" ? "_blank" : ""}
-                    href={data.link}
-                  >
-                    {data.name}
-                  </Link>
+                  <Link href={data.link}>{data.name}</Link>
                 </span>
                 <div
                   className={classNames(
@@ -65,7 +60,7 @@ const Footer = () => {
           <div className="border-[0.5px] border-[#C7D9F6] w-full max-w-7xl mx-auto"></div>
         </div>
 
-        <div className="flex flex-col justify-center items-center gap-[20px] text-center">
+        <div className="flex flex-col justify-center items-center gap-5 text-center">
           <Link href={"/"}>
             <div className="max-w-[250px] md:max-w-[350px] w-full flex justify-center gap-[15px]">
               <div className="flex items-center">
@@ -74,7 +69,7 @@ const Footer = () => {
             </div>
           </Link>
           <div
-            className={` px-[2%] font-medium md:px-0 max-w-[600px]  lg:max-w-[811px] text-[14px] sm:text-[17px] md:text-[18px] leading-6 tracking-[0.055em]`}
+            className={` px-[2%] font-medium md:px-0 max-w-[600px]  lg:max-w-[811px] text-sm sm:text-[17px] md:text-[18px] leading-6 tracking-[0.055em]`}
           >
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry&apos;s standard dummy
@@ -91,7 +86,7 @@ const Footer = () => {
             })}
           </div>
         </div>
-        <div className="flex items-center py-[21px]  bg-[rgba(241,245,253,0.1)] w-full justify-center text-[14px] sm:text-[17px] md:text-[18px] leading-[25px] tracking-[0.055em] font-normal gap-2">
+        <div className="flex items-center py-[21px]  bg-[rgba(241,245,253,0.1)] w-full justify-center text-sm sm:text-[17px] md:text-[18px] leading-[25px] tracking-[0.055em] font-normal gap-2">
           <div>Copyrights © Infynno {new Date().getFullYear()}.</div>
         </div>
       </div>

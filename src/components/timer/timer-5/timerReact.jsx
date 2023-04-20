@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 const Timer5 = () => {
   const [countDownTime, setCountDownTIme] = useState({
@@ -29,7 +29,7 @@ const Timer5 = () => {
     }
   };
 
-  const getTimeDifference = (countDownDate) => {
+  const getTimeDifference = useCallback((countDownDate) => {
     const currentTime = new Date().getTime();
     const timeDiffrence = countDownDate - currentTime;
     const days = Math.floor(timeDiffrence / (24 * 60 * 60 * 1000));
@@ -60,9 +60,9 @@ const Timer5 = () => {
         seconds: seconds,
       });
     }
-  };
+  }, []);
 
-  const startCountDown = () => {
+  const startCountDown = useCallback(() => {
     const customDate = new Date();
     const countDownDate = new Date(
       customDate.getFullYear(),
@@ -75,10 +75,11 @@ const Timer5 = () => {
     setInterval(() => {
       getTimeDifference(countDownDate.getTime());
     }, 1000);
-  };
+  }, [getTimeDifference]);
+
   useEffect(() => {
     startCountDown();
-  }, []);
+  }, [startCountDown]);
   return (
     <div className="flex min-h-screen h-max md:h-screen flex-col md:flex-row justify-center items-center bg-gradient-to-l sm:bg-gradient-to-t from-[#88adf1] to-[#374b9c]">
       <div className="relative">
@@ -183,7 +184,7 @@ export default Timer5;
        .circle {
         height: 100%;
         width: 100%;
-        stroke-width: 8;
+        strokeWidth: 8;
         fill: transparent;
         stroke: #88adf1;
         transform: translate(5px, 5px);
@@ -193,7 +194,7 @@ export default Timer5;
         stroke-dasharray: 451px;
         height: 100%;
         width: 100%;
-        stroke-width: 8;
+        strokeWidth: 8;
         fill: transparent;
         transform: translate(5px, 5px);
       }

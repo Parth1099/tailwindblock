@@ -35,12 +35,7 @@ const Header = () => {
                 <span
                   className={` font-nunito text-lg text-center font-semibold text-black opacity-80 cursor-pointer md:flex md:items-center hidden h-8`}
                 >
-                  <Link
-                    target={data.name === "Documentations" ? "_blank" : ""}
-                    href={data.link}
-                  >
-                    {data.name}
-                  </Link>
+                  <Link href={data.link}>{data.name}</Link>
                 </span>
                 <div
                   className={classNames(
@@ -53,27 +48,39 @@ const Header = () => {
                 ></div>
               </div>
             ))}
-
-            <div className="flex md:hidden justify-end w-full h-full">
-              <div
-                id="nav-icon4"
-                onClick={() => {
-                  toggleClass();
-                  setToggle(!toggle);
-                }}
-              >
-                <span></span>
-                <span></span>
-                <span></span>
+            <button
+              className="w-12 h-12 relative focus:outline-none md:hidden"
+              onClick={() => {
+                toggleClass();
+                setToggle(!toggle);
+              }}
+            >
+              <div className="block w-5 absolute left-6 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50">
+                <span
+                  className={classNames(
+                    "block absolute h-0.5 w-7 text-black bg-current transform transition duration-300 ease-in-out",
+                    toggle ? "rotate-45" : "-translate-y-1.5"
+                  )}
+                ></span>
+                <span
+                  className={classNames(
+                    "block absolute h-0.5 w-7 text-black bg-current transform  transition duration-300 ease-in-out",
+                    toggle && "opacity-0"
+                  )}
+                ></span>
+                <span
+                  className={classNames(
+                    "block absolute h-0.5 w-7 text-black bg-current transform  transition duration-300 ease-in-out",
+                    toggle ? "-rotate-45" : "translate-y-1.5"
+                  )}
+                ></span>
               </div>
-            </div>
+            </button>
           </div>
 
           <div
             className={`md:invisible w-full h-full flex flex-wrap flex-col justify-center fixed left-0 top-[45px] ${
-              toggle
-                ? "visible ms:visible sm:visible  z-[3]"
-                : "invisible -z-10"
+              toggle ? "visible ms:visible sm:visible z-[3]" : "invisible -z-10"
             }`}
           >
             <div
@@ -84,7 +91,7 @@ const Header = () => {
             <div
               data-tilt
               data-tilt-perspective="2000"
-              className="navbar_menu will-change-transform w-full ssm:w-3/5"
+              className="relative z-[3] text-center pt-[96px] transform perspective-2000 rotate-x-0 rotate-y-0 will-change-transform w-full ssm:w-3/5"
             >
               <div
                 className={`block min-h-[130px] w-fit mx-auto transform transition ${

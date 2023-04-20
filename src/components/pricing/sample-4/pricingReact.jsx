@@ -134,7 +134,7 @@ const Sample4 = ({ color }) => {
                   </div>
                 </div>
                 <hr className="my-8" />
-                <div className="">
+                <div>
                   <div className="flex flex-col items-start">
                     <span className="uppercase font-semibold text-base">
                       Features

@@ -57,7 +57,7 @@ const Input = ({ color }) => {
             </div>
           </div>
           <div className="flex items-center justify-center text-left">
-            <div className="">
+            <div>
               <label
                 for="formInput1"
                 className="form-label h mb-2 inline-block text-lg text-gray-700"

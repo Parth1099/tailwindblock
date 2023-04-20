@@ -88,14 +88,14 @@ export default function Sample3({ color }) {
                       className="w-5 h-5"
                     />
                   </div>
-                  <span className="">{myData}</span>
+                  <span>{myData}</span>
                 </div>
               ))}
               <div className="border border-dashed border-[#A9A9AA] tracking-widest my-[18px]" />
               <div className="flex flex-col justify-between grow">
                 <div className="flex items-baseline">
                   <span className="text-[32px] font-bold ">{data.price}</span>
-                  <span className="">{data.duration}</span>
+                  <span>{data.duration}</span>
                 </div>
                 <div className="flex align-bottom">
                   <button

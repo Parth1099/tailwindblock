@@ -141,7 +141,7 @@ const MonthData = ({ cardData }) => {
                                   <h2 className=" whitespace-nowrap">
                                     {data.title}
                                   </h2>
-                                  <div className="hidden sm:flex  truncate  sm:max-w-[300px] md:max-w-[450px] lg:max-w-[700px] whitespace-nowrap text-[14px] leading-7  items-center">
+                                  <div className="hidden sm:flex  truncate  sm:max-w-[300px] md:max-w-[450px] lg:max-w-[700px] whitespace-nowrap text-sm leading-7  items-center">
                                     - {data.hoverText}
                                   </div>
                                 </div>

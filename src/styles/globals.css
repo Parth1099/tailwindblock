@@ -6,127 +6,7 @@ body,
 html {
   font-family: "Nunito", sans-serif;
   background-color: #f1f5fd;
-}
-
-/* MOBILE MENU  */
-
-#nav-icon4 {
-  width: 30px;
-  height: 18px;
-  position: relative;
-  /* / margin: 50px auto; / */
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  transform: rotate(0deg);
-  -webkit-transition: 0.5s ease-in-out;
-  -moz-transition: 0.5s ease-in-out;
-  -o-transition: 0.5s ease-in-out;
-  transition: 0.5s ease-in-out;
-  cursor: pointer;
-}
-
-#nav-icon4 span {
-  display: block;
-  position: absolute;
-  height: 3px;
-  width: 100%;
-  background: black;
-  border-radius: 9px;
-  opacity: 1;
-  left: 0;
-  -webkit-transform: rotate(0deg);
-  -moz-transform: rotate(0deg);
-  -o-transform: rotate(0deg);
-  transform: rotate(0deg);
-  -webkit-transition: 0.25s ease-in-out;
-  -moz-transition: 0.25s ease-in-out;
-  -o-transition: 0.25s ease-in-out;
-  transition: 0.25s ease-in-out;
-}
-
-#nav-icon4 span:nth-child(1) {
-  top: 0px;
-  -webkit-transform-origin: left center;
-  -moz-transform-origin: left center;
-  -o-transform-origin: left center;
-  transform-origin: left center;
-}
-
-#nav-icon4 span:nth-child(2) {
-  top: 9px;
-  -webkit-transform-origin: left center;
-  -moz-transform-origin: left center;
-  -o-transform-origin: left center;
-  transform-origin: left center;
-}
-
-#nav-icon4 span:nth-child(3) {
-  top: 18px;
-  -webkit-transform-origin: left center;
-  -moz-transform-origin: left center;
-  -o-transform-origin: left center;
-  transform-origin: left center;
-}
-
-#nav-icon4.open span:nth-child(1) {
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
-  top: -1px;
-  left: 4px;
-}
-
-#nav-icon4.open span:nth-child(2) {
-  width: 0%;
-  opacity: 0;
-}
-
-#nav-icon4.open span:nth-child(3) {
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -o-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-  top: 20px;
-  left: 4px;
-}
-
-.navbar_menu {
-  position: relative;
-  z-index: 3;
-  color: #fff;
-  text-align: center;
-  padding-top: 96px;
-  transform: perspective(2000px) rotateX(0deg) rotateY(0deg);
-}
-
-.parallax {
-  overflow: hidden;
-  letter-spacing: -2px;
-  line-height: 0.8;
-  margin: 0;
-  white-space: nowrap;
-  display: flex;
-  flex-wrap: nowrap;
-  max-width: 400px;
-}
-
-.parallax .scroller {
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: 18px;
-  color: #fff;
-  display: flex;
-  white-space: nowrap;
-  letter-spacing: 2px;
-  display: flex;
-  flex-wrap: nowrap;
-}
-
-.parallax span {
-  display: block;
-  margin-right: 30px;
+  scroll-behavior: smooth;
 }
 /* Scrollbar hide */
 @layer utilities {
@@ -171,7 +51,6 @@ html {
 
   color: #365cce !important;
 }
-
 .slick-dots li button:before {
   font-size: 20px !important;
   display: flex;
@@ -381,7 +260,7 @@ html {
 .circle {
   height: 100%;
   width: 100%;
-  stroke-width: 8;
+  stroke-width: 8px;
   fill: transparent;
   stroke: #88adf1;
   transform: translate(5px, 5px);
@@ -391,7 +270,14 @@ html {
   stroke-dasharray: 451px;
   height: 100%;
   width: 100%;
-  stroke-width: 8;
+  stroke-width: 8px;
   fill: transparent;
   transform: translate(5px, 5px);
+}
+
+.dream-agency-bussiness .slick-dots li.slick-active button:before {
+  color: #38b9f8 !important;
+}
+.dream-agency-work .slick-dots li.slick-active button:before {
+  color: #fb8f6e !important;
 }

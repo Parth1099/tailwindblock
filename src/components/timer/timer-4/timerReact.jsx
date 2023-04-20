@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 const Timer4 = () => {
   const [countDownTime, setCountDownTIme] = useState({
@@ -45,7 +45,7 @@ const Timer4 = () => {
     }
   };
 
-  const startCountDown = () => {
+  const startCountDown = useCallback(() => {
     const customDate = new Date();
 
     const countDownDate = new Date(
@@ -59,11 +59,11 @@ const Timer4 = () => {
     setInterval(() => {
       getTimeDifference(countDownDate.getTime());
     }, 1000);
-  };
+  }, []);
 
   useEffect(() => {
     startCountDown();
-  }, []);
+  }, [startCountDown]);
   return (
     <div className="h-screen  w-screen flex items-center justify-center bg-gradient-to-bl from-blue-400 via-blue-200 to-blue-400">
       <div className="flex gap-3 sm:gap-1   flex-row bg-[#2A303C] h-36 rounded-lg overflow-hidden pt-2 pr-3 sm:pt-0 sm:pr-0">

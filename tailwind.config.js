@@ -20,6 +20,8 @@ module.exports = {
         montserratAlter: ["Montserrat Alternates", "sans-serif"],
         worksans: ["Work Sans", "sans-serif"],
         poppins: ["Poppins", "sans-serif"],
+        playFairDisplay: ["Playfair Display", "serif"],
+        hindVadodara: ["Hind Vadodara", "sans-serif"],
       },
       backgroundImage: {
         "hero-pattern": "url('/assets/common/componentsBg.png')",

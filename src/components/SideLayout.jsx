@@ -1,6 +1,12 @@
 import { compareName } from "@/utils/helper";
 import { Listbox, Transition } from "@headlessui/react";
-import React, { Fragment, useEffect, useRef, useState } from "react";
+import React, {
+  Fragment,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { HiChevronUpDown } from "react-icons/hi2";
 import Card from "./Card";
 import { MdClear } from "react-icons/md";
@@ -21,41 +27,44 @@ const SideLayout = ({ listData, category }) => {
     visible: listData,
   });
 
+  const filterdata = useCallback(
+    (val) => {
+      setSelected(val);
+      switch (val.name) {
+        case "Recent Added":
+          setData({
+            ...components,
+            visible: components.visible.sort(
+              (next, prev) => new Date(prev?.date) - new Date(next?.date)
+            ),
+          });
+          break;
+        case "A - Z":
+          setData({
+            ...components,
+            visible: components.visible.sort(compareName),
+          });
+          break;
+        case "Z - A":
+          setData({
+            ...components,
+            visible: components.visible.sort(compareName).reverse(),
+          });
+          break;
+        default:
+          setData({
+            ...components,
+            visible: Constant.ComponentList,
+          });
+      }
+    },
+    [components]
+  );
+
   useEffect(() => {
     filterdata(selected);
-  }, [components]);
-  useEffect(() => {}, [categoryData]);
+  }, [filterdata, selected]);
 
-  const filterdata = (val) => {
-    setSelected(val);
-    switch (val.name) {
-      case "Recent Added":
-        setData({
-          ...components,
-          visible: components.visible.sort(
-            (next, prev) => new Date(prev?.date) - new Date(next?.date)
-          ),
-        });
-        break;
-      case "A - Z":
-        setData({
-          ...components,
-          visible: components.visible.sort(compareName),
-        });
-        break;
-      case "Z - A":
-        setData({
-          ...components,
-          visible: components.visible.sort(compareName).reverse(),
-        });
-        break;
-      default:
-        setData({
-          ...components,
-          visible: Constant.ComponentList,
-        });
-    }
-  };
   const handleFilter = (e) => {
     const query = e.target.value;
     var updatedList = [...category];
@@ -214,10 +223,10 @@ const SideLayout = ({ listData, category }) => {
         <div className="h-full flex flex-col border-r border-[#75A0E5] items-center">
           <div
             className={classNames(
-              "w-full text-black text-opacity-60 sticky top-20 h-auto overflow-y-auto scrollbar-thumb-[#75A0E5] scrollbar-thin"
+              "w-full text-black text-opacity-60 sticky top-20 h-auto overflow-y-auto max-h-[80vh] scrollbar-thumb-[#75A0E5] scrollbar-thin"
             )}
           >
-            <div className="border-[#75A0E5] border-b whitespace-nowrap w-full group px-2 py-2 ssm:py-[11px] sm:py-[17px] sm:px-4 items-center  flex sm:justify-between gap-1 text-[14px] cursor-pointer text-xs sm:text-sm md:text-lg font-bold">
+            <div className="border-[#75A0E5] border-b whitespace-nowrap w-full group px-2 py-2 ssm:py-[11px] sm:py-[17px] sm:px-4 items-center  flex sm:justify-between gap-1 text-sm cursor-pointer sm:text-sm md:text-lg font-bold">
               <input
                 type="text"
                 className="font-normal w-full text-base md:text-lg leading-tight text-black text-opacity-60 bg-[#F1F5FD] outline-none"
@@ -235,7 +244,7 @@ const SideLayout = ({ listData, category }) => {
               categoryData.map((ctype, index) => (
                 <div
                   key={index}
-                  className={`border-[#75A0E5] border-b whitespace-nowrap w-full group px-2 py-2 sm:py-3 sm:px-4 items-center flex sm:justify-between gap-1 text-[14px] cursor-pointer text-xs sm:text-sm md:text-lg font-bold hover:bg-[#E0E9F9] 
+                  className={`border-[#75A0E5] border-b whitespace-nowrap w-full group px-2 py-2 sm:py-3 sm:px-4 items-center flex sm:justify-between gap-1 text-sm cursor-pointer md:text-lg font-bold hover:bg-[#E0E9F9] 
                     ${
                       components.type === ctype.type
                         ? "text-[#365CCE]"
@@ -243,21 +252,25 @@ const SideLayout = ({ listData, category }) => {
                     }
                   `}
                   onClick={() => {
-                    ctype.type === "all"
-                      ? setComponents({
-                          count: listData.length,
-                          type: ctype.type,
-                          visible: listData,
-                        })
-                      : setComponents({
-                          count: listData.filter(
-                            (item) => item.type === ctype.type
-                          ).length,
-                          type: ctype.type,
-                          visible: listData.filter(
-                            (item) => item.type === ctype.type
-                          ),
-                        });
+                    document.body.scrollTop = 0;
+                    document.documentElement.scrollTop = 0;
+                    setTimeout(() => {
+                      ctype.type === "all"
+                        ? setComponents({
+                            count: listData.length,
+                            type: ctype.type,
+                            visible: listData,
+                          })
+                        : setComponents({
+                            count: listData.filter(
+                              (item) => item.type === ctype.type
+                            ).length,
+                            type: ctype.type,
+                            visible: listData.filter(
+                              (item) => item.type === ctype.type
+                            ),
+                          });
+                    }, 150);
                   }}
                 >
                   <span className="w-full max-w-[220px] block truncate">
@@ -274,7 +287,7 @@ const SideLayout = ({ listData, category }) => {
                 </div>
               ))
             ) : (
-              <p className="p-4 text-[14px] text-xs sm:text-sm md:text-lg">
+              <p className="p-4 text-sm sm:text-sm md:text-lg">
                 No Match Found
               </p>
             )}
@@ -282,8 +295,8 @@ const SideLayout = ({ listData, category }) => {
         </div>
         <div className="bg-[#E0E9F9] min-h-[700px] h-full w-full">
           <div className="flex justify-between items-center w-full bg-[#F1F5FD] px-4 sm:px-8 ssm:py-1 md:py-2 border-b border-[#75A0E5]">
-            <h2 className="font-normal text-xs sm:text-sm md:text-lg leading-tight text-black text-opacity-60">
-              BLocks
+            <h2 className="font-normal capitalize text-xs sm:text-sm md:text-lg leading-tight text-black text-opacity-60">
+              {components.type}
             </h2>
             <Listbox value={selected} onChange={(val) => filterdata(val)}>
               <div className="relative">

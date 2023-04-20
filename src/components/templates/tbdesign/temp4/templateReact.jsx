@@ -1,4 +1,34 @@
+import classNames from "classnames";
 import { useState } from "react";
+
+const Button = ({
+  size,
+  className,
+  color,
+  font,
+  type,
+  onClick,
+  label,
+  ...props
+}) => {
+  return (
+    <button
+      className={classNames(
+        className,
+        "flex justify-center items-center",
+        size ? size : "",
+        color ? color : "bg-blue",
+        font ? font : "font-[500] tracking-tight text-[#ECDBBA]"
+      )}
+      {...props}
+    >
+      <div className="flex justify-center items-center gap-3">
+        <div className="label">{label}</div>
+      </div>
+    </button>
+  );
+};
+
 export default function TbDesign() {
   const moveTo = (section) => {
     const element = document.getElementById(section);
@@ -76,7 +106,7 @@ export default function TbDesign() {
     {
       title: "Title Of The Question",
       details:
-        "Absolutely fantastic, my go to web designer! Absolutely fantastic, my go to web designer!Absolutely fantastic, my go to web designer!Absolutely fan",
+        "Absolutely fantastic, my go to web designer! Absolutely fantastic,my go to web designer!Absolutely fantastic, my go to web designer!Absolutely fan",
     },
   ];
   return (
@@ -84,7 +114,7 @@ export default function TbDesign() {
       <div className="bg-[#F8F7F3]">
         <div>
           <div className="max-w-[1920px] mx-auto 2xl:px-40 xl:px-32 sm:px-10  px-5 flex justify-between items-center pt-6">
-            <a href="#" className="flex gap-3">
+            <a href="#_" className="flex gap-3">
               <img src={"/assets/tbdesign/TB.svg"} alt="Logo"></img>
               <span className="font-normal md:text-3xl leading-10 uppercase">
                 TAILWIND blocks
@@ -127,12 +157,12 @@ export default function TbDesign() {
               </div>
             </div>
 
-            <div className="md:flex gap-3 lg:gap-12  hidden ">
+            <div className="md:flex gap-3 lg:gap-12 hidden ">
               {header.map((data, index) => {
                 return (
                   <span
                     key={index}
-                    className=" relative font-medium text-xl lg:text-xl  text-[#09051B] cursor-pointer"
+                    className=" relative font-medium text-xl lg:text-xl text-[#09051B] cursor-pointer"
                     onClick={() => moveTo(data.scrollto)}
                   >
                     {data.title}
@@ -146,7 +176,7 @@ export default function TbDesign() {
           </div>
         </div>
         <div>
-          <div className="max-w-[1920px] mx-auto 2xl:px-40   xl:px-32    sm:px-24  px-5 flex xl:justify-between  justify-center  flex-col xl:flex-row ">
+          <div className="max-w-[1920px] mx-auto 2xl:px-40 xl:px-32 sm:px-24 px-5 flex xl:justify-between  justify-center flex-col xl:flex-row ">
             <div className="relative 2xl:self-start self-center flex pt-5">
               <div className="relative lg:w-[500px] lg:h-[700px] w-80 h-[300px] sm:w-[400px] sm:h-[400px] ">
                 <img
@@ -177,13 +207,13 @@ export default function TbDesign() {
               </div>
             </div>
             {/* remanning */}
-            <div className="w-full flex flex-col xl:ml-60 2xl:max-w-2xl xl:max-w-lg px-3  gap-16  pb-24 pt-24">
+            <div className="w-full flex flex-col xl:ml-60 2xl:max-w-2xl xl:max-w-lg px-3 gap-7  md:gap-16 pb-11  md:pb-24 pt-10 md:pt-24">
               <div>
                 <div className="flex gap-4 items-center w-full">
                   <span className="font-[Playfair] text-3xl sm:text-4xl xl:text-5xl 2xl:text-8xl xl:leading-10  font-bold text-[#09051B]">
                     Websites
                   </span>
-                  <a href="/" className="relative">
+                  <a href="#_" className="relative">
                     <img
                       alt="logo"
                       src="/assets/tbdesign/arrow.svg"
@@ -195,7 +225,7 @@ export default function TbDesign() {
                   <div className="flex items-center  font-bold text-[#09051B]">
                     <span className=" font-[Playfair] text-3xl sm:text-4xl xl:text-5xl 2xl:text-8xl xl:leading-10 gap-2">
                       Fit For Purpose
-                      <span className="relative text-[#4518F5] xl:text-8xl sm:ml-3 ml-2 text-7xl ">
+                      <span className="relative text-[#4518F5] xl:text-8xl sm:ml-3 ml-2 text-3xl md:text-7xl ">
                         .
                       </span>
                     </span>
@@ -209,14 +239,13 @@ export default function TbDesign() {
                 </div>
               </div>
               <div className="bg-[#09051b66] h-px w-full"></div>
-              <div className=" flex flex-col gap-28 ">
+              <div className=" flex flex-col gap-10 md:gap-28 ">
                 <div className="flex gap-2 md:gap-16 items-center">
-                  <a
-                    href="/"
-                    className="relative font-[Playfair] border-[#4518F5] border-[3px]  bg-transparent  sm:py-4  sm:px-10 px-8 py-3 sm:text-2xl text-xl leading-5  sm:leading-8  font-semibold rounded-[30px] text-[#4518F5] hover:text-white duration-1000 hover:bg-[#4518F5] "
-                  >
-                    My Portfolio
-                  </a>
+                  <Button
+                    label="My Portfolio"
+                    font="sm:text-2xl text-xl leading-5  sm:leading-8  font-semibold text-[#4518F5]"
+                    className="relative font-[Playfair] border-[#4518F5] border-[3px] bg-transparent sm:py-4 sm:px-10 px-8 py-3 rounded-[30px]  hover:text-white duration-1000 hover:bg-[#4518F5]"
+                  />
 
                   <div className="flex sm:gap-7 gap-4 ">
                     <a
@@ -273,7 +302,7 @@ export default function TbDesign() {
               My Portfolio
               <div className=" xl:w-4 xl:h-4  w-3 h-3 bg-[#4518F5] rounded-full "></div>
             </span>
-            <div className="">
+            <div>
               <span className="text-xl w-[500px] text-[#09051B]">
                 Here are some examples of websites I&apos;ve made recently. Each
                 and every project is a bespoke design made to serve the purpose
@@ -282,7 +311,7 @@ export default function TbDesign() {
             </div>
           </div>
           <div className="flex  gap-24  flex-col-reverse  lg:flex-col">
-            <div className="">
+            <div>
               <span className="text-xl w-[500px] text-[#09051B]">
                 Here are some examples of websites I&apos;ve made recently. Each
                 and every project is a bespoke design made to serve the purpose
@@ -351,20 +380,20 @@ export default function TbDesign() {
           </div>
         </div>
       </div>
-      <div className="bg-[#F2F2F2] sm:pb-40  pb-24" id="about">
-        <div className="max-w-[1920px] mx-auto 2xl:px-40 xl:px-32 sm:px-24  px-5 flex items-center pt-[25px] flex-col gap-16 ">
-          <div className="w-full 2xl:px-36 lg:px-24 md:px-14 sm:px-11 px-6 py-16 lg:py-28 border-[#09051B] rounded-5 border-2 flex justify-between flex-col xl:flex-row gap-4 xl:gap-10">
+      <div className="bg-[#F2F2F2] sm:pb-40  pb-12 md:pb-24" id="about">
+        <div className="max-w-[1920px] mx-auto 2xl:px-40 xl:px-32 sm:px-24  px-5 flex items-center pt-[25px] flex-col gap-8 md:gap-16 ">
+          <div className="w-full 2xl:px-36 lg:px-24 md:px-14 sm:px-11 px-6 py-10 md:py-16 lg:py-28 border-[#09051B] rounded-5 border-2 flex justify-between flex-col xl:flex-row gap-4 xl:gap-10">
             <div>
               <span className="font-[Playfair] text-3xl leading-9 text-[#09051B]">
                 About Me
               </span>
               <h1 className=" font-[Playfair] 2xl:text-6xl  sm:text-5xl text-4xl  font-bold text-[#09051B]">
                 I&apos;m The Guy For The Job
-                <span className="relative text-[#4518F5] sm:text-8xl sm:ml-3 ml-2 text-7xl ">
+                <span className="relative text-[#4518F5] sm:text-8xl sm:ml-3 ml-2 text-7xl leading-6 ">
                   .
                 </span>
               </h1>
-              <div className="sm:text-xl text-lg mt-8 font-light leading-6 flex gap-10 flex-col">
+              <div className="sm:text-xl text-lg mt-8 font-light leading-6 flex gap-5 md:gap-10 flex-col">
                 <span className="sm:text-xl text-lg leading-6 text-[#09051B] font-light">
                   I am a website designer who focuses on creating memorable
                   websites. The aim isn&apos;t to have a website that blends in
@@ -400,12 +429,14 @@ export default function TbDesign() {
               </div>
             </div>
           </div>
-          <button className="font-[Playfair] mx-auto text-[#4518F5] text-2xl leading-8 font-semibold py-4 px-10 rounded-[20px] border-[#4518F5] border-[3px]  hover:text-white duration-1000 hover:bg-[#4518F5]">
-            Learn More
-          </button>
+          <Button
+            label="Learn More"
+            font="sm:text-2xl text-xl leading-5  sm:leading-8  font-semibold text-[#4518F5]"
+            className="font-[Playfair] mx-auto py-4 px-10 rounded-[20px] border-[#4518F5] border-[3px]  hover:text-white duration-1000 hover:bg-[#4518F5]"
+          />
         </div>
       </div>
-      <div className="  pt-20 md:pb-40 pb-96 bg-[#F8F7F3]">
+      <div className="pt-5 md:pt-20 md:pb-40 pb-96 bg-[#F8F7F3]">
         <div className="max-w-[1920px] mx-auto 2xl:px-40 xl:px-32 sm:px-24  px-5 flex justify-between items-center pt-6 flex-col gap-16">
           <div className="mx-auto md:max-w-xl w-full flex flex-col justify-center gap-6">
             <div className="flex items-end  lg:gap-4 md:gap-3 gap-2 text-center justify-center">
@@ -464,8 +495,8 @@ export default function TbDesign() {
           </div>
         </div>
       </div>
-      <div className="bg-[#F2F2F2] py-32">
-        <div className="max-w-[1920px] mx-auto 2xl:px-40 xl:px-32 sm:px-24  px-5 flex justify-between items-center pt-6 flex-col gap-32">
+      <div className="bg-[#F2F2F2] py-5 md:py-32">
+        <div className="max-w-[1920px] mx-auto 2xl:px-40 xl:px-32 sm:px-24  px-5 flex justify-between items-center pt-6 flex-col gap-10 md:gap-32">
           <div className="mx-auto  w-full max-w-xl flex flex-col justify-center gap-6">
             <div className="flex items-end  lg:gap-4 md:gap-3 gap-2 text-center justify-center">
               <span className="sm:text-6xl sm:leading-10 text-4xl  text-center">
@@ -514,7 +545,7 @@ export default function TbDesign() {
           </div>
         </div>
       </div>
-      <div className="bg-[#F8F7F3] sm:py-32 py-20">
+      <div className="bg-[#F8F7F3] sm:py-32 py-10 md:py-20">
         <div className="max-w-[1222px] mx-auto flex flex-col ">
           <div className="flex items-end gap-2 text-center justify-center">
             <span className="font-[Playfair] sm:text-6xl sm:10  font-bold text-4xl  text-center">
@@ -550,9 +581,9 @@ export default function TbDesign() {
           </div>
         </div>
       </div>
-      <div className="bg-[#F2F2F2] sm:py-40 py-24 " id="contactus">
-        <div className="flex justify-center gap-16 items-center flex-col lg:flex-row">
-          <div className="">
+      <div className="bg-[#F2F2F2] sm:py-40 py-10 md:py-24 " id="contactus">
+        <div className="flex justify-center gap-8 md:gap-16 items-center flex-col lg:flex-row">
+          <div>
             <div className="flex items-end sm:gap-3 gap-2 text-center ">
               <span className="font-[Playfair] sm:text-6xl sm:leading-10 text-4xl  text-center whitespace-nowrap">
                 Let&apos;s Work Together
@@ -571,19 +602,21 @@ export default function TbDesign() {
           </div>
           <div>
             <a
-              href="/"
+              href="#_"
               target="_blank"
               rel="noreferrer"
               className="cursor-pointer"
             >
-              <button className="font-[Playfair] mx-auto text-[#4518F5] text-2xl leading-8 font-semibold py-4 px-16 rounded-[20px] border-[#4518F5] border-[3px] hover:text-white duration-1000 hover:bg-[#4518F5]">
-                Get In Touch
-              </button>
+              <Button
+                label=" Get In Touch"
+                font="text-2xl leading-8 font-semibold sm:leading-8 font-semibold text-[#4518F5]"
+                className="w-full font-[Playfair] mx-auto py-4 px-16 rounded-[20px] border-[#4518F5] border-[3px]  hover:text-white duration-1000 hover:bg-[#4518F5]"
+              />
             </a>
           </div>
         </div>
       </div>
-      <div className="bg-[#F8F7F3] py-16 flex justify-center border-t-[1px] border-[#000000]">
+      <div className="bg-[#F8F7F3] py-5 px-5 md:py-16 flex justify-center border-t-[1px] border-[#000000]">
         <span className="sm:text-xl leading-6 font-light text-center text-[#000000] text-lg">
           Copyright © {new Date().getFullYear()} TB Tailwind Blocks. Design
           credits goes to Tom Berry.

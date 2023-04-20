@@ -172,7 +172,6 @@ function SampleNextArrow(props) {
     </div>
   );
 }
-
 function SamplePrevArrow(props) {
   const { className, style, onClick } = props;
   return (
@@ -189,22 +188,22 @@ function SamplePrevArrow(props) {
     </div>
   );
 }
-
 const Advocate = () => {
   const [navbar, setNavbar] = useState(false);
   return (
     <>
-      <div className="font-poppins flex flex-col justify-center items-center ">
+      <div className="font-poppins flex flex-col justify-center items-center">
         <div className="w-full h-[110px] bg-[#FFFFFF] flex justify-center">
           <div className="flex justify-between md:justify-center items-center px-5 w-full max-w-[1440px] sm:px-5 md:px-[102px] sm:gap-[30px] md:gap-[50px] lg:gap-20 xl:gap-[124px]">
-            <a href="/" className="w-full max-w-fit">
+            <a href="#_" className="w-full max-w-fit">
               <img src={"/assets/advocate/logo.svg"} alt="logo" />
             </a>
             <div className="-mb-2.5 hidden md:flex  justify-between min-w-[200px] sm:min-w-[200px] md:min-w-[280px] gap-0 sm:gap-5 lg:min-w-[400px] xl:gap-[82px] w-full font-medium sm:text-xs xl:text-lg md:text-[15px] lg:text-[15px] tracking-tight leading-7">
-              {Navitem.map((navitem) => {
+              {Navitem.map((navitem, index) => {
                 return (
                   <a
-                    href="#"
+                    key={index}
+                    href="#_"
                     className="text-[#1C1C23] hover:text-[#DDA45C] font-semibold"
                   >
                     {navitem}
@@ -214,18 +213,18 @@ const Advocate = () => {
             </div>
             <div className=" hidden md:flex items-center justify-center gap-[25px]">
               <a
-                href="/"
-                className="xl:min-w-[141px] md:min-w-[80px] sm:min-w-[60px]  w-full sm:py-[10px] sm:px-[20px] xl:py-2.5 md:py-[5px] flex justify-center items-center rounded-[5px] border border-[#DDA45C] "
+                href="#_"
+                className="xl:min-w-[141px] md:min-w-[80px] sm:min-w-[60px] w-full sm:py-2.5  sm:px-5 xl:py-2.5 md:py-[5px] flex justify-center items-center rounded-[5px] border border-[#DDA45C]"
               >
                 <button className="font-normal sm:text-xs xl:text-lg md:text-xs lg:text-sm leading-7 tracking-tight">
                   Login
                 </button>
               </a>
               <a
-                href="/"
-                className="xl:min-w-[141px] md:min-w-[80px] sm:min-w-[60px] sm:py-[10px] sm:px-[20px] w-full xl:py-2.5 md:py-[5px] flex justify-center items-center text-white rounded-[5px] bg-[#DDA45C] "
+                href="#_"
+                className="xl:min-w-[141px] md:min-w-[80px] sm:min-w-[60px] sm:py-2.5  sm:px-5 w-full xl:py-2.5 md:py-[5px] flex justify-center items-center text-white rounded-[5px] bg-[#DDA45C]"
               >
-                <button className="font-normal xl:text-lg sm:text-xs md:text-xs  lg:text-sm leading-7 tracking-tight">
+                <button className="font-normal xl:text-lg sm:text-xs md:text-xs lg:text-sm leading-7 tracking-tight">
                   Register
                 </button>
               </a>
@@ -238,9 +237,13 @@ const Advocate = () => {
               }
             >
               <div className="flex flex-col -mb-2.5 sm:flex items-center  justify-between  gap-2.5 sm:gap-5  w-full  font-medium sm:text-xs xl:text-lg md:text-[15px] lg:text-[15px] tracking-tight leading-7">
-                {Navitem.map((navitem) => {
+                {Navitem.map((navitem, index) => {
                   return (
-                    <a href="#" className="text-[#1C1C23] font-semibold">
+                    <a
+                      key={index}
+                      href="#_"
+                      className="text-[#1C1C23] font-semibold"
+                    >
                       {navitem}
                     </a>
                   );
@@ -257,15 +260,15 @@ const Advocate = () => {
             </div>
           </div>
         </div>
-        <div className="pt-[5%] z-10 md:pt-[30%] lg:pt-[15%] relative xl:pt-0 !bg-landing-back bg-cover bg-no-repeat w-full md:min-h-[609px] min-h-[400px] flex flex-col items-center md:gap-[70px] sm:gap-[40px] gap-[30px] justify-center">
+        <div className="pt-[5%] z-10 md:pt-[30%] lg:pt-[15%] relative xl:pt-0 !bg-landing-back bg-cover bg-no-repeat w-full md:min-h-[609px] min-h-[400px] flex flex-col items-center md:gap-[70px] sm:gap-10 gap-[30px] justify-center">
           <div className="w-full h-full opacity-[0.5] top-0 bg-black absolute"></div>
           <div className="absolute z-10 flex justify-center flex-col items-center gap-[60px]">
             <div className="flex flex-col gap-[22px] xs:gap-[23px] md:gap-5">
-              <div className="text-center text-white mx-auto text-[28px] leading-9 sm:text-[48px] sm:leading-[50px] md:text-[38px]  lg:text-[48px] md:leading-[48px] lg:leading-[60px] font-extrabold lg:max-w-[514px] md:max-w-[414px] max-w-[300px] sm:max-w-[550px]">
+              <div className="text-center text-white mx-auto text-[28px] leading-9 sm:text-5xl sm:leading-[50px] md:text-[38px] lg:text-5xl md:leading-[48px] lg:leading-[60px] font-extrabold lg:max-w-[514px] md:max-w-[414px] max-w-[300px] sm:max-w-[550px]">
                 Here at <span className="text-[#DDA45C]"> Advocate</span>, Every
                 client matters
               </div>
-              <div className=" text-white text-center md:max-w-[613px] max-w-[380px] sm:max-w-[500px]  text-[13px] md:text-[20px]   leading-[20px] md:leading-[28px] tracking-[0.02em]">
+              <div className=" text-white text-center md:max-w-[613px] max-w-[380px] sm:max-w-[500px] text-[13px] md:text-[20px] leading-5 md:leading-[28px] tracking-[0.02em]">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 <br></br> Lectus nunc scelerisque est aenean sed nunc id
                 tincidunt.
@@ -276,7 +279,10 @@ const Advocate = () => {
                 Consult Lawyers
               </button>
               <div>
-                <img src={"/assets/advocate/button_arrow.svg"} alt="" />
+                <img
+                  src={"/assets/advocate/button_arrow.svg"}
+                  alt="btn-arrow"
+                />
               </div>
             </div>
           </div>
@@ -295,7 +301,11 @@ const Advocate = () => {
                       className="max-w-[365px] bg-white rounded-b-[5px]"
                     >
                       <div>
-                        <img src={data.img_lawyer} alt="" className="w-full" />
+                        <img
+                          src={data.img_lawyer}
+                          alt=""
+                          className="w-full hover:opacity-75 cursor-pointer"
+                        />
                       </div>
                       <div className="h-[224px] flex flex-col">
                         <div className="flex py-[14px] flex-col items-center">
@@ -419,15 +429,15 @@ const Advocate = () => {
             </Slider>
           </div>
           <div>
-            <div className="px-[24px] text-white  leading-[24px] tracking-[0.02em] font-normal py-[10px] bg-[#DDA45C] rounded-[6px] ">
+            <div className="px-[24px] text-white  leading-[24px] tracking-[0.02em] font-normal py-2.5  bg-[#DDA45C] rounded-[6px] ">
               <button className="text-base">All Categories</button>
             </div>
           </div>
         </div>
         <div className="mt-[60px] relative flex w-full bg-chooseus-back bg-cover md:min-h-[500px] min-h-[400px] ">
           <div className="h-full w-full absolute bg-black opacity-[0.7]"></div>
-          <div className="flex absolute   top-[50%]  transform translate-x-[-52%] translate-y-[-50%]  left-[50%] z-10 mx-auto flex-col  lg:flex-row justify-center gap-[50px] md:gap-[40px] xl:gap-[135px] items-center max-w-[1216px] w-full">
-            <div className="left w-max mx-auto pl-[15px]   text-white font-semibold lg:text-[40px]  xl:text-[54px]  md:text-[40px] md:leading-5  xs:text-[34px]  xs:leading-[20px] lg:leading-[61px]  xl:leading-[81px] tracking-[0.02em] lg:max-w-[140px]">
+          <div className="flex absolute   top-[50%]  transform translate-x-[-52%] translate-y-[-50%]  left-[50%] z-10 mx-auto flex-col  lg:flex-row justify-center gap-[50px] md:gap-10 xl:gap-[135px] items-center max-w-[1216px] w-full">
+            <div className="left w-max mx-auto pl-[15px]   text-white font-semibold lg:text-[40px]  xl:text-[54px]  md:text-[40px] md:leading-5  xs:text-[34px]  xs:leading-5 lg:leading-[61px]  xl:leading-[81px] tracking-[0.02em] lg:max-w-[140px]">
               Why<span className="text-[#DDA45C] "> Choose </span> Us ?
             </div>
             <div className=" px-[10%] lg:px-0 flex flex-col md:gap-[30px] lg:gap-[41px] xl:gap-[61px] gap-5 sm:gap-[30px]">
@@ -439,7 +449,7 @@ const Advocate = () => {
                   <div className="min-w-[40px]">
                     <img src={"/assets/advocate/rightarrow.svg"} alt="arrow" />
                   </div>
-                  <div className="lg:text-[24px] xl:text-[28px] sm:text-[15px] md:text-[23px]  text-start lg:leading-[42px] md:leading-[30px] xs:text-sm leading-[20px] text-white  font-medium ">
+                  <div className="lg:text-[24px] xl:text-[28px] sm:text-[15px] md:text-[23px]  text-start lg:leading-[42px] md:leading-[30px] xs:text-sm leading-5 text-white  font-medium ">
                     {data}
                   </div>
                 </div>
@@ -458,7 +468,7 @@ const Advocate = () => {
                 return (
                   <div
                     key={index}
-                    className="max-w-[365px] w-full min-h-[278px] flex flex-col gap-[15px] bg-[#FFFFFF] shadow-xl rounded-b-[5px]"
+                    className="hover:scale-95 duration-1000 max-w-[365px] w-full min-h-[278px] flex flex-col gap-[15px] bg-[#FFFFFF] shadow-xl rounded-b-[5px]"
                   >
                     <div className="flex items-center gap-[15px] px-[25px] pt-[15px]">
                       <div>
@@ -493,7 +503,7 @@ const Advocate = () => {
           <div className="flex md:mt-[60px] mt-0 flex-col  items-center justify-center max-h-fit    xl:max-w-full  w-full bg-[#000D13]">
             <div className="flex gap-5 px-[10%] xl:gap-[122px] lg:gap-[50px] flex-col md:flex-row md:gap-5   justify-center mt-[30px] md:mt-[60px] xl:px-0 lg:px-[30px] md:px-[30px]">
               <div className="flex flex-col gap-[15px] lg:gap-[23px] md:gap-[15px]">
-                <a href="#" className="max-w-fit -mt-2.5  ">
+                <a href="#_" className="max-w-fit -mt-2.5  ">
                   <img src={"/assets/advocate/logofooter.svg"} alt="footer" />
                 </a>
                 <div className="text-[#F2F2F2] xl:max-w-[249px] lg:max-w-[249px] md:max-w-[190px] text-justify xl:text-base md:text-xs lg:text-sm leading-[24px] tracking-[0.02em] font-normal">
@@ -520,10 +530,11 @@ const Advocate = () => {
                 <div className="text-[#DDA45C] xl:text-[20px] lg:text-lg md:text-sm leading-[30px] tracking-[0.02em] text-justify font-semibold">
                   Links
                 </div>
-                {Navitem.map((navitem) => {
+                {Navitem.map((navitem, index) => {
                   return (
                     <a
-                      href="#"
+                      key={index}
+                      href="#_"
                       className="text-[#F2F2F2] xl:text-base lg:text-sm md:text-xs leading-[24px] font-normal text-justify"
                     >
                       {navitem}
@@ -536,30 +547,30 @@ const Advocate = () => {
                   Services
                 </div>
                 <div className="flex gap-[31px] w-full  text-[#F2F2F2] xl:text-base lg:text-sm md:text-xs leading-[24px] font-normal text-justify">
-                  <a href="#" className="lg:w-[112px] w-[95px] md:w-[85px]">
+                  <a href="#_" className="lg:w-[112px] w-[95px] md:w-[85px]">
                     Drug crime
                   </a>
-                  <a href="#">Evading</a>
+                  <a href="#_">Evading</a>
                 </div>
                 <div className="flex gap-[31px]  text-[#F2F2F2] xl:text-base lg:text-sm md:text-xs leading-[24px] font-normal text-justify">
-                  <a href="#" className="lg:w-[112px] w-[95px] md:w-[85px]">
+                  <a href="#_" className="lg:w-[112px] w-[95px] md:w-[85px]">
                     Robbery
                   </a>
-                  <a href="#">Hit and Run</a>
+                  <a href="#_">Hit and Run</a>
                 </div>
                 <div className="flex gap-[31px]  text-[#F2F2F2] xl:text-base lg:text-sm md:text-xs leading-[24px] font-normal text-justify">
-                  <a href="#" className="lg:w-[112px] w-[95px] md:w-[85px]">
+                  <a href="#_" className="lg:w-[112px] w-[95px] md:w-[85px]">
                     Investigations
                   </a>
-                  <a href="#" className="tett-strat flex justify-start ">
+                  <a href="#_" className="tett-strat flex justify-start ">
                     Theft
                   </a>
                 </div>
                 <div className="flex gap-[31px]  text-[#F2F2F2] xl:text-base lg:text-sm md:text-xs leading-[24px] font-normal text-justify">
-                  <a href="#" className=" lg:w-[112px] w-[95px] md:w-[85px]">
+                  <a href="#_" className=" lg:w-[112px] w-[95px] md:w-[85px]">
                     Assault
                   </a>
-                  <a href="#" className="whitespace-nowrap">
+                  <a href="#_" className="whitespace-nowrap">
                     Disturbing the peace
                   </a>
                 </div>
@@ -578,8 +589,8 @@ const Advocate = () => {
                   info.advocate@gmail.com
                 </div>
                 <div className="text-[#F2F2F2]  lg:text-xs xs:text-[13px] md:text-xs leading-[24px] font-normal text-justify">
-                  <a href="#">
-                    <div className="xl:max-w-[211px] lg:max-w-[170px] xs:max-w-[190px] md:max-w-[170px] lg:py-3 md:py-2 py-[10px] bg-[#DDA45C] text-center text-white font-medium">
+                  <a href="#_">
+                    <div className="xl:max-w-[211px] lg:max-w-[170px] xs:max-w-[190px] md:max-w-[170px] lg:py-3 md:py-2 py-2.5 bg-[#DDA45C] text-center text-white font-medium">
                       <button>Book free Consultation</button>
                     </div>
                   </a>
@@ -587,14 +598,14 @@ const Advocate = () => {
               </div>
             </div>
 
-            <div className="h-[1.17px] md:mt-[14px] mt-2.5  w-full bg-[#A3A3A3]"></div>
-            <div className="flex flex-col items-start px-[10%] md:px-0 md:flex-row justify-between md:items-center w-full xl:max-w-[1238px] lg:max-w-[900px] md:max-w-[700px] md:mt-[27px] mt-2.5 mb-[14px] ">
+            <div className="h-[1.17px] md:mt-[14px] mt-2.5 w-full bg-[#A3A3A3]"></div>
+            <div className="flex flex-col items-start px-[10%] md:px-0 md:flex-row justify-between md:items-center w-full xl:max-w-[1238px] lg:max-w-[900px] md:max-w-[700px] md:mt-[27px] mt-2.5 mb-[14px]">
               <div className="text-white text-sm xl:text-base whitespace-nowrap lg:text-sm md:text-xs flex items-center gap-1">
                 Advocate{" "}
                 <img src={"/assets/advocate/copyright.svg"} alt="copyright" />
                 {new Date().getFullYear()} All Rights Reserved
               </div>
-              <div className="flex md:gap-[16px] gap-[6px] whitespace-nowrap text-white font-normal leading-[24px] text-sm xl:text-base lg:text-sm md:text-xs tracking-[0.02em]">
+              <div className="flex md:gap-4 gap-[6px] whitespace-nowrap text-white font-normal leading-[24px] text-sm xl:text-base lg:text-sm md:text-xs tracking-[0.02em]">
                 <div>Terms of Service</div>
                 <div>|</div>
                 <div>Privacy Policy</div>
